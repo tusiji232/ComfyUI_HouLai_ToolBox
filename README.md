@@ -169,6 +169,16 @@ pip install -r requirements.txt
   - 可选输入: 图片、产品名称、卖点等
 ```
 
+## Tests
+
+Lightweight repository and node sanity checks are stored in `tests/`.
+
+```bash
+python tests/test_repository_health.py
+```
+
+Some node tests use mock API values such as `test-key`, `ak-test`, and `sk-test`; they are placeholders, not real credentials.
+
 ## 📂 项目结构
 
 ```

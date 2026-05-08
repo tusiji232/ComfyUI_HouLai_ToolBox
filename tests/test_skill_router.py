@@ -6,14 +6,15 @@
 """
 
 import sys
-import os
+from pathlib import Path
 # 设置 stdout 编码
 if sys.platform == 'win32':
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+PLUGIN_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PLUGIN_DIR))
 
 from py.houlai_llm_agent import (
     Ecommerce_Skill_Router, 
