@@ -75,6 +75,21 @@
 
 ComfyUI_HouLai_ToolBox 是一个功能丰富的 ComfyUI 自定义节点集合，提供了从基础工具到高级 AI 功能的完整解决方案。
 
+## 🖼 节点截图
+
+| 图像与视觉 | AI / 云端生成 |
+| --- | --- |
+| <img src="docs/images/houlai-recolor-v3.png" width="320" alt="HouLai Recolor V3"> | <img src="docs/images/houlai-gemini-image.png" width="320" alt="HouLai Gemini Image Generation"> |
+| <img src="docs/images/houlai-image-switch.png" width="320" alt="HouLai Image Switch"> | <img src="docs/images/houlai-jimeng-image.png" width="320" alt="HouLai Jimeng Image Generation"> |
+| <img src="docs/images/houlai-10-slot-router.png" width="320" alt="HouLai 10 Slot Image Router"> | <img src="docs/images/houlai-nanobanana-scheduler.png" width="320" alt="HouLai NanoBanana Scheduler"> |
+| <img src="docs/images/houlai-cloud-gen.png" width="320" alt="HouLai Cloud Generation"> | <img src="docs/images/houlai-aliyun-translate.png" width="320" alt="HouLai Aliyun Translate"> |
+
+| 文本 / LLM / 逻辑 | 工具节点 |
+| --- | --- |
+| <img src="docs/images/houlai-llm-config.png" width="320" alt="HouLai LLM Config"> | <img src="docs/images/houlai-data-gate.png" width="320" alt="HouLai Data Gate"> |
+| <img src="docs/images/houlai-skill-router.png" width="320" alt="HouLai Skill Router"> | <img src="docs/images/houlai-reroute.png" width="320" alt="HouLai Reroute"> |
+| <img src="docs/images/houlai-text-switch.png" width="320" alt="HouLai Text Switch"> | <img src="docs/images/houlai-random-prompt.png" width="320" alt="HouLai Random Prompt"> |
+
 ## ✨ 功能特性
 
 ### 🎨 图像处理节点
