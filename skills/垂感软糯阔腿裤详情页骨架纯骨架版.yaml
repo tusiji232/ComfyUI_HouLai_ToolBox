@@ -1,0 +1,127 @@
+name: 垂感软糯阔腿裤详情页骨架纯骨架版
+description: 女装阔腿裤、软糯垂感、慵懒显瘦、极简时装海报风格的纯骨架版详情页 skill：保留时装开场、垂感故事、侧身版型、抗皱证明、面料微距、尺码表、坐姿收尾和腰部细节 8 屏骨架，不承载运行时文案与业务判断。适合软糯阔腿裤、垂坠休闲裤、家居通勤慵懒下装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 阔腿裤
+trigger_words:
+- 阔腿裤
+- 垂感长裤
+- 软糯裤
+- 休闲长裤
+- 慵懒裤
+weight: 1.0
+tags:
+- name: 阔腿裤
+  weight: 1.0
+- name: 垂感长裤
+  weight: 0.99
+- name: 软糯裤
+  weight: 0.98
+- name: 休闲长裤
+  weight: 0.97
+- name: 慵懒裤
+  weight: 0.96
+- name: 显瘦垂坠
+  weight: 0.95
+- name: 家居通勤
+  weight: 0.94
+- name: 宽松下装
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 时装开场
+  description: 'source_refs:[1]; 功能: 竖版海报式单模特开场，保留大面积灰米背景和时装标题。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[fashion_poster, neutral_bg, full_body_adult_model]
+- id: screen_2
+  name: 垂感故事
+  description: 'source_refs:[2]; 功能: 顶部说明加右侧坐姿或布料垂落画面的叙事页，强调一触即垂。'
+  order: 2
+  prompt_guide: f_code=F5; screen_kind=material-story; style_tokens=[top_copy, seated_drape_view, warm_taupe_board]
+- id: screen_3
+  name: 侧身版型
+  description: 'source_refs:[3]; 功能: 侧身模特主图配左侧局部细节框，突出高腰与顺直裤线。'
+  order: 3
+  prompt_guide: f_code=F2+F6; screen_kind=fit-callout; style_tokens=[side_adult_model, inset_detail_card, slim_labels]
+- id: screen_4
+  name: 抗皱证明
+  description: 'source_refs:[4]; 功能: 单模特立姿页配右侧抗皱或不显褶皱标签，属于理性证明页。'
+  order: 4
+  prompt_guide: f_code=F3+F6; screen_kind=evidence-panel; style_tokens=[standing_adult_model, right_badges, wrinkle_resist_story]
+- id: screen_5
+  name: 面料微距
+  description: 'source_refs:[5]; 功能: 深色面料微距卡片页，保留多条短标签和中心面料特写。'
+  order: 5
+  prompt_guide: f_code=F5; screen_kind=material-proof; style_tokens=[dark_fabric_macro, framed_card, stacked_notes]
+- id: screen_6
+  name: 尺码信息
+  description: 'source_refs:[6]; 功能: 上下分区的尺码表与体重建议页，保留尺码推荐和规格表结构。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[size_recommendation, compact_table, brown_header]
+- id: screen_7
+  name: 坐姿收尾
+  description: 'source_refs:[7]; 功能: 坐姿模特收尾页，突出垂感下坠与松弛气质。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=model-closure; style_tokens=[seated_adult_model, airy_studio, drape_focus]
+- id: screen_8
+  name: 腰部细节
+  description: 'source_refs:[8]; 功能: 松紧腰和口袋等局部特写页，保留 2-3 格细节块与短说明。'
+  order: 8
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[waistband_closeup, pocket_detail, dark_inset_grid]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=minimal_taupe_fashion_poster|camera=single_full_body_adult_model_with_bag|layout=left_vertical_title_right_large_model|subject=single_adult_model_in_draped_wide_pants|accent=clean_frame_and_floor_shadow|text_mode=strong|text_zone=left-side|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=material-proof|bg=soft_taupe_story_board|camera=seated_or_draped_fabric_scene|layout=top_copy_middle_large_drape_photo_bottom_small_note|subject=fabric_drape_story|accent=soft_brown_tabs|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_2}}|negative=single-image-only
+
+  s3|kind=on-body-hero|bg=light_gray_editorial_board|camera=side_view_adult_model_with_inset_detail|layout=left_inset_card_right_tall_model|subject=side_fit_and_high_waist_line|accent=small_fit_labels|text_mode=strong|text_zone=left_column|text_align=left|text_density=bullet-list|copy_role=hero-feature|slot={{copy_function_language_3}}|negative=headline-only
+
+  s4|kind=evidence-panel|bg=neutral_gray_proof_board|camera=standing_adult_model_with_right_badges|layout=left_large_model_right_vertical_badges|subject=wrinkle_resist_or_shape_hold_story|accent=round_proof_icons|text_mode=strong|text_zone=right-column|text_align=left|text_density=badge-row|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-centered-packshot
+
+  s5|kind=material-proof|bg=dark_charcoal_fabric_card|camera=large_fabric_macro_center|layout=top_title_middle_framed_macro_bottom_label_stack|subject=soft_brushed_fabric_texture|accent=small_callout_bars|text_mode=strong|text_zone=center_and_bottom|text_align=center|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_5}}|negative=single-image-only
+
+  s6|kind=size-chart|bg=white_and_brown_size_panel|camera=table_with_size_recommendation_blocks|layout=top_recommendation_middle_table_bottom_small_note|subject=size_and_weight_guidance|accent=rounded_size_badges|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=on-body-proof|bg=soft_gray_studio_space|camera=seated_adult_model_full_body|layout=left_large_model_right_small_note|subject=seated_adult_model_showing_pant_drape|accent=floor_shadow_and_simple_prop|text_mode=weak|text_zone=right-side|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=detail-grid|bg=dark_detail_inset_board|camera=waistband_and_pocket_macro_grid|layout=top_title_middle_2x2_or_1x3_detail_grid_bottom_short_caption|subject=elastic_waist_and_pocket_details|accent=black_inset_frames|text_mode=strong|text_zone=bottom-right|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_8}}|negative=single-image-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

@@ -1,0 +1,115 @@
+name: "黑金新机数码详情页骨架纯骨架版"
+description: "黑金新机、手机详情页、3C数码科技风格的纯骨架版详情页 skill：保留深黑开场主图、功能卡片拼贴、大数字性能证明、真人交互场景、多设备兼容桌面、俯拍生态协同、材质背书和规格参数页 8 屏骨架，不承载运行时文案与业务判断。适合手机、新机、耳机、键盘、鼠标等深色科技数码详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "黑金新机"
+trigger_words:
+  - "黑金新机"
+  - "手机详情页"
+  - "新机详情页"
+  - "3C数码"
+  - "深色科技"
+weight: 1.0
+tags:
+  - name: "黑金新机"
+    weight: 1.0
+  - name: "手机详情页"
+    weight: 1.0
+  - name: "新机详情页"
+    weight: 0.99
+  - name: "3C数码"
+    weight: 0.98
+  - name: "深色科技"
+    weight: 0.97
+  - name: "多卡功能页"
+    weight: 0.96
+  - name: "大数字证明"
+    weight: 0.95
+  - name: "参数收尾页"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "开场主图"
+    description: "source_refs:[1,9]; 功能: 深黑到暖金渐变的科技开场，一台主导数码设备或同系列双版本设备悬浮居中，顶部承接大标题与核心利益点。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[dark_gold_gradient, floating_device, large_title_zone]"
+  - id: "screen_2"
+    name: "功能拼贴"
+    description: "source_refs:[2,10]; 功能: 顶部标题区加中部多卡片功能拼贴，保留小图标、局部特写、卖点模块和主设备之间的多层级关系。"
+    order: 2
+    prompt_guide: "f_code=F4+F6; screen_kind=feature-mosaic; style_tokens=[multi_card_grid, icon_row, feature_tiles]"
+  - id: "screen_3"
+    name: "性能证明"
+    description: "source_refs:[3,11]; 功能: 上部性能说明区，下部主设备与巨大发光数字或能力标识同框，突出单一强证据锤点。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[giant_number, centered_device, proof_stage]"
+  - id: "screen_4"
+    name: "交互体验"
+    description: "source_refs:[4,5,12,13]; 功能: 用人物操作、佩戴、手部互动或桌面实操来承接真实体验，文案位于主体旁侧，不做单纯悬浮单品。"
+    order: 4
+    prompt_guide: "f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[human_interaction, real_use_posture, dark_lifestyle]"
+  - id: "screen_5"
+    name: "兼容场景"
+    description: "source_refs:[5,13]; 功能: 主设备置于桌面或手边，搭配若干功能卡或连接方式模块，形成场景与卖点并行的复合结构。"
+    order: 5
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-collage; style_tokens=[desk_scene, connection_cards, hybrid_usage]"
+  - id: "screen_6"
+    name: "生态协同"
+    description: "source_refs:[6,14]; 功能: 顶部黑底说明区配多设备图标，下部俯拍桌面生态场景，表现主设备与其他数码设备的协同关系。"
+    order: 6
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[top_header_icons, overhead_flatlay, multi_device_ecosystem]"
+  - id: "screen_7"
+    name: "材质背书"
+    description: "source_refs:[7,15]; 功能: 用侧边轮廓、材质特写或结构剖面承接理性说明，可叠加大图形符号或材料背书标识。"
+    order: 7
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[material_profile, large_symbol, rational_proof]"
+  - id: "screen_8"
+    name: "规格参数"
+    description: "source_refs:[8,16]; 功能: 顶部规格标题，中部产品识别图，下部双列或多列参数信息，保持清晰理性的收尾节奏。"
+    order: 8
+    prompt_guide: "f_code=F4; screen_kind=spec-panel; style_tokens=[parameter_table, centered_title, dark_spec_sheet]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=deep-black-to-warm-gold-gradient|camera=one-dominant-digital-device-or-dual-color-device-floating-front|layout=top-title_middle-large-subject_bottom-badge|subject=one-dominant-digital-device|accent=warm-gold-glow_and_fog-base|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=feature-mosaic|bg=deep-black-feature-panel|camera=multi-card-collage-with-device-closeups-and-icons|layout=top-title_middle-feature-grid_bottom-icon-row|subject=feature-cards-around-main-device|accent=teal-or-gold-highlight|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=evidence-panel|bg=deep-black-stage-with-giant-number|camera=centered-front-device-with-large-glowing-data|layout=top-copy_middle-large-number_bottom-benefit-strip|subject=one-dominant-device-with-proof-number|accent=oversized-data_and_light-ring|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=on-body-proof|bg=dark-lifestyle-scene|camera=human-hand-or-portrait-using-main-device|layout=top-left-copy_middle-human-interaction_bottom-soft-scene|subject=device-in-real-use-posture|accent=hand-action_or_half-body-portrait|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=single-image-only
+  s5|kind=scene-collage|bg=dark-desk-with-module-cards|camera=device-used-in-desk-scene-plus-feature-panels|layout=top-left-copy_middle-main-scene_bottom-three-feature-cards|subject=main-device-with-usage-accessories|accent=wireless-and-wired-module-cards|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=scene-note|slot={{copy_function_language_5}}|negative=single-centered-packshot
+  s6|kind=scene-collage|bg=black-header-plus-warm-overhead-desk|camera=top-copy_bottom-overhead-ecosystem-flatlay|layout=top-header-icons_bottom-flatlay-scene|subject=main-device-in-multi-device-ecosystem|accent=screen-icons_and_flatlay-accessories|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=evidence-panel|bg=deep-black-material-proof-panel|camera=side-profile-or-material-closeup-with-large-symbol|layout=top-copy_middle-device-profile_bottom-proof-caption|subject=device-profile-or-material-structure|accent=recycle-symbol_or_material-badge|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=evidence-panel|bg=clean-dark-spec-sheet|camera=spec-info-panel-or-product-plus-parameter-list|layout=top-title_middle-product_identity_bottom-two-column-parameters|subject=parameter-table-and-device-identity|accent=thin-divider-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

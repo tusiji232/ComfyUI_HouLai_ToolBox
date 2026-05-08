@@ -1,0 +1,111 @@
+name: 奶油无骨抗起球短袜详情页骨架纯骨架版
+description: 女袜短袜、无骨短袜、抗起球棉袜、对比证明风格的纯骨架版详情页 skill：保留松口对比、刷毛实验、长绒棉对照、无骨袜头、后跟包裹、细节拼图、调色板和配鞋收尾 8 屏骨架，不承载运行时文案与业务判断。适合无骨短袜、月子袜、抗起球短袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 无骨短袜
+trigger_words:
+- 无骨短袜
+- 抗起球短袜
+- 纯棉月子袜
+- 女短袜
+- 奶油棉袜
+weight: 1.0
+tags:
+- name: 无骨短袜
+  weight: 1.0
+- name: 抗起球短袜
+  weight: 0.99
+- name: 纯棉月子袜
+  weight: 0.98
+- name: 女短袜
+  weight: 0.97
+- name: 奶油棉袜
+  weight: 0.96
+- name: 松口袜
+  weight: 0.95
+- name: 后跟包裹袜
+  weight: 0.94
+- name: 多色短袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 松口对比
+  description: 'source_refs:[1]; 功能: 双列材质对照的品质页，保留优劣对比和顶部绿色横条。'
+  order: 1
+  prompt_guide: f_code=F3+F4; screen_kind=compare-closure; style_tokens=[quality_compare, top_green_bar, material_columns]
+- id: screen_2
+  name: 刷毛实验
+  description: 'source_refs:[2]; 功能: 刷头摩擦的实验型近景页，突出抗起球证据。'
+  order: 2
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[brush_test, fiber_surface, minimal_white_scene]
+- id: screen_3
+  name: 长绒棉对照
+  description: 'source_refs:[3]; 功能: 双列对照的长绒棉说明页，保留左右实验结果结构。'
+  order: 3
+  prompt_guide: f_code=F3+F4; screen_kind=compare-closure; style_tokens=[cotton_compare, dual_result_cards, green_highlight_bar]
+- id: screen_4
+  name: 无骨袜头
+  description: 'source_refs:[4]; 功能: 袜头工艺对比页，保留局部特写和品质二分结构。'
+  order: 4
+  prompt_guide: f_code=F3; screen_kind=compare-closure; style_tokens=[toe_compare, quality_split, closeup_panels]
+- id: screen_5
+  name: 后跟包裹
+  description: 'source_refs:[5]; 功能: 脚后跟上脚说明页，保留品质对照与足跟包裹效果。'
+  order: 5
+  prompt_guide: f_code=F2+F3; screen_kind=on-body-proof; style_tokens=[heel_wrap_pose, compare_columns, soft_white_card]
+- id: screen_6
+  name: 细节拼图
+  description: 'source_refs:[6]; 功能: 多格小图拼合的细节页，保留四宫格局部证明。'
+  order: 6
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[four_detail_tiles, clean_grid, small_feature_labels]
+- id: screen_7
+  name: 调色板
+  description: 'source_refs:[7]; 功能: 多色袜体调色板页，保留两排色卡与简短配色名。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[color_palette_board, two_row_lineup, pastel_range]
+- id: screen_8
+  name: 配鞋收尾
+  description: 'source_refs:[8]; 功能: 完整低帮鞋搭配的近景收尾页，突出单只奶油袜与深色鞋的日常关系。'
+  order: 8
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[complete_low_cut_shoe_pairing, single_cream_sock, neutral_floor]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=compare-closure|bg=white_quality_compare_board|camera=dual_material_compare_columns|layout=top_title_middle_two_quality_columns_bottom_short_note|subject=short_sock_cuff_quality_compare|accent=green_result_bar_and_check_icons|text_mode=strong|text_zone=top-left|text_align=left|text_density=option-labels|copy_role=proof-data|slot={{copy_function_language_1}}|negative=no-compare-layout
+  s2|kind=macro-closeup|bg=clean_white_lab_scene|camera=brush_rub_fabric_macro|layout=top_copy_middle_large_test_closeup_bottom_small_note|subject=anti_pilling_surface_test_for_short_sock|accent=metal_brush_and_soft_shadow|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=compare-closure|bg=white_green_cotton_compare_board|camera=dual_result_macro_compare|layout=top_title_middle_two_compare_cards_bottom_brief_copy|subject=long_staple_cotton_quality_difference|accent=green_highlight_bar_and_close_detail_windows|text_mode=strong|text_zone=top-right|text_align=left|text_density=option-labels|copy_role=proof-data|slot={{copy_function_language_3}}|negative=no-compare-layout
+  s4|kind=compare-closure|bg=white_seam_compare_panel|camera=toe_area_dual_column_closeup|layout=top_copy_middle_two_toe_compare_blocks_bottom_quality_labels|subject=seamless_toe_vs_common_finish_compare|accent=quality_icons_and_product_cutaways|text_mode=strong|text_zone=top-left|text_align=left|text_density=option-labels|copy_role=feature-callout|slot={{copy_function_language_4}}|negative=no-compare-layout
+  s5|kind=on-body-proof|bg=soft_white_compare_card|camera=heel_wrap_on_foot_with_side_compare|layout=top_title_middle_large_heel_pose_bottom_two_quality_columns|subject=heel_wrap_and_arch_fit_for_short_sock|accent=green_compare_strip|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=single-centered-packshot
+  s6|kind=detail-grid|bg=clean_white_feature_board|camera=four_detail_tile_collage|layout=top_copy_middle_2x2_detail_grid_bottom_small_labels|subject=multi_panel_short_sock_detail_review|accent=thin_frame_lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=scene-collage|bg=white_palette_board|camera=two_row_color_lineup|layout=top_copy_middle_two_row_palette_bottom_color_names|subject=multi_color_short_sock_palette_display|accent=pastel_name_tags|text_mode=weak|text_zone=bottom-center|text_align=center|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=on-body-proof|bg=soft_neutral_floor_scene|camera=single_cream_sock_with_complete_dark_low_cut_shoe|layout=top_copy_middle_large_shoe_pairing_bottom_small_note|subject=single_short_sock_in_aesthetic_daily_shoe_match|accent=full_low_cut_shoe_and_leg_bend|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_8}}|negative=cropped-footwear-or-oversized-shoe
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

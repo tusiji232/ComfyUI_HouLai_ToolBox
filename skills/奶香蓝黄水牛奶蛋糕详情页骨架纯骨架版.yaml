@@ -1,0 +1,115 @@
+name: "奶香蓝黄水牛奶蛋糕详情页骨架纯骨架版"
+description: "暖黄奶香、水牛奶蛋糕风格的纯骨架版详情页 skill：保留蛋糕开场、配料对比、原料占比证明、奶源主打、掰开微距、下午茶场景、原料纵向拼贴和产品信息卡 8 屏骨架，不承载运行时文案与业务判断。适合蛋糕糕点、奶香零食、礼盒烘焙类食品详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "奶香蛋糕"
+trigger_words:
+  - "奶香蛋糕"
+  - "水牛奶蛋糕"
+  - "糕点礼盒"
+  - "奶香零食"
+  - "烘焙蛋糕"
+weight: 1.0
+tags:
+  - name: "奶香蛋糕"
+    weight: 1.0
+  - name: "水牛奶蛋糕"
+    weight: 1.0
+  - name: "糕点礼盒"
+    weight: 0.99
+  - name: "奶香零食"
+    weight: 0.98
+  - name: "烘焙蛋糕"
+    weight: 0.97
+  - name: "下午茶"
+    weight: 0.96
+  - name: "原料证明"
+    weight: 0.95
+  - name: "产品信息卡"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "奶香开场"
+    description: "source_refs:[1]; 功能: 多块蛋糕与牛奶杯同框的暖黄开场页。"
+    order: 1
+    prompt_guide: "f_code=F1; screen_kind=hero-opening; style_tokens=[warm_yellow_bg, cake_with_milk, centered_title]"
+  - id: "screen_2"
+    name: "配料对比"
+    description: "source_refs:[2]; 功能: 左右信息卡对比主要原料与不添加项。"
+    order: 2
+    prompt_guide: "f_code=F3+F5; screen_kind=evidence-panel; style_tokens=[ingredient_compare_cards, orange_board, small_cake_anchor]"
+  - id: "screen_3"
+    name: "蛋香证明"
+    description: "source_refs:[3]; 功能: 鸡蛋篮子与蛋糕同框的大数字原料占比页。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[egg_basket, giant_number, cake_plate]"
+  - id: "screen_4"
+    name: "奶源主打"
+    description: "source_refs:[4]; 功能: 单块蛋糕与牛奶飞溅构成的奶源主打页。"
+    order: 4
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[milk_splash, single_cake, large_blue_copy]"
+  - id: "screen_5"
+    name: "掰开微距"
+    description: "source_refs:[5]; 功能: 掰开蛋糕的奶液环绕微距页，底部配两枚数字徽章。"
+    order: 5
+    prompt_guide: "f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[cake_macro_split, milk_ring, bottom_badges]"
+  - id: "screen_6"
+    name: "下午茶场景"
+    description: "source_refs:[6]; 功能: 木盘蛋糕与茶饮牛奶同框的食用场景页。"
+    order: 6
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[tea_time_scene, wooden_tray, snack_tabletop]"
+  - id: "screen_7"
+    name: "原料拼贴"
+    description: "source_refs:[7]; 功能: 鸡蛋、牛奶和糖类原料的纵向三段拼贴页。"
+    order: 7
+    prompt_guide: "f_code=F3; screen_kind=detail-grid; style_tokens=[vertical_ingredient_strips, food_macro, cream_board]"
+  - id: "screen_8"
+    name: "信息卡"
+    description: "source_refs:[8]; 功能: 商品信息字段和配料说明组合的产品信息卡页。"
+    order: 8
+    prompt_guide: "f_code=F4; screen_kind=spec-panel; style_tokens=[food_info_card, ingredient_note, cream_sheet]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-yellow-food-board|camera=multiple-cakes-with-milk-cup|layout=top-center-copy_bottom-main-food-display|subject=multiple-cakes-and-milk|accent=soft-plate-and-cream-shadow|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=orange-food-proof-board|camera=left-right-ingredient-cards-with-small-cakes|layout=top-center-copy_middle-two-proof-cards_bottom-small-cakes|subject=ingredient-proof-and-no-additive-compare|accent=rounded-info-cards|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=evidence-panel|bg=warm-yellow-kitchen-board|camera=egg-basket-and-cake-plate|layout=top-left-copy_middle-large-number_scene_bottom-small-compare|subject=egg-themed-proof-scene-and-cakes|accent=giant-number-and-basket|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=hero-opening|bg=white-milk-splash-scene|camera=single-cake-emerging-from-milk|layout=top-split-copy_middle-single-cake_bottom-origin-note|subject=one-dominant-cake-with-milk-source|accent=large-blue-copy|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-feature|slot={{copy_function_language_4}}|negative=plain-white-packshot
+  s5|kind=evidence-panel|bg=warm-cream-macro-board|camera=split-cake-with-milk-ring|layout=top-left-copy_middle-large-macro_bottom-number-badges|subject=cake-macro-and-health-badges|accent=white-milk-ring|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=scene-collage|bg=warm-wood-afternoon-tea-scene|camera=cakes-on-tray-with-drinks|layout=top-left-copy_middle-food-scene|subject=cakes-in-snack-tabletop-scene|accent=milk_glass_and_tea_cup|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=detail-grid|bg=cream-ingredient-board|camera=three-vertical-ingredient-strips|layout=top-left-copy_bottom-vertical-ingredient-panels|subject=raw-material-collage|accent=egg_milk_sugar_strips|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=evidence-panel|bg=light-cream-info-card|camera=product-info-fields-and-ingredient-note|layout=top-left-copy_middle-info-fields_bottom-note-block|subject=food-info-card-and-note|accent=blue-dividers|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

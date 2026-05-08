@@ -1,0 +1,127 @@
+name: 轻灰弹力男童卫裤详情页骨架纯骨架版
+description: 男童卫裤、灰色休闲裤、弹力童裤、春秋运动裤风格的纯骨架版详情页 skill：保留下半身开场、触感说明、动作展示、三段特征、纱线证明、细节卡、尺码信息和上身穿搭收尾 8 屏骨架，不承载运行时文案与业务判断。适合男童卫裤、灰色长裤、休闲运动童裤详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 弹力卫裤
+trigger_words:
+- 弹力卫裤
+- 男童卫裤
+- 灰色休闲裤
+- 春秋运动裤
+- 儿童长裤
+weight: 1.0
+tags:
+- name: 弹力卫裤
+  weight: 1.0
+- name: 男童卫裤
+  weight: 1.0
+- name: 灰色休闲裤
+  weight: 0.99
+- name: 春秋运动裤
+  weight: 0.98
+- name: 儿童长裤
+  weight: 0.97
+- name: 触感说明
+  weight: 0.96
+- name: 纱线证明
+  weight: 0.95
+- name: 尺码信息
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 下半身开场
+  description: 'source_refs:[1]; 功能: 裤装下半身开场页，保留黄色边框和力量口号。'
+  order: 1
+  prompt_guide: f_code=F1; screen_kind=hero-opening; style_tokens=[lower_body_hero, yellow_frame, bold_copy]
+- id: screen_2
+  name: 触感说明
+  description: 'source_refs:[2]; 功能: 手掌触摸面料页，承接弹力与透气说明。'
+  order: 2
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[hand_touch_fabric, percentage_copy, icon_column]
+- id: screen_3
+  name: 动作展示
+  description: 'source_refs:[3]; 功能: 动作中的下半身页，表现跳跃与不紧绷。'
+  order: 3
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[jumping_lower_body, wave_shadow, oversized_headline]
+- id: screen_4
+  name: 三段特征
+  description: 'source_refs:[4]; 功能: 三段上下排布的结构特征说明页。'
+  order: 4
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[three_feature_panels, numbered_labels, neutral_bg]
+- id: screen_5
+  name: 纱线证明
+  description: 'source_refs:[5]; 功能: 纱线近景加底部三张小证明窗的耐用页。'
+  order: 5
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[yarn_macro, mini_proof_boxes, cream_texture]
+- id: screen_6
+  name: 细节卡片
+  description: 'source_refs:[6]; 功能: 主腰头加两块局部细节卡片的详情页。'
+  order: 6
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[waistband_main_card, two_detail_insets, yellow_header]
+- id: screen_7
+  name: 尺码信息
+  description: 'source_refs:[7]; 功能: 模特信息和尺码表组合页。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[profile_badges, size_table, yellow_tabs]
+- id: screen_8
+  name: 穿搭收尾
+  description: 'source_refs:[8]; 功能: 上衣外套搭配整身模特收尾页。'
+  order: 8
+  prompt_guide: f_code=F5+F6; screen_kind=model-closure; style_tokens=[full_look_child_model, peach_studio, styled_finish]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=light-grey-board-with-yellow-frame|camera=lower-body-child-model-standing|layout=top-left-copy_bottom-main-lower-body|subject=one_child_model_in_soft_sweatpants|accent=yellow-card-border|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=evidence-panel|bg=white-board-with-yellow-card|camera=hand-touch-on-fabric|layout=top-badges_middle-main-touch-card_bottom-side-icons|subject=elasticity_and_soft_touch_proof|accent=percentage_copy_and_icon_column|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=on-body-proof|bg=warm-grey-motion-board|camera=lower-body-jumping-shot|layout=top-right-copy_bottom-main-motion-photo|subject=free_movement_of_one_bottom_shape|accent=soft-circle-shadow|text_mode=strong|text_zone=top-right|text_align=right|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=single-image-only
+
+  s4|kind=detail-grid|bg=soft-grey-feature-board|camera=three-stacked-lower-body-panels|layout=right-numbered-labels_left-main-panels|subject=waist_crotch_and_hem_features|accent=number_markers|text_mode=strong|text_zone=left-center|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_4}}|negative=headline-only
+
+  s5|kind=evidence-panel|bg=cream-yarn-board|camera=large-yarn-macro-plus-three-proof-insets|layout=top-left-copy_middle-main-yarn_photo_bottom-three-mini-proofs|subject=durability_and_anti_pilling_concept|accent=numbered-mini-insets|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_5}}|negative=no-multi-panel-collage
+
+  s6|kind=detail-grid|bg=white-detail-board-with-yellow-top-strip|camera=main-waistband-card-plus-two-detail-insets|layout=top-header_middle-main-card_bottom-two-detail-boxes|subject=waistband_pocket_and_hem_details|accent=cartoon-top-border|text_mode=strong|text_zone=bottom-center|text_align=center|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=spec-panel|bg=white-info-board-with-yellow-tabs|camera=profile-badges-and-size-table|layout=top-profile-strip_middle-size-table_bottom-size-badges|subject=bottomwear_profile_and_size_information|accent=yellow-tab-system|text_mode=strong|text_zone=top-right|text_align=right|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=model-closure|bg=soft-peach-studio|camera=full-look-child-model-standing|layout=top-right-weak-copy_bottom-main-model|subject=one_child_model_wearing_styled_bottom_look|accent=cap_and_layering_prop|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=plain-white-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

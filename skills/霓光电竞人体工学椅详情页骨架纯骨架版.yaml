@@ -1,0 +1,113 @@
+name: "霓光电竞人体工学椅详情页骨架纯骨架版"
+description: "电竞椅、人体工学椅、RGB电竞房、久坐护腰风格的纯骨架版详情页 skill：保留暗场提问开场、霓虹主视觉、工学卖点拼页、动态追腰、腰背包裹、多场景搭配、结构总览和上机体验 8 屏骨架，不承载运行时文案与业务判断。适合电竞椅、人体工学电脑椅、电竞房家居座椅详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "霓光电竞椅"
+trigger_words:
+  - "霓光电竞椅"
+  - "电竞人体工学椅"
+  - "RGB电竞房椅"
+  - "久坐护腰椅"
+  - "游戏电脑椅"
+weight: 1.0
+tags:
+  - name: "霓光电竞椅"
+    weight: 1.0
+  - name: "电竞人体工学椅"
+    weight: 0.99
+  - name: "RGB电竞房椅"
+    weight: 0.98
+  - name: "久坐护腰椅"
+    weight: 0.97
+  - name: "游戏电脑椅"
+    weight: 0.96
+  - name: "机甲风座椅"
+    weight: 0.95
+  - name: "电竞直播房"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "暗场开篇"
+    description: "source_refs:[1]; 功能: 暗场提问式开场，上方大字钩子与下方小字并置，右下角保留半身座椅轮廓和极光光带。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[aurora_dark_stage, question_hook, partial_chair_silhouette]"
+  - id: "screen_2"
+    name: "霓光主视觉"
+    description: "source_refs:[2,3]; 功能: 霓虹电竞房中的主椅英雄页，完整正面主体居中，顶部主标题配少量补充文案。"
+    order: 2
+    prompt_guide: "f_code=F1+F2; screen_kind=scene-hero; style_tokens=[rgb_gaming_room, centered_full_chair, neon_light_bars]"
+  - id: "screen_3"
+    name: "工学卖点"
+    description: "source_refs:[4]; 功能: 多卡片拼页拆解肩颈、扶手、躺靠与光效等核心卖点，保留专业参数感与分栏结构。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=detail-grid; style_tokens=[feature_card_grid, orange_badges, product_detail_crops]"
+  - id: "screen_4"
+    name: "动态追腰"
+    description: "source_refs:[5]; 功能: 标题置上，主体以侧视或半剖结构解释动态追腰和背部调节逻辑，辅以局部说明框。"
+    order: 4
+    prompt_guide: "f_code=F3+F5; screen_kind=evidence-panel; style_tokens=[side_structure_view, dynamic_support_callouts, mechanism_crops]"
+  - id: "screen_5"
+    name: "腰背包裹"
+    description: "source_refs:[6]; 功能: 近景特写表现腰背三段包裹与角度支撑，保留弧线箭头、角度标注和包裹感文案位置。"
+    order: 5
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[lumbar_closeup, angle_badges, curved_support_lines]"
+  - id: "screen_6"
+    name: "场景搭配"
+    description: "source_refs:[7]; 功能: 完整座椅置于居家电竞混合场景，突出灯光氛围、陈设道具和多风格百搭感。"
+    order: 6
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-collage; style_tokens=[styled_room_scene, ambient_lights, decor_props]"
+  - id: "screen_7"
+    name: "结构总览"
+    description: "source_refs:[8]; 功能: 正面主图搭配侧面或背面小视图，集中说明头枕、扶手、椅背、底盘等整体结构。"
+    order: 7
+    prompt_guide: "f_code=F3+F4; screen_kind=compare-proof; style_tokens=[multi_view_overview, feature_pointers, clean_spec_layout]"
+  - id: "screen_8"
+    name: "上机收尾"
+    description: "source_refs:[9]; 功能: 真人使用场景收尾，桌面设备与坐姿关系明确，文案区位于人物或桌面侧上方。"
+    order: 8
+    prompt_guide: "f_code=F2+F6; screen_kind=comfort-closure; style_tokens=[user_seated_scene, desk_setup, comfort_finish]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=dark-aurora-gradient|camera=angled-partial-chair-teaser|layout=top-question-copy_bottom-right-subject|subject=partial-gaming-chair-silhouette|accent=neon-light-ribbon|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=scene-hero|bg=dark-rgb-gaming-room|camera=front-centered-full-chair|layout=top-title_bottom-hero-chair|subject=single-dominant-ergonomic-chair|accent=monitor-glow_and_light-bars|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=detail-grid|bg=charcoal-tech-panel|camera=multi-panel-feature-board|layout=top-title_bottom-four-feature-cards|subject=chair-feature-breakdown|accent=orange-badges_and-detail-crops|text_mode=strong|text_zone=top-left_and_panel-bottom|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=evidence-panel|bg=light-gray-tech-panel|camera=side-structure-view|layout=top-title_bottom-mechanism-explainer|subject=dynamic-back-support-system|accent=callout-lines_and-small-insets|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=macro-closeup|bg=neutral-gray-studio|camera=closeup-seat-and-lumbar-angle|layout=top-title_bottom-large-closeup|subject=three-zone-backrest-and-lumbar-wrap|accent=angle-badges_and-curved-arrows|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=scene-collage|bg=dark-to-warm-gaming-home-scene|camera=full-chair-in-styled-room|layout=top-title_bottom-large-scene|subject=single-chair-in-mixed-gaming-home-setup|accent=ambient-lights_and-room-props|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=compare-proof|bg=clean-light-gray-spec-sheet|camera=front-side-back-multi-view|layout=top-title_middle-primary-chair_bottom-smaller-views|subject=chair-structure-and-adjustment-overview|accent=dimension-labels_and-feature-pointers|text_mode=strong|text_zone=top-center_and_bottom-cards|text_align=center|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_7}}|negative=no-compare-layout
+  s8|kind=comfort-closure|bg=bright-desk-gaming-scene|camera=seated-user-three-quarter-view|layout=top-title_right-copy_bottom-scene|subject=user-seated-in-ergonomic-chair|accent=desk-setup_and-screen-glow|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

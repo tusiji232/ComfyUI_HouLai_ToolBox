@@ -1,0 +1,127 @@
+name: 极简白底女童运动套装详情页骨架纯骨架版
+description: 极简白底、女童连帽运动套装风格的纯骨架版详情页 skill：保留双模特开场、坐姿舒适页、模特加细节拼贴、背身版型页、双模特搭配、尺码信息、面料解析和2x2细节宫格 8 屏骨架，不承载运行时文案与业务判断。适合童装套装、春装两件套、女童休闲运动类详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 童装套装
+trigger_words:
+- 童装套装
+- 女童运动套
+- 连帽两件套
+- 春装童装
+- 白底童装
+weight: 1.0
+tags:
+- name: 童装套装
+  weight: 1.0
+- name: 女童运动套
+  weight: 1.0
+- name: 连帽两件套
+  weight: 0.99
+- name: 春装童装
+  weight: 0.98
+- name: 白底童装
+  weight: 0.97
+- name: 双模特
+  weight: 0.96
+- name: 尺码表
+  weight: 0.95
+- name: 面料解析
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 双模特开场
+  description: 'source_refs:[1]; 功能: 灰粉双模特全身并排开场，建立成套穿搭和高留白童装气质。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[white_bg, dual_child_models, vertical_copy]
+- id: screen_2
+  name: 坐姿舒适
+  description: 'source_refs:[2]; 功能: 坐姿模特页承接亲肤舒适与透气卖点，配勾选卖点列。'
+  order: 2
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[seated_child_model, comfort_badges, left_vertical_copy]
+- id: screen_3
+  name: 细节拼贴
+  description: 'source_refs:[3]; 功能: 左侧三张面料与拉链细节卡，右侧全身模特同屏。'
+  order: 3
+  prompt_guide: f_code=F4+F6; screen_kind=detail-collage; style_tokens=[detail_cards_plus_child_model, zipper_macro, icon_row]
+- id: screen_4
+  name: 背身版型
+  description: 'source_refs:[4]; 功能: 背身近景展示帽型和肩背轮廓，突出版型不紧绷。'
+  order: 4
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[back_view_child_model, hoodie_shape, clean_white_page]
+- id: screen_5
+  name: 成套搭配
+  description: 'source_refs:[5]; 功能: 双模特并排搭配页，强化成套统一和多彩搭配感。'
+  order: 5
+  prompt_guide: f_code=F5+F6; screen_kind=compare-closure; style_tokens=[two_outfit_colors, full_body_child_models, style_pairing]
+- id: screen_6
+  name: 尺码信息
+  description: 'source_refs:[6]; 功能: 上标题下表格的尺码信息页。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[size_chart, centered_title, clean_table]
+- id: screen_7
+  name: 面料解析
+  description: 'source_refs:[7]; 功能: 大面积面料微距卡配短段说明，突出面料属性。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=material-note; style_tokens=[fabric_macro_card, pink_texture, lower_paragraph]
+- id: screen_8
+  name: 细节宫格
+  description: 'source_refs:[8]; 功能: 2x2细节宫格展示帽型、拉链、袖口和裤腰。'
+  order: 8
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[2x2_detail_grid, garment_parts, white_board]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=clean-white-studio|camera=two-full-body-child-models-in-matching-sets|layout=left-copy_right-dual-models|subject=two-child-models-wearing-matching-set|accent=vertical-copy-strip-and-accessory-prop|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=on-body-proof|bg=clean-white-with-soft-shadow|camera=seated-child-model-wearing-set|layout=top-copy_left-vertical-note_bottom-badge-row|subject=one-child-model-in-comfort-pose|accent=check-badges-and-box-prop|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=comfort-proof|slot={{copy_function_language_2}}|negative=single-image-only
+
+  s3|kind=scene-collage|bg=white-studio-board|camera=detail-cards-plus-full-body-child-model|layout=left-three-detail-cards_right-model_bottom-icon-row|subject=garment-detail-cards-and-one-child-model|accent=macro-zippers-and-fabric-crops|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-centered-packshot
+
+  s4|kind=on-body-proof|bg=clean-white-studio|camera=back-view-child-model-closeup|layout=top-left-copy_middle-large-back-view|subject=hood-shape-and-back-silhouette|accent=vertical-side-tag|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=compare-closure|bg=clean-white-studio|camera=two-full-body-child-models-side-by-side|layout=top-left-copy_middle-dual-model-display|subject=two-colorways-of-one-outfit-style|accent=vertical-right-tag-and-bags|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_5}}|negative=no-compare-layout
+
+  s6|kind=evidence-panel|bg=clean-white-spec-board|camera=size-table-only|layout=top-title_middle-data-table|subject=size-chart-and-product-info|accent=thin-divider-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-image-only
+
+  s7|kind=material-note|bg=white-board-with-large-fabric-card|camera=single-large-fabric-macro-card|layout=top-title_middle-fabric-card_bottom-paragraph|subject=fabric-texture-and-material-note|accent=soft-pink-card|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=detail-grid|bg=clean-white-detail-board|camera=2x2-garment-part-grid|layout=top-title_bottom-four-detail-cards|subject=hood-zipper-cuff-waistband-details|accent=soft-shadow-detail-crops|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_8}}|negative=single-image-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

@@ -1,0 +1,127 @@
+name: 山系浅绿机能夹克详情页骨架纯骨架版
+description: 女装机能夹克、浅绿山系、轻户外防护、实拍栏杆场景风格的纯骨架版详情页 skill：保留户外开场、机能卖点页、动作展开、防小雨页面、舒适上身、反光细节、长度版型和尺码表 8 屏骨架，不承载运行时文案与业务判断。适合女装机能外套、软壳夹克、通勤户外轻防护详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 机能夹克
+trigger_words:
+- 机能夹克
+- 软壳外套
+- 户外女装
+- 防晒夹克
+- 山系外套
+weight: 1.0
+tags:
+- name: 机能夹克
+  weight: 1.0
+- name: 软壳外套
+  weight: 0.99
+- name: 户外女装
+  weight: 0.98
+- name: 防晒夹克
+  weight: 0.97
+- name: 山系外套
+  weight: 0.96
+- name: 浅绿机能
+  weight: 0.95
+- name: 通勤户外
+  weight: 0.94
+- name: 轻防护外套
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 户外开场
+  description: 'source_refs:[1]; 功能: 栏杆与树林背景中的单模特开场，突出帽檐、长袖和户外机能氛围。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[outdoor_rail_scene, single_adult_model, deep_green_frame]
+- id: screen_2
+  name: 机能卖点
+  description: 'source_refs:[2]; 功能: 深色边框中的模特主图加底部图标卖点栏，表达轻防护和机能属性。'
+  order: 2
+  prompt_guide: f_code=F2+F3; screen_kind=feature-panel; style_tokens=[dark_frame, bottom_icon_row, adult_model_center]
+- id: screen_3
+  name: 动作展开
+  description: 'source_refs:[3]; 功能: 大幅张开手臂的上身展示页，突出活动量与宽松包容感。'
+  order: 3
+  prompt_guide: f_code=F6; screen_kind=on-body-proof; style_tokens=[arms_open_pose, outdoor_boardwalk, airy_fit]
+- id: screen_4
+  name: 天气应对
+  description: 'source_refs:[4]; 功能: 保留顶部标题和单模特展示，用于表达小雨、防泼或临时天气应对结构。'
+  order: 4
+  prompt_guide: f_code=F3+F6; screen_kind=weather-proof; style_tokens=[headline_top, single_adult_model, light_weather_story]
+- id: screen_5
+  name: 舒适上身
+  description: 'source_refs:[5]; 功能: 站姿模特和分散标签说明页，强调舒适、轻便和日常外穿感。'
+  order: 5
+  prompt_guide: f_code=F2+F6; screen_kind=fit-callout; style_tokens=[standing_adult_model, scattered_labels, soft_outdoor_light]
+- id: screen_6
+  name: 反光细节
+  description: 'source_refs:[6]; 功能: 单个反光条或功能件微距页，保留深底框和局部特写。'
+  order: 6
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[reflective_trim_macro, dark_square_frame, minimal_copy]
+- id: screen_7
+  name: 长度版型
+  description: 'source_refs:[7]; 功能: 模特全身页配左右标注，突出中长款长度和版型关系。'
+  order: 7
+  prompt_guide: f_code=F3; screen_kind=fit-compare; style_tokens=[full_body_adult_model, side_notes, length_focus]
+- id: screen_8
+  name: 尺码表
+  description: 'source_refs:[8]; 功能: 单页线稿和尺码表的信息页，保留产品示意图、表格和尺码建议。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[garment_sketch, compact_table, size_notes]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=deep_olive_frame_outdoor_scene|camera=full_body_female_model_by_railings|layout=top_left_large_title_bottom_single_model|subject=single_adult_model_in_light_functional_jacket|accent=forest_light_and_cap|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=evidence-panel|bg=dark_green_function_board|camera=centered_adult_model_with_bottom_icon_row|layout=top_headline_middle_model_bottom_feature_icons|subject=functional_outerwear_feature_panel|accent=round_icons_and_stat_labels|text_mode=strong|text_zone=bottom-band|text_align=spread|text_density=badge-row|copy_role=proof-data|slot={{copy_function_language_2}}|negative=headline-only
+
+  s3|kind=on-body-proof|bg=soft_green_outdoor_walkway|camera=front_adult_model_with_arms_open|layout=top_title_bottom_large_pose|subject=single_model_showing_movement_range|accent=boardwalk_lines|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_3}}|negative=single-centered-packshot
+
+  s4|kind=evidence-panel|bg=deep_green_weather_story_board|camera=single_adult_model_with_light_rain_narrative|layout=top_headline_middle_model_bottom_small_badges|subject=weather_response_outerwear_page|accent=soft_drop_icons_or_weather_marks|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=on-body-hero|bg=forest_side_soft_light|camera=standing_adult_model_front_view|layout=top_headline_middle_model_side_scattered_labels|subject=single_adult_model_daily_outdoor_fit|accent=small_callout_labels|text_mode=strong|text_zone=left_right_sides|text_align=left|text_density=bullet-list|copy_role=hero-feature|slot={{copy_function_language_5}}|negative=headline-only
+
+  s6|kind=macro-closeup|bg=dark_utility_frame|camera=single_reflective_trim_macro|layout=top_headline_middle_square_macro_bottom_small_note|subject=functional_trim_or_accessory_detail|accent=clean_border_frame|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-image-only
+
+  s7|kind=compare-closure|bg=deep_green_fit_board|camera=full_body_adult_model_with_side_notes|layout=top_title_middle_model_left_right_length_labels|subject=mid_length_outerwear_fit_display|accent=vertical_measure_markers|text_mode=strong|text_zone=side_columns|text_align=left|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_7}}|negative=no-compare-layout
+
+  s8|kind=size-chart|bg=white_technical_panel|camera=garment_sketch_above_size_table|layout=top_sketch_middle_data_table_bottom_notes|subject=outerwear_size_information|accent=small_size_recommendation_badges|text_mode=strong|text_zone=top-right|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-centered-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

@@ -1,0 +1,127 @@
+name: 暖调修身吊带背心详情页骨架纯骨架版
+description: 吊带背心、带杯背心、修身打底上衣、外穿内搭风格的纯骨架版详情页 skill：保留暖调模特开场、白布抗透、双色模特页、黑白面料对比、舒适近景、前后对照、参数尺码和模特收尾 8 屏骨架，不承载运行时文案与业务判断。适合带胸垫吊带、修身背心、外穿打底上衣详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 吊带背心
+trigger_words:
+- 吊带背心
+- 带杯背心
+- 修身背心
+- 打底上衣
+- 外穿内搭
+weight: 1.0
+tags:
+- name: 吊带背心
+  weight: 1.0
+- name: 带杯背心
+  weight: 1.0
+- name: 修身背心
+  weight: 0.99
+- name: 打底上衣
+  weight: 0.98
+- name: 外穿内搭
+  weight: 0.97
+- name: 双色展示
+  weight: 0.96
+- name: 参数尺码
+  weight: 0.95
+- name: 面料对比
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 暖调开场
+  description: 'source_refs:[1]; 功能: 低照度暖调模特开场，突出贴身穿着和垂坠气质。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[warm_lifestyle_hero, torso_adult_model, dark_wood_light]
+- id: screen_2
+  name: 白布抗透
+  description: 'source_refs:[2]; 功能: 白色面料透视测试页，保留单块面料和底部短句结构。'
+  order: 2
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[fabric_transparency_test, white_macro, centered_copy]
+- id: screen_3
+  name: 双色模特
+  description: 'source_refs:[3]; 功能: 单模特彩色款展示页，延续暖调窗边光感。'
+  order: 3
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[single_adult_model_colorway, warm_room_light, top_copy]
+- id: screen_4
+  name: 面料对比
+  description: 'source_refs:[4]; 功能: 黑白双面料对比和三枚功能标签构成的说明页。'
+  order: 4
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[dual_fabric_compare, black_white_split, icon_row]
+- id: screen_5
+  name: 舒适近景
+  description: 'source_refs:[5]; 功能: 单模特半身舒适展示页，保留大面积留白和柔和动作。'
+  order: 5
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[half_body_adult_model, soft_smile_pose, plain_background]
+- id: screen_6
+  name: 前后对照
+  description: 'source_refs:[6]; 功能: 前后两位模特并排的版型对照页。'
+  order: 6
+  prompt_guide: f_code=F5+F6; screen_kind=compare-closure; style_tokens=[front_back_dual_adult_models, white_board, center_title]
+- id: screen_7
+  name: 参数尺码
+  description: 'source_refs:[7]; 功能: 参数说明、模特信息和尺码表组合页。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[parameter_table, adult_model_card, size_chart]
+- id: screen_8
+  name: 模特收尾
+  description: 'source_refs:[8]; 功能: 白色款模特收尾页，保留穿搭外套和低饱和暖调。'
+  order: 8
+  prompt_guide: f_code=F1+F6; screen_kind=model-closure; style_tokens=[single_adult_model_closure, layering_prop, warm_beige_styling]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=warm-lifestyle-room|camera=torso-adult-model-in-soft-window-light|layout=top-left-copy_bottom-large-model|subject=one_adult_model_in_fitted_tank_top|accent=dark_wood_shadow_and_jewelry|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=evidence-panel|bg=white-fabric-proof-board|camera=single-fabric-stretch-macro|layout=top-right-copy_middle-main-fabric_bottom-short-proof|subject=opacity_and_fabric_density_test|accent=soft-grey-badge|text_mode=strong|text_zone=bottom-center|text_align=center|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=on-body-proof|bg=warm-room-lifestyle-board|camera=single-adult-model-half-body-standing|layout=top-center-copy_bottom-main-model|subject=one_adult_model_in_fitted_tank_shape|accent=soft-window-shadow|text_mode=strong|text_zone=top-center|text_align=center|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=headline-only
+
+  s4|kind=evidence-panel|bg=dark-light-fabric-compare-board|camera=two-large-fabric-panels|layout=top-title_middle-dual-fabric_compare_bottom-three-badges|subject=dual_color_fabric_comparison|accent=three_square_function_boxes|text_mode=strong|text_zone=top-right|text_align=right|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=on-body-proof|bg=warm-white-photo-board|camera=single-adult-model-waist-up-shot|layout=top-title_bottom-large-model|subject=comfort_closeup_for_fitted_tank|accent=soft_jacket_prop|text_mode=strong|text_zone=top-left|text_align=left|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=single-centered-packshot
+
+  s6|kind=compare-closure|bg=clean-white-compare-board|camera=front-and-back-dual-adult-models|layout=top-title_bottom-two-model-display|subject=front_back_silhouette_comparison|accent=small-side-captions|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_6}}|negative=no-compare-layout
+
+  s7|kind=spec-panel|bg=white-parameter-card|camera=parameter-rows-plus-size-chart|layout=top-title_middle-parameter-table_bottom-size-chart|subject=tank_top_spec_and_size_information|accent=model_profile_strip|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=model-closure|bg=warm-beige-lifestyle-board|camera=single-adult-model-styling-shot|layout=top-right-weak-copy_bottom-main-model|subject=one_adult_model_in_white_tank_with_layering|accent=coat_or_bag_prop|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=plain-white-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

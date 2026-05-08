@@ -1,0 +1,127 @@
+name: 暖黄针织开衫童装详情页骨架纯骨架版
+description: 暖黄街景、针织开衫童装风格的纯骨架版详情页 skill：保留街拍开场、图标加穿搭拼贴、面料透气证明、柔软微距、耐穿不起球证明、双尺码信息页和白底模特收尾 8 屏骨架，不承载运行时文案与业务判断。适合童装开衫、针织衫、女童春秋外搭类详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 针织开衫
+trigger_words:
+- 针织开衫
+- 童装开衫
+- 女童毛衣
+- 春秋童装
+- 针织童装
+weight: 1.0
+tags:
+- name: 针织开衫
+  weight: 1.0
+- name: 童装开衫
+  weight: 1.0
+- name: 女童毛衣
+  weight: 0.99
+- name: 春秋童装
+  weight: 0.98
+- name: 针织童装
+  weight: 0.97
+- name: 材质证明
+  weight: 0.96
+- name: 尺码信息
+  weight: 0.95
+- name: 街拍童装
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 街拍开场
+  description: 'source_refs:[1]; 功能: 暖黄街景中的单模特开场，突出童装街拍感和柔和阳光氛围。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[street_scene, yellow_cardigan, sunny_wall]
+- id: screen_2
+  name: 穿搭拼贴
+  description: 'source_refs:[2]; 功能: 顶部图标、中部多模特拼贴的春秋穿搭页。'
+  order: 2
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[icon_header, multi_child_model_collage, cream_background]
+- id: screen_3
+  name: 透气面料
+  description: 'source_refs:[3]; 功能: 大面积面料与水汽示意的透气材质证明页。'
+  order: 3
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[fabric_macro, breathable_demo, warm_yellow_panel]
+- id: screen_4
+  name: 柔软微距
+  description: 'source_refs:[4]; 功能: 卷叠针织大特写配分散标签，强化柔软亲肤体验。'
+  order: 4
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[rolled_knit_macro, softness_labels, warm_texture]
+- id: screen_5
+  name: 耐穿证明
+  description: 'source_refs:[5]; 功能: 刷子与针织纹理构成的耐穿不起球证明页。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=evidence-panel; style_tokens=[brush_test, pink_knit_bg, proof_badges]
+- id: screen_6
+  name: 上装尺码
+  description: 'source_refs:[6]; 功能: 开衫商品信息与尺码表页面。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[pink_info_card, cardigan_size_table, age_badges]
+- id: screen_7
+  name: 下装尺码
+  description: 'source_refs:[7]; 功能: 长裤商品信息与尺码表页面，延续粉白信息卡布局。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[pink_info_card, pants_size_table, age_badges]
+- id: screen_8
+  name: 模特收尾
+  description: 'source_refs:[8]; 功能: 白底单模特收尾页，保留简洁站姿展示。'
+  order: 8
+  prompt_guide: f_code=F1; screen_kind=model-closure; style_tokens=[single_child_model, white_background, simple_closure]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=sunny-street-and-warm-wall|camera=single-child-model-in-cardigan|layout=top-left-copy_bottom-street-model|subject=one-child-model-wearing-cardigan|accent=sunlight-and-city-lane|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=scene-collage|bg=cream-board-with-soft-illustration|camera=icon-header-plus-multi-child-model-collage|layout=top-icon-row_middle-collage_bottom-main-model|subject=multiple-child-look-collage|accent=warm-cream-icons|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=scene-note|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=evidence-panel|bg=warm-yellow-material-board|camera=single-large-fabric-macro-with-breathable-demo|layout=top-left-copy_middle-fabric-card_bottom-bullets|subject=fabric-structure-and-breathable-proof|accent=steam-and-water-demo|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_3}}|negative=single-image-only
+
+  s4|kind=macro-closeup|bg=warm-cream-closeup-board|camera=rolled-knit-macro|layout=top-left-copy_middle-large-texture|subject=soft-knit-texture|accent=scattered-softness-labels|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=evidence-panel|bg=pink-knit-proof-board|camera=brush-test-on-knit-surface|layout=top-left-copy_middle-proof-demo_bottom-badge-row|subject=durability-proof-on-fabric|accent=round-proof-icons|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_5}}|negative=headline-only
+
+  s6|kind=evidence-panel|bg=pink-white-info-card|camera=size-table-and-age-badges|layout=top-left-copy_middle-info-card_bottom-badge-row|subject=cardigan-size-and-age-info|accent=rounded-pink-badges|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-image-only
+
+  s7|kind=evidence-panel|bg=pink-white-info-card|camera=size-table-and-age-badges|layout=top-left-copy_middle-info-card_bottom-badge-row|subject=pants-size-and-age-info|accent=rounded-pink-badges|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=single-image-only
+
+  s8|kind=product-hero|bg=clean-white-studio|camera=single-child-model-standing|layout=top-center-weak-copy_bottom-single-model|subject=one-child-model-in-cardigan|accent=rounded-photo-frame|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

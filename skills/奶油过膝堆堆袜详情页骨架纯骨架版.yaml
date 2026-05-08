@@ -1,0 +1,111 @@
+name: 奶油过膝堆堆袜详情页骨架纯骨架版
+description: 女袜过膝袜、堆堆袜、奶油长袜、长袜搭配展示风格的纯骨架版详情页 skill：保留拉伸开场、拼接口、长短切换、直腿上身、协调配鞋穿搭、信息卡、棉感面料和细节拼图 8 屏骨架，不承载运行时文案与业务判断。适合过膝袜、堆堆长袜、可切换长短穿法详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 过膝堆堆袜
+trigger_words:
+- 过膝堆堆袜
+- 高筒堆堆袜
+- 靴搭长袜
+- 过膝袜
+- 奶油长袜
+weight: 1.0
+tags:
+- name: 过膝堆堆袜
+  weight: 1.0
+- name: 高筒堆堆袜
+  weight: 0.99
+- name: 靴搭长袜
+  weight: 0.98
+- name: 过膝袜
+  weight: 0.97
+- name: 奶油长袜
+  weight: 0.96
+- name: 可切换长短袜
+  weight: 0.95
+- name: 直腿显瘦袜
+  weight: 0.94
+- name: 棉感长袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 拉伸开场
+  description: 'source_refs:[1]; 功能: 手部轻拉过膝袜的开场页，突出袜长、腿部比例和自然堆叠关系。'
+  order: 1
+  prompt_guide: f_code=F1+F2; screen_kind=hero-opening; style_tokens=[hand_pull_pose, cream_long_sock, soft_leg_styling]
+- id: screen_2
+  name: 拼接口
+  description: 'source_refs:[2]; 功能: 近景拉开袜口的局部页，保留拼接细节和大面积留白。'
+  order: 2
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[cuff_pull_closeup, seam_focus, white_space]
+- id: screen_3
+  name: 长短切换
+  description: 'source_refs:[3]; 功能: 同一双袜子通过上拉和平堆两种穿法展示过膝与中筒视觉差异。'
+  order: 3
+  prompt_guide: f_code=F3; screen_kind=compare-closure; style_tokens=[height_switch, dual_styling_options, same_sock_restyle]
+- id: screen_4
+  name: 直腿上身
+  description: 'source_refs:[4]; 功能: 双腿正视的上身页，突出竖向纹理与显腿直效果。'
+  order: 4
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[front_leg_pose, vertical_rib_lines, centered_balance]
+- id: screen_5
+  name: 穿搭在线
+  description: 'source_refs:[5]; 功能: 侧身穿搭页保留完整鞋履与长袜的协调比例，突出抬脚姿态和细长构图。'
+  order: 5
+  prompt_guide: f_code=F6; screen_kind=on-body-proof; style_tokens=[side_style_pose, complete_matched_footwear, slim_vertical_frame]
+- id: screen_6
+  name: 信息卡
+  description: 'source_refs:[6]; 功能: 橙粉底信息卡页，保留长度、尺码和厚度的核心参数布局。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[orange_info_card, key_parameters, centered_data]
+- id: screen_7
+  name: 棉感面料
+  description: 'source_refs:[7]; 功能: 叠放面料特写页，突出不同色袜的棉感纹理。'
+  order: 7
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[stacked_fabric_macro, cream_grey_layers, knit_texture]
+- id: screen_8
+  name: 细节拼图
+  description: 'source_refs:[8]; 功能: 四格局部细节拼图页，保留纹理、袜口和垂坠状态。'
+  order: 8
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[four_detail_tiles, fabric_and_cuff_mix, minimal_labels]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=soft_white_legwear_editorial_scene|camera=overknee_sock_with_hand_pull_close_pose|layout=top_small_brand_middle_large_leg_pose_bottom_brief_copy|subject=single_overknee_slouch_sock_on_body|accent=soft_seat_edge_and_hand_interaction|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=macro-closeup|bg=clean_white_minimal_board|camera=cuff_pull_and_seam_detail_closeup|layout=top_copy_middle_large_detail_bottom_small_note|subject=overknee_sock_cuff_and_joining_detail|accent=soft_hand_pose|text_mode=strong|text_zone=top-right|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=compare-closure|bg=white_length_switch_card|camera=two_height_options_for_same_sock_without_extra_footwear|layout=top_copy_middle_dual_length_views_bottom_small_labels|subject=same_overknee_sock_styled_as_overknee_and_mid_calf|accent=height_labels_and_clean_compare_divider|text_mode=strong|text_zone=top-right|text_align=left|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_3}}|negative=no-compare-layout
+  s4|kind=on-body-proof|bg=light_grey_leg_proof_board|camera=front_leg_pair_pose|layout=top_copy_bottom_centered_pair_legs|subject=overknee_sock_vertical_fit_on_body|accent=subtle_floor_shadow|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=headline-only
+  s5|kind=on-body-proof|bg=clean_white_fashion_board|camera=side_leg_pose_with_complete_matched_footwear|layout=top_copy_middle_large_side_pose_bottom_small_note|subject=slouch_sock_styling_with_proportionate_footwear|accent=full_footwear_visible_and_long_vertical_crop|text_mode=weak|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_5}}|negative=cropped-footwear-or-mismatched-boot-height
+  s6|kind=evidence-panel|bg=orange_coral_info_card|camera=centered_key_parameter_board|layout=top_title_middle_main_data_block_bottom_brief_note|subject=overknee_sock_core_parameter_summary|accent=soft_gradient_and_small_brand_footer|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=macro-closeup|bg=soft_grey_knit_board|camera=stacked_fabric_texture_macro|layout=top_copy_middle_large_knit_stack_bottom_small_note|subject=layered_overknee_sock_fabric_textures|accent=cream_and_grey_color_layers|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_7}}|negative=no-multi-panel-collage
+  s8|kind=detail-grid|bg=white_detail_review_board|camera=four_tile_detail_collage|layout=top_copy_middle_2x2_detail_grid_bottom_small_labels|subject=multi_panel_review_of_cuff_texture_and_drape|accent=thin_grid_lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_8}}|negative=single-image-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

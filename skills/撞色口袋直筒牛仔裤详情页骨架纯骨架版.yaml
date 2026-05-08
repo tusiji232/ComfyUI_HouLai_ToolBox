@@ -1,0 +1,127 @@
+name: 撞色口袋直筒牛仔裤详情页骨架纯骨架版
+description: 女装直筒牛仔裤、撞色口袋、门店实拍、双配色陈列风格的纯骨架版详情页 skill：保留双裤型开场、撞色口袋特写、后视长度、特性总览、高腰收腹、后视收尾、工艺细节和产品信息表 8 屏骨架，不承载运行时文案与业务判断。适合撞色直筒牛仔裤、复古宽腿裤、街拍休闲下装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 撞色牛仔裤
+trigger_words:
+- 撞色牛仔裤
+- 直筒牛仔裤
+- 宽腿牛仔裤
+- 高腰长裤
+- 口袋牛仔裤
+weight: 1.0
+tags:
+- name: 撞色牛仔裤
+  weight: 1.0
+- name: 直筒牛仔裤
+  weight: 0.99
+- name: 宽腿牛仔裤
+  weight: 0.98
+- name: 高腰长裤
+  weight: 0.97
+- name: 口袋牛仔裤
+  weight: 0.96
+- name: 复古街拍
+  weight: 0.95
+- name: 双配色裤装
+  weight: 0.94
+- name: 拖地长裤
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 双配色开场
+  description: 'source_refs:[1]; 功能: 两位模特同场展示不同裤色或同版不同搭配，保留门店场景和竖版标题。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[dual_look_opening, indoor_real_scene, long_leg_pose]
+- id: screen_2
+  name: 口袋特写
+  description: 'source_refs:[2]; 功能: 单个后袋或撞色拼接部位放大页，突出视觉识别点。'
+  order: 2
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[contrast_pocket_crop, framed_photo, minimal_labels]
+- id: screen_3
+  name: 后视长度
+  description: 'source_refs:[3]; 功能: 后视拖地裤腿展示页，强调裤长、背面比例和质感垂落。'
+  order: 3
+  prompt_guide: f_code=F6; screen_kind=on-body-proof; style_tokens=[back_view_adult_model, floor_length_pants, clean_room_bg]
+- id: screen_4
+  name: 特性总览
+  description: 'source_refs:[4]; 功能: 右侧全身模特加左侧数字或条目式能力列的总览页。'
+  order: 4
+  prompt_guide: f_code=F2+F6; screen_kind=fit-callout; style_tokens=[feature_stack, full_body_adult_model, vertical_metrics]
+- id: screen_5
+  name: 高腰收腹
+  description: 'source_refs:[5]; 功能: 正面腰部到裤腿展示页，保留圆形细节放大和高腰说明。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=detail-panel; style_tokens=[front_waist_view, inset_circle_detail, bold_side_copy]
+- id: screen_6
+  name: 后视收尾
+  description: 'source_refs:[6]; 功能: 后视全身模特收尾页，结合侧边圆形细节和纵向说明。'
+  order: 6
+  prompt_guide: f_code=F6; screen_kind=model-closure; style_tokens=[back_view_full_body, side_detail_bubble, minimal_copy]
+- id: screen_7
+  name: 工艺细节
+  description: 'source_refs:[7]; 功能: 2-3 格细节组合页，展示面料、铆钉、走线或纽扣等局部。'
+  order: 7
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[quality_closeups, vertical_caption, denim_parts]
+- id: screen_8
+  name: 产品信息
+  description: 'source_refs:[8]; 功能: 上方参数标签下方尺码表的信息页，保留多个圆角信息块。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[rounded_meta_tags, large_size_table, blue_tabs]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=indoor_mirror_dual_look_opening|camera=two_adult_models_showing_two_pant_variants|layout=top_small_title_bottom_dual_models|subject=dual_look_denim_display|accent=interior_doorway_and_small_bag|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=macro-closeup|bg=clean_white_detail_frame|camera=single_contrast_pocket_crop|layout=top_title_middle_large_crop_bottom_small_note|subject=contrast_back_pocket_or_panel_detail|accent=thin_photo_frame|text_mode=strong|text_zone=top-right|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-image-only
+
+  s3|kind=on-body-proof|bg=warm_indoor_real_scene|camera=back_view_full_body_adult_model|layout=top_title_bottom_single_model|subject=long_back_view_pant_line|accent=floor_shadow_and_room_context|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_3}}|negative=headline-only
+
+  s4|kind=on-body-hero|bg=white_editorial_feature_board|camera=full_body_adult_model_with_left_metric_stack|layout=left_feature_column_right_large_model|subject=single_adult_model_showing_fit_and_length|accent=numbered_badges_and_measure_line|text_mode=strong|text_zone=left-column|text_align=left|text_density=bullet-list|copy_role=hero-feature|slot={{copy_function_language_4}}|negative=single-centered-packshot
+
+  s5|kind=detail-grid|bg=white_plus_soft_blue_detail_board|camera=front_waist_and_leg_view_with_circle_inset|layout=left_large_model_right_inset_bubble_bottom_copy|subject=high_waist_and_front_structure_detail|accent=round_zoom_bubble|text_mode=strong|text_zone=right-side|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=single-image-only
+
+  s6|kind=brand-closure|bg=warm_indoor_minimal_scene|camera=back_view_full_body_with_side_bubble|layout=left_large_model_right_detail_circle|subject=back_view_closure_and_leg_length_display|accent=small_detail_bubble|text_mode=strong|text_zone=right-column|text_align=left|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_6}}|negative=headline-only
+
+  s7|kind=detail-grid|bg=white_vertical_quality_board|camera=three_closeups_of_denim_parts|layout=left_vertical_title_right_2x2_or_1x3_closeups|subject=hardware_and_stitching_details|accent=soft_pink_corner_label|text_mode=strong|text_zone=left_side_and_panel_edge|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=single-image-only
+
+  s8|kind=spec-panel|bg=white_information_board|camera=rounded_meta_tags_above_size_table|layout=top_meta_badges_middle_large_table_bottom_small_note|subject=product_information_and_size_data|accent=blue_and_gray_info_pills|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-centered-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

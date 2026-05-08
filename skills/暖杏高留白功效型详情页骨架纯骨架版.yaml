@@ -1,0 +1,115 @@
+name: "暖杏高留白功效型详情页骨架纯骨架版"
+description: "暖杏/杏暖高留白详情页的纯骨架版 skill：保留暖橙开场、主图承接、结构标注、场景拼接、材质微距、上身证明、证据面板和对比收尾这 8 屏骨架，不承担运行时文案决策。适合暖杏、杏暖、暖米杏、法式米杏、轻奢女装详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "暖杏"
+trigger_words:
+  - "暖杏"
+  - "杏暖"
+  - "暖杏高留白功效详情页骨架版"
+  - "暖杏纯骨架详情页"
+  - "暖杏骨架版详情页"
+weight: 1.0
+tags:
+  - name: "暖杏"
+    weight: 1.0
+  - name: "杏暖"
+    weight: 1.0
+  - name: "暖米杏"
+    weight: 0.98
+  - name: "法式米杏"
+    weight: 0.97
+  - name: "轻奢女装"
+    weight: 0.96
+  - name: "暖杏高留白"
+    weight: 1.0
+  - name: "纯骨架"
+    weight: 0.97
+  - name: "脑骨分离"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "暖橙开场"
+    description: "source_refs:[1,2]; 功能: 暖橙渐变开场，图标徽章与利益点标题并存。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[warm_gradient, icon_row, airy_space]"
+  - id: "screen_2"
+    name: "主图承接"
+    description: "source_refs:[2]; 功能: 干净主图承接，顶部标题、下部主体。"
+    order: 2
+    prompt_guide: "f_code=F1+F2; screen_kind=hero-product; style_tokens=[clean_stage, top_copy, centered_subject]"
+  - id: "screen_3"
+    name: "结构标注"
+    description: "source_refs:[3]; 功能: 编号标注、箭头说明、结构拆解。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=annotated-breakdown; style_tokens=[numbered_callouts, arrow_notes, structure_labels]"
+  - id: "screen_4"
+    name: "场景拼接"
+    description: "source_refs:[4,9,13,14,15]; 功能: 下半身或上身场景拼接，文案较弱。"
+    order: 4
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[scene_crops, lower_body, collage_layout]"
+  - id: "screen_5"
+    name: "材质微距"
+    description: "source_refs:[5,8]; 功能: 纹理、针织、表面细节微距。"
+    order: 5
+    prompt_guide: "f_code=F2; screen_kind=macro-closeup; style_tokens=[macro_texture, ribbed_surface, soft_shadow]"
+  - id: "screen_6"
+    name: "上身证明"
+    description: "source_refs:[6,14,15]; 功能: 穿着、动作或体验状态展示。"
+    order: 6
+    prompt_guide: "f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[on_body, comfort_pose, daily_context]"
+  - id: "screen_7"
+    name: "证据面板"
+    description: "source_refs:[7,10,16]; 功能: 大数字、机理图、报告拼贴。"
+    order: 7
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[large_number, report_collage, science_panel]"
+  - id: "screen_8"
+    name: "对比收尾"
+    description: "source_refs:[11,12,17]; 功能: 多格细节、长度对比或版本收尾。"
+    order: 8
+    prompt_guide: "f_code=F4+F5; screen_kind=compare-closure; style_tokens=[compare_layout, detail_grid, closure_choice]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-peach-gradient|camera=abstract-icon-or-clean-product-lower|layout=top-open-bg_bottom-benefit|subject=weak-or-lower-subject|accent=icon-badge-row|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=hero-product|bg=light-beige-white|camera=full-product-front|layout=top-copy_bottom-subject|subject=single-centered-subject|accent=clean-stage|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=annotated-breakdown|bg=soft-beige-panel|camera=single-subject-with-callouts|layout=callout-around-subject|subject=single-centered-subject|accent=numbered-callouts-arrow-notes|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=generic-packshot
+  s4|kind=scene-collage|bg=calm-beige|camera=lower-body-or-on-body-multi-view|layout=multi-view-collage|subject=scene-subjects|accent=split-crops|text_mode=weak|text_zone=top-left|text_align=left|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=macro-closeup|bg=cream-beige|camera=macro-closeup-only|layout=top-copy_below-macro|subject=surface-only|accent=texture-detail|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_5}}|negative=full-product-front
+  s6|kind=on-body-proof|bg=light-studio-beige|camera=on-body-midshot-or-hand-interaction|layout=top-copy_bottom-subject|subject=human-wear-subject|accent=comfort-posture|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=evidence-panel|bg=light-gray-white-panel|camera=report-collage-or-science-panel|layout=left-copy_right-evidence|subject=evidence-plus-subject|accent=large-number-report-frame|text_mode=strong|text_zone=mid-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_7}}|negative=generic-ad-headline
+  s8|kind=compare-closure|bg=clean-white|camera=side-by-side-compare-or-grid-choice|layout=side-by-side-choice|subject=dual-or-grid-subject|accent=mini-tags-detail-grid|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=no-compare-layout
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

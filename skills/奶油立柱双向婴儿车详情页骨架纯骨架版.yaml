@@ -1,0 +1,115 @@
+name: "奶油立柱双向婴儿车详情页骨架纯骨架版"
+description: "奶油立柱、双向推行、高景观婴儿车风格的纯骨架版详情页 skill：保留品牌拼贴开场、单品英雄页、多卡功能页、双向对照、睡眠舱近景、罩棚微距、参数信息卡和万向轮证明页 8 屏骨架，不承载运行时文案与业务判断。适合双向婴儿车、高景观推车、轻便折叠推车类母婴详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "双向婴儿车"
+trigger_words:
+  - "双向婴儿车"
+  - "高景观推车"
+  - "轻便折叠推车"
+  - "奶油婴儿车"
+  - "睡眠舱推车"
+weight: 1.0
+tags:
+  - name: "双向婴儿车"
+    weight: 1.0
+  - name: "高景观推车"
+    weight: 1.0
+  - name: "轻便折叠推车"
+    weight: 0.99
+  - name: "奶油婴儿车"
+    weight: 0.98
+  - name: "睡眠舱推车"
+    weight: 0.97
+  - name: "立柱棚拍"
+    weight: 0.96
+  - name: "万向轮"
+    weight: 0.95
+  - name: "母婴出行"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "品牌拼贴"
+    description: "source_refs:[1]; 功能: 上文案下拼贴的品牌开场，建立成长陪伴与母婴出行气质。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=brand-opening; style_tokens=[brand_header, collage_intro, warm_beige_scene]"
+  - id: "screen_2"
+    name: "单品主图"
+    description: "source_refs:[2]; 功能: 奶油立柱棚拍中的单车英雄页，左文案右主体，保留竖排标签。"
+    order: 2
+    prompt_guide: "f_code=F1; screen_kind=product-hero; style_tokens=[single_stroller_center, beige_columns, vertical_tag]"
+  - id: "screen_3"
+    name: "功能卡组"
+    description: "source_refs:[3]; 功能: 多张功能特写卡并列展示罩棚、杯架、透气座舱和轮组。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=detail-grid; style_tokens=[multi_feature_cards, canopy_closeup, wheel_detail]"
+  - id: "screen_4"
+    name: "双向推行"
+    description: "source_refs:[4]; 功能: 两台不同朝向婴儿车前后错落展示，突出双向模式切换。"
+    order: 4
+    prompt_guide: "f_code=F5+F6; screen_kind=compare-closure; style_tokens=[two_strollers, dual_direction, studio_platform]"
+  - id: "screen_5"
+    name: "睡眠舱"
+    description: "source_refs:[5]; 功能: 近景斜角展示大空间睡眠舱，保留强文案和竖排标签。"
+    order: 5
+    prompt_guide: "f_code=F2; screen_kind=product-hero; style_tokens=[bassinet_closeup, large_canopy, comfort_space]"
+  - id: "screen_6"
+    name: "罩棚微距"
+    description: "source_refs:[6]; 功能: 罩棚大面积微距页，突出版型弧线和面料细节。"
+    order: 6
+    prompt_guide: "f_code=F2; screen_kind=macro-closeup; style_tokens=[canopy_macro, soft_beige_texture, large_surface]"
+  - id: "screen_7"
+    name: "信息卡"
+    description: "source_refs:[7]; 功能: 产品信息与尺寸示意组合成的参数信息卡页。"
+    order: 7
+    prompt_guide: "f_code=F4; screen_kind=spec-panel; style_tokens=[product_info_card, dimensions, centered_stroller]"
+  - id: "screen_8"
+    name: "轮组证明"
+    description: "source_refs:[8]; 功能: 上大下小的轮组特写与路面适配说明页。"
+    order: 8
+    prompt_guide: "f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[wheel_macro, road_tiles, lower_proof_strip]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-beige-brand-board|camera=top-brand-header_bottom-collage-scenes|layout=top-copy_bottom-collage|subject=stroller-brand-and-use-scenes|accent=logo-strip-and-warm-shadow|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=product-hero|bg=beige-column-studio|camera=single-stroller-standing-front|layout=left-copy_right-subject_with_vertical-tag|subject=one-dominant-stroller|accent=architectural-columns|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=detail-grid|bg=light-beige-detail-board|camera=multi-card-closeups-of-stroller-parts|layout=top-left-copy_bottom-feature-card-grid|subject=stroller-parts-and-utility-features|accent=rounded-feature-cards|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=compare-closure|bg=beige-studio-with-platforms|camera=two-strollers-in-different-directions|layout=top-left-copy_middle-dual-display|subject=dual-direction-stroller-modes|accent=vertical-tag-and-pedestal-blocks|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_4}}|negative=no-compare-layout
+  s5|kind=product-hero|bg=warm-beige-closeup-scene|camera=large-angle-closeup-of-bassinet-seat|layout=top-left-copy_middle-large-subject|subject=one-dominant-stroller-seat-space|accent=rounded-guardrail-and-large-canopy|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=single-centered-packshot
+  s6|kind=macro-closeup|bg=soft-beige-macro-board|camera=oversized-canopy-surface-closeup|layout=top-left-copy_middle-large-macro|subject=stroller-canopy-material-and-shape|accent=large-curved-surface|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=evidence-panel|bg=clean-white-info-card|camera=stroller-with-dimension-lines-and-data|layout=top-title_middle-product_bottom-info-rows|subject=stroller-info-card-and-size-diagram|accent=thin-data-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=evidence-panel|bg=beige-proof-board|camera=top-wheel-macro_bottom-road-tile-strip|layout=top-left-copy_middle-wheel-closeup_bottom-road-grid|subject=wheel-system-and-road-adaptation|accent=road-type-mini-cards|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_8}}|negative=headline-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

@@ -1,0 +1,127 @@
+name: 裸粉修身瑜伽短袖详情页骨架纯骨架版
+description: 瑜伽短袖、普拉提上衣、修身运动上衣、高级感训练服风格的纯骨架版详情页 skill：保留坐姿开场、模特参数、3D 结构页、三联细节、正面版型、腰侧坐姿、模特展示和背面收尾 8 屏骨架，不承载运行时文案与业务判断。适合修身瑜伽短袖、普拉提训练上衣、轻运动上装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 瑜伽短袖
+trigger_words:
+- 瑜伽短袖
+- 普拉提上衣
+- 修身运动上衣
+- 健身短袖
+- 训练服
+weight: 1.0
+tags:
+- name: 瑜伽短袖
+  weight: 1.0
+- name: 普拉提上衣
+  weight: 1.0
+- name: 修身运动上衣
+  weight: 0.99
+- name: 健身短袖
+  weight: 0.98
+- name: 训练服
+  weight: 0.97
+- name: 模特参数
+  weight: 0.96
+- name: 3D结构
+  weight: 0.95
+- name: 背面展示
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 坐姿开场
+  description: 'source_refs:[1]; 功能: 坐姿模特开场页，保留粉灰配色和轻柔边框。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[seated_adult_model, pink_grey_palette, thin_frame]
+- id: screen_2
+  name: 模特参数
+  description: 'source_refs:[2]; 功能: 模特信息和尺码建议并列的信息页。'
+  order: 2
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[adult_model_profile_card, size_table, clean_header]
+- id: screen_3
+  name: 3D结构
+  description: 'source_refs:[3]; 功能: 单件上衣 3D 示意加结构标注的解析页。'
+  order: 3
+  prompt_guide: f_code=F3; screen_kind=annotated-breakdown; style_tokens=[single_top_diagram, structure_labels, centered_layout]
+- id: screen_4
+  name: 三联细节
+  description: 'source_refs:[4]; 功能: 三张竖排细节卡展示面料、领口和褶皱。'
+  order: 4
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[three_detail_cards, pink_closeups, white_margins]
+- id: screen_5
+  name: 正面版型
+  description: 'source_refs:[5]; 功能: 正面模特版型页，突出侧腰镂空和收身线条。'
+  order: 5
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[front_adult_model_pose, lower_caption_band, airy_board]
+- id: screen_6
+  name: 腰侧坐姿
+  description: 'source_refs:[6]; 功能: 坐姿模特页承接腰侧褶皱和贴体感。'
+  order: 6
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[seated_side_pose, lower_caption_band, soft_gym_mood]
+- id: screen_7
+  name: 模特展示
+  description: 'source_refs:[7]; 功能: 单模特加球具的模特展示页。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=product-hero; style_tokens=[single_adult_model_with_prop, pink_frame, weak_copy]
+- id: screen_8
+  name: 背面收尾
+  description: 'source_refs:[8]; 功能: 背面模特收尾页，延续细边框与静态站姿。'
+  order: 8
+  prompt_guide: f_code=F1+F6; screen_kind=model-closure; style_tokens=[back_view_adult_model, thin_frame, clean_finish]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=soft-pink-grey-studio|camera=seated-adult-model-on-block|layout=top-left-weak-copy_bottom-large-seated-model|subject=one_adult_model_in_fitted_sports_top|accent=thin-soft-frame|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=spec-panel|bg=white-sport-info-board|camera=adult-model-profile-plus-size-table|layout=top-profile_card_bottom-two-info-boxes|subject=model_measurements_and_size_suggestion|accent=gold_size_tabs|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_2}}|negative=headline-only
+
+  s3|kind=annotated-breakdown|bg=white-card-with-blush-gradient|camera=single-top-diagram-with-callouts|layout=top-title_middle-centered-product_bottom-annotation-points|subject=topwear_structure_breakdown|accent=small-round-callout-dots|text_mode=strong|text_zone=bottom-center|text_align=center|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-centered-packshot
+
+  s4|kind=detail-grid|bg=white-board-with-three-vertical-cards|camera=three-stacked-detail-closeups|layout=top-right-copy_bottom-three-detail-panels|subject=fabric_neckline_and_pleat_details|accent=rounded-card-corners|text_mode=weak|text_zone=top-right|text_align=right|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=on-body-proof|bg=white-studio-with-soft-blush-band|camera=single-adult-model-front-standing|layout=top-left-copy_bottom-main-model_bottom-caption-band|subject=fitted_front_silhouette_display|accent=bottom-color-band|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=plain-white-packshot
+
+  s6|kind=on-body-proof|bg=soft-beige-gym-board|camera=single-adult-model-seated-side-pose|layout=top-right-copy_bottom-main-model_bottom-caption-band|subject=waist_pleat_and_side_fit_display|accent=block_prop_and_bottom-band|text_mode=strong|text_zone=bottom-right|text_align=right|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=product-hero|bg=white-pink-model-board|camera=single-adult-model-standing-with-fitness-prop|layout=top-title_bottom-main-model|subject=one_adult_model_with_small_prop|accent=thin-side-vertical-copy|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=model-closure|bg=white-board-with-soft-blush-side-bar|camera=single-adult-model-back-view|layout=top-right-weak-copy_bottom-back-view-model|subject=back_silhouette_of_fitted_sports_top|accent=thin_photo_frame|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=plain-white-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

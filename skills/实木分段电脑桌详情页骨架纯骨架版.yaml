@@ -1,0 +1,113 @@
+name: "实木分段电脑桌详情页骨架纯骨架版"
+description: "实木分段电脑桌、长条书桌、电竞工作台、家用办公桌风格的纯骨架版详情页 skill：保留暖木家居开场、多图结构拆解、桌腿承重特写、板材厚度近景、材质对比、承重证明、宽桌面尺寸页与参数收尾 8 屏骨架，不承载运行时文案与业务判断。适合电脑桌、书桌、工作台、电竞桌详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "分段电脑桌"
+trigger_words:
+  - "分段电脑桌"
+  - "长条书桌"
+  - "实木电脑桌"
+  - "电竞工作台"
+  - "家用办公桌"
+weight: 1.0
+tags:
+  - name: "分段电脑桌"
+    weight: 1.0
+  - name: "长条书桌"
+    weight: 0.99
+  - name: "实木电脑桌"
+    weight: 0.98
+  - name: "电竞工作台"
+    weight: 0.97
+  - name: "宽桌面书桌"
+    weight: 0.96
+  - name: "双段桌架"
+    weight: 0.95
+  - name: "家用办公桌"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "暖木开场"
+    description: "source_refs:[1]; 功能: 暖木家居场景里的整桌开场页，俯视偏斜角展示大桌面和两段式结构，上方保留强主标题。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[warm_wood_scene, angled_full_desk, bold_headline]"
+  - id: "screen_2"
+    name: "结构拆解"
+    description: "source_refs:[2]; 功能: 多宫格拼接展示桌面、侧梁、底梁和厚板信息，中间保留放大主图，形成结构拆解页。"
+    order: 2
+    prompt_guide: "f_code=F3+F4; screen_kind=detail-grid; style_tokens=[multi_panel_breakdown, center_focus, structure_notes]"
+  - id: "screen_3"
+    name: "桌腿特写"
+    description: "source_refs:[3]; 功能: 单个桌腿与侧架近景放大，顶部短标题，局部用箭头或环形标记强调支撑结构。"
+    order: 3
+    prompt_guide: "f_code=F4; screen_kind=annotated-breakdown; style_tokens=[leg_closeup, support_callout, clean_white_margin]"
+  - id: "screen_4"
+    name: "厚板细节"
+    description: "source_refs:[4]; 功能: 以桌面边缘和厚度为主的近景页，顶部强卖点标题，画面下半保留局部结构。"
+    order: 4
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[desktop_thickness, cropped_monitor_context, bold_top_copy]"
+  - id: "screen_5"
+    name: "材质对比"
+    description: "source_refs:[5]; 功能: 左右对比板材截面或材料质感，用对错符号和短列点形成优劣对照页。"
+    order: 5
+    prompt_guide: "f_code=F4+F6; screen_kind=compare-closure; style_tokens=[material_compare, yes_no_icons, split_cards]"
+  - id: "screen_6"
+    name: "承重证明"
+    description: "source_refs:[6]; 功能: 低机位展示桌架与重物承压场景，底部辅以小图标或示意人物强化稳定证明。"
+    order: 6
+    prompt_guide: "f_code=F4; screen_kind=comfort-proof; style_tokens=[load_bearing_scene, low_angle_frame, small_icon_strip]"
+  - id: "screen_7"
+    name: "宽面尺寸"
+    description: "source_refs:[7]; 功能: 回到整桌主场景，突出宽桌面与分区使用感，下方附小型尺寸示意框。"
+    order: 7
+    prompt_guide: "f_code=F2+F4; screen_kind=scene-parameter; style_tokens=[full_desk_scene, workspace_emphasis, size_inset]"
+  - id: "screen_8"
+    name: "参数收尾"
+    description: "source_refs:[8]; 功能: 白底参数收尾页，小规格表叠加单个整桌透视图，保留大量留白。"
+    order: 8
+    prompt_guide: "f_code=F4+F6; screen_kind=parameter-sheet; style_tokens=[white_spec_sheet, single_desk_diagram, airy_space]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-wood-home-office|camera=high-three-quarter-full-scene|layout=top-left-title_bottom-right-full-desk|subject=one-dominant-desk-in-home-office-scene|accent=window-blinds_and-floor-pattern|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=detail-grid|bg=clean-white-breakdown-board|camera=multi-crop-with-center-focus|layout=top-short-copy_middle-large-panel_surrounding-detail-crops|subject=main-desk-structure-collage|accent=thickness-labels_and-frame-details|text_mode=strong|text_zone=top-left_and-panel-corners|text_align=left|text_density=caption-grid|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-image-only
+  s3|kind=annotated-breakdown|bg=white-closeup-board|camera=low-angle-leg-closeup|layout=top-title_bottom-single-leg-detail|subject=desk-leg-and-side-frame-detail|accent=ring-marker_and-short-callout|text_mode=strong|text_zone=top-left_and-bottom-left|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=macro-closeup|bg=white-and-warm-detail-scene|camera=tight-desktop-edge-closeup|layout=top-title_bottom-cropped-desktop-detail|subject=desktop-thickness-and-edge-finish|accent=monitor-corner_and-thickness-ribbon|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=compare-closure|bg=soft-white-compare-board|camera=split-material-cross-section-view|layout=top-title_bottom-two-compare-cards|subject=material-cross-section-compare|accent=check-cross-icons_and-bullet-columns|text_mode=strong|text_zone=bottom-left_and-bottom-right|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_5}}|negative=no-compare-layout
+  s6|kind=comfort-proof|bg=warm-room-proof-scene|camera=low-angle-load-bearing-view|layout=top-left-title_bottom-frame-with-weight|subject=desk-frame-stability-proof-scene|accent=heavy-object_and-small-icon-strip|text_mode=strong|text_zone=top-left_and-bottom-center|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_6}}|negative=plain-white-packshot
+  s7|kind=scene-parameter|bg=bright-home-office-scene|camera=high-angle-full-desk-view|layout=top-left-copy_bottom-full-desk_with-size-inset|subject=wide-desktop-workspace-scene|accent=small-dimension-card_and-floor-pattern|text_mode=weak|text_zone=top-left_and-bottom-right|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=parameter-sheet|bg=clean-white-spec-sheet|camera=three-quarter-desk-diagram|layout=top-right-spec-table_bottom-single-desk-view|subject=single-desk-parameter-sheet|accent=mini-table_and-light-shadow|text_mode=weak|text_zone=top-right|text_align=left|text_density=data-callout|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

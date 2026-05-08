@@ -1,0 +1,111 @@
+name: 米灰勃肯短筒袜详情页骨架纯骨架版
+description: 女袜短筒袜、勃肯搭配袜、米灰棉袜、极简陈列风格的纯骨架版详情页 skill：保留配鞋开场、配色排布、叠放材质、自然面料、包裹弹力、织面细节、双色上脚和鞋履收尾 8 屏骨架，不承载运行时文案与业务判断。适合中短筒袜、勃肯鞋搭配袜、无骨棉袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 勃肯短筒袜
+trigger_words:
+- 勃肯短筒袜
+- 中短筒袜
+- 无骨棉袜
+- 配鞋短袜
+- 米灰袜子
+weight: 1.0
+tags:
+- name: 勃肯短筒袜
+  weight: 1.0
+- name: 中短筒袜
+  weight: 0.99
+- name: 无骨棉袜
+  weight: 0.98
+- name: 配鞋短袜
+  weight: 0.97
+- name: 米灰袜子
+  weight: 0.96
+- name: 极简棉袜
+  weight: 0.95
+- name: 通勤短袜
+  weight: 0.94
+- name: 双色上脚袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 配鞋开场
+  description: 'source_refs:[1]; 功能: 开放式平底鞋与短袜同框的秋季开场页，鞋体完整且比例协调。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[open_footbed_shoe, warm_badge_block, ankle_sock_pose]
+- id: screen_2
+  name: 配色排布
+  description: 'source_refs:[2]; 功能: 多双袜体横向排布页，保留上部简短标题和下部阵列。'
+  order: 2
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[color_lineup, centered_row, rounded_card]
+- id: screen_3
+  name: 叠放材质
+  description: 'source_refs:[3]; 功能: 成叠袜体展示优质面料页，突出厚实堆叠和右侧文案。'
+  order: 3
+  prompt_guide: f_code=F5; screen_kind=evidence-panel; style_tokens=[folded_sock_stack, soft_shadow, top_right_copy]
+- id: screen_4
+  name: 自然面料
+  description: 'source_refs:[4]; 功能: 三双袜体平铺与大字留白结合的材质页。'
+  order: 4
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[three_sock_flatlay, oversized_type, cream_board]
+- id: screen_5
+  name: 包裹弹力
+  description: 'source_refs:[5]; 功能: 单只黑袜上脚近景页，保留顶部图标和包裹力说明。'
+  order: 5
+  prompt_guide: f_code=F2; screen_kind=annotated-breakdown; style_tokens=[single_black_sock_pose, icon_row, fitted_ankle_shape]
+- id: screen_6
+  name: 织面细节
+  description: 'source_refs:[6]; 功能: 三色面料切片特写页，突出舒适透气的材质对照。'
+  order: 6
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[tri_color_fabric_macro, texture_slices, icon_row]
+- id: screen_7
+  name: 双色上脚
+  description: 'source_refs:[7]; 功能: 黑灰两色左右脚并列的上脚页，保留下方简短功能标签。'
+  order: 7
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[dual_color_on_foot, side_by_side_pose, low_copy_band]
+- id: screen_8
+  name: 鞋履收尾
+  description: 'source_refs:[8]; 功能: 完整鞋履搭配与底部色卡的收尾页，保留风格匹配关系。'
+  order: 8
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[complete_open_shoe_pairing, color_swatch_row, autumn_tone]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=soft_cream_card_with_tan_badge|camera=ankle_sock_with_complete_open_footbed_shoe|layout=top_badge_left_copy_bottom_leg_pose|subject=single_short_sock_in_open_shoe_pairing|accent=complete_footwear_visible_and_soft_skirt_edge|text_mode=strong|text_zone=top-right_and_left-side|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=cropped-footwear-or-bulky-shoe
+  s2|kind=evidence-panel|bg=rounded_cream_series_card|camera=horizontal_multi_pair_lineup|layout=top_copy_middle_centered_row_bottom_short_note|subject=multi_color_short_sock_lineup|accent=rounded_frame_and_soft_base_shadow|text_mode=strong|text_zone=bottom-center|text_align=center|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_2}}|negative=single-image-only
+  s3|kind=evidence-panel|bg=soft_cream_material_board|camera=folded_sock_stack_display|layout=right_copy_left_folded_stack|subject=stacked_short_socks_for_material_story|accent=soft_shadow_and_column_spacing|text_mode=strong|text_zone=right-side|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_3}}|negative=single-centered-packshot
+  s4|kind=scene-collage|bg=clean_beige_flatlay_board|camera=three_sock_flatlay_with_large_type|layout=top_large_type_bottom_three_product_blocks|subject=three_short_sock_material_views|accent=oversized_copy_and_spacious_margins|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_4}}|negative=headline-only
+  s5|kind=annotated-breakdown|bg=soft_white_icon_card|camera=single_ankle_sock_on_foot|layout=top_icon_row_middle_large_pose_bottom_brief_note|subject=single_short_sock_fit_and_wrap|accent=small_feature_icons|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=single-centered-packshot
+  s6|kind=macro-closeup|bg=white_texture_board|camera=tri_color_fabric_slice_macro|layout=top_copy_middle_three_texture_slices_bottom_icon_row|subject=multi_tone_short_sock_fabric_textures|accent=small_comfort_icons|text_mode=strong|text_zone=top-right|text_align=left|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_6}}|negative=no-multi-panel-collage
+  s7|kind=on-body-proof|bg=clean_floor_with_soft_shadow|camera=dual_color_on_foot_side_view|layout=top_copy_middle_dual_feet_bottom_small_labels|subject=two_colorways_worn_side_by_side|accent=low_copy_band_and_balanced_pose|text_mode=weak|text_zone=bottom-left|text_align=left|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=scene-collage|bg=soft_cream_shoe_pairing_board|camera=complete_open_shoe_and_sock_closure|layout=left_vertical_copy_middle_large_pairing_bottom_color_swatch_row|subject=single_short_sock_with_aesthetic_open_shoe_match|accent=full_footwear_visible_and_color_swatch_row|text_mode=strong|text_zone=left-side|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_8}}|negative=cropped-footwear-or-mismatched-shoe-style
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

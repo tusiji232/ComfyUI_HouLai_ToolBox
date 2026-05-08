@@ -1,0 +1,127 @@
+name: 蓝绿活力男童卫衣详情页骨架纯骨架版
+description: 男童卫衣、落肩卫衣、活力童装、春季男童上衣风格的纯骨架版详情页 skill：保留标题开场、图标面料页、面料微距、云雾透气、版型展示、OOTD 多色、尺码表和模特收尾 8 屏骨架，不承载运行时文案与业务判断。适合男童卫衣、儿童圆领上衣、轻运动童装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 活力卫衣
+trigger_words:
+- 活力卫衣
+- 男童卫衣
+- 儿童卫衣
+- 落肩卫衣
+- 春季童装
+weight: 1.0
+tags:
+- name: 活力卫衣
+  weight: 1.0
+- name: 男童卫衣
+  weight: 1.0
+- name: 儿童卫衣
+  weight: 0.99
+- name: 落肩卫衣
+  weight: 0.98
+- name: 春季童装
+  weight: 0.97
+- name: OOTD
+  weight: 0.96
+- name: 透气证明
+  weight: 0.95
+- name: 尺码表
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 标题开场
+  description: 'source_refs:[1]; 功能: 白蓝撞色标题开场，单模特站姿承接运动氛围。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[blue_green_hero, single_child_model, bold_title]
+- id: screen_2
+  name: 图标面料
+  description: 'source_refs:[2]; 功能: 顶部功能图标加单模特的面料卖点页。'
+  order: 2
+  prompt_guide: f_code=F3+F6; screen_kind=evidence-panel; style_tokens=[icon_header, single_child_model, fabric_claim]
+- id: screen_3
+  name: 面料微距
+  description: 'source_refs:[3]; 功能: 蓝色面料大特写页，配底部耐洗说明。'
+  order: 3
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[blue_fabric_macro, bottom_labels, clean_white_space]
+- id: screen_4
+  name: 云雾透气
+  description: 'source_refs:[4]; 功能: 面料小山丘加迷你人物的透气概念页。'
+  order: 4
+  prompt_guide: f_code=F3+F5; screen_kind=evidence-panel; style_tokens=[fabric_hill_concept, mini_people, breathable_copy]
+- id: screen_5
+  name: 版型展示
+  description: 'source_refs:[5]; 功能: 单模特版型页，底部列出版型卖点。'
+  order: 5
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[single_child_model_pose, bottom_feature_row, green_lime_accent]
+- id: screen_6
+  name: OOTD多色
+  description: 'source_refs:[6]; 功能: 主模特加两种颜色小窗的多色搭配页。'
+  order: 6
+  prompt_guide: f_code=F5+F6; screen_kind=compare-closure; style_tokens=[main_child_model_with_color_insets, ootd_title, white_board]
+- id: screen_7
+  name: 尺码信息
+  description: 'source_refs:[7]; 功能: 简洁蓝白尺码表页。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[blue_size_chart, clean_table, minimal_header]
+- id: screen_8
+  name: 模特收尾
+  description: 'source_refs:[8]; 功能: 单模特白底收尾页，保留几何色块装饰。'
+  order: 8
+  prompt_guide: f_code=F1+F6; screen_kind=model-closure; style_tokens=[single_child_model_closure, white_studio, abstract_shapes]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=white-board-with-blue-green-arcs|camera=single-child-model-front-standing|layout=top-left-bold-copy_bottom-main-model|subject=one_child_model_in_loose_sweatshirt|accent=blue_green_shape_blocks|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=evidence-panel|bg=white-board-with-icon-header|camera=single-child-model-and-fabric-claim|layout=top-icon-row_middle-model_bottom-short-proof|subject=material_benefits_with_child_model_display|accent=round-icon-strip|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=macro-closeup|bg=white-board-with-blue-card|camera=single-large-fabric-macro|layout=top-right-copy_middle-fabric_card_bottom-proof_label|subject=blue_knit_texture_macro|accent=small-percentage-badges|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_3}}|negative=headline-only
+
+  s4|kind=evidence-panel|bg=white-board-with-soft-cream-hill|camera=fabric-hill-concept-with-mini-figures|layout=top-right-copy_middle-concept-photo|subject=breathable_concept_and_non_sweaty_feel|accent=mini_character_scene|text_mode=strong|text_zone=top-right|text_align=right|text_density=two-line|copy_role=proof-data|slot={{copy_function_language_4}}|negative=no-multi-panel-collage
+
+  s5|kind=on-body-proof|bg=white-studio-with-lime-accents|camera=single-child-model-front-standing|layout=top-left-copy_bottom-main-model_bottom-feature-row|subject=loose_drop_shoulder_silhouette|accent=mini-feature-pills|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=plain-white-packshot
+
+  s6|kind=compare-closure|bg=white-ootd-board|camera=main-child-model-plus-two-color-insets|layout=left-main-model_right-two-colorway-insets|subject=multiple_colorways_of_one_sweatshirt_shape|accent=big-ootd-title|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_6}}|negative=no-compare-layout
+
+  s7|kind=spec-panel|bg=white-and-blue-size-board|camera=size-chart-only|layout=top-title_middle-clean-table|subject=topwear_size_chart|accent=blue-header-band|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=single-centered-packshot
+
+  s8|kind=model-closure|bg=white-studio-with-abstract-shapes|camera=single-child-model-standing|layout=top-title_bottom-main-model|subject=one_child_model_in_basic_sweatshirt|accent=green_blue_floor_shapes|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

@@ -1,0 +1,113 @@
+name: "奶油圆鼓边几详情页骨架纯骨架版"
+description: "奶油圆鼓边几、圆形小茶几、民宿边几、客厅小边桌风格的纯骨架版详情页 skill：保留浪漫开场、场景搭配、单品近景、多场景适用、木材证明、台面细节、底座特写与圆角收尾 8 屏骨架，不承载运行时文案与业务判断。适合边几、小茶几、圆桌、民宿圆几详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "奶油圆鼓边几"
+trigger_words:
+  - "奶油圆鼓边几"
+  - "圆形小茶几"
+  - "民宿边几"
+  - "可移动圆桌"
+  - "客厅小边桌"
+weight: 1.0
+tags:
+  - name: "奶油圆鼓边几"
+    weight: 1.0
+  - name: "圆形小茶几"
+    weight: 0.99
+  - name: "民宿边几"
+    weight: 0.98
+  - name: "可移动圆桌"
+    weight: 0.97
+  - name: "奶油风边几"
+    weight: 0.96
+  - name: "客厅小边桌"
+    weight: 0.95
+  - name: "圆墩茶几"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "浪漫开场"
+    description: "source_refs:[1]; 功能: 客厅软装背景中的浪漫开场页，主产品居中，左上角放金色感标题。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[romantic_living_room, center_table_pair, gold_title]"
+  - id: "screen_2"
+    name: "场景搭配"
+    description: "source_refs:[2]; 功能: 继续用客厅场景展示主产品搭配，上方居中标题更强调场景适配。"
+    order: 2
+    prompt_guide: "f_code=F2; screen_kind=scene-hero; style_tokens=[styled_scene_match, centered_copy, living_room_pairing]"
+  - id: "screen_3"
+    name: "单品近景"
+    description: "source_refs:[3]; 功能: 减少文案后的近景美图页，画面聚焦主产品比例和圆润体块。"
+    order: 3
+    prompt_guide: "f_code=F1+F2; screen_kind=hero-feature; style_tokens=[clean_close_scene, rounded_form, minimal_copy]"
+  - id: "screen_4"
+    name: "多场景适用"
+    description: "source_refs:[4]; 功能: 2x2 小场景拼页，用不同空间卡片说明适用环境。"
+    order: 4
+    prompt_guide: "f_code=F3; screen_kind=detail-grid; style_tokens=[2x2_scene_grid, room_cards, top_right_heading]"
+  - id: "screen_5"
+    name: "木材证明"
+    description: "source_refs:[5]; 功能: 主产品场景配局部材质放大圆章，顶部大标题解释核心木材或用料。"
+    order: 5
+    prompt_guide: "f_code=F4+F5; screen_kind=evidence-panel; style_tokens=[material_proof_scene, inset_badge, bold_left_copy]"
+  - id: "screen_6"
+    name: "台面细节"
+    description: "source_refs:[6]; 功能: 台面与器物的局部细节页，正文以左上信息块形式出现。"
+    order: 6
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[tabletop_closeup, left_info_block, tactile_surface]"
+  - id: "screen_7"
+    name: "底座特写"
+    description: "source_refs:[7]; 功能: 超近景展示圆鼓底座和表面肌理，文案弱化，让结构成为主角。"
+    order: 7
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[pedestal_closeup, soft_shadow, low_text_presence]"
+  - id: "screen_8"
+    name: "圆角收尾"
+    description: "source_refs:[8]; 功能: 用边缘弧线和红线标记做收尾特征页，标题置于上方左侧。"
+    order: 8
+    prompt_guide: "f_code=F4; screen_kind=feature-callout; style_tokens=[rounded_edge_detail, highlight_line, top_left_copy]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-cream-living-room|camera=front-centered-scene-view|layout=top-left-title_bottom-centered-main-scene|subject=one-dominant-round-side-table-in-soft-room|accent=sofa-backdrop_and-small-styled-props|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=scene-hero|bg=neutral-styled-living-room|camera=front-close-scene-view|layout=top-centered-title_bottom-main-scene|subject=main-side-table-in-matching-room-scene|accent=graphic-wall_panel_and-cozy-sofa|text_mode=strong|text_zone=top-center|text_align=center|text_density=single-line|copy_role=scene-note|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=hero-feature|bg=soft-beige-close-scene|camera=three-quarter-near-view|layout=minimal-copy_above_large-main-subject|subject=single-rounded-table-form-in-room|accent=rounded-silhouette_and-soft-fabric-backdrop|text_mode=weak|text_zone=top-left|text_align=left|text_density=single-line|copy_role=hero-feature|slot={{copy_function_language_3}}|negative=single-centered-packshot
+  s4|kind=detail-grid|bg=clean-white-scene-board|camera=2x2-room-card-view|layout=top-right-title_bottom-four-scene-cards|subject=main-side-table-across-multiple-room-cards|accent=rounded-card-borders_and-small-room-labels|text_mode=strong|text_zone=top-right_and-card-bottom|text_align=center|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_4}}|negative=single-image-only
+  s5|kind=evidence-panel|bg=soft-room-with-material-inset|camera=front-main-scene-with-closeup-badge|layout=top-left-copy_bottom-main-scene_with-material-inset|subject=material-proof-scene-for-side-table|accent=round-material-inset_and-large-title-block|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_5}}|negative=headline-only
+  s6|kind=macro-closeup|bg=warm-tactile-close-scene|camera=tabletop-closeup-view|layout=top-left-info_block_bottom-large-surface-closeup|subject=tabletop-surface-and-props-closeup|accent=fruit-and-glass-props_and-light-grain|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_6}}|negative=plain-white-packshot
+  s7|kind=macro-closeup|bg=neutral-closeup-board|camera=extreme-closeup-pedestal-view|layout=top-left-weak-copy_bottom-large-base-detail|subject=rounded-pedestal-base-detail|accent=soft-shadow_and-monolithic-shape|text_mode=weak|text_zone=top-left|text_align=left|text_density=single-line|copy_role=material-note|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=feature-callout|bg=warm-close-scene-with-edge-highlight|camera=edge-closeup-view|layout=top-left-title_bottom-rounded-edge-detail|subject=rounded-edge-and-corner-detail|accent=curved-highlight-line_and-prop-crop|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_8}}|negative=headline-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

@@ -1,0 +1,127 @@
+name: 青柠花边女童卫衣详情页骨架纯骨架版
+description: 女童卫衣、花边卫衣、糖果色童装、春秋打底衫风格的纯骨架版详情页 skill：保留糖果开场、面料大卡、耐洗证明、版型图标页、耐磨测试、领口细节、尺码表和模特收尾 8 屏骨架，不承载运行时文案与业务判断。适合女童花边卫衣、翻领童装上衣、轻甜春装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 花边卫衣
+trigger_words:
+- 花边卫衣
+- 女童卫衣
+- 糖果童装
+- 翻领上衣
+- 春装童装
+weight: 1.0
+tags:
+- name: 花边卫衣
+  weight: 1.0
+- name: 女童卫衣
+  weight: 1.0
+- name: 糖果童装
+  weight: 0.99
+- name: 翻领上衣
+  weight: 0.98
+- name: 春装童装
+  weight: 0.97
+- name: 耐磨测试
+  weight: 0.96
+- name: 尺码表
+  weight: 0.95
+- name: 模特收尾
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 糖果开场
+  description: 'source_refs:[1]; 功能: 青柠绿单模特开场，保留手写感标题、贴纸箭头和大色块留白。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[lime_hero, playful_stickers, single_child_model]
+- id: screen_2
+  name: 面料大卡
+  description: 'source_refs:[2]; 功能: 大面积绿色面料卡片加圆角功能标签的卖点页。'
+  order: 2
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[rounded_fabric_card, lime_gradient, badge_row]
+- id: screen_3
+  name: 耐洗证明
+  description: 'source_refs:[3]; 功能: 扭转面料配简短证明标题的耐洗抗变形页。'
+  order: 3
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[twisted_fabric, wash_proof, minimal_board]
+- id: screen_4
+  name: 廓形展示
+  description: 'source_refs:[4]; 功能: 单模特加左右图标说明的宽松版型展示页。'
+  order: 4
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[single_child_model_with_icons, silhouette_note, pink_green_balance]
+- id: screen_5
+  name: 耐磨测试
+  description: 'source_refs:[5]; 功能: 刷头摩擦与左右证明模块构成的抗起球证明页。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=evidence-panel; style_tokens=[brush_test, dual_proof_boxes, candy_pink_board]
+- id: screen_6
+  name: 领口细节
+  description: 'source_refs:[6]; 功能: 领口特写单卡页，强调翻领与纽扣细节。'
+  order: 6
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[single_detail_card, collar_closeup, playful_footer]
+- id: screen_7
+  name: 尺码建议
+  description: 'source_refs:[7]; 功能: 顶部标题加中部尺码表的清爽数据页。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[size_chart, lime_header, clean_table]
+- id: screen_8
+  name: 模特收尾
+  description: 'source_refs:[8]; 功能: 女童持道具单模特收尾页，保留轻甜姿态和大圆角照片框。'
+  order: 8
+  prompt_guide: f_code=F1+F6; screen_kind=model-closure; style_tokens=[single_child_model_closure, rounded_frame, playful_prop]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=white-board-with-lime-blocks|camera=single-child-model-front-standing|layout=top-left-handwritten-copy_bottom-large-model|subject=one-child-model-in-sweet-collar-top|accent=arrow-stickers-and-side-notes|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=macro-closeup|bg=lime-rounded-card|camera=single-large-fabric-surface|layout=top-copy_middle-fabric-card_bottom-badge-row|subject=soft_fabric_macro|accent=round-function-tags|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_2}}|negative=single-image-only
+
+  s3|kind=evidence-panel|bg=white-board-with-lime-panel|camera=twisted-fabric-and-proof-note|layout=top-title_middle-macro-card_bottom-short-proof|subject=wash-and-shape-retention-proof|accent=mini-water-wave-graphics|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_3}}|negative=headline-only
+
+  s4|kind=on-body-proof|bg=white-studio-with-soft-pink-card|camera=single-child-model-plus-icon-list|layout=left-copy_icons_right-full-model|subject=loose_silhouette_child_model_display|accent=feature-icon-column|text_mode=strong|text_zone=left-center|text_align=left|text_density=bullet-list|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=single-centered-packshot
+
+  s5|kind=evidence-panel|bg=candy-pink-proof-board|camera=brush-test-plus-dual-proof-boxes|layout=top-title_middle-demo_bottom-two-proof-cards|subject=anti-pilling_and_wear_proof|accent=rounded-compare-boxes|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_5}}|negative=single-image-only
+
+  s6|kind=detail-grid|bg=white-board-with-single-rounded-card|camera=single-collar-closeup|layout=top-title_middle-large-detail-card_bottom-mini-caption|subject=collar_and_button_detail|accent=small-mascot-tag|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=headline-only
+
+  s7|kind=spec-panel|bg=white-size-board|camera=size-table-with-top-title|layout=top-left-copy_middle-data-table|subject=topwear-size-suggestion|accent=lime-header-bar|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=single-centered-packshot
+
+  s8|kind=product-hero|bg=white-studio-with-pastel-shapes|camera=single-child-model-with-playful-prop|layout=top-left-copy_bottom-large-rounded-photo|subject=one-child-model-in-sweet-top|accent=racket_or_toy_prop|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

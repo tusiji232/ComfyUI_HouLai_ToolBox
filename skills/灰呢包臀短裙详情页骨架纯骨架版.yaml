@@ -1,0 +1,128 @@
+name: 灰呢包臀短裙详情页骨架纯骨架版
+description: 女装包臀短裙、灰呢材质、秋冬显瘦、镜前实拍风格的纯骨架版详情页 skill：保留镜前开场、裙身展示、尺码表、面料微距、细节拼图、显瘦说明、包容度证明和模特收尾 8 屏骨架，不承载运行时文案与业务判断。适合灰色短裙、包臀半裙、秋冬显瘦裙装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 包臀短裙
+trigger_words:
+- 包臀短裙
+- 灰呢短裙
+- A字半裙
+- 显瘦短裙
+- 秋冬短裙
+weight: 1.0
+tags:
+- name: 包臀短裙
+  weight: 1.0
+- name: 灰呢短裙
+  weight: 0.99
+- name: A字半裙
+  weight: 0.98
+- name: 显瘦短裙
+  weight: 0.97
+- name: 秋冬短裙
+  weight: 0.96
+- name: 包容版型
+  weight: 0.95
+- name: 防走光半裙
+  weight: 0.94
+- name: 镜前穿搭
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 镜前开场
+  description: 'source_refs:[1]; 功能: 全身镜前穿搭开场，保留暖色室内背景、长靴袜套和纵向标题带。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[mirror_room_scene, full_body_adult_model, vertical_title_bar]
+- id: screen_2
+  name: 裙身展示
+  description: 'source_refs:[2]; 功能: 腰部到裙摆的近景展示页，突出裙长、包臀线条和布料包裹感。'
+  order: 2
+  prompt_guide: f_code=F2+F6; screen_kind=fit-callout; style_tokens=[waist_to_hem_crop, black_top_contrast, slim_shape]
+- id: screen_3
+  name: 尺码表
+  description: 'source_refs:[3]; 功能: 单页尺码推荐与数据表，保留推荐体重和多个尺码块。'
+  order: 3
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[size_recommendation, gray_table, weight_range]
+- id: screen_4
+  name: 面料微距
+  description: 'source_refs:[4]; 功能: 深灰面料微距页，单独表现绒感、密度和细腻纹理。'
+  order: 4
+  prompt_guide: f_code=F5; screen_kind=material-proof; style_tokens=[dark_gray_macro, warm_title, fine_texture]
+- id: screen_5
+  name: 细节拼图
+  description: 'source_refs:[5]; 功能: 2x2 细节拼图页，展示腰缝、内衬、拉链和锁边等局部。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[four_detail_tiles, beige_board, arrow_labels]
+- id: screen_6
+  name: 显瘦说明
+  description: 'source_refs:[6]; 功能: 大模特图配左侧圆形局部插图和三条结论，解决显胖顾虑。'
+  order: 6
+  prompt_guide: f_code=F2+F6; screen_kind=fit-callout; style_tokens=[large_adult_model, inset_circle, stacked_conclusions]
+- id: screen_7
+  name: 包容证明
+  description: 'source_refs:[7]; 功能: 左侧模特加右侧包容身材图标矩阵的证明页，突出不挑身材。'
+  order: 7
+  prompt_guide: f_code=F3+F6; screen_kind=evidence-panel; style_tokens=[adult_model_plus_icon_matrix, body_shape_diagrams,
+    side_title]
+- id: screen_8
+  name: 模特收尾
+  description: 'source_refs:[8]; 功能: 单张镜前模特页作为收尾，保持标题轻量和实拍气氛。'
+  order: 8
+  prompt_guide: f_code=F6; screen_kind=brand-closure; style_tokens=[single_adult_model_photo, warm_room_light, simple_title]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=warm_mirror_room_short_skirt_opening|camera=full_body_adult_model_mirror_selfie_style|layout=left_vertical_title_right_large_model|subject=single_adult_model_in_short_skirt_outfit|accent=wool_hat_scarf_and_leg_warmers|text_mode=strong|text_zone=left-side|text_align=left|text_density=short-paragraph|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=on-body-hero|bg=warm_indoor_closeup_board|camera=waist_to_hem_body_crop|layout=top_small_copy_middle_large_skirt_crop_bottom_breathing_room|subject=short_skirt_fit_and_length_display|accent=high_contrast_top_and_skin|text_mode=weak|text_zone=right-lower|text_align=left|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=headline-only
+
+  s3|kind=size-chart|bg=light_gray_data_panel|camera=size_table_with_weight_badges|layout=top_headline_middle_table_bottom_size_badges|subject=short_skirt_size_information|accent=multiple_size_pills|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_3}}|negative=single-centered-packshot
+
+  s4|kind=material-proof|bg=dark_gray_texture_board|camera=single_fabric_macro_surface|layout=top_title_middle_macro_bottom_small_copy|subject=wool_like_surface_texture|accent=soft_light_gradient|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=detail-grid|bg=beige_detail_board|camera=four_closeups_of_waist_lining_zipper_edge|layout=top_title_middle_2x2_detail_grid_bottom_labels|subject=garment_construction_details|accent=arrow_markers|text_mode=strong|text_zone=panel_center|text_align=center|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=single-image-only
+
+  s6|kind=on-body-hero|bg=white_fit_solution_board|camera=large_adult_model_with_inset_circle_crop|layout=left_copy_and_inset_right_large_model|subject=single_adult_model_showing_body_slimming_effect|accent=three_conclusion_bars|text_mode=strong|text_zone=left-column|text_align=left|text_density=bullet-list|copy_role=hero-feature|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=evidence-panel|bg=white_body_shape_panel|camera=adult_model_plus_icon_matrix|layout=left_large_model_right_2x3_icon_grid|subject=body_shape_compatibility_proof|accent=body_silhouette_icons|text_mode=strong|text_zone=right-column|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=brand-closure|bg=warm_room_photo_board|camera=single_adult_model_mid_to_full_body|layout=top_center_small_title_bottom_single_photo|subject=single_adult_model_real_scene_closure|accent=mirror_room_and_wood_cabinet|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

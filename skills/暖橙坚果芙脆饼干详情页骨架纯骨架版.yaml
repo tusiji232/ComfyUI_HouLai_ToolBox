@@ -1,0 +1,115 @@
+name: "暖橙坚果芙脆饼干详情页骨架纯骨架版"
+description: "暖橙奶油、坚果芙脆饼干风格的纯骨架版详情页 skill：保留饼干漂浮开场、果仁占比证明、酥脆微距、产品展示、原料纵向拼贴、早餐茶点双场景、办公零食场景和信息页 8 屏骨架，不承载运行时文案与业务判断。适合饼干零食、坚果糕点、休闲茶点类食品详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "坚果饼干"
+trigger_words:
+  - "坚果饼干"
+  - "芙脆饼干"
+  - "休闲零食"
+  - "茶点饼干"
+  - "果仁饼干"
+weight: 1.0
+tags:
+  - name: "坚果饼干"
+    weight: 1.0
+  - name: "芙脆饼干"
+    weight: 1.0
+  - name: "休闲零食"
+    weight: 0.99
+  - name: "茶点饼干"
+    weight: 0.98
+  - name: "果仁饼干"
+    weight: 0.97
+  - name: "暖橙零食"
+    weight: 0.96
+  - name: "原料证明"
+    weight: 0.95
+  - name: "下午茶"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "漂浮开场"
+    description: "source_refs:[1]; 功能: 空中漂浮饼干与下方堆叠展示的零食开场页。"
+    order: 1
+    prompt_guide: "f_code=F1; screen_kind=hero-opening; style_tokens=[floating_biscuits, stacked_biscuits, warm_cream_bg]"
+  - id: "screen_2"
+    name: "坚果证明"
+    description: "source_refs:[2]; 功能: 三块饼干并列和圆形占比标记构成的果仁证明页。"
+    order: 2
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[nut_ratio_markers, three_biscuits, cream_board]"
+  - id: "screen_3"
+    name: "酥脆微距"
+    description: "source_refs:[3]; 功能: 掰开的两片饼干和巨大脆感符号构成的口感证明页。"
+    order: 3
+    prompt_guide: "f_code=F2; screen_kind=macro-closeup; style_tokens=[broken_biscuit_macro, large_crisp_symbol, warm_orange_panel]"
+  - id: "screen_4"
+    name: "产品展示"
+    description: "source_refs:[4]; 功能: 多片饼干斜立展示的产品陈列页。"
+    order: 4
+    prompt_guide: "f_code=F1; screen_kind=product-display; style_tokens=[standing_biscuits, clean_white_space, warm_shadow]"
+  - id: "screen_5"
+    name: "原料拼贴"
+    description: "source_refs:[5]; 功能: 小麦、食用油和鸡蛋纵向排列的原料拼贴页。"
+    order: 5
+    prompt_guide: "f_code=F3; screen_kind=detail-grid; style_tokens=[vertical_ingredient_panels, wheat_oil_egg, cream_layout]"
+  - id: "screen_6"
+    name: "食用搭档"
+    description: "source_refs:[6]; 功能: 早餐与茶点双场景餐盘页。"
+    order: 6
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[two_food_plates, breakfast_and_tea, warm_table_scene]"
+  - id: "screen_7"
+    name: "办公零食"
+    description: "source_refs:[7]; 功能: 多片堆叠饼干的办公零食场景页。"
+    order: 7
+    prompt_guide: "f_code=F6; screen_kind=scene-note; style_tokens=[stacked_biscuits, office_snack_badge, soft_focus]"
+  - id: "screen_8"
+    name: "信息收尾"
+    description: "source_refs:[8]; 功能: 产品名称、类型、保质期和食用方法信息页。"
+    order: 8
+    prompt_guide: "f_code=F4; screen_kind=spec-panel; style_tokens=[minimal_info_fields, cream_sheet, product_meta]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-cream-snack-board|camera=floating-and-stacked-biscuits|layout=top-left-copy_middle-floating_biscuits_bottom-stacks|subject=multiple-biscuits-in-light-snack-scene|accent=falling-nuts|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=cream-proof-board|camera=three-biscuits-with-ratio-markers|layout=top-left-copy_middle-biscuit-proof_panel|subject=nut-piece-ratio-proof|accent=round-data-markers|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=macro-closeup|bg=warm-orange-crisp-board|camera=two-broken-biscuits-closeup|layout=top-left-copy_middle-broken-biscuit-macro|subject=crisp-texture-and-break-edge|accent=large-crisp-symbol|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=product-hero|bg=clean-cream-display-board|camera=multiple-biscuits-standing-front|layout=top-left-copy_middle-product-display|subject=multiple-biscuits-in-display-arrangement|accent=soft-shadow|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-feature|slot={{copy_function_language_4}}|negative=headline-only
+  s5|kind=detail-grid|bg=warm-cream-ingredient-board|camera=vertical-ingredient-panel-stack|layout=top-left-copy_bottom-three-ingredient-panels|subject=raw-material-strips|accent=wheat_oil_egg_images|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=scene-collage|bg=cream-life-scene|camera=two-food-plate-scenes-stacked|layout=top-left-copy_middle-top-plate_bottom-bottom-plate|subject=biscuits-in-breakfast-and-tea-scenes|accent=plates_and_tablecloth|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=scene-note|bg=warm-office-snack-scene|camera=stacked-biscuits-on-table|layout=bottom-left-weak-copy_middle-main-biscuit-stack|subject=office-snack-display|accent=small-badge-and-soft-tabletop|text_mode=weak|text_zone=bottom-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=evidence-panel|bg=light-cream-info-sheet|camera=minimal-product-meta-fields|layout=top-left-copy_middle-info-grid|subject=product-meta-and-consumption-info|accent=wide-negative-space|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

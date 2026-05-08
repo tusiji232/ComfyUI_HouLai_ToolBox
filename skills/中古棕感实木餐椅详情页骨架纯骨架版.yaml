@@ -1,0 +1,113 @@
+name: "中古棕感实木餐椅详情页骨架纯骨架版"
+description: "中古风餐椅、实木软包椅、轻奢化妆凳、棕感家居风格的纯骨架版详情页 skill：保留单椅开场、材质拼页、坐姿工学、抗刮易洁、海绵细节、实木支撑、参数页和场景收尾 8 屏骨架，不承载运行时文案与业务判断。适合实木餐椅、软包靠背椅、轻奢家居单椅详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "中古实木餐椅"
+trigger_words:
+  - "中古实木餐椅"
+  - "棕感靠背椅"
+  - "轻奢化妆凳"
+  - "皮感餐椅"
+  - "软包实木椅"
+weight: 1.0
+tags:
+  - name: "中古实木餐椅"
+    weight: 1.0
+  - name: "棕感靠背椅"
+    weight: 0.99
+  - name: "轻奢化妆凳"
+    weight: 0.98
+  - name: "皮感餐椅"
+    weight: 0.97
+  - name: "软包实木椅"
+    weight: 0.96
+  - name: "小户型家居椅"
+    weight: 0.95
+  - name: "复古家居单椅"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "单椅开场"
+    description: "source_refs:[1]; 功能: 中古家居角落中的单椅英雄页，主体居中偏左，顶部保留柔和标题和副标题。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[single_chair_room_scene, warm_beige_frame, soft_title]"
+  - id: "screen_2"
+    name: "材质拼页"
+    description: "source_refs:[2]; 功能: 多格拼页展示面料、填充、触感等材质信息，保留大标题与局部特写组合。"
+    order: 2
+    prompt_guide: "f_code=F3; screen_kind=detail-grid; style_tokens=[material_collage, fabric_and_fill_closeups, soft_brown_palette]"
+  - id: "screen_3"
+    name: "坐姿工学"
+    description: "source_refs:[3]; 功能: 模特坐姿主图配人体工学角度或受力线标注，版面为大图加两侧说明标签。"
+    order: 3
+    prompt_guide: "f_code=F2+F3; screen_kind=comfort-proof; style_tokens=[seated_model_scene, angle_callouts, ergonomic_labels]"
+  - id: "screen_4"
+    name: "抗刮易洁"
+    description: "source_refs:[4]; 功能: 以局部近景展示表面耐刮和易清洁特性，保留工具接触动作和标题文案区。"
+    order: 4
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[surface_closeup, tool_interaction, easy_clean_material]"
+  - id: "screen_5"
+    name: "海绵细节"
+    description: "source_refs:[5]; 功能: 局部剖面或按压细节说明双层填充与回弹感，标题在上，主体为单块坐垫特写。"
+    order: 5
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[cushion_section_closeup, rebound_fill, warm_brown_detail]"
+  - id: "screen_6"
+    name: "实木支撑"
+    description: "source_refs:[6]; 功能: 双椅并列场景中强调木架稳固和承重，保留中央说明标签与空间留白。"
+    order: 6
+    prompt_guide: "f_code=F2+F3; screen_kind=scene-note; style_tokens=[paired_chairs_scene, solid_wood_frame, centered_labels]"
+  - id: "screen_7"
+    name: "参数页"
+    description: "source_refs:[7]; 功能: 产品参数页采用白底留白和小比例单椅图，尺寸与材质信息集中排列。"
+    order: 7
+    prompt_guide: "f_code=F4; screen_kind=parameter-sheet; style_tokens=[white_info_sheet, small_product_view, parameter_table]"
+  - id: "screen_8"
+    name: "场景收尾"
+    description: "source_refs:[1,6]; 功能: 复用单椅或双椅场景做安静收尾，保留暖调家居氛围和简短总结文案区。"
+    order: 8
+    prompt_guide: "f_code=F2+F6; screen_kind=choice-recap; style_tokens=[quiet_room_closure, single_or_pair_scene, warm_home_finish]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-beige-dining-corner|camera=front-three-quarter-single-chair|layout=top-title_bottom-single-chair-scene|subject=single-upholstered-wood-chair-in-room|accent=arched-wall_and-side-table|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=detail-grid|bg=soft-cream-material-board|camera=multi-panel-material-collage|layout=top-title_bottom-mixed-closeup-grid|subject=upholstery-texture-and-fill-breakdown|accent=small-captions_and-soft-borders|text_mode=strong|text_zone=top-center_and_panel-corners|text_align=center|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-image-only
+  s3|kind=comfort-proof|bg=light-warm-lifestyle-scene|camera=side-view-seated-model|layout=top-title_bottom-model-and-chair|subject=user-seated-on-upholstered-wood-chair|accent=angle-lines_and-ergo-labels|text_mode=strong|text_zone=top-right_and_side-labels|text_align=right|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=macro-closeup|bg=warm-tan-closeup-panel|camera=surface-detail-macro|layout=top-title_bottom-large-material-closeup|subject=scratch-resistant-and-easy-clean-surface|accent=tool_interaction_and-clean-lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=macro-closeup|bg=soft-brown-detail-board|camera=cushion-section-closeup|layout=top-title_bottom-single-cushion-detail|subject=double-layer-cushion-and-rebound-detail|accent=callout-tags_and-soft-shadow|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=scene-note|bg=warm-minimal-dining-scene|camera=front-view-paired-chairs|layout=top-title_bottom-two-chair-scene|subject=paired-wood-chairs-with-stable-frame-focus|accent=centered-badges_and-floor-shadow|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_6}}|negative=no-invented-extra-products
+  s7|kind=parameter-sheet|bg=clean-white-parameter-page|camera=small-product-front-view|layout=top-info_title_middle-parameter-list_bottom-small-chair|subject=chair-parameter-sheet|accent=table-lines_and-light-divider|text_mode=weak|text_zone=top-center|text_align=center|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=choice-recap|bg=quiet-warm-home-scene|camera=single-or-paired-chair-room-view|layout=top-short-copy_bottom-scene-closure|subject=upholstered-wood-chair-in-calm-home-context|accent=soft-window-light_and-simple-props|text_mode=weak|text_zone=top-left|text_align=left|text_density=single-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=single-centered-packshot
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

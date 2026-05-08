@@ -1,0 +1,113 @@
+name: "黑金支撑人体工学椅详情页骨架纯骨架版"
+description: "人体工学椅、久坐支撑椅、黑金功能椅、办公电竞两用椅风格的纯骨架版详情页 skill：保留功能总览、暗场主图、头枕调节、联动释压、坐垫支撑、扶手细节、参数页与金属底座证明 8 屏骨架，不承载运行时文案与业务判断。适合人体工学办公椅、功能电脑椅、电竞办公两用椅详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "黑金工学椅"
+trigger_words:
+  - "黑金工学椅"
+  - "人体工学办公椅"
+  - "久坐支撑椅"
+  - "可调头枕椅"
+  - "功能电脑椅"
+weight: 1.0
+tags:
+  - name: "黑金工学椅"
+    weight: 1.0
+  - name: "人体工学办公椅"
+    weight: 0.99
+  - name: "久坐支撑椅"
+    weight: 0.98
+  - name: "可调头枕椅"
+    weight: 0.97
+  - name: "功能电脑椅"
+    weight: 0.96
+  - name: "铝脚办公椅"
+    weight: 0.95
+  - name: "黑黄信息流椅"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "功能总览"
+    description: "source_refs:[1]; 功能: 四宫格或多模块总览页，集中展示新品卖点与核心结构，黄色边框强视觉引导。"
+    order: 1
+    prompt_guide: "f_code=F1+F3; screen_kind=detail-grid; style_tokens=[feature_overview_grid, yellow_frame, product_cutaways]"
+  - id: "screen_2"
+    name: "暗场主图"
+    description: "source_refs:[2]; 功能: 深色背景中的单椅主视觉页，座椅居中偏前，顶部大标题和小标签形成科技感开场。"
+    order: 2
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[dark_support_hero, centered_chair, yellow_badge]"
+  - id: "screen_3"
+    name: "头枕调节"
+    description: "source_refs:[3]; 功能: 以完整单椅主图展示头枕上下或角度调节，保留上方标题区与调节点标识。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[headrest_adjustment_view, top_copy_block, highlight_markers]"
+  - id: "screen_4"
+    name: "联动释压"
+    description: "source_refs:[4]; 功能: 半剖结构页说明一键躺靠或联动支撑路径，主图大、侧边小标签辅助。"
+    order: 4
+    prompt_guide: "f_code=F3+F5; screen_kind=evidence-panel; style_tokens=[side_cutaway_view, support_path, mechanism_labels]"
+  - id: "screen_5"
+    name: "坐垫支撑"
+    description: "source_refs:[5]; 功能: 坐垫剖面近景展示弹性层次和受力逻辑，版面为大标题配单一切面主图。"
+    order: 5
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[seat_section_closeup, spring_support, yellow_callouts]"
+  - id: "screen_6"
+    name: "扶手细节"
+    description: "source_refs:[6]; 功能: 以 2x2 卡片展示扶手上下调节与部件细节，白底信息流感较强。"
+    order: 6
+    prompt_guide: "f_code=F3+F4; screen_kind=detail-grid; style_tokens=[armrest_detail_grid, white_cards, blue_support_highlight]"
+  - id: "screen_7"
+    name: "参数页"
+    description: "source_refs:[7]; 功能: 单椅参数页收尾，左侧或下方是尺寸线，顶部保留品牌或系列信息条。"
+    order: 7
+    prompt_guide: "f_code=F4; screen_kind=parameter-sheet; style_tokens=[dimension_sheet, front_side_view, top_brand_strip]"
+  - id: "screen_8"
+    name: "金属底座"
+    description: "source_refs:[8]; 功能: 金属脚架特写和强承重证明页，保留大面积金属构件与黄色信息块。"
+    order: 8
+    prompt_guide: "f_code=F3+F6; screen_kind=proof-data; style_tokens=[metal_base_closeup, yellow_info_block, strength_proof]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=detail-grid|bg=white-and-yellow-overview-board|camera=four-panel-feature-collage|layout=top-title_bottom-2x2-feature-grid|subject=chair-core-function-overview|accent=yellow-frame_and-small-cutaways|text_mode=strong|text_zone=top-left_and_panel-bottom|text_align=left|text_density=caption-grid|copy_role=hero-feature|slot={{copy_function_language_1}}|negative=single-image-only
+  s2|kind=hero-opening|bg=dark-tech-gradient|camera=front-centered-chair-hero|layout=top-title_bottom-single-chair|subject=single-ergonomic-chair-in-dark-stage|accent=yellow-badge_and-soft-rim-light|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_2}}|negative=plain-white-packshot
+  s3|kind=evidence-panel|bg=dark-blue-support-board|camera=three-quarter-full-chair-view|layout=top-title_bottom-full-chair-with-adjust-markers|subject=headrest-adjustment-and-upper-back-support|accent=yellow-point-markers_and-light-outline|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=evidence-panel|bg=dark-side-structure-board|camera=side-cutaway-chair-view|layout=top-title_bottom-large-mechanism-view|subject=recline-mechanism-and-back-support-path|accent=support-arrows_and-part-labels|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=macro-closeup|bg=deep-navy-and-cream-section|camera=seat-cushion-cutaway|layout=top-title_bottom-single-section-view|subject=seat-cushion-layer-and-elastic-support|accent=yellow-callouts_and-pressure-path|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=detail-grid|bg=clean-white-control-board|camera=armrest-detail-cards|layout=top-title_bottom-2x2-adjustment-grid|subject=armrest-adjustment-and-side-details|accent=blue-highlight_and-yellow-labels|text_mode=strong|text_zone=top-left_and_card-corners|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=parameter-sheet|bg=clean-light-spec-sheet|camera=front-and-side-dimension-view|layout=top-brand_strip_bottom-parameter-drawing|subject=chair-size-and-adjustment-range-sheet|accent=dimension-lines_and-small-brand-box|text_mode=weak|text_zone=top-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=proof-data|bg=warm-white-and-yellow-proof-board|camera=metal-base-closeup|layout=top-title_bottom-large-base-detail_with_info-block|subject=metal-base-and-load-strength-proof|accent=yellow-data-card_and-metal-texture|text_mode=strong|text_zone=top-left_and_bottom-card|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

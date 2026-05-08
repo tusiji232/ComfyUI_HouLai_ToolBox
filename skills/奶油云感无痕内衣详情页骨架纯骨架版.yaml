@@ -1,0 +1,111 @@
+name: 奶油云感无痕内衣详情页骨架纯骨架版
+description: 无痕内衣、云感文胸、一片式内衣、固定杯 bra 风格的纯骨架版详情页 skill：保留平铺开场、场景单品、侧面杯型、单品支撑、细节拼贴、支撑示意、参数配色和实拍收尾 8 屏骨架，不承载运行时文案与业务判断。适合云感无痕内衣、轻薄杯模内衣、奶油系文胸详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 云感内衣
+trigger_words:
+- 云感内衣
+- 无痕文胸
+- 固定杯内衣
+- 一片式内衣
+- 奶油文胸
+weight: 1.0
+tags:
+- name: 云感内衣
+  weight: 1.0
+- name: 无痕文胸
+  weight: 1.0
+- name: 固定杯内衣
+  weight: 0.99
+- name: 一片式内衣
+  weight: 0.98
+- name: 奶油文胸
+  weight: 0.97
+- name: 平铺实拍
+  weight: 0.96
+- name: 支撑示意
+  weight: 0.95
+- name: 参数配色
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 平铺开场
+  description: 'source_refs:[1]; 功能: 奶油色平铺主图开场，突出一片式杯模与静物氛围。'
+  order: 1
+  prompt_guide: f_code=F1; screen_kind=hero-opening; style_tokens=[flatlay_hero, creamy_palette, tray_composition]
+- id: screen_2
+  name: 场景单品
+  description: 'source_refs:[2]; 功能: 室内陈设中的单品展示页，下方承接功能标签。'
+  order: 2
+  prompt_guide: f_code=F1+F4; screen_kind=product-hero; style_tokens=[interior_display, hanging_bra, function_badges]
+- id: screen_3
+  name: 侧面杯型
+  description: 'source_refs:[3]; 功能: 侧面杯型展示页，强调轮廓和抗菌类材质表达。'
+  order: 3
+  prompt_guide: f_code=F4; screen_kind=detail-collage; style_tokens=[side_cup_profile, rounded_card, soft_shadow]
+- id: screen_4
+  name: 单品支撑
+  description: 'source_refs:[4]; 功能: 单品独立悬浮页，配底部三枚简洁说明卡。'
+  order: 4
+  prompt_guide: f_code=F1+F5; screen_kind=hero-feature; style_tokens=[single_product_isolation, large_title, three_info_boxes]
+- id: screen_5
+  name: 细节拼贴
+  description: 'source_refs:[5]; 功能: 主杯面加底部双细节窗的产品细节拼贴页。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[main_product_card, dual_detail_insets, rounded_panel]
+- id: screen_6
+  name: 支撑示意
+  description: 'source_refs:[6]; 功能: 杯托结构与线稿说明构成的支撑示意页。'
+  order: 6
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[support_diagram, line_sketches, cream_board]
+- id: screen_7
+  name: 参数配色
+  description: 'source_refs:[7]; 功能: 配色样卡加规格信息的参数页。'
+  order: 7
+  prompt_guide: f_code=F3+F5; screen_kind=compare-closure; style_tokens=[color_palette_card, spec_rows, dual_color_display]
+- id: screen_8
+  name: 实拍收尾
+  description: 'source_refs:[8]; 功能: 真实平铺收尾页，延续奶油背景和大标题。'
+  order: 8
+  prompt_guide: f_code=F1; screen_kind=model-closure; style_tokens=[flatlay_closure, creamy_sheet, real_shooting]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=cream-flatlay-board|camera=top-down-product-flatlay|layout=top-left-large-copy_bottom-main-flatlay|subject=single_seamless_bra_flatlay|accent=soft_fabric_fold_and_tray|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=single-centered-packshot
+  s2|kind=product-hero|bg=warm-room-display-board|camera=single-product-staged-in-interior|layout=top-title_middle-main-product_bottom-function-badges|subject=one_bra_displayed_in_soft_room_scene|accent=rounded-feature-tags|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=plain-white-packshot
+  s3|kind=detail-grid|bg=cream-rounded-card|camera=side-cup-profile-closeup|layout=top-title_middle-large-side-profile_bottom-short-note|subject=cup_shape_and_side_support|accent=soft-outline-window|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=hero-feature|bg=light-cream-single-product-board|camera=isolated-product-packshot|layout=top-large-title_middle-product_bottom-three-info-boxes|subject=single_bra_shape_and_support_points|accent=three_small_square_notes|text_mode=strong|text_zone=top-right|text_align=right|text_density=bullet-list|copy_role=hero-feature|slot={{copy_function_language_4}}|negative=headline-only
+  s5|kind=detail-grid|bg=white-card-with-cream-borders|camera=main-product-card-plus-two-detail-insets|layout=top-title_middle-main-card_bottom-two-detail-boxes|subject=cup_surface_and_inner_structure_details|accent=round-icon-row|text_mode=strong|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=single-centered-packshot
+  s6|kind=evidence-panel|bg=cream-support-board|camera=product-photo-plus-support-line-diagram|layout=top-title_middle-product_card_bottom-three-diagram-boxes|subject=support_principle_and_cup_structure|accent=thin-illustration-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_6}}|negative=no-multi-panel-collage
+  s7|kind=compare-closure|bg=cream-parameter-card|camera=color-chip-card-plus-spec-table|layout=left-color-card_right-spec-rows_bottom-size-note|subject=colorway_and_basic_spec_information|accent=dual_color_reference|text_mode=strong|text_zone=right-center|text_align=left|text_density=data-table|copy_role=choice-recap|slot={{copy_function_language_7}}|negative=no-compare-layout
+  s8|kind=model-closure|bg=cream-real-shoot-board|camera=top-down-flatlay-real-photo|layout=top-right-copy_bottom-large-real-shooting-card|subject=single_bra_real_shooting_flatlay|accent=folded_sheet_texture|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

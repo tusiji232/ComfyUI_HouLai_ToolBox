@@ -1,0 +1,113 @@
+name: "极简云感直排沙发详情页骨架纯骨架版"
+description: "极简云感直排沙发、科技布客厅沙发、宽坐深沙发、大扶手沙发风格的纯骨架版详情页 skill：保留情绪开场、图标卖点、扶手实证、躺感场景、座包结构、防泼水特写、坐垫剖面与大坐面收尾 8 屏骨架，不承载运行时文案与业务判断。适合直排沙发、客厅布沙发、科技布沙发、宽坐深沙发详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "云感直排沙发"
+trigger_words:
+  - "云感直排沙发"
+  - "科技布沙发"
+  - "宽坐深沙发"
+  - "大扶手沙发"
+  - "客厅直排沙发"
+weight: 1.0
+tags:
+  - name: "云感直排沙发"
+    weight: 1.0
+  - name: "科技布沙发"
+    weight: 0.99
+  - name: "极简客厅沙发"
+    weight: 0.98
+  - name: "宽坐深沙发"
+    weight: 0.97
+  - name: "大扶手沙发"
+    weight: 0.96
+  - name: "直排布沙发"
+    weight: 0.95
+  - name: "羽绒感沙发"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "情绪开场"
+    description: "source_refs:[1]; 功能: 深色客厅空间中的氛围开场页，主体横向铺开，保留人物躺靠和左上大标题。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[moody_living_room, wide_sofa_scene, lifestyle_title]"
+  - id: "screen_2"
+    name: "图标卖点"
+    description: "source_refs:[2]; 功能: 浅灰白底卖点面板页，上方短标题，下方用规则图标矩阵整理功能信息。"
+    order: 2
+    prompt_guide: "f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[icon_matrix_board, white_card, concise_summary]"
+  - id: "screen_3"
+    name: "扶手实证"
+    description: "source_refs:[3]; 功能: 人物与扶手互动的近景证明页，局部叠加仪表或放大圆框，强化实测感。"
+    order: 3
+    prompt_guide: "f_code=F4; screen_kind=on-body-proof; style_tokens=[armrest_interaction, circular_insets, measured_proof]"
+  - id: "screen_4"
+    name: "躺感场景"
+    description: "source_refs:[4]; 功能: 人物整身躺靠场景页，主体靠下铺满画面，顶部保留卖点标题。"
+    order: 4
+    prompt_guide: "f_code=F2; screen_kind=scene-note; style_tokens=[recline_pose_scene, top_copy, soft_room_depth]"
+  - id: "screen_5"
+    name: "座包结构"
+    description: "source_refs:[5]; 功能: 单侧人物坐靠场景配结构标注点，形成座包与靠包的分层说明页。"
+    order: 5
+    prompt_guide: "f_code=F3+F4; screen_kind=annotated-breakdown; style_tokens=[seat_structure_callouts, side_pose_scene, line_annotations]"
+  - id: "screen_6"
+    name: "防泼水特写"
+    description: "source_refs:[6]; 功能: 面料微距特写页，液体冲刷成为唯一动作主体，标题置于上部。"
+    order: 6
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[fabric_macro, splash_action, dark_texture]"
+  - id: "screen_7"
+    name: "坐垫剖面"
+    description: "source_refs:[7]; 功能: 主体场景里叠加半透明剖面或浮层，说明双层坐感和内部结构。"
+    order: 7
+    prompt_guide: "f_code=F4; screen_kind=comfort-proof; style_tokens=[cutaway_overlay, sofa_scene, layered_cushion]"
+  - id: "screen_8"
+    name: "大坐面收尾"
+    description: "source_refs:[8]; 功能: 回归完整主产品收尾页，构图更纯净，突出大坐面与横向尺度。"
+    order: 8
+    prompt_guide: "f_code=F1+F2; screen_kind=hero-feature; style_tokens=[clean_full_sofa, big_seat_closure, minimal_top_copy]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=moody-gray-living-room|camera=front-wide-scene-view|layout=top-left-title_bottom-wide-sofa-scene|subject=one-dominant-sofa-in-lifestyle-room|accent=lifestyle-figure_and-arched-shelf|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=soft-gray-white-board|camera=front-flat-panel-view|layout=top-left-title_bottom-icon-grid-card|subject=function-summary-icon-board|accent=rounded-white-card_and-six-icon-matrix|text_mode=strong|text_zone=top-left_and-icon-bottom|text_align=left|text_density=caption-grid|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-image-only
+  s3|kind=on-body-proof|bg=dark-neutral-room-corner|camera=half-body-close-scene|layout=top-left-copy_bottom-armrest-interaction|subject=sofa-armrest-proof-scene|accent=device-inset_and-circular-focus-rings|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=scene-note|bg=soft-gray-lifestyle-room|camera=front-wide-recline-view|layout=top-left-title_bottom-full-recline-scene|subject=sofa-recline-comfort-scene|accent=wide-seat-span_and-clean-wall-depth|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=annotated-breakdown|bg=muted-lifestyle-room|camera=three-quarter-seat-close-scene|layout=top-left-title_bottom-seat-structure-scene|subject=seat-bag-and-backrest-layered-breakdown|accent=line-callouts_and-side-labels|text_mode=strong|text_zone=top-left_and-right-edge|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=macro-closeup|bg=dark-fabric-texture|camera=extreme-closeup-splash-view|layout=top-left-copy_bottom-large-texture-action|subject=water-on-fabric-macro-detail|accent=liquid-motion_and-grain-texture|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_6}}|negative=plain-white-packshot
+  s7|kind=comfort-proof|bg=warm-neutral-living-room|camera=front-cutaway-scene-view|layout=top-left-title_bottom-sofa-scene_with-overlay|subject=layered-seat-cushion-proof-scene|accent=transparent-cutaway_overlay_and-standing-figure-context|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=hero-feature|bg=soft-gray-minimal-room|camera=front-wide-clean-view|layout=top-left-copy_bottom-single-sofa-closure|subject=single-main-sofa-wide-seat-poster|accent=clean-shadow_and-minimal-wall-lines|text_mode=weak|text_zone=top-left|text_align=left|text_density=single-line|copy_role=hero-feature|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

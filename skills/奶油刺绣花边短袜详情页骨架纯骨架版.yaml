@@ -1,0 +1,111 @@
+name: 奶油刺绣花边短袜详情页骨架纯骨架版
+description: 女袜短袜、刺绣花边袜、奶油木调、社媒卡片风格的纯骨架版详情页 skill：保留上脚开场、配色系列、社媒截图、手持质感、上脚卡片、多色平铺、袜口特写和刺绣细节 8 屏骨架，不承载运行时文案与业务判断。适合花边短袜、少女袜、刺绣袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 刺绣花边袜
+trigger_words:
+- 刺绣花边袜
+- 花边短袜
+- 少女短袜
+- 蝴蝶结袜
+- 纯棉刺绣袜
+weight: 1.0
+tags:
+- name: 刺绣花边袜
+  weight: 1.0
+- name: 花边短袜
+  weight: 0.99
+- name: 少女短袜
+  weight: 0.98
+- name: 蝴蝶结袜
+  weight: 0.97
+- name: 纯棉刺绣袜
+  weight: 0.96
+- name: 奶油木调袜
+  weight: 0.95
+- name: 社媒卡片袜
+  weight: 0.94
+- name: 鞋口甜感袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 上脚开场
+  description: 'source_refs:[1]; 功能: 低帮轻鞋与奶油短袜的上脚开场页，鞋体完整且不抢袜口主体。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[complete_low_cut_shoe, warm_wood_floor, cute_sock_hero]
+- id: screen_2
+  name: 配色系列
+  description: 'source_refs:[2]; 功能: 中上部标题加单只袜体陈列的系列页，保留竖向奶油留白。'
+  order: 2
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[series_title, single_product_column, soft_blank_space]
+- id: screen_3
+  name: 社媒截图
+  description: 'source_refs:[3]; 功能: 社交媒体截图框中的细节页，突出刺绣和袜口褶边。'
+  order: 3
+  prompt_guide: f_code=F6; screen_kind=social-card; style_tokens=[phone_frame, closeup_detail, cream_ui_card]
+- id: screen_4
+  name: 手持质感
+  description: 'source_refs:[4]; 功能: 手持拉近展示页，保留黑白配色陪衬和局部编织纹理。'
+  order: 4
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[handheld_texture, knit_surface, side_color_ref]
+- id: screen_5
+  name: 上脚卡片
+  description: 'source_refs:[5]; 功能: 竖版卡片式上脚页，保留地板场景和下方简短标题。'
+  order: 5
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[vertical_card, on_foot_pose, warm_floor_scene]
+- id: screen_6
+  name: 多色平铺
+  description: 'source_refs:[6]; 功能: 桌面平铺加多色阵列的系列页，保留手机和杯子等生活化道具。'
+  order: 6
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[desktop_flatlay, color_lineup, lifestyle_props]
+- id: screen_7
+  name: 袜口特写
+  description: 'source_refs:[7]; 功能: 完整鞋口与褶边近景页，突出卷边高度和刺绣位置。'
+  order: 7
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[complete_shoe_upper_closeup, frill_edge, small_embroidery]
+- id: screen_8
+  name: 刺绣细节
+  description: 'source_refs:[8]; 功能: 单只袜口与刺绣图案的近景收尾页，保留低干扰背景。'
+  order: 8
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[embroidery_macro, cream_sock_closeup, low_noise_bg]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm_wood_surface|camera=close_on_foot_pairing_with_complete_low_cut_shoe|layout=top_small_copy_bottom_large_leg_closeup|subject=single_pair_cute_short_socks_on_foot|accent=complete_light_shoe_and_soft_leg_pose|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=cropped-footwear-or-bulky-shoe
+  s2|kind=evidence-panel|bg=clean_cream_board|camera=single_sock_series_display|layout=top_title_middle_vertical_product_bottom_brief_note|subject=single_embroidery_sock_with_series_spacing|accent=airy_margins_and_soft_shadow|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-image-only
+  s3|kind=scene-collage|bg=cream_ui_social_card|camera=detail_crop_inside_phone_frame|layout=top_ui_header_middle_detail_card_bottom_small_caption|subject=embroidery_and_frill_detail_in_social_frame|accent=mobile_ui_edges|text_mode=weak|text_zone=bottom-left|text_align=left|text_density=caption-grid|copy_role=scene-note|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=macro-closeup|bg=soft_neutral_handheld_scene|camera=handheld_knit_texture_closeup|layout=left_copy_right_large_fabric_and_side_ref|subject=single_sock_texture_and_cuff_shape|accent=small_color_reference_piece|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_4}}|negative=no-multi-panel-collage
+  s5|kind=on-body-proof|bg=warm_floor_card|camera=vertical_on_foot_pose|layout=top_card_header_middle_full_sock_pose_bottom_brief_note|subject=single_pair_cute_short_socks_in_daily_pose|accent=card_frame_and_floor_reflection|text_mode=weak|text_zone=bottom-left|text_align=left|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=headline-only
+  s6|kind=scene-collage|bg=soft_desk_flatlay|camera=top_view_color_lineup|layout=top_small_ui_middle_multi_color_flatlay_bottom_brief_copy|subject=multi_color_short_sock_lineup_on_table|accent=phone_cup_and_lifestyle_props|text_mode=weak|text_zone=bottom-center|text_align=center|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=on-body-proof|bg=warm_complete_shoe_closeup_scene|camera=complete_shoe_upper_and_sock_cuff_macro|layout=top_small_header_middle_large_cuff_closeup_bottom_note|subject=single_sock_frill_and_embroidery_with_full_shoe_upper|accent=full_shoe_upper_and_leg_curve|text_mode=weak|text_zone=bottom-left|text_align=left|text_density=one-line|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=broken-shoe-shape-or-cropped-upper
+  s8|kind=macro-closeup|bg=deep_warm_floor_blur|camera=single_sock_embroidery_macro|layout=top_small_ui_middle_large_embroidery_detail_bottom_soft_caption|subject=embroidery_icon_and_frill_edge_closeup|accent=soft_floor_blur|text_mode=placeholder|text_zone=top-left|text_align=left|text_density=one-line|copy_role=material-note|slot={{copy_function_language_8}}|negative=headline-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

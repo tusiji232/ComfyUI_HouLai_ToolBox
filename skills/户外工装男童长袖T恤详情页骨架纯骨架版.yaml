@@ -1,0 +1,127 @@
+name: 户外工装男童长袖T恤详情页骨架纯骨架版
+description: 男童长袖 T 恤、工装风童装、宽松打底衫、户外上衣风格的纯骨架版详情页 skill：保留面料开场、40 支技术页、侧身场景、场景清单、细节宫格、模特信息、背身展示和侧身收尾 8 屏骨架，不承载运行时文案与业务判断。适合男童工装长袖、宽松打底衫、户外童装上衣详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 工装长T
+trigger_words:
+- 工装长T
+- 男童长袖T
+- 宽松打底衫
+- 户外童装
+- 男童上衣
+weight: 1.0
+tags:
+- name: 工装长T
+  weight: 1.0
+- name: 男童长袖T
+  weight: 1.0
+- name: 宽松打底衫
+  weight: 0.99
+- name: 户外童装
+  weight: 0.98
+- name: 男童上衣
+  weight: 0.97
+- name: 40支面料
+  weight: 0.96
+- name: 场景清单
+  weight: 0.95
+- name: 模特信息
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 面料开场
+  description: 'source_refs:[1]; 功能: 大面积浅色面料微距开场页，保留极简底部三点说明。'
+  order: 1
+  prompt_guide: f_code=F1+F4; screen_kind=hero-opening; style_tokens=[fabric_hero, soft_cream_macro, minimalist_footer]
+- id: screen_2
+  name: 技术数字
+  description: 'source_refs:[2]; 功能: 大数字技术页，结合纤维结构示意。'
+  order: 2
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[big_number_panel, fiber_diagram, blue_gradient]
+- id: screen_3
+  name: 侧身场景
+  description: 'source_refs:[3]; 功能: 户外侧身模特页，强调宽松版型和工装感。'
+  order: 3
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[side_view_child_model, outdoor_wall, relaxed_fit]
+- id: screen_4
+  name: 场景清单
+  description: 'source_refs:[4]; 功能: 四个生活场景小卡构成的用途说明页。'
+  order: 4
+  prompt_guide: f_code=F5; screen_kind=compare-closure; style_tokens=[four_scene_cards, compact_grid, dark_blue_info_box]
+- id: screen_5
+  name: 细节宫格
+  description: 'source_refs:[5]; 功能: 领口、印花、袖口三格细节页。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[three_detail_cards, cream_board, closeup_parts]
+- id: screen_6
+  name: 模特信息
+  description: 'source_refs:[6]; 功能: 模特头像、尺码信息和体重区间组合页。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[avatar_cards, size_table, weight_band]
+- id: screen_7
+  name: 背身展示
+  description: 'source_refs:[7]; 功能: 单模特背身展示页，保留照片边框和街头质感。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=product-hero; style_tokens=[back_view_child_model, street_shadow, photo_frame]
+- id: screen_8
+  name: 侧身收尾
+  description: 'source_refs:[8]; 功能: 侧身单模特收尾页，延续低饱和户外氛围。'
+  order: 8
+  prompt_guide: f_code=F1+F6; screen_kind=model-closure; style_tokens=[side_child_model_closure, wall_shadow, calm_finish]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=soft-cream-fabric-board|camera=large-fabric-macro-only|layout=top-left-weak-copy_middle-large-texture_bottom-three-footnotes|subject=soft_cotton_texture_opening|accent=thin-bottom-feature-row|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_1}}|negative=headline-only
+
+  s2|kind=evidence-panel|bg=blue-tech-gradient-board|camera=big-number-plus-fiber-diagram|layout=top-title_middle-large-number_bottom-two-diagram-boxes|subject=fabric_count_and_structure_explanation|accent=white-fiber-icons|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=on-body-proof|bg=outdoor-wall-scene|camera=single-child-model-side-view|layout=top-right-copy_bottom-main-model|subject=relaxed_fit_on_one_child_model|accent=shadowed_wall_texture|text_mode=strong|text_zone=top-right|text_align=right|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=plain-white-packshot
+
+  s4|kind=compare-closure|bg=white-board-with-dark-scene-card|camera=four-small-scene-cards|layout=right-compact-scene-grid_left-open-space|subject=multiple_daily_usage_scene_cards|accent=numbered-badges|text_mode=strong|text_zone=right-top|text_align=left|text_density=bullet-list|copy_role=choice-recap|slot={{copy_function_language_4}}|negative=no-compare-layout
+
+  s5|kind=detail-grid|bg=cream-detail-board|camera=three-garment-detail-cards|layout=left-large-detail_top-right-two-small-details|subject=collar_print_and_cuff_details|accent=blue-caption-strip|text_mode=weak|text_zone=bottom-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=single-image-only
+
+  s6|kind=spec-panel|bg=white-info-board|camera=avatar-cards-plus-size-table|layout=top-avatar-list_middle-info-rows_bottom-size-chart|subject=child_model_profile_and_size_information|accent=rounded-weight-badges|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=headline-only
+
+  s7|kind=product-hero|bg=street-photo-frame-board|camera=single-child-model-back-view|layout=top-left-weak-copy_bottom-main-photo|subject=back_graphic_and_loose_fit_display|accent=thin-photo-border|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=plain-white-packshot
+
+  s8|kind=model-closure|bg=outdoor-wall-shadow-board|camera=single-child-model-side-standing|layout=top-right-weak-copy_bottom-main-photo|subject=side_silhouette_of_relaxed_long_sleeve_top|accent=soft_ground_shadow|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=single-centered-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

@@ -1,0 +1,111 @@
+name: 简米抗菌男士船袜详情页骨架纯骨架版
+description: 男袜船袜、抗菌船袜、简米棉袜、轻商务证明风格的纯骨架版详情页 skill：保留上脚开场、配色阵列、侧身展示、织面特写、结构双卡、堆叠展示、脚弓包裹和细节拼图 8 屏骨架，不承载运行时文案与业务判断。适合男士船袜、低帮短袜、纯棉抗菌袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 男士船袜
+trigger_words:
+- 男士船袜
+- 低帮短袜
+- 纯棉抗菌袜
+- 男短袜
+- 船袜男
+weight: 1.0
+tags:
+- name: 男士船袜
+  weight: 1.0
+- name: 低帮短袜
+  weight: 0.99
+- name: 纯棉抗菌袜
+  weight: 0.98
+- name: 男短袜
+  weight: 0.97
+- name: 船袜男
+  weight: 0.96
+- name: 脚弓包裹袜
+  weight: 0.95
+- name: 轻商务短袜
+  weight: 0.94
+- name: 多色船袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 上脚开场
+  description: 'source_refs:[1]; 功能: 长裤与深色船袜的上脚页，突出低帮露脚背和防滑场景。'
+  order: 1
+  prompt_guide: f_code=F1+F2; screen_kind=hero-opening; style_tokens=[low_cut_on_foot, neutral_pants, anti_slip_pose]
+- id: screen_2
+  name: 配色阵列
+  description: 'source_refs:[2]; 功能: 多色船袜半圆阵列页，突出配色系列。'
+  order: 2
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[arched_lineup, neutral_series, soft_shadow]
+- id: screen_3
+  name: 侧身展示
+  description: 'source_refs:[3]; 功能: 灰袜侧身上脚页，保留俯视斜向腿部构图。'
+  order: 3
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[side_leg_pose, low_cut_shape, beige_floor]
+- id: screen_4
+  name: 织面特写
+  description: 'source_refs:[4]; 功能: 黑灰织面大特写页，突出纱线细节和大留白标题。'
+  order: 4
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[dark_knit_macro, soft_gradient_shadow, large_title_space]
+- id: screen_5
+  name: 结构双卡
+  description: 'source_refs:[5]; 功能: 两张结构小卡并列的信息页，保留网孔与支撑关系。'
+  order: 5
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[dual_feature_cards, airy_spacing, white_board]
+- id: screen_6
+  name: 堆叠展示
+  description: 'source_refs:[6]; 功能: 多双袜体堆叠页，保留上部标题与下部产品塔。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[stacked_lineup, top_copy, compact_product_tower]
+- id: screen_7
+  name: 脚弓包裹
+  description: 'source_refs:[7]; 功能: 手拉袜口的上脚页，突出脚弓和袜身弹力。'
+  order: 7
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[arch_wrap_pose, hand_interaction, side_leg_crop]
+- id: screen_8
+  name: 细节拼图
+  description: 'source_refs:[8]; 功能: 多格局部细节页，保留面料、袜口和色差对照。'
+  order: 8
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[detail_collage, multi_panel_review, muted_palette]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=soft_beige_floor_with_neutral_pants|camera=low_cut_sock_on_foot_closeup|layout=left_copy_right_large_leg_pose|subject=single_mens_boat_sock_in_daily_wear|accent=trouser_hem_and_floor_shadow|text_mode=strong|text_zone=left-side|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=clean_cream_series_board|camera=arched_multi_color_lineup|layout=top_copy_middle_centered_series_bottom_brief_note|subject=multi_color_mens_boat_sock_series|accent=soft_ground_shadow|text_mode=strong|text_zone=top-left|text_align=left|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=on-body-proof|bg=light_beige_studio_floor|camera=side_leg_pose_with_low_cut_sock|layout=top_copy_middle_large_side_pose_bottom_small_note|subject=single_boat_sock_low_cut_profile_on_body|accent=ankle_curve_and_soft_trouser_fold|text_mode=weak|text_zone=top-right|text_align=left|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=macro-closeup|bg=dark_knit_texture_board|camera=large_fabric_macro|layout=top_copy_middle_texture_block_bottom_small_note|subject=mens_boat_sock_yarn_texture_closeup|accent=soft_light_gradient|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_4}}|negative=no-multi-panel-collage
+  s5|kind=evidence-panel|bg=white_feature_card_board|camera=two_small_information_cards|layout=top_copy_middle_two_feature_cards_bottom_small_note|subject=mesh_zone_and_support_structure_overview|accent=thin_dividers_and_airy_spacing|text_mode=strong|text_zone=left-side|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=evidence-panel|bg=soft_beige_product_tower_board|camera=stacked_sock_lineup|layout=top_title_middle_compact_stack_bottom_brief_note|subject=multi_pair_boat_sock_stack_display|accent=muted_color_layers|text_mode=strong|text_zone=top-right|text_align=left|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=on-body-proof|bg=clean_light_pose_board|camera=hand_adjusting_low_cut_sock|layout=top_copy_middle_large_arch_pose_bottom_small_note|subject=arch_support_and_stretch_for_single_boat_sock|accent=hand_interaction_and_leg_crop|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=detail-grid|bg=white_detail_review_board|camera=multi_panel_texture_and_color_collage|layout=top_copy_middle_2x2_detail_grid_bottom_small_labels|subject=multi_panel_review_of_cuff_texture_and_colorways|accent=thin_grid_lines_and_muted_tone_blocks|text_mode=strong|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_8}}|negative=single-image-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

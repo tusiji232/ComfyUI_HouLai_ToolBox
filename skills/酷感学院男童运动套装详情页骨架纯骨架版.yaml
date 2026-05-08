@@ -1,0 +1,127 @@
+name: 酷感学院男童运动套装详情页骨架纯骨架版
+description: 男童运动套装、学院童装、春装两件套、帅气童装风格的纯骨架版详情页 skill：保留前后双模特开场、多色整套、面料对比、前后设计、单色细节、室内展示、尺码表和模特实拍 8 屏骨架，不承载运行时文案与业务判断。适合男童运动套装、春装两件套、学院风童装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 学院套装
+trigger_words:
+- 学院套装
+- 男童运动套装
+- 春装两件套
+- 帅气童装
+- 男童套装
+weight: 1.0
+tags:
+- name: 学院套装
+  weight: 1.0
+- name: 男童运动套装
+  weight: 1.0
+- name: 春装两件套
+  weight: 0.99
+- name: 帅气童装
+  weight: 0.98
+- name: 男童套装
+  weight: 0.97
+- name: 前后双模特
+  weight: 0.96
+- name: 多色整套
+  weight: 0.95
+- name: 尺码表
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 前后开场
+  description: 'source_refs:[1]; 功能: 前后双模特同屏开场，突出整套搭配和包袋道具。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[front_back_duo, set_styling, white_space]
+- id: screen_2
+  name: 多色整套
+  description: 'source_refs:[2]; 功能: 三种颜色整套并列页，强化一套搭好的选择感。'
+  order: 2
+  prompt_guide: f_code=F5+F6; screen_kind=compare-closure; style_tokens=[three_colorways, lineup_display, white_board]
+- id: screen_3
+  name: 面料对比
+  description: 'source_refs:[3]; 功能: 紫色面料对比页，底部承接双材质对照。'
+  order: 3
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[fabric_compare, purple_board, dual_material_boxes]
+- id: screen_4
+  name: 前后设计
+  description: 'source_refs:[4]; 功能: 前后双模特设计款页，配小型细节标签。'
+  order: 4
+  prompt_guide: f_code=F5+F6; screen_kind=compare-closure; style_tokens=[front_back_child_models, design_notes, clean_layout]
+- id: screen_5
+  name: 单色细节
+  description: 'source_refs:[5]; 功能: 单色套装模特页，展示肩部和裤腰局部。'
+  order: 5
+  prompt_guide: f_code=F2+F4; screen_kind=on-body-proof; style_tokens=[single_child_model_full_look, two_detail_bubbles, home_scene]
+- id: screen_6
+  name: 室内展示
+  description: 'source_refs:[6]; 功能: 室内空间中的正反面整套展示页。'
+  order: 6
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[indoor_dual_view, room_prop, inset_detail]
+- id: screen_7
+  name: 尺码信息
+  description: 'source_refs:[7]; 功能: 规格说明和尺码表信息页。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[fabric_note, size_chart, recommendation_band]
+- id: screen_8
+  name: 模特实拍
+  description: 'source_refs:[8]; 功能: 单模特实拍收尾页，保留竖向卡片构图。'
+  order: 8
+  prompt_guide: f_code=F1+F6; screen_kind=model-closure; style_tokens=[real_shoot_closure, single_child_model, white_room]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=clean-white-studio|camera=front-and-back-dual-child-models|layout=top-left-copy_bottom-two-models|subject=one_sport_set_shown_from_two_angles|accent=bag_prop_and_soft_pastel_shadow|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=compare-closure|bg=white-lineup-board|camera=three-full-look-colorways|layout=top-center-copy_bottom-three-look-lineup|subject=multiple_colorways_of_one_set|accent=small-directional-badges|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_2}}|negative=no-compare-layout
+
+  s3|kind=evidence-panel|bg=purple-fabric-proof-board|camera=large-fabric-card-with-compare-insets|layout=top-right-copy_middle-main-fabric_card_bottom-two-compare-boxes|subject=fabric_surface_and_material_compare|accent=small-cloud-badge|text_mode=strong|text_zone=top-right|text_align=right|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_3}}|negative=single-centered-packshot
+
+  s4|kind=compare-closure|bg=white-design-board|camera=front-and-back-dual-child-models|layout=top-right-copy_bottom-two-models|subject=design_details_from_front_and_back|accent=small-floating-labels|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_4}}|negative=no-multi-panel-collage
+
+  s5|kind=on-body-proof|bg=white-home-scene-board|camera=single-child-model-full-look|layout=top-left-copy_bottom-main-model_bottom-two-detail-bubbles|subject=one_colorway_full_look_and_details|accent=shoulder_and_waist_detail_bubbles|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=plain-white-packshot
+
+  s6|kind=scene-collage|bg=indoor-room-board|camera=front-and-back-dual-view-in-room|layout=left-main-dual-view_right-small-detail-inset|subject=indoor_full_look_display|accent=room_props_and_detail_window|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=spec-panel|bg=white-info-board|camera=spec-note-plus-size-chart|layout=top-fabric-note_middle-size-table_bottom-recommendation-band|subject=set_spec_and_size_information|accent=blue_recommendation_band|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=model-closure|bg=white-room-photo-board|camera=single-child-model-back-leaning-shot|layout=top-profile-strip_bottom-large-photo|subject=one_child_model_in_real_shooting_scene|accent=portrait-info-pill|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=plain-white-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

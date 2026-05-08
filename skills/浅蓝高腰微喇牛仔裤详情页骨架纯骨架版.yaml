@@ -1,0 +1,127 @@
+name: 浅蓝高腰微喇牛仔裤详情页骨架纯骨架版
+description: 女装微喇牛仔裤、浅蓝高腰、修身长腿、海报式陈列风格的纯骨架版详情页 skill：保留海报开场、面料透气、单模特主图、包容显瘦、前腰细节、后臀细节、裤脚微喇和产品信息表 8 屏骨架，不承载运行时文案与业务判断。适合女装微喇裤、修身牛仔裤、小个子显腿长下装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 微喇牛仔裤
+trigger_words:
+- 微喇牛仔裤
+- 喇叭牛仔裤
+- 高腰牛仔裤
+- 修身牛仔裤
+- 显瘦长裤
+weight: 1.0
+tags:
+- name: 微喇牛仔裤
+  weight: 1.0
+- name: 喇叭牛仔裤
+  weight: 0.99
+- name: 高腰牛仔裤
+  weight: 0.98
+- name: 修身牛仔裤
+  weight: 0.97
+- name: 显瘦长裤
+  weight: 0.96
+- name: 浅蓝微喇
+  weight: 0.95
+- name: 小个子穿搭
+  weight: 0.94
+- name: 长腿版型
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 海报开场
+  description: 'source_refs:[1]; 功能: 大标题海报页，左侧全身模特搭配右侧腰臀局部特写。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[poster_layout, full_body_plus_crop, white_pink_board]
+- id: screen_2
+  name: 透气面料
+  description: 'source_refs:[2]; 功能: 腰部拉伸或局部特写页，保留顶部功能标签和竖版细节照片。'
+  order: 2
+  prompt_guide: f_code=F5; screen_kind=material-proof; style_tokens=[stretch_detail, vertical_photo, top_feature_tabs]
+- id: screen_3
+  name: 主图展示
+  description: 'source_refs:[3]; 功能: 单模特正面展示页，保留极简背景和低密度竖排辅助文字。'
+  order: 3
+  prompt_guide: f_code=F6; screen_kind=product-hero; style_tokens=[single_adult_model, minimal_bg, vertical_side_text]
+- id: screen_4
+  name: 包容显瘦
+  description: 'source_refs:[4]; 功能: 正面全身模特配右侧特性列，表达收腹、包容和腿长延展。'
+  order: 4
+  prompt_guide: f_code=F2+F6; screen_kind=fit-callout; style_tokens=[front_adult_model, right_feature_stack, airy_layout]
+- id: screen_5
+  name: 前腰细节
+  description: 'source_refs:[5]; 功能: 前腰与门襟局部页，保留左右短注释和细节放大结构。'
+  order: 5
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[front_waist_crop, side_labels, clean_white_board]
+- id: screen_6
+  name: 后臀细节
+  description: 'source_refs:[6]; 功能: 后臀和口袋特写页，突出后腰线条和结构说明。'
+  order: 6
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[back_pocket_crop, bilateral_notes, pale_blue_panel]
+- id: screen_7
+  name: 裤脚微喇
+  description: 'source_refs:[7]; 功能: 裤脚与鞋面组合页，保留微喇裤脚局部和右侧说明文案。'
+  order: 7
+  prompt_guide: f_code=F3; screen_kind=detail-panel; style_tokens=[hem_closeup, shoe_pairing, side_paragraph]
+- id: screen_8
+  name: 产品信息
+  description: 'source_refs:[8]; 功能: 顶部参数卡加下部尺码表的信息页，保持理性收尾。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[top_meta_card, large_table, simple_tabs]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=fashion_poster_clean_white_board|camera=full_body_adult_model_plus_hip_crop|layout=left_large_model_right_detail_crop_top_title|subject=single_adult_model_in_micro_flare_denim|accent=soft_pink_badges|text_mode=strong|text_zone=top-left_and_bottom-right|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=material-proof|bg=white_feature_board|camera=waist_stretch_or_detail_vertical_closeup|layout=top_feature_tabs_middle_tall_photo_bottom_small_labels|subject=stretch_and_breathable_denim_area|accent=small_box_tags|text_mode=strong|text_zone=top-band|text_align=center|text_density=badge-row|copy_role=material-note|slot={{copy_function_language_2}}|negative=single-image-only
+
+  s3|kind=product-hero|bg=clean_white_studio|camera=single_full_body_adult_model_front_view|layout=left_vertical_note_center_model_right_breathing_room|subject=single_adult_model_in_high_waist_flare_denim|accent=thin_vertical_text_strip|text_mode=weak|text_zone=left-side|text_align=left|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_3}}|negative=headline-only
+
+  s4|kind=on-body-hero|bg=airy_white_editorial_board|camera=front_adult_model_with_right_feature_column|layout=left_large_model_right_benefit_stack|subject=single_adult_model_showing_slimming_fit|accent=round_badges_and_small_icons|text_mode=strong|text_zone=right-column|text_align=left|text_density=bullet-list|copy_role=hero-feature|slot={{copy_function_language_4}}|negative=single-centered-packshot
+
+  s5|kind=macro-closeup|bg=white_detail_board|camera=front_waist_and_zipper_crop|layout=left_large_crop_right_two_callout_blocks|subject=front_waist_structure_detail|accent=small_pointer_labels|text_mode=strong|text_zone=right-side|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=single-image-only
+
+  s6|kind=macro-closeup|bg=pale_blue_white_detail_board|camera=back_hip_and_pocket_crop|layout=left_copy_right_large_back_crop|subject=back_yoke_and_pocket_detail|accent=thin_underline_markers|text_mode=strong|text_zone=left_center|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-image-only
+
+  s7|kind=detail-grid|bg=white_minimal_hem_board|camera=hem_and_shoe_closeup|layout=left_large_hem_photo_right_short_note|subject=micro_flare_hem_and_shoe_pairing|accent=small_side_labels|text_mode=strong|text_zone=right-side|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=single-image-only
+
+  s8|kind=spec-panel|bg=white_product_info_panel|camera=meta_card_above_size_table|layout=top_meta_card_middle_large_table_bottom_small_note|subject=product_meta_and_size_data|accent=blue_gray_tabs|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-centered-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

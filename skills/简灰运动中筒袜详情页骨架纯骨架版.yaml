@@ -1,0 +1,111 @@
+name: 简灰运动中筒袜详情页骨架纯骨架版
+description: 男袜中筒袜、运动中筒袜、简灰拼色袜、功能网格风格的纯骨架版详情页 skill：保留侧身开场、正面双只、深色分款、阳光棉感、纱线抗球、优势网格、四格功能和上脚收尾 8 屏骨架，不承载运行时文案与业务判断。适合男士中筒袜、运动棉袜、拼色短袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 男士中筒袜
+trigger_words:
+- 男士中筒袜
+- 运动中筒袜
+- 拼色棉袜
+- 防臭男袜
+- 男短筒袜
+weight: 1.0
+tags:
+- name: 男士中筒袜
+  weight: 1.0
+- name: 运动中筒袜
+  weight: 0.99
+- name: 拼色棉袜
+  weight: 0.98
+- name: 防臭男袜
+  weight: 0.97
+- name: 男短筒袜
+  weight: 0.96
+- name: 纱线抗球袜
+  weight: 0.95
+- name: 功能网格袜
+  weight: 0.94
+- name: 上脚运动袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 侧身开场
+  description: 'source_refs:[1]; 功能: 白灰拼色袜的侧身上脚开场页，保留大字竖排和裤脚关系。'
+  order: 1
+  prompt_guide: f_code=F1+F2; screen_kind=hero-opening; style_tokens=[side_pose, large_vertical_type, color_block_sock]
+- id: screen_2
+  name: 正面双只
+  description: 'source_refs:[2]; 功能: 双脚正面并列的功能页，突出拼色分区和双只关系。'
+  order: 2
+  prompt_guide: f_code=F3; screen_kind=compare-closure; style_tokens=[front_pair_display, dual_product_view, balanced_layout]
+- id: screen_3
+  name: 深色分款
+  description: 'source_refs:[3]; 功能: 深色配色上脚页，保留大字竖排与同版式替换色。'
+  order: 3
+  prompt_guide: f_code=F3; screen_kind=compare-closure; style_tokens=[dark_colorway, side_pose, alternate_option]
+- id: screen_4
+  name: 阳光棉感
+  description: 'source_refs:[4]; 功能: 三色面料特写页，突出阳光棉感与斜向编织纹理。'
+  order: 4
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[sunlit_texture, tri_color_fabric, diagonal_knit]
+- id: screen_5
+  name: 纱线抗球
+  description: 'source_refs:[5]; 功能: 白色纱线大图页，保留单一纱线形态和少量说明。'
+  order: 5
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[white_yarn_macro, airy_space, soft_text_block]
+- id: screen_6
+  name: 优势网格
+  description: 'source_refs:[6]; 功能: 多格细节对比页，保留六宫格或纵向网格结构。'
+  order: 6
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[advantage_grid, multi_detail_tiles, compare_marks]
+- id: screen_7
+  name: 四格功能
+  description: 'source_refs:[7]; 功能: 四格功能与穿搭小图结合的说明页。'
+  order: 7
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[four_feature_tiles, wear_match_tile, clear_labels]
+- id: screen_8
+  name: 上脚收尾
+  description: 'source_refs:[8]; 功能: 双脚自然站立的收尾页，保留裤脚、鞋底和拼色袜体。'
+  order: 8
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[standing_pair_pose, trouser_hem, sporty_closure]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=light_beige_sport_floor|camera=side_pose_with_color_block_mid_sock|layout=left_large_vertical_copy_right_leg_pose|subject=single_pair_mens_mid_calf_socks_in_side_view|accent=trouser_hem_and_color_block_toe|text_mode=strong|text_zone=left-side|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=compare-closure|bg=clean_cream_front_display_board|camera=front_pair_mid_sock_display|layout=top_copy_middle_dual_feet_front_view_bottom_small_labels|subject=two_feet_display_of_color_block_mid_socks|accent=toe_heel_color_blocks_and_small_annotations|text_mode=weak|text_zone=bottom-left|text_align=left|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_2}}|negative=no-compare-layout
+  s3|kind=compare-closure|bg=warm_neutral_floor_scene|camera=side_pose_with_dark_colorway|layout=left_vertical_copy_right_large_pose|subject=alternate_dark_colorway_for_same_mid_sock_structure|accent=deep_grey_toe_blocks|text_mode=strong|text_zone=left-side|text_align=left|text_density=two-line|copy_role=choice-recap|slot={{copy_function_language_3}}|negative=single-centered-packshot
+  s4|kind=macro-closeup|bg=soft_shadow_material_board|camera=tri_color_knit_texture_macro|layout=top_copy_middle_large_texture_block_bottom_small_note|subject=multi_tone_cotton_surface_for_mid_sock|accent=sunlit_gradient_and_diagonal_knit_lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_4}}|negative=no-multi-panel-collage
+  s5|kind=macro-closeup|bg=white_yarn_story_board|camera=single_white_yarn_macro|layout=top_title_middle_large_yarn_form_bottom_short_note|subject=anti_pilling_yarn_story_for_mid_sock|accent=airy_shadow_and_small_corner_copy|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_5}}|negative=headline-only
+  s6|kind=detail-grid|bg=white_advantage_grid_board|camera=multi_tile_feature_grid|layout=top_copy_middle_vertical_multi_tile_grid_bottom_small_labels|subject=multi_panel_review_of_texture_toe_heel_and_surface|accent=compare_marks_and_thin_tile_gaps|text_mode=strong|text_zone=top-right|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=detail-grid|bg=soft_beige_feature_board|camera=four_feature_tiles_with_wear_match|layout=left_2x2_feature_grid_right_small_wear_tile|subject=four_key_mid_sock_features_with_daily_match_example|accent=clear_labels_and_small_action_pose|text_mode=strong|text_zone=left-side|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=on-body-proof|bg=clean_light_floor_scene|camera=standing_pair_pose_with_color_block_socks|layout=middle_large_pair_pose_bottom_small_note|subject=single_pair_mens_mid_socks_in_natural_standing_pose|accent=trouser_hem_and_soft_floor_shadow|text_mode=placeholder|text_zone=bottom-center|text_align=center|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_8}}|negative=headline-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

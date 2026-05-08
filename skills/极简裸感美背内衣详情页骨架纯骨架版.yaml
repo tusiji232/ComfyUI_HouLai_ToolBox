@@ -1,0 +1,127 @@
+name: 极简裸感美背内衣详情页骨架纯骨架版
+description: 美背内衣、裸感文胸、小胸聚拢内衣、无痕 bra 风格的纯骨架版详情页 skill：保留参数开场、科学设计群像、单模特体感页、贴肤近景、外扩控制、全身舒适页、更多细节和尺码收尾 8 屏骨架，不承载运行时文案与业务判断。适合轻薄内衣、日常美背文胸、裸色无痕内衣详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 美背内衣
+trigger_words:
+- 美背内衣
+- 裸感文胸
+- 无痕内衣
+- 小胸聚拢
+- 轻薄内衣
+weight: 1.0
+tags:
+- name: 美背内衣
+  weight: 1.0
+- name: 裸感文胸
+  weight: 1.0
+- name: 无痕内衣
+  weight: 0.99
+- name: 小胸聚拢
+  weight: 0.98
+- name: 轻薄内衣
+  weight: 0.97
+- name: 模特近景
+  weight: 0.96
+- name: 科学设计
+  weight: 0.95
+- name: 尺码表
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 参数开场
+  description: 'source_refs:[1]; 功能: 左侧文字说明加基础参数表的极简开场页。'
+  order: 1
+  prompt_guide: f_code=F1+F3; screen_kind=hero-opening; style_tokens=[text_led_hero, minimal_spec_table, nude_white_space]
+- id: screen_2
+  name: 科学设计
+  description: 'source_refs:[2]; 功能: 三位模特半身群像承接设计原理与结构利益点。'
+  order: 2
+  prompt_guide: f_code=F5+F6; screen_kind=scene-collage; style_tokens=[three_adult_model_collage, neutral_background, top_copy]
+- id: screen_3
+  name: 体感展示
+  description: 'source_refs:[3]; 功能: 单模特正面展示透气和舒适的核心体感页。'
+  order: 3
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[single_adult_model_front, top_copy, clean_nude_frame]
+- id: screen_4
+  name: 贴肤近景
+  description: 'source_refs:[4]; 功能: 单模特胸肩近景页，聚焦贴合与轻包覆。'
+  order: 4
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[close_crop_adult_model, soft_skin_light, minimal_copy]
+- id: screen_5
+  name: 外扩控制
+  description: 'source_refs:[5]; 功能: 单模特近景页，延续极简留白与侧向支撑表达。'
+  order: 5
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[bust_closeup, off_white_board, subtle_copy]
+- id: screen_6
+  name: 全身舒适
+  description: 'source_refs:[6]; 功能: 全身动作模特页承接轻盈和清爽体感。'
+  order: 6
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[full_body_adult_model, raised_arm_pose, airy_studio]
+- id: screen_7
+  name: 更多细节
+  description: 'source_refs:[7]; 功能: 单模特配侧边短说明的更多舒适细节页。'
+  order: 7
+  prompt_guide: f_code=F2+F6; screen_kind=product-hero; style_tokens=[single_adult_model_detail_page, side_note, low_density_copy]
+- id: screen_8
+  name: 尺码收尾
+  description: 'source_refs:[8]; 功能: 文胸尺码推荐和示意图收尾页。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[bra_size_chart, line_diagram, clean_table]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=soft-white-minimal-board|camera=text-panel-with-small-spec-table|layout=left-copy_right-open-space_bottom-spec-rows|subject=parameter_led_bra_opening|accent=thin-divider-lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-feature|slot={{copy_function_language_1}}|negative=headline-only
+
+  s2|kind=scene-collage|bg=clean-nude-studio|camera=three-adult-model-half-body-collage|layout=top-copy_bottom-three-model-collage|subject=multiple_adult_model_shape_comparison|accent=small-side-labels|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=on-body-proof|bg=off-white-clean-frame|camera=single-adult-model-front-torso-shot|layout=top-left-copy_bottom-large-model|subject=one_adult_model_wearing_minimal_bra|accent=soft-top-note|text_mode=strong|text_zone=top-left|text_align=left|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=plain-white-packshot
+
+  s4|kind=on-body-proof|bg=off-white-photo-frame|camera=single-adult-model-close-crop|layout=top-small-copy_bottom-large-closeup|subject=strap_and_cup_fit_closeup|accent=small-side-caption|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=on-body-proof|bg=warm-white-portrait-board|camera=single-adult-model-bust-closeup|layout=top-left-copy_bottom-main-closeup|subject=outer_curve_control_closeup|accent=arched-frame-outline|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=headline-only
+
+  s6|kind=on-body-proof|bg=clean-light-studio|camera=full-body-model-in-light-movement-pose|layout=top-left-copy_bottom-full-body-model|subject=lightweight_bra_full_body_display|accent=subtle-top-badges|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=product-hero|bg=white-detail-board|camera=single-adult-model-with-side-note|layout=top-title_right-short-note_bottom-main-model|subject=single_adult_model_comfort_detail_display|accent=small-side-callout|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=no-multi-panel-collage
+
+  s8|kind=spec-panel|bg=white-size-recommendation-board|camera=size-chart-and-line-diagram|layout=top-title_middle-size-table_bottom-line-diagram|subject=bra_size_and_fit_recommendation|accent=thin-outline-illustration|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=headline-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

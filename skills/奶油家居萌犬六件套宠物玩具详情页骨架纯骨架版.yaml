@@ -1,0 +1,115 @@
+name: "奶油家居萌犬六件套宠物玩具详情页骨架纯骨架版"
+description: "奶油家居、萌犬陪伴、六件套宠物玩具风格的纯骨架版详情页 skill：保留萌犬与多玩具开场、材质安全啃咬、双卡微距、套装展示、三种单品互动场景和品牌收尾 8 屏骨架，不承载运行时文案与业务判断。适合狗狗玩具、耐咬玩具、发声玩具、解闷陪伴类宠物用品详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "萌犬玩具"
+trigger_words:
+  - "萌犬玩具"
+  - "狗狗玩具"
+  - "耐咬玩具"
+  - "发声玩具"
+  - "宠物六件套"
+weight: 1.0
+tags:
+  - name: "萌犬玩具"
+    weight: 1.0
+  - name: "狗狗玩具"
+    weight: 1.0
+  - name: "耐咬玩具"
+    weight: 0.99
+  - name: "发声玩具"
+    weight: 0.98
+  - name: "宠物六件套"
+    weight: 0.97
+  - name: "奶油家居"
+    weight: 0.96
+  - name: "解闷玩具"
+    weight: 0.95
+  - name: "宠物用品"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "萌犬开场"
+    description: "source_refs:[1]; 功能: 萌犬居中配六件套玩具开场，突出陪伴感和奶油家居氛围。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[cream_floor, small_dog, six_toy_set]"
+  - id: "screen_2"
+    name: "安全啃咬"
+    description: "source_refs:[2]; 功能: 用真实啃咬近景承接安全材质与耐咬卖点，保持顶部大标题。"
+    order: 2
+    prompt_guide: "f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[dog_chewing_closeup, soft_daylight, top_copy]"
+  - id: "screen_3"
+    name: "双卡微距"
+    description: "source_refs:[3]; 功能: 左右双卡微距并列展示骨头玩具和刺球玩具表面结构。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=detail-grid; style_tokens=[two_macro_cards, blue_and_pink_toys, white_board]"
+  - id: "screen_4"
+    name: "套装展示"
+    description: "source_refs:[4]; 功能: 狗狗与整套玩具同框的陈列页，突出多玩具组合和整体展示。"
+    order: 4
+    prompt_guide: "f_code=F1+F6; screen_kind=scene-collage; style_tokens=[dog_plus_full_set, cream_floor, centered_display]"
+  - id: "screen_5"
+    name: "球体互动"
+    description: "source_refs:[5]; 功能: 小狗与球形玩具的单品互动页，保留前扑动作和家居地面场景。"
+    order: 5
+    prompt_guide: "f_code=F6; screen_kind=on-body-proof; style_tokens=[round_toy_play, dog_pose, warm_home_scene]"
+  - id: "screen_6"
+    name: "绳索互动"
+    description: "source_refs:[6]; 功能: 小狗叼绳玩具行走，保留动态叼取和主体前进感。"
+    order: 6
+    prompt_guide: "f_code=F6; screen_kind=on-body-proof; style_tokens=[rope_toy_walk, moving_pet, soft_floor_light]"
+  - id: "screen_7"
+    name: "拉环互动"
+    description: "source_refs:[7]; 功能: 小狗侧身叼起环形玩具，作为另一种玩法单品页。"
+    order: 7
+    prompt_guide: "f_code=F6; screen_kind=on-body-proof; style_tokens=[ring_toy_sideview, pet_interaction, single_use_scene]"
+  - id: "screen_8"
+    name: "品牌收尾"
+    description: "source_refs:[8]; 功能: 品牌标识、宠物用品图标和设计背书的收尾证据页。"
+    order: 8
+    prompt_guide: "f_code=F3; screen_kind=brand-closure; style_tokens=[brand_icons, design_badges, clean_closure]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=cream-home-floor-with-soft-daylight|camera=small-dog-surrounded-by-multi-toy-set|layout=top-title_middle-dog-and-toys|subject=small-dog-with-six-toy-set|accent=bright-pastel-toys|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=on-body-proof|bg=soft-cream-indoor-scene|camera=dog-chewing-single-bone-toy|layout=top-copy_middle-chewing-closeup|subject=pet-using-one-dominant-toy|accent=soft-rubber-texture|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=detail-grid|bg=clean-white-board|camera=two-macro-toy-cards|layout=top-title_middle-left-right-macro-cards|subject=surface-texture-of-two-pet-toys|accent=macro-structure-and-soft-color-contrast|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=scene-collage|bg=cream-floor-display|camera=dog-with-full-toy-lineup|layout=top-title_middle-dog_bottom-toy-row|subject=pet-and-multiple-toys|accent=soft-home-daylight|text_mode=strong|text_zone=top-center|text_align=center|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_4}}|negative=headline-only
+  s5|kind=on-body-proof|bg=warm-home-floor-scene|camera=dog-playing-with-round-toy|layout=top-left-copy_middle-pet-action|subject=pet-with-round-toy|accent=playful-body-posture|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=on-body-proof|bg=warm-home-floor-scene|camera=dog-carrying-rope-toy|layout=top-left-copy_middle-moving-pet|subject=pet-with-rope-toy|accent=dynamic-walk-and-tug-shape|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=on-body-proof|bg=warm-home-floor-scene|camera=dog-carrying-ring-toy|layout=top-left-copy_middle-side-pet-scene|subject=pet-with-ring-toy|accent=single-use-scene|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=evidence-panel|bg=clean-brand-board|camera=brand-icons-and-design-badges|layout=top-brand-row_middle-icon-grid_bottom-proof-card|subject=brand-closure-and-pet-supply-badges|accent=seal-icons-and-clean-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_8}}|negative=headline-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

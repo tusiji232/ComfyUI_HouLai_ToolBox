@@ -1,0 +1,115 @@
+name: "黑灰双模办公机械键盘详情页骨架纯骨架版"
+description: "深黑极简、黑灰双模办公机械键盘风格的纯骨架版详情页 skill：保留双色键盘开场、功能拼贴、大数字续航证明、打字使用场景、三模桌面场景、俯拍生态切换、环保背书和规格信息页 8 屏骨架，不承载运行时文案与业务判断。适合机械键盘、办公键盘、三模无线键盘类数码详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "办公键盘"
+trigger_words:
+  - "办公键盘"
+  - "机械键盘"
+  - "三模键盘"
+  - "无线键盘"
+  - "黑灰键盘"
+weight: 1.0
+tags:
+  - name: "办公键盘"
+    weight: 1.0
+  - name: "机械键盘"
+    weight: 1.0
+  - name: "三模键盘"
+    weight: 0.99
+  - name: "无线键盘"
+    weight: 0.98
+  - name: "黑灰键盘"
+    weight: 0.97
+  - name: "多设备切换"
+    weight: 0.96
+  - name: "续航证明"
+    weight: 0.95
+  - name: "规格页"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "双色开场"
+    description: "source_refs:[1]; 功能: 黑白双键盘并排开场，建立深黑科技感和双色版本选择。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[dual_keyboards, black_gradient, centered_title]"
+  - id: "screen_2"
+    name: "功能拼贴"
+    description: "source_refs:[2]; 功能: 多张功能卡与数据模块拼贴，突出续航、结构和适配。"
+    order: 2
+    prompt_guide: "f_code=F4+F6; screen_kind=feature-mosaic; style_tokens=[dark_card_grid, data_modules, multi_feature_panel]"
+  - id: "screen_3"
+    name: "续航证明"
+    description: "source_refs:[3]; 功能: 单键盘居中配大数字续航和底部电量条。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[giant_battery_number, centered_keyboard, power_bar]"
+  - id: "screen_4"
+    name: "打字体验"
+    description: "source_refs:[4]; 功能: 手部打字的暗调使用场景页。"
+    order: 4
+    prompt_guide: "f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[typing_hands, dark_desk_scene, comfort_input]"
+  - id: "screen_5"
+    name: "三模场景"
+    description: "source_refs:[5]; 功能: 键盘与鼠标桌面场景配三张连接方式功能卡。"
+    order: 5
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[desk_scene, connection_cards, tri_mode_layout]"
+  - id: "screen_6"
+    name: "生态切换"
+    description: "source_refs:[6]; 功能: 顶部黑底说明，下部俯拍多设备生态桌面。"
+    order: 6
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[black_header, overhead_desk, multi_device_ecosystem]"
+  - id: "screen_7"
+    name: "环保背书"
+    description: "source_refs:[7]; 功能: 白色键盘侧视与循环符号组合成的环保背书页。"
+    order: 7
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[recycle_symbol, side_keyboard, sustainability_proof]"
+  - id: "screen_8"
+    name: "规格信息"
+    description: "source_refs:[8]; 功能: 深黑表格规格信息页。"
+    order: 8
+    prompt_guide: "f_code=F4; screen_kind=spec-panel; style_tokens=[dark_spec_table, centered_title, keyboard_info]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=deep-black-tech-gradient|camera=two-keyboards-floating-front|layout=top-center-copy_bottom-dual-subject|subject=two-colorways-of-one-keyboard-style|accent=soft-floor-platform|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=feature-mosaic|bg=deep-black-card-board|camera=multi-card-keyboard-function-grid|layout=top-center-copy_middle-card-mosaic_bottom-data-cards|subject=keyboard-features-and-data-panels|accent=dark-rounded-cards|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=evidence-panel|bg=deep-black-with-giant-battery-number|camera=centered-keyboard-front|layout=top-left-copy_middle-large-number_bottom-power-bar|subject=one-dominant-keyboard-with-battery-proof|accent=power-bar-and-glow|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=on-body-proof|bg=dark-desk-scene|camera=typing-hands-over-keyboard|layout=top-left-copy_middle-hand-use-scene|subject=keyboard-in-real-typing-scene|accent=soft-wave-rings|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=single-image-only
+  s5|kind=scene-collage|bg=warm-desk-plus-dark-cards|camera=desk-keyboard-scene-with-connection-modules|layout=top-left-copy_middle-main-desk_bottom-three-cards|subject=keyboard-in-desk-setup|accent=connection-cards|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=scene-note|slot={{copy_function_language_5}}|negative=single-centered-packshot
+  s6|kind=scene-collage|bg=black-header-plus-overhead-desk|camera=top-copy_bottom-overhead-ecosystem|layout=top-header-icons_bottom-flatlay-desk|subject=keyboard-in-multi-device-ecosystem|accent=overhead-devices-and-icons|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=evidence-panel|bg=dark-sustainability-board|camera=side-keyboard-with-large-recycle-symbol|layout=top-center-copy_middle-side-profile|subject=keyboard-profile-and-sustainability-symbol|accent=large-circular-arrow|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=evidence-panel|bg=deep-black-spec-sheet|camera=table-only|layout=top-title_middle-large-spec-table|subject=keyboard-specification-table|accent=thin-grid-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

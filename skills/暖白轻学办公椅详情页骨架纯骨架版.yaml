@@ -1,0 +1,113 @@
+name: "暖白轻学办公椅详情页骨架纯骨架版"
+description: "宿舍学习椅、家用办公椅、暖白书桌椅、久坐靠背椅风格的纯骨架版详情页 skill：保留多场景用途开场、书桌主场景、选购理由、支撑结构、久坐证明、大靠背展示、承重测试与参数收尾 8 屏骨架，不承载运行时文案与业务判断。适合宿舍学习椅、家用电脑椅、简约办公靠背椅详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "轻学办公椅"
+trigger_words:
+  - "轻学办公椅"
+  - "宿舍学习椅"
+  - "家用电脑椅"
+  - "暖白靠背椅"
+  - "书桌座椅"
+weight: 1.0
+tags:
+  - name: "轻学办公椅"
+    weight: 1.0
+  - name: "宿舍学习椅"
+    weight: 0.99
+  - name: "家用电脑椅"
+    weight: 0.98
+  - name: "暖白靠背椅"
+    weight: 0.97
+  - name: "书桌座椅"
+    weight: 0.96
+  - name: "弯管会议椅"
+    weight: 0.95
+  - name: "久坐舒适椅"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "场景总览"
+    description: "source_refs:[1]; 功能: 以四格或多卡片方式展示办公、学习、宿舍等使用场景，顶部保留主标题和黄色标签。"
+    order: 1
+    prompt_guide: "f_code=F1+F3; screen_kind=detail-grid; style_tokens=[multi_scene_grid, yellow_labels, audience_use_cases]"
+  - id: "screen_2"
+    name: "书桌主场景"
+    description: "source_refs:[2]; 功能: 模特坐在书桌前的主视觉场景页，主体与桌面空间关系明确，底部有轻弧形装饰带。"
+    order: 2
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-hero; style_tokens=[desk_lifestyle_scene, seated_model, curved_bottom_band]"
+  - id: "screen_3"
+    name: "选购理由"
+    description: "source_refs:[3]; 功能: 左图右栏式对比说明，右侧用清单卡或禁用符号总结不适感与本页解决点。"
+    order: 3
+    prompt_guide: "f_code=F4; screen_kind=compare-proof; style_tokens=[checklist_panel, no_symbol, reason_to_choose]"
+  - id: "screen_4"
+    name: "支撑结构"
+    description: "source_refs:[4]; 功能: 以透明或半剖形式展示椅背与坐垫的回弹支撑路径，下方保留小图标卖点。"
+    order: 4
+    prompt_guide: "f_code=F3+F5; screen_kind=evidence-panel; style_tokens=[transparent_structure_view, support_arrows, bottom_icons]"
+  - id: "screen_5"
+    name: "久坐证明"
+    description: "source_refs:[5]; 功能: 模特侧坐主图配压力分散或腰背支撑箭头，顶部文字偏右或偏上集中。"
+    order: 5
+    prompt_guide: "f_code=F2+F3; screen_kind=comfort-proof; style_tokens=[seated_model_side_view, pressure_relief_arrows, top_copy_block]"
+  - id: "screen_6"
+    name: "大靠背展示"
+    description: "source_refs:[6]; 功能: 大面积靠背与坐姿场景页，强调后背包裹感和宽适坐面，底部保留弧线装饰。"
+    order: 6
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-note; style_tokens=[large_backrest_scene, warm_room_light, curved_footer]"
+  - id: "screen_7"
+    name: "承重测试"
+    description: "source_refs:[7]; 功能: 人体站踩或跪压证明页，主体置中，突出稳固承重与结构安全的可视化证明。"
+    order: 7
+    prompt_guide: "f_code=F3+F6; screen_kind=proof-data; style_tokens=[load_test_pose, centered_proof_scene, strong_yellow_badge]"
+  - id: "screen_8"
+    name: "参数收尾"
+    description: "source_refs:[8]; 功能: 白底单椅参数页收尾，尺寸线和高度标注完整，保留上方参数标题。"
+    order: 8
+    prompt_guide: "f_code=F4+F6; screen_kind=parameter-sheet; style_tokens=[single_chair_dimensions, clean_spec_sheet, top_title]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=detail-grid|bg=soft-beige-scene-board|camera=four-scene-use-case-collage|layout=top-title_bottom-multi-scene-grid|subject=chair-in-study-and-office-scenes|accent=yellow-tags_and-room-vignettes|text_mode=strong|text_zone=top-left_and_panel-corners|text_align=left|text_density=caption-grid|copy_role=hero-feature|slot={{copy_function_language_1}}|negative=single-image-only
+  s2|kind=scene-hero|bg=warm-home-study-room|camera=three-quarter-seated-model-view|layout=top-title_middle-model-and-chair_bottom-curved-band|subject=user-seated-at-desk-with-chair|accent=desk_props_and-curved-footer|text_mode=strong|text_zone=top-right|text_align=right|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=compare-proof|bg=light-cream-checklist-panel|camera=left-scene-right-info-board|layout=left-lifestyle_right-checklist-cards|subject=chair-benefit-vs-pain-point-summary|accent=no-symbol_and-yellow-cards|text_mode=strong|text_zone=top-right_and_mid-right|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_3}}|negative=no-compare-layout
+  s4|kind=evidence-panel|bg=warm-gray-structure-board|camera=transparent-chair-side-view|layout=top-title_middle-main-structure_bottom-icon-row|subject=chair-support-path-and-rebound-structure|accent=orange-support-arrows_and-round-icons|text_mode=strong|text_zone=top-left_and_bottom-center|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=comfort-proof|bg=soft-office-scene|camera=side-view-seated-model|layout=top-title_bottom-large-model-scene|subject=user-seated-with-pressure-relief-focus|accent=body-pressure-arrows_and-top-copy|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=headline-only
+  s6|kind=scene-note|bg=warm-study-scene|camera=wide-seated-model-view|layout=top-title_bottom-large-backrest-scene|subject=chair-with-large-backrest-in-home-study|accent=curved-footer_and-clean-desk-props|text_mode=strong|text_zone=top-right|text_align=right|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=proof-data|bg=clean-cream-proof-scene|camera=centered-load-test-view|layout=top-title_bottom-proof-pose|subject=chair-load-bearing-safety-test|accent=yellow-proof-badge_and-floor-shadow|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=parameter-sheet|bg=clean-white-spec-sheet|camera=front-view-dimension-drawing|layout=top-title_bottom-single-chair-with-dimensions|subject=single-chair-parameter-view|accent=dimension-lines_and-light-shadow|text_mode=weak|text_zone=top-center|text_align=center|text_density=data-callout|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

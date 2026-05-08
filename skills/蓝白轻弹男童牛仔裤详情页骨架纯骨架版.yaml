@@ -1,0 +1,111 @@
+name: 蓝白轻弹男童牛仔裤详情页骨架纯骨架版
+description: 男童牛仔裤、轻弹牛仔裤、耐磨长裤、春装童裤风格的纯骨架版详情页 skill：保留坐姿开场、图标卖点、上身裤型、水洗证明、弹力对比、耐磨小窗、背身细节和尺码收尾 8 屏骨架，不承载运行时文案与业务判断。适合男童牛仔裤、耐磨童裤、日常宽松长裤详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 轻弹牛仔裤
+trigger_words:
+- 轻弹牛仔裤
+- 男童牛仔裤
+- 耐磨长裤
+- 春装童裤
+- 儿童裤子
+weight: 1.0
+tags:
+- name: 轻弹牛仔裤
+  weight: 1.0
+- name: 男童牛仔裤
+  weight: 1.0
+- name: 耐磨长裤
+  weight: 0.99
+- name: 春装童裤
+  weight: 0.98
+- name: 儿童裤子
+  weight: 0.97
+- name: 水洗证明
+  weight: 0.96
+- name: 弹力对比
+  weight: 0.95
+- name: 尺码表
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 坐姿开场
+  description: 'source_refs:[1]; 功能: 坐姿下半身开场页，保留蓝白大标题和浅景深。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[chair_pose_hero, blue_white_palette, denim_focus]
+- id: screen_2
+  name: 图标卖点
+  description: 'source_refs:[2]; 功能: 图标卖点横排页，强调防粘毛和野外耐磨。'
+  order: 2
+  prompt_guide: f_code=F3; screen_kind=evidence-panel; style_tokens=[icon_row_card, white_space, blue_header]
+- id: screen_3
+  name: 上身裤型
+  description: 'source_refs:[3]; 功能: 下半身上身页，突出舒弹版型和九分视觉。'
+  order: 3
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[lower_body_pose, blue_side_copy, clean_board]
+- id: screen_4
+  name: 水洗证明
+  description: 'source_refs:[4]; 功能: 水洗牛仔和手部操作的耐洗证明页。'
+  order: 4
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[wash_demo, hand_and_water, icon_footer]
+- id: screen_5
+  name: 弹力对比
+  description: 'source_refs:[5]; 功能: 面料拉伸和柱状对比页。'
+  order: 5
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[stretch_demo, bar_chart, blue_texture]
+- id: screen_6
+  name: 耐磨小窗
+  description: 'source_refs:[6]; 功能: 单裤上身加下方刷子小窗的耐磨页。'
+  order: 6
+  prompt_guide: f_code=F2+F4; screen_kind=on-body-proof; style_tokens=[main_lower_body, brush_inset, side_note]
+- id: screen_7
+  name: 背身细节
+  description: 'source_refs:[7]; 功能: 背身下半身和口袋特写页。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=detail-collage; style_tokens=[back_view_pants, pocket_detail, side_title]
+- id: screen_8
+  name: 尺码收尾
+  description: 'source_refs:[8]; 功能: 长裤产品信息和尺码表收尾页。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[product_info_table, blue_size_chart, clean_finish]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=white-board-with-blue-wave-header|camera=child-model-seated-showing-lower-body|layout=top-left-copy_bottom-main-photo|subject=one_child_model_in_relaxed_denim_bottom|accent=chair_prop_and_blue_header|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=white-minimal-info-board|camera=single-icon-row-card|layout=top-title_middle-icon-row_card|subject=core_fabric_and_usage_benefits|accent=three-blue-icons|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=on-body-proof|bg=white-and-blue-fashion-board|camera=single-lower-body-standing-shot|layout=top-right-copy_bottom-main-photo|subject=lower_body_silhouette_and_pants_length|accent=vertical-side-copy|text_mode=strong|text_zone=right-center|text_align=right|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=single-centered-packshot
+  s4|kind=evidence-panel|bg=white-proof-board-with-blue-card|camera=wash-demo-with-hand-action|layout=top-right-copy_middle-main-proof_photo_bottom-icon_strip|subject=washability_and_color_retention|accent=small-care-icons|text_mode=strong|text_zone=top-right|text_align=right|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-image-only
+  s5|kind=evidence-panel|bg=blue-texture-board|camera=stretch-demo-plus-bar-compare|layout=top-left-copy_middle-main-demo_bottom-bar-comparison|subject=stretch_softness_and_breathability_compare|accent=rounded-bar-cards|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_5}}|negative=no-multi-panel-collage
+  s6|kind=on-body-proof|bg=white-board-with-blue-side-note|camera=single-lower-body-photo-plus-brush-inset|layout=top-left-copy_middle-main-photo_bottom-detail-inset|subject=wear_resistance_of_denim_bottom|accent=brush-test-window|text_mode=strong|text_zone=bottom-center|text_align=center|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_6}}|negative=plain-white-packshot
+  s7|kind=detail-grid|bg=white-detail-board|camera=back-view-lower-body-with-pocket-closeup|layout=top-right-copy_middle-main-photo_bottom-pocket-inset|subject=back_pocket_and_stitch_detail|accent=dotted-callout-line|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=single-centered-packshot
+  s8|kind=spec-panel|bg=white-info-board-with-blue-table|camera=product-info-table-and-size-chart|layout=top-title_middle-detail-rows_bottom-size-table|subject=bottomwear_spec_and_size_information|accent=blue-header-band|text_mode=strong|text_zone=top-right|text_align=right|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=headline-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

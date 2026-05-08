@@ -1,0 +1,111 @@
+name: 暖灰微压塑形连裤袜详情页骨架纯骨架版
+description: 女袜连裤袜、微压连裤袜、秋冬打底袜、显瘦裤袜风格的纯骨架版详情页 skill：保留坐姿开场、叠搭情绪、四区分压、裸腿对比、多造型拼贴、挂拍绒里、覆盖长度和尺码表 8 屏骨架，不承载运行时文案与业务判断。适合连裤袜、压力裤袜、加绒打底袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 微压连裤袜
+trigger_words:
+- 微压连裤袜
+- 打底裤袜
+- 显瘦连裤袜
+- 压力裤袜
+- 秋冬打底袜
+weight: 1.0
+tags:
+- name: 微压连裤袜
+  weight: 1.0
+- name: 打底裤袜
+  weight: 0.99
+- name: 显瘦连裤袜
+  weight: 0.98
+- name: 压力裤袜
+  weight: 0.97
+- name: 加绒连裤袜
+  weight: 0.96
+- name: 秋冬打底袜
+  weight: 0.95
+- name: 暖灰打底
+  weight: 0.94
+- name: 腿部塑形单品
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 坐姿开场
+  description: 'source_refs:[1]; 功能: 暖灰座面与坐姿模特的开场页，突出腿部纵向线条和秋冬叠搭氛围。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[soft_beige_stage, seated_female_model, long_leg_line]
+- id: screen_2
+  name: 叠搭情绪
+  description: 'source_refs:[2]; 功能: 侧坐腿部叠搭场景页，保留轻奢居家角落和柔和配饰的穿搭情绪。'
+  order: 2
+  prompt_guide: f_code=F6; screen_kind=styling-scene; style_tokens=[side_leg_pose, warm_beige_corner, layered_legwear]
+- id: screen_3
+  name: 四区分压
+  description: 'source_refs:[3]; 功能: 用整腿主视觉配局部小图的结构页，表达分区支撑和显腿型逻辑。'
+  order: 3
+  prompt_guide: f_code=F3; screen_kind=annotated-breakdown; style_tokens=[tall_leg_visual, inset_panels, numbered_callouts]
+- id: screen_4
+  name: 裸腿对比
+  description: 'source_refs:[4]; 功能: 保留裸腿与袜体对照、曲面大底图和百分比标记的证明型版式。'
+  order: 4
+  prompt_guide: f_code=F3; screen_kind=compare-proof; style_tokens=[bare_leg_compare, curve_panel, percentage_labels]
+- id: screen_5
+  name: 多造型拼贴
+  description: 'source_refs:[5]; 功能: 多套裙装造型与小图拼贴的情绪页，保留纵向模特阵列。'
+  order: 5
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[three_look_columns, mini_style_tiles, soft_warm_board]
+- id: screen_6
+  name: 挂拍绒里
+  description: 'source_refs:[6]; 功能: 挂拍平铺加卷边内里展示页，表达加绒层次和单品完整形态。'
+  order: 6
+  prompt_guide: f_code=F5; screen_kind=evidence-panel; style_tokens=[hanger_flatlay, plush_interior, round_prop_frame]
+- id: screen_7
+  name: 覆盖长度
+  description: 'source_refs:[7]; 功能: 单腿裸腿与单腿上身的长度证明页，保留上下身裁切和长度标尺。'
+  order: 7
+  prompt_guide: f_code=F2+F3; screen_kind=on-body-proof; style_tokens=[split_leg_measure, coverage_labels, clean_white_board]
+- id: screen_8
+  name: 尺码信息
+  description: 'source_refs:[8]; 功能: 头像小卡加大尺码表的理性信息页，保留表格和脚注关系。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[profile_card, large_size_table, orange_header]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=soft_beige_room_with_orange_bench|camera=seated_full_body_female_model|layout=left_vertical_copy_right_tall_model|subject=single_legwear_model_with_skirt_styling|accent=warm_bench_and_heels|text_mode=strong|text_zone=left-side|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=scene-collage|bg=warm_beige_styling_corner|camera=side_seated_leg_pose|layout=left_copy_right_large_legwear_scene|subject=single_legwear_with_layered_autumn_styling|accent=round_seat_and_soft_accessory_layer|text_mode=strong|text_zone=left-lower|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=annotated-breakdown|bg=clean_white_support_panel|camera=full_leg_front_view_with_side_insets|layout=left_inset_column_right_tall_leg_visual|subject=single_legwear_with_four_zone_support_mapping|accent=numbered_callouts_and_step_labels|text_mode=strong|text_zone=right-upper_and_left-side|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=compare-closure|bg=soft_beige_compare_board|camera=bare_leg_and_legwear_split_compare|layout=left_curve_panel_right_tall_leg_compare|subject=bare_leg_vs_legwear_coverage_compare|accent=percentage_markers_and_soft_data_ticks|text_mode=strong|text_zone=left-side|text_align=left|text_density=option-labels|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=no-compare-layout
+  s5|kind=scene-collage|bg=warm_fashion_board|camera=multi_model_look_collage|layout=top_copy_middle_three_look_columns_bottom_mini_tiles|subject=three_outfit_legwear_styling_collage|accent=small_style_reference_tiles|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_5}}|negative=single-centered-packshot
+  s6|kind=evidence-panel|bg=warm_beige_hanging_board|camera=hanging_flatlay_with_folded_interior|layout=top_copy_bottom_hanger_display|subject=single_legwear_flatlay_with_plush_lining|accent=round_frame_and_folded_roll|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_6}}|negative=no-invented-extra-products
+  s7|kind=on-body-proof|bg=clean_white_length_compare_board|camera=front_leg_measure_compare|layout=top_copy_bottom_bare_leg_and_legwear_pair|subject=coverage_length_proof_for_single_legwear|accent=length_markers_and_split_labels|text_mode=strong|text_zone=top-left|text_align=left|text_density=option-labels|copy_role=comfort-proof|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=size-chart|bg=white_data_panel_with_orange_header|camera=profile_card_above_large_table|layout=top_profile_middle_table_bottom_notes|subject=legwear_size_data_board|accent=orange_tabs_and_footnote_block|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-centered-packshot
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

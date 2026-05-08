@@ -1,0 +1,127 @@
+name: 通勤面试西装套装详情页骨架纯骨架版
+description: 女装西装套装、通勤面试、旧钱风职业感、灰米极简风格的纯骨架版详情页 skill：保留单模特开场、三套造型、场景主题、多人阵列、色系 lookbook、版型研究、领口细节和面料微距 8 屏骨架，不承载运行时文案与业务判断。适合面试西装、职业套装、通勤正装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 西装套装
+trigger_words:
+- 西装套装
+- 面试西装
+- 职业套装
+- 通勤西装
+- 正装女
+weight: 1.0
+tags:
+- name: 西装套装
+  weight: 1.0
+- name: 面试西装
+  weight: 0.99
+- name: 职业套装
+  weight: 0.98
+- name: 通勤西装
+  weight: 0.97
+- name: 正装女
+  weight: 0.96
+- name: 旧钱风
+  weight: 0.95
+- name: 灰米通勤
+  weight: 0.94
+- name: 小个子职业装
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 单模特开场
+  description: 'source_refs:[1]; 功能: 单模特灰米背景开场，突出衬衫领结、长款西装和通勤手提包。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[single_adult_model_suit, gray_beige_bg, commute_bag]
+- id: screen_2
+  name: 三套造型
+  description: 'source_refs:[2]; 功能: 三位模特并列的风格页，用来表现不同颜色或不同场景的职业穿搭。'
+  order: 2
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[three_adult_model_lineup, old_money_mood, clean_gray_panel]
+- id: screen_3
+  name: 场景主题
+  description: 'source_refs:[3]; 功能: 三格立式模特阵列页，保留每种场景的小标题或身份标签。'
+  order: 3
+  prompt_guide: f_code=F6; screen_kind=look-lineup; style_tokens=[three_vertical_cards, scenario_labels, office_attire]
+- id: screen_4
+  name: 多人阵列
+  description: 'source_refs:[4]; 功能: 多位模特站姿阵列页，强调套装系列感和不同版型组合。'
+  order: 4
+  prompt_guide: f_code=F6; screen_kind=lookbook-panel; style_tokens=[multi_adult_model_group, interior_scene, full_body_looks]
+- id: screen_5
+  name: 色系图鉴
+  description: 'source_refs:[5]; 功能: 主色卡加多张小图 lookbook 的色系说明页，保留花材或道具点缀。'
+  order: 5
+  prompt_guide: f_code=F2+F6; screen_kind=color-lookbook; style_tokens=[color_story, small_photo_grid, soft_prop]
+- id: screen_6
+  name: 版型研究
+  description: 'source_refs:[6]; 功能: 顶部理性标题加下部版型示意或办公场景小图的研究页。'
+  order: 6
+  prompt_guide: f_code=F3; screen_kind=evidence-panel; style_tokens=[fit_research_title, office_inset, muted_layout]
+- id: screen_7
+  name: 领口细节
+  description: 'source_refs:[7]; 功能: 领口近景特写页，突出衬衫、系带或翻领结构。'
+  order: 7
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[collar_closeup, soft_fabric_fold, lower_caption]
+- id: screen_8
+  name: 面料微距
+  description: 'source_refs:[8]; 功能: 单张面料纹理微距页，保留左上角理性文案和大面积织纹。'
+  order: 8
+  prompt_guide: f_code=F5; screen_kind=material-proof; style_tokens=[fabric_macro, pale_gray_board, subtle_text]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=light_gray_office_suit_hero|camera=single_full_body_female_model_with_handbag|layout=top_left_title_bottom_single_model|subject=single_adult_model_in_formal_suit_set|accent=bow_blouse_and_commute_bag|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=scene-collage|bg=clean_gray_old_money_board|camera=three_adult_models_in_different_suit_colors|layout=top_headline_bottom_three_model_lineup|subject=three_professional_look_options|accent=subtle_floor_shadow|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=compare-closure|bg=white_gray_card_layout|camera=three_vertical_full_body_cards|layout=top_title_middle_three_cards_bottom_small_labels|subject=three_scenario_suit_variants|accent=scene_tags_under_each_card|text_mode=weak|text_zone=top-center_and_card_bottom|text_align=center|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_3}}|negative=no-compare-layout
+
+  s4|kind=scene-collage|bg=light_office_group_board|camera=multi_adult_model_full_body_group|layout=top_right_copy_bottom_group_lineup|subject=multi_look_suit_collection|accent=office_corner_prop|text_mode=strong|text_zone=top-right|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+
+  s5|kind=detail-grid|bg=beige_color_story_board|camera=single_main_adult_model_plus_small_look_grid|layout=left_color_story_right_main_model_bottom_small_grid|subject=color_family_and_lookbook_combo|accent=flower_prop_and_soft_frames|text_mode=strong|text_zone=left-top|text_align=left|text_density=caption-grid|copy_role=hero-feature|slot={{copy_function_language_5}}|negative=single-image-only
+
+  s6|kind=evidence-panel|bg=muted_gray_research_board|camera=fit_research_title_with_office_inset|layout=top_large_title_bottom_single_inset_or_silhouette|subject=fit_or_structure_research_page|accent=small_office_scene_card|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_6}}|negative=headline-only
+
+  s7|kind=macro-closeup|bg=soft_beige_closeup_board|camera=collar_and_blouse_bow_macro|layout=top_left_logo_mark_bottom_large_closeup|subject=collar_and_neckline_structure|accent=small_quality_badge|text_mode=weak|text_zone=bottom-left|text_align=left|text_density=one-line|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=single-image-only
+
+  s8|kind=material-proof|bg=pale_gray_fabric_board|camera=single_large_fabric_macro|layout=top_left_copy_middle_macro_bottom_breathing_room|subject=formal_fabric_texture|accent=subtle_light_gradient|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_8}}|negative=single-image-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

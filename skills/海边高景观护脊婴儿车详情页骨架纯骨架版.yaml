@@ -1,0 +1,115 @@
+name: "海边高景观护脊婴儿车详情页骨架纯骨架版"
+description: "海边亲子、高景观、护脊睡篮婴儿车风格的纯骨架版详情页 skill：保留海边双车开场、主图加图标卖点、睡篮单屏、结构对比、季节双段、后备箱收纳、操作步骤和2x2细节页 8 屏骨架，不承载运行时文案与业务判断。适合新生儿婴儿车、高景观推车、护脊睡篮类母婴详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "护脊婴儿车"
+trigger_words:
+  - "护脊婴儿车"
+  - "高景观推车"
+  - "睡篮婴儿车"
+  - "新生儿推车"
+  - "海边婴儿车"
+weight: 1.0
+tags:
+  - name: "护脊婴儿车"
+    weight: 1.0
+  - name: "高景观推车"
+    weight: 1.0
+  - name: "睡篮婴儿车"
+    weight: 0.99
+  - name: "新生儿推车"
+    weight: 0.98
+  - name: "海边婴儿车"
+    weight: 0.97
+  - name: "亲子出行"
+    weight: 0.96
+  - name: "后备箱收纳"
+    weight: 0.95
+  - name: "婴儿车细节"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "海边开场"
+    description: "source_refs:[1]; 功能: 海边亲子场景中的双形态婴儿车开场，建立高景观与亲子出行氛围。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[beach_family_scene, dual_stroller_modes, sky_gradient]"
+  - id: "screen_2"
+    name: "图标卖点"
+    description: "source_refs:[2]; 功能: 上部海边主图，下部六枚卖点图标，保留清晰的信息分层。"
+    order: 2
+    prompt_guide: "f_code=F4; screen_kind=feature-panel; style_tokens=[main_photo_plus_icon_grid, light_cream_board, stroller_features]"
+  - id: "screen_3"
+    name: "睡篮单屏"
+    description: "source_refs:[3]; 功能: 睡篮模式婴儿车单独成屏，搭配海边父母人物，突出新生儿平躺诉求。"
+    order: 3
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[bassinet_stroller, beach_couple, single_focus_page]"
+  - id: "screen_4"
+    name: "结构对比"
+    description: "source_refs:[4]; 功能: 一体平躺睡篮与传统结构左右对比，保留优缺点分栏说明。"
+    order: 4
+    prompt_guide: "f_code=F3+F5; screen_kind=compare-proof; style_tokens=[left_right_compare, structure_callouts, contrast_panel]"
+  - id: "screen_5"
+    name: "四季温感"
+    description: "source_refs:[5]; 功能: 上下双段的冷暖季节近景对照页，突出罩棚和睡篮环境感。"
+    order: 5
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[top_cool_bottom_warm, seasonal_split, closeup_stroller]"
+  - id: "screen_6"
+    name: "收纳上车"
+    description: "source_refs:[6]; 功能: 后备箱场景中的折叠婴儿车与真人尺寸对照，突出轻量收纳。"
+    order: 6
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-note; style_tokens=[car_trunk_storage, standing_model, folded_stroller]"
+  - id: "screen_7"
+    name: "操作步骤"
+    description: "source_refs:[7]; 功能: 上部操作特写，下部多步折叠流程图，形成使用说明页。"
+    order: 7
+    prompt_guide: "f_code=F4+F5; screen_kind=usage-guide; style_tokens=[handle_closeup, step_sequence, fold_process]"
+  - id: "screen_8"
+    name: "细节宫格"
+    description: "source_refs:[8]; 功能: 2x2细节宫格展示车架、推手、轮组和储物篮。"
+    order: 8
+    prompt_guide: "f_code=F3; screen_kind=detail-grid; style_tokens=[2x2_detail_grid, stroller_parts, clean_white_board]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=beach-sky-and-sand-scene|camera=family-with-dual-stroller-modes|layout=top-left-copy_bottom-wide-scene|subject=two-stroller-modes-in-family-scene|accent=sea_horizon_and_soft_daylight|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=detail-grid|bg=light-cream-info-board|camera=one-main-photo-plus-icon-row|layout=top-right-copy_middle-main-photo_bottom-icon-grid|subject=stroller-features-and-main-scene|accent=feature-icons|text_mode=strong|text_zone=top-right|text_align=right|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=hero-opening|bg=beach-family-scene|camera=one-bassinet-stroller-with-couple|layout=top-left-copy_bottom-single-stroller-scene|subject=one-dominant-bassinet-stroller|accent=family-figures-and-sea-background|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-feature|slot={{copy_function_language_3}}|negative=single-centered-packshot
+  s4|kind=compare-proof|bg=clean-compare-board|camera=left-right-structure-compare|layout=top-left-copy_middle-two-column-compare|subject=two-stroller-structure-modes|accent=compare-icons-and-lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_4}}|negative=no-compare-layout
+  s5|kind=scene-collage|bg=cool-top-and-warm-bottom-panel|camera=two-season-closeups|layout=top-left-copy_middle-top-closeup_bottom-bottom-closeup|subject=stroller-canopy-and-bassinet-season-scenes|accent=temperature-color-contrast|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=scene-collage|bg=car-trunk-lifestyle-scene|camera=folded-stroller-in-trunk-with-standing-model|layout=top-left-copy_bottom-storage-scene|subject=folded-stroller-and-size-reference|accent=car-trunk-open-view|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=usage-guide|bg=clean-light-guide-board|camera=top-handle-closeup_bottom-step-sequence|layout=top-copy_middle-handle-detail_bottom-fold-steps|subject=operation-detail-and-step-flow|accent=arrow-motion-and-mini-step-cards|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=choice-recap|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=detail-grid|bg=clean-white-detail-board|camera=2x2-stroller-parts-grid|layout=top-left-copy_bottom-four-detail-cards|subject=stroller-parts-and-material-details|accent=wheel-frame-handle-basket|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

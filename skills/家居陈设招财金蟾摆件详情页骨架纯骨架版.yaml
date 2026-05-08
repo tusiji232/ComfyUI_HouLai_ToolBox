@@ -1,0 +1,114 @@
+name: 家居陈设招财金蟾摆件详情页骨架纯骨架版
+description: 招财金蟾摆件、家居摆件、桌面陈列、空间装饰风格的纯骨架版详情页 skill：保留空间开场、场景摆放、轮廓细节、材质工艺、比例关系和信息收束 8 屏骨架，不承载运行时文案与业务判断。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 陈设摆件
+trigger_words:
+- 陈设摆件
+- 家居陈设
+- 家居摆件
+- 桌面摆件
+- 空间陈列
+- 材质特写
+- 角度展示
+- 尺寸信息
+weight: 1.0
+tags:
+- name: 陈设摆件
+  weight: 1.0
+- name: 家居陈设
+  weight: 0.99
+- name: 家居摆件
+  weight: 0.98
+- name: 桌面摆件
+  weight: 0.97
+- name: 空间陈列
+  weight: 0.96
+- name: 材质特写
+  weight: 0.95
+- name: 角度展示
+  weight: 0.94
+- name: 尺寸信息
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 开场主视觉
+  description: 'source_refs:[1]; 功能: 开场主视觉页，保留招财金蟾摆件主体、氛围背景和主标题区。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[decor-editorial-stage, hero-shot, top-copy_bottom-subject]
+- id: screen_2
+  name: 场景展示
+  description: 'source_refs:[2]; 功能: 场景展示页，保留招财金蟾摆件与空间陈列关系的关系、副标题和环境氛围。'
+  order: 2
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[decor-editorial-scene-board, scene-shot, top-copy_middle-scene_bottom-note]
+- id: screen_3
+  name: 结构拆解
+  description: 'source_refs:[3]; 功能: 结构拆解页，保留主体、编号标注和侧边说明区。'
+  order: 3
+  prompt_guide: f_code=F3; screen_kind=annotated-breakdown; style_tokens=[decor-editorial-breakdown-board, product-with-callouts, main-subject_with-side-callouts]
+- id: screen_4
+  name: 功能说明
+  description: 'source_refs:[4]; 功能: 功能说明页，保留主体近景、顶部标题和功能标签区。'
+  order: 4
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[decor-editorial-feature-board, closeup-shot, top-copy_middle-closeup_bottom-icons]
+- id: screen_5
+  name: 细节近景
+  description: 'source_refs:[5]; 功能: 细节近景页，保留轮廓与表面局部、标题区和留白说明位。'
+  order: 5
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[white-detail-board, detail-closeup-shot, top-copy_middle-closeup_bottom-note]
+- id: screen_6
+  name: 部件关系
+  description: 'source_refs:[6]; 功能: 部件关系页，保留局部特写、分栏结构和说明分区。'
+  order: 6
+  prompt_guide: f_code=F5; screen_kind=detail-grid; style_tokens=[clean-white-panel-board, part-array-shot, stacked-panels_with-side-copy]
+- id: screen_7
+  name: 信息参数
+  description: 'source_refs:[7]; 功能: 信息参数页，保留主体缩略图、规格表和脚注区关系。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[white-data-board, product-plus-table-shot, left-thumb_right-table]
+- id: screen_8
+  name: 收尾展示
+  description: 'source_refs:[8]; 功能: 收尾展示页，保留并列陈列、场景回收和简洁收束区。'
+  order: 8
+  prompt_guide: f_code=F4+F6; screen_kind=compare-closure; style_tokens=[decor-editorial-closure-board, multi-angle-shot, top-copy_middle-array_bottom-note]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=decor-editorial-stage|camera=hero-shot|layout=top-copy_bottom-subject|subject=one-dominant-decoration-object|accent=title-band-and-signoff-area|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-feature|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=scene-collage|bg=decor-editorial-scene-board|camera=scene-shot|layout=top-copy_middle-scene_bottom-note|subject=decoration-object-in-space|accent=scene-note-band|text_mode=strong|text_zone=top-left_and_bottom-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=annotated-breakdown|bg=decor-editorial-breakdown-board|camera=product-with-callouts|layout=main-subject_with-side-callouts|subject=one-dominant-decoration-object|accent=numbered-part-labels|text_mode=strong|text_zone=side-panel|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=evidence-panel|bg=decor-editorial-feature-board|camera=closeup-shot|layout=top-copy_middle-closeup_bottom-icons|subject=one-dominant-decoration-object|accent=feature-callout-strip|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_4}}|negative=headline-only
+  s5|kind=macro-closeup|bg=white-detail-board|camera=detail-closeup-shot|layout=top-copy_middle-closeup_bottom-note|subject=surface-and-form-detail|accent=detail-marker-strip|text_mode=weak|text_zone=top-left|text_align=left|text_density=two-line|copy_role=material-note|slot={{copy_function_language_5}}|negative=plain-white-packshot
+  s6|kind=detail-grid|bg=clean-white-panel-board|camera=part-array-shot|layout=stacked-panels_with-side-copy|subject=surface-and-form-detail|accent=part-caption-cards|text_mode=strong|text_zone=right-side|text_align=left|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_6}}|negative=no-multi-panel-collage
+  s7|kind=evidence-panel|bg=white-data-board|camera=product-plus-table-shot|layout=left-thumb_right-table|subject=decoration-info-board|accent=spec-table-and-footnote|text_mode=weak|text_zone=right-panel|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=compare-closure|bg=decor-editorial-closure-board|camera=multi-angle-shot|layout=top-copy_middle-array_bottom-note|subject=multi-angle-decoration-array|accent=choice-note-area|text_mode=weak|text_zone=top-left_and_bottom-left|text_align=left|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=single-centered-packshot
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

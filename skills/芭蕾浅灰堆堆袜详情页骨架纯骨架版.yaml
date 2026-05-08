@@ -1,0 +1,111 @@
+name: 芭蕾浅灰堆堆袜详情页骨架纯骨架版
+description: 女袜堆堆袜、芭蕾风长袜、浅灰中筒袜、极简画刊风格的纯骨架版详情页 skill：保留轻鞋开场、圆形材质、长度展示、质感平铺、高弹袜口、产品信息、轻简姿态和站姿收尾 8 屏骨架，不承载运行时文案与业务判断。适合中筒堆堆袜、芭蕾搭配袜、浅灰长袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 芭蕾堆堆袜
+trigger_words:
+- 芭蕾堆堆袜
+- 浅灰中筒袜
+- 芭蕾长袜
+- 堆堆袜女
+- 小皮鞋长袜
+weight: 1.0
+tags:
+- name: 芭蕾堆堆袜
+  weight: 1.0
+- name: 浅灰中筒袜
+  weight: 0.99
+- name: 芭蕾长袜
+  weight: 0.98
+- name: 堆堆袜女
+  weight: 0.97
+- name: 小皮鞋长袜
+  weight: 0.96
+- name: 极简画刊袜
+  weight: 0.95
+- name: 高弹袜口袜
+  weight: 0.94
+- name: 站姿穿搭袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 轻鞋开场
+  description: 'source_refs:[1]; 功能: 轻薄平底鞋与灰袜同框的开场页，保留画刊式大标题和完整鞋履比例。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[editorial_title, complete_light_footwear, clean_beige_scene]
+- id: screen_2
+  name: 圆形材质
+  description: 'source_refs:[2]; 功能: 圆形放大窗与弧线辅助图形的材质说明页。'
+  order: 2
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[round_material_window, curved_lines, minimal_copy]
+- id: screen_3
+  name: 长度展示
+  description: 'source_refs:[3]; 功能: 竖版全腿构图页，突出袜长和堆叠感。'
+  order: 3
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[vertical_leg_frame, length_callout, editorial_margins]
+- id: screen_4
+  name: 质感平铺
+  description: 'source_refs:[4]; 功能: 多色袜体与道具平铺的材质页，保留轻生活感场景。'
+  order: 4
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[soft_flatlay, selected_materials, lifestyle_props]
+- id: screen_5
+  name: 高弹袜口
+  description: 'source_refs:[5]; 功能: 坐姿拉开袜口的上身页，突出袜口弹性、腿部线条和鞋履完整比例。'
+  order: 5
+  prompt_guide: f_code=F2+F3; screen_kind=on-body-proof; style_tokens=[seated_leg_pose, cuff_stretch, complete_light_footwear]
+- id: screen_6
+  name: 产品信息
+  description: 'source_refs:[6]; 功能: 双列产品信息表页，保留参数和弹力柔软指数。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[product_info_table, rating_scales, white_space]
+- id: screen_7
+  name: 轻简姿态
+  description: 'source_refs:[7]; 功能: 极简站姿页，突出腿部弯曲和下摆留白。'
+  order: 7
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[minimal_pose, airy_skirt_edge, quiet_type]
+- id: screen_8
+  name: 站姿收尾
+  description: 'source_refs:[8]; 功能: 浅灰袜直立站姿的收尾页，保留细长版面和下方小字。'
+  order: 8
+  prompt_guide: f_code=F6; screen_kind=on-body-proof; style_tokens=[tall_vertical_pose, soft_shadow, editorial_footer]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=clean_beige_editorial_room|camera=full_leg_pose_with_complete_light_footwear|layout=top_oversized_title_middle_large_pose_bottom_small_footer|subject=single_mid_calf_slouch_sock_in_ballet_styling|accent=complete_footwear_and_column_title|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=cropped-footwear-or-heavy-boot
+  s2|kind=macro-closeup|bg=soft_cream_graphic_board|camera=round_material_window_closeup|layout=top_copy_middle_round_macro_bottom_curved_guides|subject=single_sock_surface_and_fine_knit_detail|accent=thin_curve_graphic_lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_2}}|negative=no-multi-panel-collage
+  s3|kind=on-body-proof|bg=light_beige_vertical_board|camera=single_leg_full_length_pose|layout=top_right_copy_middle_tall_leg_frame_bottom_small_note|subject=mid_calf_slouch_sock_length_display|accent=small_length_markers|text_mode=weak|text_zone=top-right|text_align=left|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=scene-collage|bg=soft_home_flatlay_board|camera=top_view_material_palette|layout=top_copy_middle_multi_item_flatlay_bottom_small_note|subject=selected_sock_colorways_with_lifestyle_props|accent=tray_glass_and_texture_items|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=on-body-proof|bg=warm_seated_pose_scene|camera=seated_leg_pose_with_cuff_stretch_and_complete_light_footwear|layout=top_copy_middle_large_pose_bottom_small_note|subject=single_slouch_sock_cuff_elasticity_on_body|accent=complete_light_footwear_and_leg_curve|text_mode=strong|text_zone=top-right|text_align=left|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_5}}|negative=cropped-footwear-or-heavy-shoe
+  s6|kind=evidence-panel|bg=white_product_info_board|camera=table_and_rating_scale_layout|layout=top_small_header_middle_two_column_table_bottom_scale_row|subject=mid_calf_sock_product_information_summary|accent=rating_ticks_and_thin_dividers|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=on-body-proof|bg=quiet_beige_editorial_space|camera=minimal_leg_pose_with_white_skirt|layout=top_copy_middle_single_pose_bottom_small_footer|subject=single_slouch_sock_in_minimal_styling_pose|accent=airy_skirt_edge_and_soft_light|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=on-body-proof|bg=light_beige_vertical_editorial_board|camera=front_leg_pose_with_soft_shadow|layout=middle_tall_pose_bottom_editorial_footer|subject=single_grey_slouch_sock_closure_pose|accent=soft_shadow_and_small_footer_type|text_mode=placeholder|text_zone=bottom-center|text_align=center|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_8}}|negative=single-centered-packshot
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

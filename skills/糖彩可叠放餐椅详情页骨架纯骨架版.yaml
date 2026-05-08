@@ -1,0 +1,113 @@
+name: "糖彩可叠放餐椅详情页骨架纯骨架版"
+description: "可叠放餐椅、休闲凳、北欧家居、轻量材质风格的纯骨架版详情页 skill：保留纵向陈列开场、材质证明、重量对比、宽坐承托、支撑细节、叠放收纳、底部承重与参数收尾 8 屏骨架，不承载运行时文案与业务判断。适合可叠放餐椅、备用家居凳、轻量塑料家居椅详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "叠放餐椅"
+trigger_words:
+  - "叠放餐椅"
+  - "可叠放休闲椅"
+  - "轻量家居凳"
+  - "北欧收纳椅"
+  - "一体成型餐椅"
+weight: 1.0
+tags:
+  - name: "叠放餐椅"
+    weight: 1.0
+  - name: "可叠放休闲椅"
+    weight: 0.99
+  - name: "轻量家居凳"
+    weight: 0.98
+  - name: "北欧收纳椅"
+    weight: 0.97
+  - name: "一体成型餐椅"
+    weight: 0.96
+  - name: "糖彩家居椅"
+    weight: 0.95
+  - name: "空间备用椅"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "竖列开场"
+    description: "source_refs:[1]; 功能: 家居角落中的多把叠放开场页，主体为彩色纵向叠列，顶部窄横幅与侧边标签增强设计感。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[stacked_color_lineup, home_niche_scene, slim_banner]"
+  - id: "screen_2"
+    name: "材质证明"
+    description: "source_refs:[2]; 功能: 以颗粒或材料对照做主视觉，突出一体成型材质感，保留上下分区和说明标注。"
+    order: 2
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[material_bowls, top_title, texture_compare]"
+  - id: "screen_3"
+    name: "重量对比"
+    description: "source_refs:[3]; 功能: 左右并列对比重量或厚度差异，上方标签色块明确，底部保留数值型证明信息。"
+    order: 3
+    prompt_guide: "f_code=F4; screen_kind=compare-proof; style_tokens=[left_right_compare, weight_numbers, badge_headers]"
+  - id: "screen_4"
+    name: "宽坐承托"
+    description: "source_refs:[4]; 功能: 近景俯视展示坐面弧度与宽度标注，底部或侧边补充短文案说明承托范围。"
+    order: 4
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[seat_top_view, width_dimension, curved_edge]"
+  - id: "screen_5"
+    name: "稳固支撑"
+    description: "source_refs:[5]; 功能: 主图聚焦腿部连接与底脚结构，配合局部圆形放大窗说明稳固和防滑细节。"
+    order: 5
+    prompt_guide: "f_code=F3+F5; screen_kind=evidence-panel; style_tokens=[leg_structure_closeup, circular_insets, stability_callout]"
+  - id: "screen_6"
+    name: "叠放收纳"
+    description: "source_refs:[6]; 功能: 多把座椅竖向堆叠在柜体或餐边场景中，强调收纳占地小与整齐陈列。"
+    order: 6
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-collage; style_tokens=[stacked_storage_scene, cabinet_context, vertical_repeat]"
+  - id: "screen_7"
+    name: "底部承重"
+    description: "source_refs:[7]; 功能: 从底部结构切入展示受力分布和支撑筋线，保留俯拍大图与角落说明。"
+    order: 7
+    prompt_guide: "f_code=F3; screen_kind=proof-data; style_tokens=[underside_structure, radial_support_lines, close_detail_label]"
+  - id: "screen_8"
+    name: "参数收尾"
+    description: "source_refs:[8]; 功能: 白底参数页收尾，单椅正立视图搭配高宽深尺寸线，保留中英信息区布局。"
+    order: 8
+    prompt_guide: "f_code=F4+F6; screen_kind=parameter-sheet; style_tokens=[front_view_dimensions, info_header, clean_white_sheet]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=soft-beige-home-niche|camera=front-view-stacked-chair-lineup|layout=top-banner_bottom-vertical-stack|subject=multi-color-stackable-chair-column|accent=side-tag_and-soft-shadow|text_mode=strong|text_zone=top-center_and_left-edge|text_align=center|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=warm-cream-material-board|camera=top-view-material-bowls|layout=top-title_bottom-two-material-panels|subject=material-pellet-and-texture-compare|accent=powder-texture_and-note-labels|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=compare-proof|bg=orange-green-compare-card|camera=front-top-comparison-view|layout=top-badges_bottom-left-right-compare|subject=weight-or-thickness-difference-display|accent=numeric-badges_and-bottom-data-strip|text_mode=strong|text_zone=top-left_and_bottom-center|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_3}}|negative=no-compare-layout
+  s4|kind=macro-closeup|bg=soft-neutral-seat-closeup|camera=top-down-seat-view|layout=top-title_bottom-seat-and-dimension|subject=wide-curved-seat-surface|accent=dimension-line_and-rounded-edge|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=single-image-only
+  s5|kind=evidence-panel|bg=warm-home-detail-panel|camera=leg-joint-closeup|layout=top-title_middle-main-detail_bottom-round-insets|subject=chair-leg-connection-and-footing|accent=circular-detail-windows_and-arrow-lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=single-centered-packshot
+  s6|kind=scene-collage|bg=soft-kitchen-storage-scene|camera=stacked-chairs-near-cabinet|layout=top-title_bottom-large-storage-scene|subject=stacked-chairs-in-home-storage-context|accent=cabinet-edge_and-floor-shadow|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_6}}|negative=no-invented-extra-products
+  s7|kind=proof-data|bg=beige-structure-board|camera=underside-closeup|layout=top-title_bottom-large-underside-view|subject=underside-support-ribs-and-load-structure|accent=small-labels_and-structure-lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=parameter-sheet|bg=clean-white-spec-sheet|camera=front-view-dimension-drawing|layout=top-info_header_bottom-single-chair-with-dimensions|subject=single-chair-parameter-view|accent=dimension-lines_and-bilingual-header|text_mode=weak|text_zone=top-center|text_align=center|text_density=data-callout|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

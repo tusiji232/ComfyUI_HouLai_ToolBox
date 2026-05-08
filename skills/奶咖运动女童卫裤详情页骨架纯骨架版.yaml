@@ -1,0 +1,111 @@
+name: 奶咖运动女童卫裤详情页骨架纯骨架版
+description: 女童卫裤、运动长裤、灰紫童裤、休闲下装风格的纯骨架版详情页 skill：保留半身开场、三段卖点、波纹口号、面料对比、轻松搭配、纱线证明、动作利益点和尺码收尾 8 屏骨架，不承载运行时文案与业务判断。适合女童卫裤、灰色休闲裤、运动童裤详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 女童卫裤
+trigger_words:
+- 女童卫裤
+- 运动童裤
+- 灰色童裤
+- 休闲长裤
+- 女童下装
+weight: 1.0
+tags:
+- name: 女童卫裤
+  weight: 1.0
+- name: 运动童裤
+  weight: 1.0
+- name: 灰色童裤
+  weight: 0.99
+- name: 休闲长裤
+  weight: 0.98
+- name: 女童下装
+  weight: 0.97
+- name: 面料对比
+  weight: 0.96
+- name: 纱线证明
+  weight: 0.95
+- name: 尺码表
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 半身开场
+  description: 'source_refs:[1]; 功能: 裤装半身开场页，保留大标题、底部图标和柔和奶咖背景。'
+  order: 1
+  prompt_guide: f_code=F1; screen_kind=hero-opening; style_tokens=[half_body_pants_hero, warm_taupe_bg, icon_footer]
+- id: screen_2
+  name: 三段卖点
+  description: 'source_refs:[2]; 功能: 三块上下堆叠卖点卡强调不卡裆、立体剪裁和软弹脚口。'
+  order: 2
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[three_feature_cards, rounded_boxes, lower_body_crops]
+- id: screen_3
+  name: 波纹口号
+  description: 'source_refs:[3]; 功能: 波纹纹理加大口号的轻运动利益点页面。'
+  order: 3
+  prompt_guide: f_code=F1+F4; screen_kind=hero-feature; style_tokens=[wave_texture, oversized_headline, minimalist_copy]
+- id: screen_4
+  name: 面料对比
+  description: 'source_refs:[4]; 功能: 多种织纹微距对比的面料说明页。'
+  order: 4
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[fabric_compare, round_badges, grey_texture]
+- id: screen_5
+  name: 轻松搭配
+  description: 'source_refs:[5]; 功能: 三个小模特组合的多色搭配页。'
+  order: 5
+  prompt_guide: f_code=F5+F6; screen_kind=compare-closure; style_tokens=[three_child_models, color_mix, soft_taupe_board]
+- id: screen_6
+  name: 纱线证明
+  description: 'source_refs:[6]; 功能: 纱线旋涡加功能图标的耐穿耐洗证明页。'
+  order: 6
+  prompt_guide: f_code=F3; screen_kind=evidence-panel; style_tokens=[yarn_swirl, icon_row, material_proof]
+- id: screen_7
+  name: 动作利益点
+  description: 'source_refs:[7]; 功能: 单个下半身动作页承接透气吸湿和不束缚表达。'
+  order: 7
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[lower_body_motion, step_badge, warm_plain_bg]
+- id: screen_8
+  name: 尺码收尾
+  description: 'source_refs:[8]; 功能: 裤型示意加尺码表的收尾信息页。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[pants_outline, size_chart, technical_finish]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-taupe-soft-sport-board|camera=lower-body-child-model-standing|layout=top-left-large-copy_bottom-half-body-model|subject=one_child_model_in_soft_sweatpants|accent=icon_footer_row|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=detail-grid|bg=cream-brown-rounded-card-board|camera=three-stacked-feature-crops|layout=top-title_bottom-three-rounded-panels|subject=waist_crotch_and_hem_features|accent=mini-arrow-notes|text_mode=strong|text_zone=left-center|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-image-only
+  s3|kind=hero-feature|bg=soft-wave-texture-board|camera=abstract-texture-with-lower-body-inset|layout=top-left-copy_middle-large-wave_texture_bottom-small-inset|subject=light_motion_and_no_restriction_concept|accent=oversized-keyword|text_mode=strong|text_zone=center-left|text_align=left|text_density=short-paragraph|copy_role=hero-feature|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=evidence-panel|bg=grey-fabric-compare-board|camera=large-fabric-macro-with-compare-bubbles|layout=top-left-copy_middle-main-macro_bottom-compare-icons|subject=fabric_texture_compare_and_softness_proof|accent=round-detail-bubbles|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=compare-closure|bg=warm-taupe-fashion-board|camera=three-child-models-in-different-colorways|layout=top-title_bottom-three-model-display|subject=multiple_colorways_of_one_sweatpant_shape|accent=small-round-icons|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_5}}|negative=no-compare-layout
+  s6|kind=evidence-panel|bg=cream-yarn-proof-board|camera=yarn-swirl-plus-icon-row|layout=top-copy_middle-yarn_proof_bottom-icon_strip|subject=durability_and_wash_proof|accent=round-icons-and-fiber-flow|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=on-body-proof|bg=warm-plain-sport-board|camera=single-lower-body-motion-shot|layout=top-left-copy_bottom-main-motion-photo|subject=one_lower_body_motion_pose|accent=step_badge_and_soft_cloud_icon|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_7}}|negative=single-centered-packshot
+  s8|kind=spec-panel|bg=white-technical-size-board|camera=size-chart-with-pants-outline|layout=top-right-copy_middle-outline_bottom-size-table|subject=bottomwear_outline_and_size_data|accent=mini-fit-diagram|text_mode=strong|text_zone=top-right|text_align=right|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=headline-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

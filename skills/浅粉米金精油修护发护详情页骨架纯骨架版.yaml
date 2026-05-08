@@ -1,0 +1,115 @@
+name: "浅粉米金精油修护发护详情页骨架纯骨架版"
+description: "浅粉米金、粉金修护、精油柔亮风格的纯骨架版详情页 skill：保留液滴开场、单品承接、机理证明、发丝结果、对比背书、家族方案、用法步骤和品牌收尾这 8 屏骨架，不承担运行时文案决策。适合粉金修护、精油修护、柔顺亮泽、洗护个护、发护美妆详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "粉金修护"
+trigger_words:
+  - "粉金修护"
+  - "精油修护"
+  - "柔顺亮泽"
+  - "发护美妆"
+  - "洗护详情页"
+weight: 1.0
+tags:
+  - name: "粉金修护"
+    weight: 1.0
+  - name: "精油修护"
+    weight: 1.0
+  - name: "柔顺亮泽"
+    weight: 0.99
+  - name: "发护美妆"
+    weight: 0.98
+  - name: "洗护详情页"
+    weight: 0.97
+  - name: "浅粉米金"
+    weight: 0.97
+  - name: "个护美妆"
+    weight: 0.96
+  - name: "纯骨架"
+    weight: 0.95
+
+shots:
+  - id: "screen_1"
+    name: "液滴开场"
+    description: "source_refs:[1]; 功能: 液滴与精华质感开场，大面积留白中承接标题利益点。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=essence-opening; style_tokens=[liquid_drop, pale_peach, airy_space]"
+  - id: "screen_2"
+    name: "单品承接"
+    description: "source_refs:[2]; 功能: 大字图形背景加单品瓶身承接，顶部强标题。"
+    order: 2
+    prompt_guide: "f_code=F1+F2; screen_kind=product-hero; style_tokens=[large_numeric_backdrop, centered_bottle, top_copy]"
+  - id: "screen_3"
+    name: "机理证明"
+    description: "source_refs:[3]; 功能: 机理配方、成分弧线、数据型标题与结构说明。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=mechanism-proof; style_tokens=[serum_arch, formula_callout, proof_panel]"
+  - id: "screen_4"
+    name: "发丝结果"
+    description: "source_refs:[4]; 功能: 单主视觉女性发丝肖像结果页，右上小徽章与短段结果文案强化效果。"
+    order: 4
+    prompt_guide: "f_code=F6; screen_kind=beauty-result-hero; style_tokens=[single_hero_portrait, small_result_badges, right_top_copy]"
+  - id: "screen_5"
+    name: "对比背书"
+    description: "source_refs:[5]; 功能: 对比卡片加时长利益点，兼具证明与结果总结。"
+    order: 5
+    prompt_guide: "f_code=F3; screen_kind=compare-proof; style_tokens=[compare_cards, duration_claim, blush_panel]"
+  - id: "screen_6"
+    name: "步骤舞台"
+    description: "source_refs:[6]; 功能: 单主瓶步骤舞台，步骤链路与软场景并列；仅在真实上传多图时才扩展为多产品阵列。"
+    order: 6
+    prompt_guide: "f_code=F2+F6; screen_kind=routine-stage; style_tokens=[one_hero_product, step_icons, max_two_small_echoes]"
+  - id: "screen_7"
+    name: "用法步骤"
+    description: "source_refs:[7]; 功能: 多步骤使用指南，手部动作与上身应用场景拼接。"
+    order: 7
+    prompt_guide: "f_code=F4+F5; screen_kind=usage-guide; style_tokens=[step_panels, hand_demo, usage_collage]"
+  - id: "screen_8"
+    name: "品牌收尾"
+    description: "source_refs:[8]; 功能: 上部步骤延续，下部品牌印记与收尾信任感。"
+    order: 8
+    prompt_guide: "f_code=F4+F5; screen_kind=brand-closure; style_tokens=[heritage_seal, white_closure, brand_mark]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=essence-opening|bg=pale-peach-gradient|camera=macro-liquid-drop-and-open-space|layout=top-open-space_bottom-drop-and-copy|subject=weak-liquid-or-bottle-accent|accent=serum_drop_glow|text_mode=strong|text_zone=mid-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=product-hero|bg=soft-pink-white|camera=single-bottle-with-large-graphic-backdrop|layout=top-copy_bottom-centered-product|subject=single-centered-subject|accent=large-numeric-or-curve-backdrop|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=mechanism-proof|bg=white-cream-panel|camera=formula-panel-with-ingredient-arch|layout=top-data_copy_middle-mechanism_arch_bottom-proof_insets|subject=evidence-plus-subject|accent=serum_arch_bubbles_callouts|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=beauty-result-hero|bg=blush-beige-gradient|camera=single-beauty-portrait-with-flowing-hair|layout=single-hero-portrait_right-top-copy_with_small-badges|subject=single-dominant-portrait|accent=small-result-badges-not-collage|text_mode=strong|text_zone=top-right|text_align=right|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=no-multi-panel-collage
+  s5|kind=compare-proof|bg=soft-pink-beige|camera=compare-cards-plus-benefit_panel|layout=top-compare_panel_bottom-duration_benefit|subject=compare-visuals|accent=before_after_cards|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_5}}|negative=no-compare-layout
+  s6|kind=routine-stage|bg=warm-cream-stage|camera=one-hero-product-on-soft-stage-with-max-two-small-echoes-or-real-uploaded-multi-product|layout=top-copy_middle-step-icons_bottom-single-stage|subject=one-dominant-product-or-real-provided-multi-products|accent=step_markers_and_icons_no-bottle-grid|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=too-many-repeated-products
+  s7|kind=usage-guide|bg=light-cream-panel|camera=hand-demo-and-on-body-usage-collage|layout=stacked-step-panels|subject=human-hand-and-hair-scenes|accent=step_labels|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=choice-recap|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=brand-closure|bg=white-with-soft-blush-edge|camera=top-step_band_bottom-brand_seal|layout=top-narrow-scene_bottom-large-closure|subject=brand-seal-and-light-hair-scene|accent=heritage_mark|text_mode=strong|text_zone=center|text_align=center|text_density=two-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

@@ -1,0 +1,107 @@
+name: "暖杏高留白功效型详情页骨架"
+description: "可迁移的暖杏高留白详情页骨架：暖橙渐变开场、米灰白高留白、黑橙标题、结构标注、场景上身、微距针织、报告证据、多格细节与对比收尾。适用于 HouLai ToolBox 的 style_only_v3 链路，保留视觉骨架、镜头类型、文案功能与空间关系，不迁移参考产品事实。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "暖杏高留白功效详情页"
+trigger_words:
+  - "暖杏高留白功效详情页"
+  - "暖杏功效证明型详情页"
+  - "暖杏高留白文案复刻详情页"
+weight: 1.0
+tags:
+  - name: "暖杏高留白"
+    weight: 1.0
+  - name: "功效证明型"
+    weight: 0.97
+  - name: "结构反塌缩"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "暖橙功效开场"
+    description: "source_refs:[1,2]; 功能: 用暖橙渐变氛围、图标徽章和大标题建立第一屏开场，主体可弱化或下沉承接利益点。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; p_code=P1/P2; i_code=I1; visual_role=warm_benefit_opening; copy_role=hero_benefit; copy_bind=product+selling_points; copy_zone=bottom-left; copy_align=left; copy_relation_to_subject=outside-subject; copy_density=two-line; scene_type=hero-opening; camera_rule=abstract-icon-or-clean-product-lower; layout_rule=top-open-bg_bottom-benefit; text_visibility=clear-copy; must_not=plain-white-background-only; fallback=no-hero-shape->abstract-benefit-opening; style_tokens=[warm_orange_gradient, airy_opening, icon_badge_row, soft_glow]; copy_action=generate_copy; copy_placeholder={{copy_function_language_1}}"
+  - id: "screen_2"
+    name: "功效主图承接"
+    description: "source_refs:[2]; 功能: 用干净主图和顶部短标题承接首屏利益点，建立产品的主视觉识别。"
+    order: 2
+    prompt_guide: "f_code=F1+F2; p_code=P1/P2; i_code=I2; visual_role=clean_hero_product; copy_role=hero_feature; copy_bind=product+selling_points; copy_zone=top-left; copy_align=left; copy_relation_to_subject=outside-subject; copy_density=two-line; scene_type=hero-product; camera_rule=full-product-front; layout_rule=top-copy_bottom-subject; text_visibility=clear-copy; must_not=copy-missing-packshot-only; fallback=no-packshot->clean-object-hero; style_tokens=[light_beige_bg, clean_subject_stage, black_orange_title, soft_whitespace]; copy_action=generate_copy; copy_placeholder={{copy_function_language_2}}"
+  - id: "screen_3"
+    name: "结构标注拆解"
+    description: "source_refs:[3]; 功能: 用编号、箭头和环绕标注拆解关键结构或设计点，强调功能与体验对应关系。"
+    order: 3
+    prompt_guide: "f_code=F3; p_code=P2/P3; i_code=I2; visual_role=annotated_breakdown; copy_role=feature_callouts; copy_bind=product_info+selling_points; copy_zone=top-left; copy_align=left; copy_relation_to_subject=outside-subject; copy_density=bullet-list; scene_type=annotated-breakdown; camera_rule=single-subject-with-numbered-callouts; layout_rule=callout-around-subject; text_visibility=clear-copy; must_not=generic-ad-headline; fallback=no-precise-structure->benefit-callout-breakdown; style_tokens=[numbered_callouts, arrow_notes, centered_subject, beige_panel]; copy_action=generate_copy; copy_placeholder={{copy_function_language_3}}"
+  - id: "screen_4"
+    name: "场景上身拼接"
+    description: "source_refs:[4,9,13,14,15]; 功能: 用下半身、穿搭或场景拼接展示兼容性和真实使用状态，文案存在感较弱。"
+    order: 4
+    prompt_guide: "f_code=F6; p_code=P4; i_code=I3; visual_role=scene_collage; copy_role=scene_note; copy_bind=product+selling_points; copy_zone=top-left; copy_align=left; copy_relation_to_subject=split-column; copy_density=two-line; scene_type=scene-collage; camera_rule=lower-body-scene-or-on-body-multi-view; layout_rule=multi-view-collage; text_visibility=weak-copy; must_not=single-centered-packshot; fallback=no-scene-photo->split-layout-with-on-body-crop; style_tokens=[scene_crops, lower_body_focus, styling_context, calm_beige_backdrop]; copy_action=generate_copy; copy_placeholder={{copy_function_language_4}}"
+  - id: "screen_5"
+    name: "针织材质微距"
+    description: "source_refs:[5,8]; 功能: 用微距纹理和工艺细节建立材质信任感，突出针织、触感和表面状态。"
+    order: 5
+    prompt_guide: "f_code=F2; p_code=P2; i_code=I4; visual_role=macro_texture; copy_role=tactile_material; copy_bind=product_info+selling_points; copy_zone=top-left; copy_align=left; copy_relation_to_subject=outside-subject; copy_density=two-line; scene_type=macro-closeup; camera_rule=macro-closeup-only; layout_rule=top-copy_below-macro; text_visibility=clear-copy; must_not=full-product-front; fallback=no-macro-detail->surface-texture-closeup; style_tokens=[ribbed_texture, macro_surface, soft_shadow, creamy_beige]; copy_action=generate_copy; copy_placeholder={{copy_function_language_5}}"
+  - id: "screen_6"
+    name: "上身体验证明"
+    description: "source_refs:[6,14,15]; 功能: 用拉伸、穿着或动作姿态证明舒适感、贴合感和真实体验。"
+    order: 6
+    prompt_guide: "f_code=F2+F6; p_code=P3/P4; i_code=I5; visual_role=on_body_proof; copy_role=comfort_proof; copy_bind=product+selling_points; copy_zone=top-left; copy_align=left; copy_relation_to_subject=outside-subject; copy_density=short-paragraph; scene_type=on-body-proof; camera_rule=on-body-midshot-or-hand-interaction; layout_rule=top-copy_bottom-subject; text_visibility=clear-copy; must_not=single-centered-packshot; fallback=no-interaction-photo->on-body-static-proof; style_tokens=[hand_interaction, on_body_demo, comfort_motion, airy_floor]; copy_action=generate_copy; copy_placeholder={{copy_function_language_6}}"
+  - id: "screen_7"
+    name: "机理报告背书"
+    description: "source_refs:[7,10,16]; 功能: 用机理图、大数字和报告拼贴构成理性证据面板，突出可信度。"
+    order: 7
+    prompt_guide: "f_code=F3; p_code=P5; i_code=I1; visual_role=evidence_panel; copy_role=proof_data; copy_bind=product_info; copy_zone=mid-left; copy_align=left; copy_relation_to_subject=proof-panel; copy_density=data-callout; scene_type=evidence-panel; camera_rule=report-collage-or-science-panel; layout_rule=left-copy_right-evidence; text_visibility=clear-copy; must_not=generic-ad-headline; fallback=no-proof-data->qualitative-proof-panel; style_tokens=[science_graphic, large_number, report_collage, light_gray_panel]; copy_action=conditional; copy_placeholder={{copy_function_language_7}}"
+  - id: "screen_8"
+    name: "细节对比收尾"
+    description: "source_refs:[11,12,17]; 功能: 用多格细节、长度对比或版本选择做收尾，帮助用户完成判断和选择。"
+    order: 8
+    prompt_guide: "f_code=F4+F5; p_code=P5; i_code=I2; visual_role=detail_compare_closure; copy_role=choice_and_recap; copy_bind=product_info+selling_points; copy_zone=top-left; copy_align=left; copy_relation_to_subject=split-column; copy_density=bullet-list; scene_type=compare-closure; camera_rule=side-by-side-compare-or-grid-choice; layout_rule=side-by-side-choice_with_detail-tags; text_visibility=clear-copy; must_not=no-compare-layout; fallback=no-version-data->benefit-compare-layout; style_tokens=[detail_grid, side_by_side_choice, mini_tags, clean_closure]; copy_action=conditional; copy_placeholder={{copy_function_language_8}}"
+
+template: |
+  sv=style_only_v3
+  zh=轻暖详情骨架
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  r1=style_only
+  r2=no_ref_product
+  r3=copy_before_layout
+  r4=translate_to_natural_prompt
+  r5=no_screen_collapse
+  r6=honor_text_visibility
+  s1|role=warm_benefit_opening|scene_type=hero-opening|camera_rule=abstract-icon-or-clean-product-lower|layout_rule=top-open-bg_bottom-benefit|zone=bottom-left|align=left|density=two-line|bind=product+selling_points|relation=outside-subject|visual_anchor=warm_gradient_icon_row|text_visibility=clear-copy|must_show=warm-gradient+icon-badge-row+benefit-headline|must_not=plain-white-background-only|fallback=no-hero-shape->abstract-benefit-opening|copy_requirement=write_now|slot={{copy_function_language_1}}|visual=[warm_orange_gradient,airy_opening,icon_badge_row,soft_glow]
+  s2|role=clean_hero_product|scene_type=hero-product|camera_rule=full-product-front|layout_rule=top-copy_bottom-subject|zone=top-left|align=left|density=two-line|bind=product+selling_points|relation=outside-subject|visual_anchor=clean_subject_stage|text_visibility=clear-copy|must_show=clean-subject+top-benefit-copy|must_not=copy-missing-packshot-only|fallback=no-packshot->clean-object-hero|copy_requirement=write_now|slot={{copy_function_language_2}}|visual=[light_beige_bg,clean_subject_stage,black_orange_title,soft_whitespace]
+  s3|role=annotated_breakdown|scene_type=annotated-breakdown|camera_rule=single-subject-with-numbered-callouts|layout_rule=callout-around-subject|zone=top-left|align=left|density=bullet-list|bind=product_info+selling_points|relation=outside-subject|visual_anchor=numbered_arrow_annotations|text_visibility=clear-copy|must_show=numbered-callouts+arrow-notes+center-subject|must_not=generic-ad-headline|fallback=no-precise-structure->benefit-callout-breakdown|copy_requirement=write_now|slot={{copy_function_language_3}}|visual=[numbered_callouts,arrow_notes,centered_subject,beige_panel]
+  s4|role=scene_collage|scene_type=scene-collage|camera_rule=lower-body-scene-or-on-body-multi-view|layout_rule=multi-view-collage|zone=top-left|align=left|density=two-line|bind=product+selling_points|relation=split-column|visual_anchor=scene_crop_mix|text_visibility=weak-copy|must_show=multi-view-scene+styling-context|must_not=single-centered-packshot|fallback=no-scene-photo->split-layout-with-on-body-crop|copy_requirement=write_now|slot={{copy_function_language_4}}|visual=[scene_crops,lower_body_focus,styling_context,calm_beige_backdrop]
+  s5|role=macro_texture|scene_type=macro-closeup|camera_rule=macro-closeup-only|layout_rule=top-copy_below-macro|zone=top-left|align=left|density=two-line|bind=product_info+selling_points|relation=outside-subject|visual_anchor=ribbed_texture_macro|text_visibility=clear-copy|must_show=macro-texture+surface-detail|must_not=full-product-front|fallback=no-macro-detail->surface-texture-closeup|copy_requirement=write_now|slot={{copy_function_language_5}}|visual=[ribbed_texture,macro_surface,soft_shadow,creamy_beige]
+  s6|role=on_body_proof|scene_type=on-body-proof|camera_rule=on-body-midshot-or-hand-interaction|layout_rule=top-copy_bottom-subject|zone=top-left|align=left|density=short-paragraph|bind=product+selling_points|relation=outside-subject|visual_anchor=comfort_motion_frame|text_visibility=clear-copy|must_show=on-body-usage+comfort-posture|must_not=single-centered-packshot|fallback=no-interaction-photo->on-body-static-proof|copy_requirement=write_now|slot={{copy_function_language_6}}|visual=[hand_interaction,on_body_demo,comfort_motion,airy_floor]
+  s7|role=evidence_panel|scene_type=evidence-panel|camera_rule=report-collage-or-science-panel|layout_rule=left-copy_right-evidence|zone=mid-left|align=left|density=data-callout|bind=product_info|relation=proof-panel|visual_anchor=report_number_panel|text_visibility=clear-copy|must_show=report-collage+large-number+proof-panel|must_not=generic-ad-headline|fallback=no-proof-data->qualitative-proof-panel|copy_requirement=write_now_if_verified|slot={{copy_function_language_7}}|visual=[science_graphic,large_number,report_collage,light_gray_panel]
+  s8|role=detail_compare_closure|scene_type=compare-closure|camera_rule=side-by-side-compare-or-grid-choice|layout_rule=side-by-side-choice_with_detail-tags|zone=top-left|align=left|density=bullet-list|bind=product_info+selling_points|relation=split-column|visual_anchor=choice_grid_closure|text_visibility=clear-copy|must_show=side-by-side-choice+detail-tags|must_not=no-compare-layout|fallback=no-version-data->benefit-compare-layout|copy_requirement=write_now_if_verified|slot={{copy_function_language_8}}|visual=[detail_grid,side_by_side_choice,mini_tags,clean_closure]
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

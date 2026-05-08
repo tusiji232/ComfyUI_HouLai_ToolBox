@@ -1,0 +1,113 @@
+name: "轻奢储物茶几详情页骨架纯骨架版"
+description: "轻奢储物茶几、长方形茶几、岩板客厅茶几、电视柜组合茶几风格的纯骨架版详情页 skill：保留客厅开场、图标卖点、空间搭配、分区储物、软包台面、岩板细节、柜脚设计与金属脚收尾 8 屏骨架，不承载运行时文案与业务判断。适合长方茶几、储物茶几、客厅茶桌、轻奢茶几详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "储物轻奢茶几"
+trigger_words:
+  - "储物轻奢茶几"
+  - "长方形茶几"
+  - "岩板茶桌"
+  - "电视柜组合茶几"
+  - "客厅储物茶几"
+weight: 1.0
+tags:
+  - name: "储物轻奢茶几"
+    weight: 1.0
+  - name: "长方形茶几"
+    weight: 0.99
+  - name: "岩板茶桌"
+    weight: 0.98
+  - name: "电视柜组合茶几"
+    weight: 0.97
+  - name: "高双储物茶几"
+    weight: 0.96
+  - name: "客厅茶几"
+    weight: 0.95
+  - name: "金属脚茶几"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "客厅开场"
+    description: "source_refs:[1]; 功能: 客厅整景中的主产品开场页，左侧放英文与中文混排大标题，主体偏下居中。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[living_room_scene, mixed_type_title, centered_coffee_table]"
+  - id: "screen_2"
+    name: "图标卖点"
+    description: "source_refs:[2]; 功能: 白底图标矩阵页，上方标题，下方六宫格图标与底部弧形色带形成规整信息板。"
+    order: 2
+    prompt_guide: "f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[icon_benefit_grid, white_board, wave_footer]"
+  - id: "screen_3"
+    name: "空间搭配"
+    description: "source_refs:[3]; 功能: 主产品在完整客厅中的搭配场景页，顶部居中标题强调同风格空间组合。"
+    order: 3
+    prompt_guide: "f_code=F2; screen_kind=scene-hero; style_tokens=[full_room_match, centered_header, living_set_context]"
+  - id: "screen_4"
+    name: "分区储物"
+    description: "source_refs:[4]; 功能: 以箭头和标签拆分台面区、抽屉区、开放区的功能说明页。"
+    order: 4
+    prompt_guide: "f_code=F3+F4; screen_kind=annotated-breakdown; style_tokens=[storage_callouts, arrow_labels, product_overlay]"
+  - id: "screen_5"
+    name: "软包台面"
+    description: "source_refs:[5]; 功能: 透视单品图搭配边缘指向线，白底留白较多，突出台面包边与安全感。"
+    order: 5
+    prompt_guide: "f_code=F4+F5; screen_kind=feature-callout; style_tokens=[isolated_product_view, edge_callouts, soft_wrap_focus]"
+  - id: "screen_6"
+    name: "岩板细节"
+    description: "source_refs:[6]; 功能: 竖版细节证明页，左上标题，下方大面积岩板肌理板与小图标说明。"
+    order: 6
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[stone_slab_detail, icon_column, beige_panel]"
+  - id: "screen_7"
+    name: "柜脚设计"
+    description: "source_refs:[7]; 功能: 主产品场景中放大柜脚或底部悬浮感，顶部标题解释轻盈和扫拖便利。"
+    order: 7
+    prompt_guide: "f_code=F4; screen_kind=feature-callout; style_tokens=[leg_design_scene, closeup_arrow, top_heading]"
+  - id: "screen_8"
+    name: "金属脚收尾"
+    description: "source_refs:[8]; 功能: 白底双脚特写收尾页，用大标题和俯拍角度聚焦金属脚材质。"
+    order: 8
+    prompt_guide: "f_code=F5+F6; screen_kind=macro-closeup; style_tokens=[metal_leg_closeup, white_background, closing_title]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-luxury-living-room|camera=front-room-poster-view|layout=left-large-title_bottom-centered-main-scene|subject=one-dominant-rectangular-coffee-table-in-room|accent=tv-wall_glow_and-floor-props|text_mode=strong|text_zone=left-top|text_align=left|text_density=short-paragraph|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=clean-white-benefit-board|camera=flat-front-panel|layout=top-center-title_middle-icon-grid_bottom-wave-band|subject=benefit-icon-summary-board|accent=six-icon-matrix_and-brown-wave-footer|text_mode=strong|text_zone=top-center_and-icon-bottom|text_align=center|text_density=caption-grid|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-image-only
+  s3|kind=scene-hero|bg=neutral-living-room-set|camera=front-centered-scene-view|layout=top-centered-title_bottom-full-room-scene|subject=main-coffee-table-in-styled-living-room|accent=tv-console_context_and-soft-curtains|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=annotated-breakdown|bg=white-and-room-overlay-board|camera=three-quarter-product-view|layout=top-right-title_bottom-product-with-arrow-callouts|subject=storage-zone-breakdown-for-coffee-table|accent=orange-markers_and-drawer-region-labels|text_mode=strong|text_zone=top-right_and-callout-sides|text_align=right|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=feature-callout|bg=clean-white-perspective-board|camera=high-three-quarter-isolated-view|layout=top-left-title_bottom-isolated-product-with-pointer-lines|subject=tabletop-edge-and-body-safety-detail|accent=pointer-lines_and-soft-shadow|text_mode=strong|text_zone=top-left_and-side-labels|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=macro-closeup|bg=beige-stone-detail-board|camera=vertical-slab-closeup|layout=top-left-title_bottom-large-material-panel|subject=stone-like-surface-and-finish-detail|accent=small-icons_and-beige-paper-panel|text_mode=strong|text_zone=top-left_and-left-bottom|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_6}}|negative=headline-only
+  s7|kind=feature-callout|bg=warm-living-room-detail-scene|camera=front-three-quarter-scene-with-leg-focus|layout=top-left-title_bottom-room-scene_with-leg-emphasis|subject=base-height-and-leg-design-scene|accent=small-arrow_callout_and-floating-shadow|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=plain-white-packshot
+  s8|kind=macro-closeup|bg=clean-white-closeup-board|camera=front-oblique-metal-leg-closeup|layout=top-right-title_bottom-dual-leg-closeup|subject=metal-leg-material-closeup|accent=double-leg-arrangement_and-fine-grain-texture|text_mode=strong|text_zone=top-right|text_align=right|text_density=two-line|copy_role=material-note|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

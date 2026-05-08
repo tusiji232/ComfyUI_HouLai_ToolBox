@@ -1,0 +1,115 @@
+name: "奶油粉通勤托特包详情页骨架纯骨架版"
+description: "通勤托特包、托特包、大容量上班包、奶油粉飞马风格的纯骨架版详情页 skill：保留品牌故事开场、单包焕新主视觉、达人四宫格穿搭、升级卖点与分层结构、面料微距、容量分区、上身尺寸对比、信息收尾与模特展示 8 屏骨架，不承载运行时文案与业务判断。适合托特包、单肩手提、大容量通勤、浅粉轻奢箱包详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "通勤托特"
+trigger_words:
+  - "通勤托特"
+  - "托特包"
+  - "大容量上班包"
+  - "单肩手提包"
+  - "奶油粉通勤"
+weight: 1.0
+tags:
+  - name: "通勤托特"
+    weight: 1.0
+  - name: "托特包"
+    weight: 1.0
+  - name: "大容量上班包"
+    weight: 0.99
+  - name: "单肩手提包"
+    weight: 0.98
+  - name: "奶油粉通勤"
+    weight: 0.97
+  - name: "飞马托特"
+    weight: 0.96
+  - name: "轻奢箱包"
+    weight: 0.95
+  - name: "上身对比"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "故事开场"
+    description: "source_refs:[1]; 功能: 深色品牌故事页开场，上部叙事文案与流线氛围，下部保留纹样展示板和向下过渡感。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=story-opening; style_tokens=[dark_gradient, wave_lines, motif_board]"
+  - id: "screen_2"
+    name: "焕新主视觉"
+    description: "source_refs:[2]; 功能: 顶部标题文案，下部单包主视觉与布幔场景，突出轻盈、焕新、通勤感。"
+    order: 2
+    prompt_guide: "f_code=F1+F2; screen_kind=product-hero; style_tokens=[single_bag_pedestal, lilac_drape, airy_space]"
+  - id: "screen_3"
+    name: "达人搭配"
+    description: "source_refs:[3]; 功能: 顶部大标题，下部 2x2 穿搭拼图，保留真人街拍与签名尾注结构。"
+    order: 3
+    prompt_guide: "f_code=F4+F6; screen_kind=scene-collage; style_tokens=[2x2_outfit_grid, lifestyle_model, creator_signoff]"
+  - id: "screen_4"
+    name: "升级卖点"
+    description: "source_refs:[4]; 功能: 左上升级卖点，右侧单包陈列，下半部分保留分层结构示意与理性说明。"
+    order: 4
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[upgrade_bullets, single_bag_display, layer_diagram]"
+  - id: "screen_5"
+    name: "面料微距"
+    description: "source_refs:[5]; 功能: 标题加微距材质页，大幅纹样皮面特写，下方三枚性能图标收束。"
+    order: 5
+    prompt_guide: "f_code=F5; screen_kind=macro-closeup; style_tokens=[texture_macro, pattern_surface, icon_row]"
+  - id: "screen_6"
+    name: "容量分区"
+    description: "source_refs:[6]; 功能: 顶部容量标题，中部开包俯视结构图，竖向引线标注各分区，底部宽度说明卡片。"
+    order: 6
+    prompt_guide: "f_code=F3; screen_kind=annotated-breakdown; style_tokens=[open_bag_top_view, vertical_callout_lines, bottom_capacity_badge]"
+  - id: "screen_7"
+    name: "上身对比"
+    description: "source_refs:[7]; 功能: 顶部头像信息与对比标题，中部双上身对比，下部双尺寸单包对照，突出中版与大版选择。"
+    order: 7
+    prompt_guide: "f_code=F3+F6; screen_kind=compare-proof; style_tokens=[avatar_header, two_on_body_panels, two_size_options]"
+  - id: "screen_8"
+    name: "信息收尾"
+    description: "source_refs:[8,9]; 功能: 上部产品信息条带，下部大幅模特展示收尾，保留中英双语标题和右下尺寸标识。"
+    order: 8
+    prompt_guide: "f_code=F2+F6; screen_kind=brand-closure; style_tokens=[bilingual_info_band, large_model_display, size_tag]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=dark-brown-gradient-with-wave-lines|camera=story-copy-over-pattern-board|layout=top-story-copy_center-arrow-hint_bottom-pattern-card|subject=motif-board-and-brand-atmosphere|accent=flowing-lines_and_dark-glow|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_1}}|negative=single-centered-packshot
+  s2|kind=product-hero|bg=warm-light-gray-with-soft-lilac-drape|camera=single-tote-on-pedestal|layout=top-copy_bottom-large-product-display|subject=single-centered-tote-bag|accent=soft-fabric-backdrop_and_hanging-charm|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=scene-collage|bg=warm-cream-lifestyle|camera=four-panel-outfit-collage|layout=top-title_bottom-2x2-lifestyle-grid|subject=bag-in-multiple-wearing-scenes|accent=creator-signoff-and-clean-borders|text_mode=strong|text_zone=top-center|text_align=center|text_density=title-plus-signoff|copy_role=scene-note|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=evidence-panel|bg=soft-blush-gradient|camera=single-bag-plus-layer-breakdown|layout=upper-left-upgrade-copy_right-product_lower-proof-diagram|subject=single-product-with-material-evidence|accent=upgrade-badge_and_layer-arrows|text_mode=strong|text_zone=upper-left|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-image-only
+  s5|kind=macro-closeup|bg=soft-cream-panel|camera=full-frame-material-macro|layout=top-title_middle-large-texture_bottom-icon-row|subject=patterned-material-surface|accent=three-performance-icons|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_5}}|negative=single-centered-packshot
+  s6|kind=annotated-breakdown|bg=light-gray-clean|camera=top-down-open-bag-interior|layout=top-title_middle-annotated-interior_bottom-capacity-card|subject=open-bag-structure-and-zones|accent=vertical-callout-lines_and-width-badge|text_mode=strong|text_zone=top-center|text_align=center|text_density=label-callouts|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=compare-proof|bg=light-gray-clean|camera=two-on-body-comparisons-with-size-options|layout=top-profile-header_middle-two-on-body-panels_bottom-two-size-products|subject=wearing-compare-and-size-selection|accent=avatar-band_and_size-labels|text_mode=strong|text_zone=top-band|text_align=center|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_7}}|negative=no-compare-layout
+  s8|kind=brand-closure|bg=cool-gray-studio|camera=large-side-model-display-with-top-info-band|layout=top-bilingual-info-panel_bottom-large-model-scene|subject=single-model-with-tote-bag|accent=soft-blue-fabric-prop_and_size-tag|text_mode=weak|text_zone=top-band|text_align=center|text_density=data-callout|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

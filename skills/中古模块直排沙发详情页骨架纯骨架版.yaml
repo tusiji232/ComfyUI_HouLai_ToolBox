@@ -1,0 +1,113 @@
+name: "中古模块直排沙发详情页骨架纯骨架版"
+description: "中古模块沙发、低矮直排沙发、侘寂客厅沙发、拼块布艺沙发风格的纯骨架版详情页 skill：保留大字海报、正景场景、侧景留白、同骨架变体、顶视陈列、参数页、单品强化与版本收尾 8 屏骨架，不承载运行时文案与业务判断。适合模块沙发、低矮沙发、侘寂风沙发、复古布艺沙发详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "中古模块沙发"
+trigger_words:
+  - "中古模块沙发"
+  - "低矮直排沙发"
+  - "侘寂客厅沙发"
+  - "拼块沙发"
+  - "复古布艺沙发"
+weight: 1.0
+tags:
+  - name: "中古模块沙发"
+    weight: 1.0
+  - name: "低矮直排沙发"
+    weight: 0.99
+  - name: "侘寂客厅沙发"
+    weight: 0.98
+  - name: "拼块沙发"
+    weight: 0.97
+  - name: "极简落地沙发"
+    weight: 0.96
+  - name: "模块拼接沙发"
+    weight: 0.95
+  - name: "复古布艺沙发"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "大字海报"
+    description: "source_refs:[1]; 功能: 极简混凝土空间里的大字海报开场页，主体低矮横铺，左上以超大文字压场。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[oversized_type, low_profile_sofa, concrete_room]"
+  - id: "screen_2"
+    name: "正景场景"
+    description: "source_refs:[2]; 功能: 正视客厅场景页，以地毯和圆几形成前景层次，标题位于上方左侧。"
+    order: 2
+    prompt_guide: "f_code=F2; screen_kind=scene-hero; style_tokens=[front_room_scene, foreground_table, left_copy_block]"
+  - id: "screen_3"
+    name: "侧景留白"
+    description: "source_refs:[3]; 功能: 侧向取景的留白场景页，顶部居中只有极轻标题，主体缩小后保持氛围感。"
+    order: 3
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-note; style_tokens=[side_angle_scene, airy_negative_space, small_center_title]"
+  - id: "screen_4"
+    name: "同骨架变体"
+    description: "source_refs:[4]; 功能: 同一空间和构图下的同骨架变体页，强调不同版本或不同氛围。"
+    order: 4
+    prompt_guide: "f_code=F6; screen_kind=scene-variant; style_tokens=[same_room_restyle, product_tone_variant, top_right_copy]"
+  - id: "screen_5"
+    name: "顶视陈列"
+    description: "source_refs:[5]; 功能: 顶视构图展示整组模块排布，与圆几形成平面关系，顶部用短标题收束。"
+    order: 5
+    prompt_guide: "f_code=F3+F4; screen_kind=layout-proof; style_tokens=[top_view_layout, modular_arrangement, graphic_plane]"
+  - id: "screen_6"
+    name: "参数页"
+    description: "source_refs:[6]; 功能: 白底参数说明页，用侧视图和长度标注展示整体比例。"
+    order: 6
+    prompt_guide: "f_code=F4+F6; screen_kind=parameter-sheet; style_tokens=[white_spec_board, side_dimensions, simple_tech_copy]"
+  - id: "screen_7"
+    name: "单品强化"
+    description: "source_refs:[7]; 功能: 更干净的大单品海报页，用巨大单字或短词搭配主体，强化形态辨识。"
+    order: 7
+    prompt_guide: "f_code=F1+F2; screen_kind=hero-feature; style_tokens=[single_sofa_poster, giant_character, clean_light_scene]"
+  - id: "screen_8"
+    name: "版本收尾"
+    description: "source_refs:[8]; 功能: 延续单品海报骨架的收尾页，用另一种同骨架版本做最后落版。"
+    order: 8
+    prompt_guide: "f_code=F6; screen_kind=compare-closure; style_tokens=[same_poster_restyle, balanced_negative_space, closure_copy]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=raw-concrete-minimal-room|camera=front-wide-low-view|layout=top-left-oversized-type_bottom-low-sofa-scene|subject=one-dominant-low-profile-sofa|accent=oversized-characters_and-floor-rug|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=scene-hero|bg=warm-gray-living-room|camera=front-centered-room-view|layout=top-left-copy_middle-main-sofa_bottom-foreground-table|subject=main-sofa-in-centered-living-scene|accent=round-table_and-floor-rug|text_mode=weak|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=scene-note|bg=soft-stone-wall-room|camera=three-quarter-side-scene|layout=top-center-mini-title_bottom-small-subject-with-large-space|subject=main-sofa-in-airy-side-scene|accent=window-cutout_and-large-blank-wall|text_mode=weak|text_zone=top-center|text_align=center|text_density=single-line|copy_role=scene-note|slot={{copy_function_language_3}}|negative=single-centered-packshot
+  s4|kind=scene-variant|bg=neutral-restyle-room|camera=front-wide-balanced-view|layout=top-right-copy_bottom-same-room-restyle|subject=same-product-restyle-in-identical-layout|accent=product-tone-variant_and-wall-art|text_mode=weak|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_4}}|negative=plain-white-packshot
+  s5|kind=layout-proof|bg=top-view-graphic-room|camera=straight-top-down-view|layout=top-title_bottom-full-layout-display|subject=modular-sofa-plan-view-arrangement|accent=foreground-round-table_and-rectangular-panels|text_mode=strong|text_zone=top-center|text_align=center|text_density=single-line|copy_role=proof-data|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=parameter-sheet|bg=clean-white-parameter-board|camera=side-view-dimension-graphic|layout=top-left-title_middle-single-sofa-dimensions_bottom-note-strip|subject=single-sofa-parameter-sheet|accent=dimension-lines_and-black-bottom-strip|text_mode=weak|text_zone=top-left|text_align=left|text_density=data-callout|copy_role=choice-recap|slot={{copy_function_language_6}}|negative=headline-only
+  s7|kind=hero-feature|bg=soft-light-minimal-room|camera=front-three-quarter-clean-view|layout=top-right-giant-character_bottom-single-sofa-poster|subject=single-main-sofa-form-poster|accent=giant-character_and-frame-art|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=hero-feature|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=compare-closure|bg=neutral-gallery-room|camera=front-clean-poster-view|layout=top-right-short-copy_bottom-same-poster-restyle|subject=same-product-restyle-closure-poster|accent=balanced-blank-space_and-thin-marker-line|text_mode=weak|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=no-compare-layout
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

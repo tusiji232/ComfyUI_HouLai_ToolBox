@@ -1,0 +1,115 @@
+name: "霓虹电竞轻量无线鼠标详情页骨架纯骨架版"
+description: "霓虹电竞、轻量无线鼠标风格的纯骨架版详情页 skill：保留粉色开场、深黑功能拼贴、技术拼贴、轻量化舞台、电池证明、传感器证明、黑底参数页和电竞场景拼贴 8 屏骨架，不承载运行时文案与业务判断。适合电竞鼠标、三模无线鼠标、轻量化游戏鼠标类数码详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "电竞鼠标"
+trigger_words:
+  - "电竞鼠标"
+  - "无线鼠标"
+  - "三模鼠标"
+  - "轻量鼠标"
+  - "游戏鼠标"
+weight: 1.0
+tags:
+  - name: "电竞鼠标"
+    weight: 1.0
+  - name: "无线鼠标"
+    weight: 1.0
+  - name: "三模鼠标"
+    weight: 0.99
+  - name: "轻量鼠标"
+    weight: 0.98
+  - name: "游戏鼠标"
+    weight: 0.97
+  - name: "传感器证明"
+    weight: 0.96
+  - name: "电竞场景"
+    weight: 0.95
+  - name: "霓虹科技"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "粉色开场"
+    description: "source_refs:[1]; 功能: 粉色桌面与键盘同框的潮流电竞开场页。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[pink_keyboard_bg, single_mouse, soft_neon_style]"
+  - id: "screen_2"
+    name: "功能总览"
+    description: "source_refs:[2]; 功能: 充电底座、传感器、续航和连接方式组成的黑底功能拼贴页。"
+    order: 2
+    prompt_guide: "f_code=F4+F6; screen_kind=feature-mosaic; style_tokens=[charging_dock_card, dark_function_grid, gaming_mouse]"
+  - id: "screen_3"
+    name: "技术拼贴"
+    description: "source_refs:[3]; 功能: 多块技术卡展示材质、速度、回报率和传感器。"
+    order: 3
+    prompt_guide: "f_code=F4+F6; screen_kind=feature-mosaic; style_tokens=[tech_cards, blue_green_glow, sensor_info]"
+  - id: "screen_4"
+    name: "轻量舞台"
+    description: "source_refs:[4]; 功能: 科幻舞台中的单鼠标悬浮轻量化主打页。"
+    order: 4
+    prompt_guide: "f_code=F1; screen_kind=hero-opening; style_tokens=[futuristic_platform, centered_mouse, lightweight_copy]"
+  - id: "screen_5"
+    name: "电池证明"
+    description: "source_refs:[5]; 功能: 深黑圆环背景中的充电续航证明页。"
+    order: 5
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[battery_ring, charging_mouse, duration_cards]"
+  - id: "screen_6"
+    name: "传感器证明"
+    description: "source_refs:[6]; 功能: 芯片与电路放大结构配大数字参数的证明页。"
+    order: 6
+    prompt_guide: "f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[sensor_chip_macro, red_black_board, large_numbers]"
+  - id: "screen_7"
+    name: "产品参数"
+    description: "source_refs:[7]; 功能: 深黑参数信息页，含正侧视图和纵向数据列表。"
+    order: 7
+    prompt_guide: "f_code=F4; screen_kind=spec-panel; style_tokens=[black_param_sheet, front_side_views, vertical_data_list]"
+  - id: "screen_8"
+    name: "电竞场景"
+    description: "source_refs:[8]; 功能: 上下双图的电竞场景拼贴收尾页。"
+    order: 8
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[two_game_scenes, cyan_title, gamer_collage]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=pink-desk-and-keyboard-scene|camera=single-gaming-mouse-near-keyboard|layout=top-center-copy_bottom-main-subject|subject=one-dominant-gaming-mouse|accent=soft-pastel-keys-and-neon-edge|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=feature-mosaic|bg=deep-black-function-board|camera=multi-card-grid-with-dock-and-sensor|layout=top-center-copy_middle-card-mosaic_bottom-device-card|subject=gaming-mouse-features-and-modules|accent=glow-frame-cards|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=feature-mosaic|bg=blue-green-tech-card-board|camera=multi-card-tech-grid|layout=top-left-copy_middle-tech-card-mosaic|subject=technology-panels-around-main-mouse|accent=neon-lines-and-chip-cards|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-centered-packshot
+  s4|kind=hero-opening|bg=futuristic-city-platform|camera=single-mouse-floating-center|layout=top-center-copy_middle-single-stage|subject=one-dominant-gaming-mouse|accent=blue-city-bokeh|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-feature|slot={{copy_function_language_4}}|negative=headline-only
+  s5|kind=evidence-panel|bg=deep-black-with-electric-rings|camera=charging-mouse-angled-closeup|layout=top-left-copy_middle-main-mouse_bottom-duration-cards|subject=mouse-battery-and-charging-proof|accent=cyan-rings-and-power-lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_5}}|negative=headline-only
+  s6|kind=evidence-panel|bg=red-black-chip-board|camera=exploded-sensor-chip-over-circuit|layout=top-left-copy_middle-chip-proof_bottom-large-numbers|subject=sensor-proof-and-performance-data|accent=vertical-red-laser-line|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_6}}|negative=headline-only
+  s7|kind=evidence-panel|bg=deep-black-param-sheet|camera=front-and-side-mouse-views-with-data-list|layout=top-title_middle-views_bottom-vertical-data|subject=mouse-parameter-sheet|accent=red-divider-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=scene-collage|bg=dark-gaming-scene|camera=two-stacked-gaming-use-scenes|layout=top-center-copy_middle-top-scene_bottom-bottom-scene|subject=gaming-context-and-mouse-use|accent=cyan-title-and-monitor-light|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

@@ -1,0 +1,113 @@
+name: "中古半圆岛台餐桌详情页骨架纯骨架版"
+description: "半圆岛台餐桌、中古实木餐台、靠墙洽谈长桌、小户型岛台餐桌风格的纯骨架版详情页 skill：保留简约开场、斜角场景、靠墙半圆陈列、版本变体、三段细节、窗帘场景、长桌陈列与参数收尾 8 屏骨架，不承载运行时文案与业务判断。适合岛台餐桌、实木餐台、洽谈桌、弧形餐桌详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "半圆岛台餐桌"
+trigger_words:
+  - "半圆岛台餐桌"
+  - "中古实木餐台"
+  - "靠墙餐桌"
+  - "洽谈长桌"
+  - "小户型岛台"
+weight: 1.0
+tags:
+  - name: "半圆岛台餐桌"
+    weight: 1.0
+  - name: "中古实木餐台"
+    weight: 0.99
+  - name: "靠墙餐桌"
+    weight: 0.98
+  - name: "洽谈长桌"
+    weight: 0.97
+  - name: "小户型岛台"
+    weight: 0.96
+  - name: "弧形餐桌"
+    weight: 0.95
+  - name: "实木餐台"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "简约开场"
+    description: "source_refs:[1]; 功能: 极简暖棕空间里的主产品开场页，主体居中偏下，顶部留出简洁标题区。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[minimal_brown_room, centered_table_scene, airy_title_area]"
+  - id: "screen_2"
+    name: "斜角场景"
+    description: "source_refs:[2]; 功能: 斜俯视展示长桌与周边空间，顶部右侧放短标题，强调空间适配感。"
+    order: 2
+    prompt_guide: "f_code=F2; screen_kind=scene-hero; style_tokens=[angled_room_scene, right_top_copy, long_table_view]"
+  - id: "screen_3"
+    name: "靠墙半圆"
+    description: "source_refs:[3]; 功能: 靠墙摆放的半圆端景页，上方堆叠小字与符号，主体保持偏中构图。"
+    order: 3
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-note; style_tokens=[wall_side_scene, stacked_micro_copy, half_round_focus]"
+  - id: "screen_4"
+    name: "版本变体"
+    description: "source_refs:[4]; 功能: 同一骨架下的深色版本展示页，延续开场布局但改为另一种视觉版本。"
+    order: 4
+    prompt_guide: "f_code=F6; screen_kind=scene-variant; style_tokens=[same_layout_restyle, dark_variant, top_right_title]"
+  - id: "screen_5"
+    name: "三段细节"
+    description: "source_refs:[5]; 功能: 竖向三段细节拼页，分别展示台面、表层处理和支撑工艺。"
+    order: 5
+    prompt_guide: "f_code=F3+F5; screen_kind=detail-grid; style_tokens=[vertical_three_panel, material_and_craft, left_caption_blocks]"
+  - id: "screen_6"
+    name: "窗帘场景"
+    description: "source_refs:[6]; 功能: 正视窗帘背景场景页，主体横向展开，顶部留小标题与装饰线。"
+    order: 6
+    prompt_guide: "f_code=F2; screen_kind=scene-hero; style_tokens=[curtain_backdrop, front_view_layout, subtle_header]"
+  - id: "screen_7"
+    name: "长桌陈列"
+    description: "source_refs:[7]; 功能: 更长比例的正景陈列页，主体横向拉伸，突出桌面长度与场景完整度。"
+    order: 7
+    prompt_guide: "f_code=F1+F2; screen_kind=hero-feature; style_tokens=[long_horizontal_scene, full_length_subject, calm_room]"
+  - id: "screen_8"
+    name: "参数收尾"
+    description: "source_refs:[8]; 功能: 白底参数页，上半展示主产品尺寸，下半展示单个配套轮廓或补充尺寸。"
+    order: 8
+    prompt_guide: "f_code=F4+F6; screen_kind=parameter-sheet; style_tokens=[white_dimension_board, stacked_views, technical_notes]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-brown-minimal-room|camera=front-centered-room-view|layout=top-centered-title_bottom-centered-main-scene|subject=one-dominant-dining-furniture-in-minimal-room|accent=small-wall-shelf_and-light-floor|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=scene-hero|bg=soft-brown-styled-room|camera=high-three-quarter-angle-view|layout=top-right-copy_bottom-angled-room-scene|subject=main-dining-furniture-in-angled-space-scene|accent=wall-shelf_and-diagonal-floor-lines|text_mode=weak|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=scene-note|bg=muted-brown-wall-side-room|camera=front-oblique-wall-side-view|layout=top-centered-micro-copy_bottom-centered-main-scene|subject=main-furniture-with-half-round-end-emphasis|accent=plus-signs_and-micro-copy-stack|text_mode=weak|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_3}}|negative=single-centered-packshot
+  s4|kind=scene-variant|bg=deep-product-tone-room|camera=front-three-quarter-full-scene|layout=top-right-title_bottom-same-structure-restyle|subject=same-layout-product-restyle-scene|accent=product-tone-variant_and-clean-negative-space|text_mode=weak|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_4}}|negative=plain-white-packshot
+  s5|kind=detail-grid|bg=clean-white-vertical-board|camera=three-stacked-detail-crops|layout=left-caption_blocks_right-vertical-crop-stack|subject=material-surface-and-joinery-detail-grid|accent=three-panel-sequence_and-soft-borders|text_mode=strong|text_zone=left-column|text_align=left|text_density=caption-grid|copy_role=material-note|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=scene-hero|bg=white-curtain-soft-room|camera=front-horizontal-view|layout=top-centered-mini-title_bottom-wide-main-scene|subject=main-dining-furniture-in-curtain-lit-scene|accent=soft-curtain-light_and-wide-floor-space|text_mode=weak|text_zone=top-center|text_align=center|text_density=single-line|copy_role=scene-note|slot={{copy_function_language_6}}|negative=headline-only
+  s7|kind=hero-feature|bg=light-curtain-brown-room|camera=front-long-ratio-view|layout=top-center-light-copy_bottom-elongated-main-scene|subject=long-ratio-main-furniture-display|accent=extended-table-line_and-balanced-room-spacing|text_mode=weak|text_zone=top-center|text_align=center|text_density=single-line|copy_role=hero-feature|slot={{copy_function_language_7}}|negative=single-centered-packshot
+  s8|kind=parameter-sheet|bg=clean-white-size-board|camera=front-and-side-technical-views|layout=top-right-title_middle-main-dimension-view_bottom-secondary-dimension-view|subject=main-furniture-parameter-sheet|accent=thin-measure-lines_and-technical-captions|text_mode=weak|text_zone=top-right|text_align=right|text_density=data-callout|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

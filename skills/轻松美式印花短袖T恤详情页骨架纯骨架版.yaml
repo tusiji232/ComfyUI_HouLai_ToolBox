@@ -1,0 +1,127 @@
+name: 轻松美式印花短袖T恤详情页骨架纯骨架版
+description: 女装短袖T恤、美式休闲、印花宽松、彩色阵列风格的纯骨架版详情页 skill：保留双模特开场、单模特主图、配色阵列、纯棉面料、尺码表、背面展示、前后对照和细节拼图 8 屏骨架，不承载运行时文案与业务判断。适合女装短袖T恤、宽松印花上衣、夏季休闲基础款详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 短袖T恤
+trigger_words:
+- 短袖T恤
+- 印花T恤
+- 宽松短袖
+- 女装短袖
+- 美式T恤
+weight: 1.0
+tags:
+- name: 短袖T恤
+  weight: 1.0
+- name: 印花T恤
+  weight: 0.99
+- name: 宽松短袖
+  weight: 0.98
+- name: 女装短袖
+  weight: 0.97
+- name: 美式T恤
+  weight: 0.96
+- name: 彩色阵列
+  weight: 0.95
+- name: 纯棉上衣
+  weight: 0.94
+- name: 夏季半袖
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 双模特开场
+  description: 'source_refs:[1]; 功能: 大标题配双模特和两色短袖开场，保留卡通趣味和宽松版型展示。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[dual_adult_models, playful_graphics, soft_pastel_bg]
+- id: screen_2
+  name: 单模特主图
+  description: 'source_refs:[2]; 功能: 单个全身模特主视觉页，保留大面积留白、轻标题和斜向动线元素。'
+  order: 2
+  prompt_guide: f_code=F6; screen_kind=product-hero; style_tokens=[single_adult_model, airy_white_bg, playful_curve]
+- id: screen_3
+  name: 配色阵列
+  description: 'source_refs:[3]; 功能: 多件不同配色或印花阵列展示，用于表达系列感和选色关系。'
+  order: 3
+  prompt_guide: f_code=F3+F6; screen_kind=color-lineup; style_tokens=[multi_color_lineup, centered_title, clean_board]
+- id: screen_4
+  name: 纯棉面料
+  description: 'source_refs:[4]; 功能: 大幅面料微距配短文案，突出纯棉、柔软和贴身触感。'
+  order: 4
+  prompt_guide: f_code=F5; screen_kind=material-proof; style_tokens=[fabric_macro, top_badge, warm_light]
+- id: screen_5
+  name: 尺码信息
+  description: 'source_refs:[5]; 功能: 双模特尺码参考与表格说明页，保留上下信息分区和数据表。'
+  order: 5
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[two_adult_model_reference, info_blocks, size_table]
+- id: screen_6
+  name: 背面展示
+  description: 'source_refs:[6]; 功能: 单模特背面展示页，突出后背印花和下摆长度。'
+  order: 6
+  prompt_guide: f_code=F6; screen_kind=back-view-display; style_tokens=[back_view_adult_model, centered_layout, weak_copy]
+- id: screen_7
+  name: 前后对照
+  description: 'source_refs:[7]; 功能: 前后两张模特对照展示，保留简短卖点说明和整衣比例。'
+  order: 7
+  prompt_guide: f_code=F2+F6; screen_kind=front_back_compare; style_tokens=[two_view_compare, side_copy, clean_white_bg]
+- id: screen_8
+  name: 细节拼图
+  description: 'source_refs:[8]; 功能: 领口、袖口、下摆等 3-4 格细节拼图页，保留竖向信息结构。'
+  order: 8
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[vertical_detail_grid, macro_panels, thin_labels]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=soft_pastel_youth_board|camera=two_full_body_adult_models_in_oversized_tees|layout=top_large_title_bottom_dual_models|subject=two_color_basic_tee_lineup|accent=playful_illustrations_and_bottom_tabs|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=product-hero|bg=airy_white_with_soft_pastel_badge|camera=single_full_body_adult_model_front_view|layout=top_badge_middle_large_model_bottom_breathing_room|subject=single_adult_model_in_printed_tee|accent=curved_line_graphic|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=headline-only
+
+  s3|kind=compare-closure|bg=clean_white_series_board|camera=multiple_adult_models_in_different_colors|layout=top_center_title_bottom_color_lineup|subject=multi_color_or_multi_print_series|accent=soft_speech_bubble_badge|text_mode=weak|text_zone=top-center|text_align=center|text_density=label-only|copy_role=choice-recap|slot={{copy_function_language_3}}|negative=no-compare-layout
+
+  s4|kind=material-proof|bg=warm_white_fabric_board|camera=large_fabric_macro_surface|layout=top_badge_middle_fabric_macro_bottom_short_copy|subject=soft_cotton_texture|accent=small_material_labels|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=size-chart|bg=white_information_panel|camera=two_adult_model_reference_above_size_table|layout=top_badges_middle_models_bottom_data_table|subject=fit_reference_and_size_data|accent=paired_measure_icons|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_5}}|negative=single-centered-packshot
+
+  s6|kind=on-body-proof|bg=clean_white_editorial_space|camera=single_back_view_adult_model|layout=top_badge_middle_full_model_bottom_small_caption|subject=back_print_and_length_display|accent=minimal_frame|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_6}}|negative=headline-only
+
+  s7|kind=compare-closure|bg=white_clean_board|camera=front_and_back_adult_model_pair|layout=left_front_view_right_back_view_bottom_note|subject=two_view_garment_compare|accent=side_paragraph_and_small_marker|text_mode=strong|text_zone=bottom-right|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=no-compare-layout
+
+  s8|kind=detail-grid|bg=white_vertical_detail_board|camera=three_to_four_macro_detail_panels|layout=top_badge_middle_vertical_panel_stack_bottom_small_notes|subject=collar_cuff_hem_detail_set|accent=thin_outline_frames|text_mode=strong|text_zone=top-right_and_panel_edge|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_8}}|negative=single-image-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

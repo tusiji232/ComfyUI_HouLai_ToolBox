@@ -1,0 +1,115 @@
+name: "详情页风格骨架提取器"
+description: "从1-20张参考图提取可迁移视觉骨架，输出动态8屏skill草稿。"
+category: "详情页工具"
+schema_version: "style_only_v3"
+trigger: "风格骨架提取详情页"
+trigger_words:
+  - "风格骨架提取详情页"
+  - "style-only detail extractor"
+weight: 1.0
+tags:
+  - name: "风格骨架提取"
+    weight: 1.0
+
+shots:
+  - id: "step_1"
+    name: "约束建立"
+    description: "先锁定风格迁移边界：只迁移视觉，不迁移参考产品事实。"
+    order: 1
+    prompt_guide: "ReferenceStyleOnly + ReferenceProductForbidden + LanguageLock + LeakCheck"
+  - id: "step_2"
+    name: "顺序分析"
+    description: "按图片输入顺序提取模块出现节奏，保留source_refs。"
+    order: 2
+    prompt_guide: "sequence-first parsing"
+  - id: "step_3"
+    name: "风格骨架提取"
+    description: "抽取style_tokens与图文关系，不抽取参考产品词。"
+    order: 3
+    prompt_guide: "style tokens + F/P/I relation"
+  - id: "step_4"
+    name: "动态聚类"
+    description: "将模块动态聚类为8屏：功能位可前后移动，不做硬编码槽位。"
+    order: 4
+    prompt_guide: "dynamic sequence mapping"
+  - id: "step_5"
+    name: "结构化输出"
+    description: "输出管理器/插件均可用的JSON草稿。"
+    order: 5
+    prompt_guide: "strict JSON for skill draft"
+
+template: |
+  你是电商详情页反推专家。你的任务是把若干参考详情页图片，提炼成“风格骨架型技能草稿”。
+
+  【硬规则】
+  1. ReferenceStyleOnly:
+     只允许继承：配色、光影、构图、版式、留白、图文模块关系、文案功能关系(F/P/I)。
+  2. ReferenceProductForbidden:
+     禁止继承：参考产品品类词、产品名、品牌词、面料细节、颜色细节、工艺专名、规格参数。
+  3. ConflictResolution:
+     若冲突，以“当前输入图片顺序与视觉证据”为准。
+  4. LanguageLock:
+     输出语言必须严格等于 {{language}}，禁止中英混杂。
+  5. LeakCheck:
+     输出前自检参考产品词泄漏，命中则重写。
+
+  【关键排序规则】
+  - 必须输出8屏，但“功能位不固定”。
+  - 依据图片顺序和叙事节奏动态重排。
+  - 例如：尺码模块若在第5张出现，但叙事应提前，可放在第3屏附近。
+  - 禁止写死“第X屏一定是某功能”。
+
+  【输出格式】
+  仅输出严格JSON，不要Markdown，不要解释。
+  字段固定为：name, description, category, trigger_words, shots, template, defaults。
+
+  shots要求：
+  - 长度必须为8，order必须连续1..8。
+  - 每项必须包含：id, name, description, order, prompt_guide。
+  - description必须含source_refs:[...]，用于追溯来源图片。
+  - prompt_guide必须包含：
+    f_code=F?; p_code=P?; i_code=I?;
+    style_tokens=[...];
+    copy_action=generate_copy|reserve_space|conditional;
+    copy_placeholder={{copy_function_language_N}}。
+
+  template要求：
+  - 必须包含 {{product}} {{language}} {{platform}} {{batch_count}}。
+  - 必须包含 {{copy_function_language_1}} 到 {{copy_function_language_8}}。
+  - 只能写风格骨架，不写参考产品细节。
+
+  defaults要求：
+  - schema_version: style_only_v3
+  - screen_count: "8"
+  - style_transfer_mode: style_only
+  - dynamic_sequence: "true"
+  - language_lock: strict
+  - output_language: {{language}}
+
+  自检：
+  - 恰好8屏
+  - 无参考产品细节词
+  - 无硬编码产品名/类目词
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

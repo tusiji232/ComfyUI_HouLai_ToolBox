@@ -1,0 +1,127 @@
+name: 奶油校园长袖T恤详情页骨架纯骨架版
+description: 女装长袖T恤、奶油校园、活力穿搭、基础上衣风格的纯骨架版详情页 skill：保留双模特开场、棚拍组合、阵列穿搭、局部 lookbook、棉柔图标页、尺码参考、单车场景和人像收尾 8 屏骨架，不承载运行时文案与业务判断。适合女装长袖T恤、基础打底衫、青春休闲上衣详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 长袖T恤
+trigger_words:
+- 长袖T恤
+- 打底衫
+- 基础上衣
+- 女装长袖
+- 校园上衣
+weight: 1.0
+tags:
+- name: 长袖T恤
+  weight: 1.0
+- name: 打底衫
+  weight: 0.99
+- name: 基础上衣
+  weight: 0.98
+- name: 女装长袖
+  weight: 0.97
+- name: 奶油校园
+  weight: 0.96
+- name: 青春休闲
+  weight: 0.95
+- name: 双模特穿搭
+  weight: 0.94
+- name: 春季内搭
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 活力开场
+  description: 'source_refs:[1]; 功能: 暖杏背景中的双模特开场，保留大标题、提包或生活道具和轻松坐姿互动。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[playful_duo_adult_model, warm_peach_bg, lifestyle_prop]
+- id: screen_2
+  name: 棚拍组合
+  description: 'source_refs:[2]; 功能: 奶油色摄影棚中的一坐一站双模特组合，保留品牌区和大留白结构。'
+  order: 2
+  prompt_guide: f_code=F6; screen_kind=brand-hero; style_tokens=[studio_duo, beige_board, circle_graphics]
+- id: screen_3
+  name: 阵列穿搭
+  description: 'source_refs:[3]; 功能: 多个全身模特阵列展示不同搭配，突出基础上衣与下装组合节奏。'
+  order: 3
+  prompt_guide: f_code=F6; screen_kind=look-lineup; style_tokens=[multi_adult_model_lineup, framed_board, outfit_mix]
+- id: screen_4
+  name: 局部图鉴
+  description: 'source_refs:[4]; 功能: 保留小头像或局部裁切加右侧全身模特的 lookbook 页面。'
+  order: 4
+  prompt_guide: f_code=F2+F6; screen_kind=lookbook-panel; style_tokens=[crop_grid, main_adult_model, warm_beige_layout]
+- id: screen_5
+  name: 棉柔卖点
+  description: 'source_refs:[5]; 功能: 中央信息卡配图标列和短文案，表达柔软亲肤、轻薄透气等面料卖点。'
+  order: 5
+  prompt_guide: f_code=F5; screen_kind=material-card; style_tokens=[center_info_card, round_icons, soft_gradient]
+- id: screen_6
+  name: 尺码参考
+  description: 'source_refs:[6]; 功能: 单页尺码表信息结构，上部说明、中部表格、底部简单参数备注。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[single_data_table, top_notes, peach_panel]
+- id: screen_7
+  name: 单车场景
+  description: 'source_refs:[7]; 功能: 双模特与单车道具的生活场景页，保留完整人物关系和轻日常氛围。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[bicycle_scene, two_adult_models, casual_pose]
+- id: screen_8
+  name: 人像收尾
+  description: 'source_refs:[8]; 功能: 单人近景肖像收尾页，保留低密度文案和干净奶油边框。'
+  order: 8
+  prompt_guide: f_code=F6; screen_kind=portrait-closure; style_tokens=[portrait_crop, clean_frame, weak_copy]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=warm_peach_playful_studio|camera=two_young_female_models_with_daily_prop|layout=top_large_title_bottom_duo_interaction|subject=two_adult_models_in_basic_tops|accent=bag_or_basket_prop|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=product-hero|bg=soft_beige_studio_board|camera=one_seated_one_standing_duo_adult_model|layout=top_brand_area_middle_duo_model_bottom_breathing_room|subject=two_adult_model_style_combo|accent=round_graphic_blocks|text_mode=weak|text_zone=top-center|text_align=center|text_density=badge-row|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=headline-only
+
+  s3|kind=scene-collage|bg=warm_beige_frame_board|camera=multi_adult_model_full_body_lineup|layout=top_small_title_middle_three_to_four_models_bottom_brand_band|subject=multiple_outfit_lineup|accent=large_faint_lettering|text_mode=weak|text_zone=top-left|text_align=left|text_density=label-only|copy_role=scene-note|slot={{copy_function_language_3}}|negative=single-centered-packshot
+
+  s4|kind=detail-grid|bg=light_peach_editorial_board|camera=small_crop_grid_plus_main_adult_model|layout=left_2x2_crop_grid_right_full_body_model|subject=lookbook_crop_and_main_look|accent=mini_border_frames|text_mode=strong|text_zone=top-right_and_grid_edge|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=material-proof|bg=soft_peach_gradient_card|camera=centered_info_panel_with_icon_row|layout=top_title_middle_single_card_bottom_icon_list|subject=material_benefit_card|accent=three_round_icons|text_mode=strong|text_zone=center_and_bottom|text_align=center|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_5}}|negative=headline-only
+
+  s6|kind=size-chart|bg=warm_peach_data_panel|camera=flat_size_table|layout=top_notes_middle_table_bottom_parameter_line|subject=topwear_size_data|accent=thin_grid_and_small_badges|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=on-body-proof|bg=clean_cream_lifestyle_scene|camera=two_adult_models_with_bicycle|layout=top_small_title_bottom_large_scene_photo|subject=duo_adult_model_daily_scene|accent=bicycle_prop_and_ground_shadow|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=single-centered-packshot
+
+  s8|kind=brand-closure|bg=light_cream_clean_frame|camera=portrait_closeup_single_adult_model|layout=top_small_copy_bottom_large_portrait|subject=single_adult_model_closeup|accent=soft_border_frame|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

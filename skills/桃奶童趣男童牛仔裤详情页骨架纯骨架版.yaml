@@ -1,0 +1,111 @@
+name: 桃奶童趣男童牛仔裤详情页骨架纯骨架版
+description: 男童牛仔裤、童趣牛仔裤、宽松长裤、春装童裤风格的纯骨架版详情页 skill：保留单品开场、牛仔旋涡、折叠单品、透气概念、搭配示范、结构示意、细节拼贴和信息收尾 8 屏骨架，不承载运行时文案与业务判断。适合男童牛仔裤、卡通童裤、宽松休闲长裤详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 童趣牛仔裤
+trigger_words:
+- 童趣牛仔裤
+- 男童牛仔裤
+- 宽松长裤
+- 春装童裤
+- 儿童裤子
+weight: 1.0
+tags:
+- name: 童趣牛仔裤
+  weight: 1.0
+- name: 男童牛仔裤
+  weight: 1.0
+- name: 宽松长裤
+  weight: 0.99
+- name: 春装童裤
+  weight: 0.98
+- name: 儿童裤子
+  weight: 0.97
+- name: 折叠单品
+  weight: 0.96
+- name: 结构示意
+  weight: 0.95
+- name: 产品信息
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 单品开场
+  description: 'source_refs:[1]; 功能: 单条裤装悬挂式开场页，保留插画边线和卡通感。'
+  order: 1
+  prompt_guide: f_code=F1; screen_kind=hero-opening; style_tokens=[single_product_hero, doodle_outline, peach_board]
+- id: screen_2
+  name: 牛仔面料
+  description: 'source_refs:[2]; 功能: 跟随主产品原色的同色系牛仔面料大特写，保留底部三枚功能徽章。'
+  order: 2
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[same_tone_denim_macro, three_badges, product_color_following_copy]
+- id: screen_3
+  name: 折叠单品
+  description: 'source_refs:[3]; 功能: 立体单品展示页，保留折叠裤脚和侧边贴纸。'
+  order: 3
+  prompt_guide: f_code=F1+F4; screen_kind=product-hero; style_tokens=[floating_pants_product, folded_hem, playful_stickers]
+- id: screen_4
+  name: 透气概念
+  description: 'source_refs:[4]; 功能: 裤管下蒸汽示意的透气概念页。'
+  order: 4
+  prompt_guide: f_code=F3+F5; screen_kind=evidence-panel; style_tokens=[breathability_demo, warm_peach_card, single_concept_photo]
+- id: screen_5
+  name: 搭配示范
+  description: 'source_refs:[5]; 功能: 上衣与裤装组合的搭配示范页。'
+  order: 5
+  prompt_guide: f_code=F5+F6; screen_kind=scene-collage; style_tokens=[outfit_pairing, centered_product_combo, doodle_marks]
+- id: screen_6
+  name: 结构示意
+  description: 'source_refs:[6]; 功能: 裤装结构示意配箭头线的技术页。'
+  order: 6
+  prompt_guide: f_code=F3; screen_kind=annotated-breakdown; style_tokens=[pants_outline, arrow_notes, centered_product]
+- id: screen_7
+  name: 细节拼贴
+  description: 'source_refs:[7]; 功能: 主裤图配三块细节窗的拼贴页。'
+  order: 7
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[main_product_plus_details, peach_board, playful_footer]
+- id: screen_8
+  name: 信息收尾
+  description: 'source_refs:[8]; 功能: 产品细节和尺码表收尾页。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[product_detail_table, red_size_rows, peach_info]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=soft-peach-cartoon-board|camera=single-pants-product-only|layout=top-left-large-copy_bottom-centered-product|subject=one_denim_bottom_only|accent=doodle-outline_and_small_props|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-feature|slot={{copy_function_language_1}}|negative=single-centered-packshot
+  s2|kind=macro-closeup|bg=product-tone-denim-board|camera=single-product-color-denim-macro|layout=top-left-copy_middle-main-macro_bottom-three-badges|subject=denim_texture_in_main_product_color_family|accent=white-round-badges_and_product-tone-copy|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_2}}|negative=fixed-dark-blue-denim
+  s3|kind=product-hero|bg=peach-product-board|camera=single-pants-with-folded-hem|layout=top-left-copy_middle-product_bottom-small-stickers|subject=one_pants_product_display|accent=folded_leg_and_side_stickers|text_mode=strong|text_zone=top-left|text_align=left|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_3}}|negative=plain-white-packshot
+  s4|kind=evidence-panel|bg=warm-peach-proof-card|camera=single-breathability-concept-photo|layout=top-right-copy_middle-main-demo|subject=breathability_concept_for_denim_bottom|accent=rounded-cream-window|text_mode=strong|text_zone=top-right|text_align=right|text_density=one-line|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-image-only
+  s5|kind=scene-collage|bg=soft-peach-styling-board|camera=topwear-and-bottom-pairing-display|layout=top-left-copy_bottom-centered-outfit-combo|subject=one_bottom_with_simple_top_pairing|accent=small-doodle-icons|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_5}}|negative=no-multi-panel-collage
+  s6|kind=annotated-breakdown|bg=peach-technical-board|camera=centered-pants-outline-with-arrows|layout=top-title_middle-centered-product_bottom-arrow-notes|subject=bottomwear_structure_annotation|accent=curved-guide-lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=detail-grid|bg=peach-detail-collage-board|camera=main-product-plus-three-detail-insets|layout=top-title_middle-main-product_bottom-three-detail-boxes|subject=waist_fabric_and_stitching_details|accent=cartoon-footer-characters|text_mode=strong|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=spec-panel|bg=white-peach-info-board|camera=product-detail-table-and-size-chart|layout=top-title_middle-detail-rows_bottom-size-table|subject=bottomwear_spec_and_size_information|accent=red_size-row_highlights|text_mode=strong|text_zone=top-right|text_align=right|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=headline-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

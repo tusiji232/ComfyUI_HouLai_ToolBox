@@ -1,0 +1,111 @@
+name: 奶白暖感加绒连裤袜详情页骨架纯骨架版
+description: 女袜连裤袜、加绒连裤袜、暖感打底袜、奶白保暖风格的纯骨架版详情页 skill：保留全身开场、科技卖点、保暖分级、双造型穿搭、身型匹配、曲线标注、分段压力和尺码表 8 屏骨架，不承载运行时文案与业务判断。适合秋冬加绒袜、保暖裤袜、微压打底袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 加绒连裤袜
+trigger_words:
+- 加绒连裤袜
+- 保暖裤袜
+- 暖感打底袜
+- 微压连裤袜
+- 奶白打底袜
+weight: 1.0
+tags:
+- name: 加绒连裤袜
+  weight: 1.0
+- name: 保暖裤袜
+  weight: 0.99
+- name: 暖感打底袜
+  weight: 0.98
+- name: 微压连裤袜
+  weight: 0.97
+- name: 奶白打底袜
+  weight: 0.96
+- name: 秋冬加绒袜
+  weight: 0.95
+- name: 显瘦裤袜
+  weight: 0.94
+- name: 分段压力袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 全身开场
+  description: 'source_refs:[1]; 功能: 全身模特与绒感边缘的开场页，突出冬季穿搭和腿部一体线条。'
+  order: 1
+  prompt_guide: f_code=F1+F2; screen_kind=hero-opening; style_tokens=[full_body_model, soft_fleece_edge, winter_tights]
+- id: screen_2
+  name: 科技卖点
+  description: 'source_refs:[2]; 功能: 橙白科技网格加图文模块的说明页，保留多格信息结构。'
+  order: 2
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[tech_grid, icon_cards, orange_white_board]
+- id: screen_3
+  name: 保暖分级
+  description: 'source_refs:[3]; 功能: 暖感梯度与温区对比的核心信息页。'
+  order: 3
+  prompt_guide: f_code=F3+F4; screen_kind=compare-closure; style_tokens=[warmth_compare, orange_glow_panel, grade_boxes]
+- id: screen_4
+  name: 双造型穿搭
+  description: 'source_refs:[4]; 功能: 两套穿搭并列的开叉式情绪页，保留整身模特阵列。'
+  order: 4
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[dual_outfit_compare, full_body_models, soft_beige_bg]
+- id: screen_5
+  name: 身型匹配
+  description: 'source_refs:[5]; 功能: 不同体型或尺码适配的并列页，保留三列人台关系。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=compare-closure; style_tokens=[body_type_columns, top_copy, fit_labels]
+- id: screen_6
+  name: 曲线标注
+  description: 'source_refs:[6]; 功能: 橙色渐变底的单腿曲线说明页，突出重点部位标注。'
+  order: 6
+  prompt_guide: f_code=F2+F3; screen_kind=annotated-breakdown; style_tokens=[orange_gradient, tall_leg_visual, curved_callouts]
+- id: screen_7
+  name: 分段压力
+  description: 'source_refs:[7]; 功能: 竖向分段示意页，保留单腿标尺与压力层级说明。'
+  order: 7
+  prompt_guide: f_code=F3; screen_kind=annotated-breakdown; style_tokens=[vertical_segment_labels, single_leg_pose, length_scale]
+- id: screen_8
+  name: 尺码表
+  description: 'source_refs:[8]; 功能: 暖橙色表头尺码参考页，保留多行参数表。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[orange_header_table, size_grid, clean_data_panel]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=soft_cream_room_with_fleece_edge|camera=full_body_female_model_front_view|layout=left_copy_right_full_model|subject=single_fleece_tights_model_in_winter_styling|accent=fuzzy_border_and_soft_shoes|text_mode=strong|text_zone=left-side|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=orange_white_tech_board|camera=multi_card_information_grid|layout=top_title_middle_2x3_info_cards_bottom_small_note|subject=warm_legwear_technology_modules|accent=icon_cards_and_soft_round_tiles|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=compare-closure|bg=orange_glow_compare_panel|camera=warmth_grade_boxes_and_texture_inset|layout=left_large_temperature_box_right_two_grade_cards|subject=warmth_level_compare_for_fleece_legwear|accent=glow_gradient_and_small_texture_window|text_mode=strong|text_zone=left-side|text_align=left|text_density=option-labels|copy_role=proof-data|slot={{copy_function_language_3}}|negative=no-compare-layout
+  s4|kind=scene-collage|bg=soft_beige_fashion_board|camera=dual_full_body_model_compare|layout=top_copy_bottom_two_outfit_columns|subject=two_winter_styling_options_with_same_legwear_family|accent=small_outfit_thumbnails|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=compare-closure|bg=clean_cream_fit_board|camera=three_body_type_legwear_columns|layout=top_copy_middle_three_fit_columns_bottom_small_labels|subject=fit_range_compare_for_single_legwear_structure|accent=column_labels_and_subtle_guides|text_mode=strong|text_zone=top-left|text_align=left|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_5}}|negative=no-compare-layout
+  s6|kind=annotated-breakdown|bg=orange_gradient_leg_panel|camera=single_leg_with_curved_callouts|layout=left_copy_right_tall_leg_visual|subject=single_legwear_curve_support_mapping|accent=body_zone_callouts|text_mode=strong|text_zone=left-side|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=annotated-breakdown|bg=soft_beige_measure_board|camera=single_leg_front_measure_view|layout=top_copy_bottom_segmented_leg_and_scale|subject=sectioned_pressure_guidance_for_legwear|accent=vertical_scale_and_zone_lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=option-labels|copy_role=comfort-proof|slot={{copy_function_language_7}}|negative=single-centered-packshot
+  s8|kind=size-chart|bg=white_data_panel_with_warm_orange_table|camera=large_size_reference_table|layout=top_title_middle_full_table_bottom_small_notes|subject=fleece_legwear_size_reference|accent=orange_header_cells|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=headline-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

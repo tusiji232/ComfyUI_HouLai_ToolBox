@@ -1,0 +1,128 @@
+name: 薄荷潮趣男童卫衣详情页骨架纯骨架版
+description: 男童卫衣、潮趣卫衣、卡通上衣、春秋童装风格的纯骨架版详情页 skill：保留模特开场、面料对比、触感说明、版型展示、透气概念、耐穿近景、场景拼贴和信息收尾 8 屏骨架，不承载运行时文案与业务判断。适合男童卫衣、卡通卫衣、活力童装上衣详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 潮趣卫衣
+trigger_words:
+- 潮趣卫衣
+- 男童卫衣
+- 卡通卫衣
+- 活力童装
+- 春秋童装
+weight: 1.0
+tags:
+- name: 潮趣卫衣
+  weight: 1.0
+- name: 男童卫衣
+  weight: 1.0
+- name: 卡通卫衣
+  weight: 0.99
+- name: 活力童装
+  weight: 0.98
+- name: 春秋童装
+  weight: 0.97
+- name: 面料对比
+  weight: 0.96
+- name: 场景拼贴
+  weight: 0.95
+- name: 信息页
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 模特开场
+  description: 'source_refs:[1]; 功能: 帽子加单模特的糖果撞色开场页。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[mint_peach_hero, single_child_model, bold_border]
+- id: screen_2
+  name: 面料对比
+  description: 'source_refs:[2]; 功能: 双列面料卡的升级面料页。'
+  order: 2
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[dual_fabric_cards, yellow_border, comparison_split]
+- id: screen_3
+  name: 触感说明
+  description: 'source_refs:[3]; 功能: 手掌触感页搭配底部功能图标。'
+  order: 3
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[hand_touch, icon_footer, mint_gradient]
+- id: screen_4
+  name: 版型展示
+  description: 'source_refs:[4]; 功能: 单模特版型展示页，侧边箭头强调宽松感。'
+  order: 4
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[single_child_model_front, curved_arrows, peach_card]
+- id: screen_5
+  name: 透气概念
+  description: 'source_refs:[5]; 功能: 面料山丘和蒸汽示意的透气概念页。'
+  order: 5
+  prompt_guide: f_code=F3+F5; screen_kind=evidence-panel; style_tokens=[breathable_concept, green_wave_lines, phone_window]
+- id: screen_6
+  name: 耐穿近景
+  description: 'source_refs:[6]; 功能: 单模特加下方刷毛小窗的耐穿近景页。'
+  order: 6
+  prompt_guide: f_code=F2+F4; screen_kind=on-body-proof; style_tokens=[single_child_model_closeup, brush_inset, peach_board]
+- id: screen_7
+  name: 场景拼贴
+  description: 'source_refs:[7]; 功能: 主模特加家居/运动/户外三格场景拼贴。'
+  order: 7
+  prompt_guide: f_code=F5+F6; screen_kind=scene-collage; style_tokens=[main_child_model_plus_scene_grid, home_sport_outdoor,
+    white_board]
+- id: screen_8
+  name: 信息收尾
+  description: 'source_refs:[8]; 功能: 产品细节和尺码表信息页收尾。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[detail_table, yellow_profile_bar, size_chart]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=peach-board-with-yellow-frame|camera=single-child-model-front-standing|layout=top-left-large-copy_bottom-main-model|subject=one_child_model_in_playful_sweatshirt|accent=bold-border_and_cap_prop|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=evidence-panel|bg=white-board-with-yellow-frame|camera=two-fabric-cards-side-by-side|layout=top-title_middle-dual-fabric_cards_bottom-short-proof|subject=material_upgrade_and_compare|accent=small-round-badges|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=evidence-panel|bg=mint-gradient-board|camera=hand-touch-on-fabric|layout=top-title_middle-main-touch-photo_bottom-icon-row|subject=soft_touch_and_fabric_benefits|accent=three_line_icons|text_mode=strong|text_zone=top-right|text_align=right|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_3}}|negative=headline-only
+
+  s4|kind=on-body-proof|bg=peach-fashion-card|camera=single-child-model-front-standing|layout=top-right-copy_bottom-main-model|subject=loose_silhouette_and_drop_shoulder_display|accent=curved_arrow_marks|text_mode=strong|text_zone=top-right|text_align=right|text_density=two-line|copy_role=comfort-proof|slot={{copy_function_language_4}}|negative=plain-white-packshot
+
+  s5|kind=evidence-panel|bg=mint-breathability-concept-board|camera=fabric-hill-with-steam-demo|layout=top-left-copy_middle-main-concept_card|subject=breathability_concept_for_sweatshirt_fabric|accent=wave_lines_and_phone_window|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_5}}|negative=no-multi-panel-collage
+
+  s6|kind=on-body-proof|bg=peach-closeup-board|camera=single-child-model-half-body-plus-brush-inset|layout=top-center-copy_middle-main-model_bottom-inset|subject=wear_resistance_and_child_model_closeup|accent=small-detail-inset|text_mode=strong|text_zone=top-center|text_align=center|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_6}}|negative=single-image-only
+
+  s7|kind=scene-collage|bg=white-scene-board|camera=main-child-model-plus-three-scene-cards|layout=left-main-model_right-three-scene-boxes|subject=home_sport_outdoor_scene_collage|accent=small-scene-labels|text_mode=strong|text_zone=top-right|text_align=right|text_density=bullet-list|copy_role=scene-note|slot={{copy_function_language_7}}|negative=no-compare-layout
+
+  s8|kind=spec-panel|bg=white-info-board-with-yellow-top-bar|camera=detail-table-and-size-chart|layout=top-profile-strip_middle-detail-rows_bottom-size-table|subject=topwear_spec_and_size_information|accent=rounded-profile-badges|text_mode=strong|text_zone=top-right|text_align=right|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=headline-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

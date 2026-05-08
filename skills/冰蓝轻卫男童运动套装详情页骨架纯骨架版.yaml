@@ -1,0 +1,127 @@
+name: 冰蓝轻卫男童运动套装详情页骨架纯骨架版
+description: 男童运动套装、冰蓝卫衣套装、轻运动童装、中大童春装风格的纯骨架版详情页 skill：保留蹲姿开场、气流概念、单模特卖点、面料双卡、细节纵排、产品信息、上身展示和下身收尾 8 屏骨架，不承载运行时文案与业务判断。适合男童卫衣套装、浅蓝运动套装、春秋童装两件套详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 冰蓝套装
+trigger_words:
+- 冰蓝套装
+- 男童运动套装
+- 卫衣套装
+- 浅蓝童装
+- 中大童春装
+weight: 1.0
+tags:
+- name: 冰蓝套装
+  weight: 1.0
+- name: 男童运动套装
+  weight: 1.0
+- name: 卫衣套装
+  weight: 0.99
+- name: 浅蓝童装
+  weight: 0.98
+- name: 中大童春装
+  weight: 0.97
+- name: 气流概念
+  weight: 0.96
+- name: 细节纵排
+  weight: 0.95
+- name: 产品信息
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 蹲姿开场
+  description: 'source_refs:[1]; 功能: 蹲姿单模特开场页，突出冰蓝色和运动感。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[crouching_child_model, icy_blue_palette, clean_sport_board]
+- id: screen_2
+  name: 气流概念
+  description: 'source_refs:[2]; 功能: 纤维气流概念页，保留单图大面积结构。'
+  order: 2
+  prompt_guide: f_code=F3+F5; screen_kind=evidence-panel; style_tokens=[airflow_concept, blue_wave_texture, minimal_copy]
+- id: screen_3
+  name: 单模特卖点
+  description: 'source_refs:[3]; 功能: 单模特卖点页，弧形标签强调回弹与舒展。'
+  order: 3
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[single_child_model_pose, curved_side_label, white_bg]
+- id: screen_4
+  name: 面料双卡
+  description: 'source_refs:[4]; 功能: 主面料微距加小窗刷子测试的双卡说明页。'
+  order: 4
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[fabric_macro, brush_test_inset, blue_card_stack]
+- id: screen_5
+  name: 细节纵排
+  description: 'source_refs:[5]; 功能: 领口、袖口、下摆三张竖排细节卡页。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[three_vertical_details, blue_white_board, garment_parts]
+- id: screen_6
+  name: 产品信息
+  description: 'source_refs:[6]; 功能: 产品身份卡和尺码表组合页。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[identity_card, size_table, blue_labels]
+- id: screen_7
+  name: 上身展示
+  description: 'source_refs:[7]; 功能: 单模特上身展示页，保留高留白和简单底部字样。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=product-hero; style_tokens=[single_child_model_upper_display, clean_margin, weak_copy]
+- id: screen_8
+  name: 下身收尾
+  description: 'source_refs:[8]; 功能: 裤装下半身收尾页，强调垂感裤腿和鞋面关系。'
+  order: 8
+  prompt_guide: f_code=F2; screen_kind=model-closure; style_tokens=[lower_body_closure, wide_pants_leg, clean_floor]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=white-board-with-icy-blue-gradients|camera=single-child-model-crouching|layout=top-left-copy_bottom-main-model|subject=one_child_model_in_light_sweatshirt_set|accent=thin-blue-curves|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=evidence-panel|bg=blue-airflow-concept-board|camera=single-large-airflow-texture|layout=top-left-copy_middle-main-concept_card|subject=airflow_and_lightness_concept|accent=white-flow-arrows|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_2}}|negative=headline-only
+
+  s3|kind=on-body-proof|bg=white-sport-board|camera=single-child-model-front-standing|layout=top-right-copy_bottom-main-model|subject=one_child_model_in_basic_sweatshirt_top|accent=curved-side-label|text_mode=strong|text_zone=top-right|text_align=right|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=single-centered-packshot
+
+  s4|kind=evidence-panel|bg=white-board-with-blue-card-stack|camera=fabric-macro-plus-small-brush-test|layout=top-right-copy_middle-main-macro_bottom-small-proof-inset|subject=fabric_density_and_surface_resilience|accent=mini-proof-window|text_mode=strong|text_zone=top-right|text_align=right|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=detail-grid|bg=white-blue-detail-board|camera=three-vertical-garment-detail-cards|layout=left-three-detail-cards_right-open-space|subject=collar_cuff_and_hem_details|accent=blue-caption-bars|text_mode=weak|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=headline-only
+
+  s6|kind=spec-panel|bg=white-info-board|camera=identity-card-and-size-chart|layout=top-title_middle-info-card_bottom-size-table|subject=product_identity_and_size_information|accent=blue-tag-system|text_mode=strong|text_zone=top-right|text_align=right|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=product-hero|bg=white-clean-photo-board|camera=single-child-model-upper-body-display|layout=top-title_bottom-main-photo|subject=upper_body_display_of_sweatshirt_set|accent=small-bottom-wordmark|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=plain-white-packshot
+
+  s8|kind=model-closure|bg=white-floor-photo-board|camera=single-lower-body-closeup|layout=top-right-weak-copy_bottom-main-lower-body|subject=wide_leg_bottom_closure_with_shoes|accent=clean_floor_shadow|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=single-centered-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

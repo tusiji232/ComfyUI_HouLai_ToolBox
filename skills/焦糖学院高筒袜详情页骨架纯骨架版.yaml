@@ -1,0 +1,111 @@
+name: 焦糖学院高筒袜详情页骨架纯骨架版
+description: 女袜高筒袜、学院小腿袜、焦糖棉感、极简信息版风格的纯骨架版详情页 skill：保留显瘦开场、厚度叠色、棉感纱线、罗纹细节、单袜展示、长绒棉说明、双腿上身和基本信息 8 屏骨架，不承载运行时文案与业务判断。适合高筒袜、及膝袜、学院风长袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 学院高筒袜
+trigger_words:
+- 学院高筒袜
+- 小腿袜
+- 及膝袜
+- 长筒棉袜
+- 焦糖高袜
+weight: 1.0
+tags:
+- name: 学院高筒袜
+  weight: 1.0
+- name: 小腿袜
+  weight: 0.99
+- name: 及膝袜
+  weight: 0.98
+- name: 长筒棉袜
+  weight: 0.97
+- name: 焦糖高袜
+  weight: 0.96
+- name: 压力显瘦袜
+  weight: 0.95
+- name: 棉感高袜
+  weight: 0.94
+- name: 极简信息袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 显瘦开场
+  description: 'source_refs:[1]; 功能: 单腿上身与圆形面料小窗的开场页，突出腿型修饰和简洁留白。'
+  order: 1
+  prompt_guide: f_code=F1+F2; screen_kind=hero-opening; style_tokens=[single_leg_pose, round_fabric_inset, clean_beige_bg]
+- id: screen_2
+  name: 厚度叠色
+  description: 'source_refs:[2]; 功能: 多色袜体层叠陈列页，表达厚度感和系列化配色。'
+  order: 2
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[stacked_color_series, centered_product, soft_shadow]
+- id: screen_3
+  name: 棉感纱线
+  description: 'source_refs:[3]; 功能: 大幅编织纹理和底部功能小图标的材质页。'
+  order: 3
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[fabric_macro, icon_row, warm_brown_texture]
+- id: screen_4
+  name: 罗纹细节
+  description: 'source_refs:[4]; 功能: 横向叠放的罗纹特写页，保留大面积织纹和竖排辅助字。'
+  order: 4
+  prompt_guide: f_code=F5; screen_kind=macro-closeup; style_tokens=[ribbed_stack, oversized_texture, side_copy]
+- id: screen_5
+  name: 单袜展示
+  description: 'source_refs:[5]; 功能: 单只袜体悬置展示页，突出长度、轮廓和少量功能标签。'
+  order: 5
+  prompt_guide: f_code=F2; screen_kind=annotated-breakdown; style_tokens=[single_sock_isolation, height_marker, minimal_type]
+- id: screen_6
+  name: 长绒棉说明
+  description: 'source_refs:[6]; 功能: 棉枝道具加功能条目的信息页，保留左右分栏结构。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[cotton_branch, feature_list, white_space_split]
+- id: screen_7
+  name: 双腿上身
+  description: 'source_refs:[7]; 功能: 双腿正视上身证明页，保留成对脚位和居中构图。'
+  order: 7
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[pair_leg_front_view, centered_pose, clean_floor]
+- id: screen_8
+  name: 基本信息
+  description: 'source_refs:[8]; 功能: 袜子线稿与参数表结合的理性页，保留线图加横向表格。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[sock_outline, parameter_table, grey_orange_tabs]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=light_beige_minimal_room|camera=single_leg_side_pose_with_round_inset|layout=left_vertical_copy_right_single_leg|subject=single_high_sock_on_lower_leg|accent=round_texture_window|text_mode=strong|text_zone=left-side|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=clean_cream_series_board|camera=stacked_multi_color_sock_pile|layout=top_copy_middle_centered_series_bottom_small_note|subject=stacked_high_sock_color_series|accent=soft_shadow_and_compact_base|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=macro-closeup|bg=warm_white_material_board|camera=large_knit_texture_closeup|layout=top_title_middle_macro_bottom_icon_row|subject=cotton_rib_texture_for_high_sock|accent=three_small_feature_icons|text_mode=strong|text_zone=top-right|text_align=left|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=macro-closeup|bg=deep_warm_knit_board|camera=stacked_ribbed_texture_macro|layout=left_large_texture_right_vertical_copy|subject=layered_ribbed_knit_surface|accent=side_measure_text_strip|text_mode=strong|text_zone=right-side|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_4}}|negative=no-multi-panel-collage
+  s5|kind=annotated-breakdown|bg=soft_beige_product_board|camera=single_sock_front_display|layout=left_copy_right_isolated_sock|subject=single_high_sock_shape_and_length|accent=height_marker_and_small_notes|text_mode=strong|text_zone=left-side|text_align=left|text_density=two-line|copy_role=hero-feature|slot={{copy_function_language_5}}|negative=headline-only
+  s6|kind=evidence-panel|bg=white_cotton_info_board|camera=botanical_prop_with_feature_list|layout=right_botanical_left_feature_copy|subject=material_story_with_high_sock_attributes|accent=cotton_branch_and_small_icons|text_mode=strong|text_zone=left-side|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-centered-packshot
+  s7|kind=on-body-proof|bg=clean_light_floor|camera=pair_leg_front_view|layout=top_copy_bottom_centered_pair_pose|subject=paired_high_socks_on_body|accent=balanced_feet_alignment|text_mode=strong|text_zone=top-center|text_align=center|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=size-chart|bg=grey_white_parameter_panel|camera=sock_outline_above_table|layout=top_outline_middle_horizontal_table_bottom_scale_notes|subject=high_sock_basic_parameter_board|accent=orange_tabs_and_scale_bars|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-image-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

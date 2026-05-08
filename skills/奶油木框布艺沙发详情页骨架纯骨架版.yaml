@@ -1,0 +1,113 @@
+name: "奶油木框布艺沙发详情页骨架纯骨架版"
+description: "奶油木框沙发、雪尼尔布艺沙发、可拆洗沙发、小户型客厅沙发风格的纯骨架版详情页 skill：保留温柔开场、软靠场景、拆洗演示、模块拆解、背书证明、三宫细节、面料特写与风格推荐 8 屏骨架，不承载运行时文案与业务判断。适合木框沙发、布艺沙发、奶油风沙发、可拆洗沙发详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "奶油木框沙发"
+trigger_words:
+  - "奶油木框沙发"
+  - "雪尼尔布艺沙发"
+  - "可拆洗沙发"
+  - "中古奶油沙发"
+  - "木扶手沙发"
+weight: 1.0
+tags:
+  - name: "奶油木框沙发"
+    weight: 1.0
+  - name: "雪尼尔布艺沙发"
+    weight: 0.99
+  - name: "可拆洗沙发"
+    weight: 0.98
+  - name: "中古奶油沙发"
+    weight: 0.97
+  - name: "小户型客厅沙发"
+    weight: 0.96
+  - name: "木扶手沙发"
+    weight: 0.95
+  - name: "柔软沙发"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "温柔开场"
+    description: "source_refs:[1]; 功能: 暖奶油卧客厅氛围开场页，人物与主产品同框，顶部大手写感标题拉开情绪。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[warm_cream_room, lifestyle_pose, handwritten_title]"
+  - id: "screen_2"
+    name: "软靠场景"
+    description: "source_refs:[2]; 功能: 人物俯靠主产品的舒适场景页，上部为浅色标题条，下部保留完整产品与地面层次。"
+    order: 2
+    prompt_guide: "f_code=F2; screen_kind=scene-hero; style_tokens=[leaning_pose_scene, cream_title_band, cozy_room]"
+  - id: "screen_3"
+    name: "拆洗演示"
+    description: "source_refs:[3]; 功能: 近中景场景页，以人物拆开或拿起软包的动作表现可拆洗结构。"
+    order: 3
+    prompt_guide: "f_code=F3+F4; screen_kind=on-body-proof; style_tokens=[removable_cover_action, warm_window_light, simple_top_copy]"
+  - id: "screen_4"
+    name: "模块拆解"
+    description: "source_refs:[4]; 功能: 白底漂浮分区拆解页，将头靠、靠包、扶手等模块分离摆放并指向主体。"
+    order: 4
+    prompt_guide: "f_code=F3+F4; screen_kind=annotated-breakdown; style_tokens=[exploded_parts, floating_modules, clean_background]"
+  - id: "screen_5"
+    name: "背书证明"
+    description: "source_refs:[5]; 功能: 证书或盾牌居中的背书页，底部并列小图标或短词，形成安心证明结构。"
+    order: 5
+    prompt_guide: "f_code=F4; screen_kind=evidence-panel; style_tokens=[badge_centerpiece, proof_icons, soft_yellow_board]"
+  - id: "screen_6"
+    name: "三宫细节"
+    description: "source_refs:[6]; 功能: 三块细节拼页，分别展示耐磨、抗污和防泼水等表层表现。"
+    order: 6
+    prompt_guide: "f_code=F5; screen_kind=detail-grid; style_tokens=[three_tile_details, brush_and_hand_actions, fabric_performance]"
+  - id: "screen_7"
+    name: "面料特写"
+    description: "source_refs:[7]; 功能: 斜裁面料近景为主体，上方大标题与大数字，下方横向列出简短利益点。"
+    order: 7
+    prompt_guide: "f_code=F5+F6; screen_kind=macro-closeup; style_tokens=[diagonal_fabric_crop, large_number, bottom_benefit_row]"
+  - id: "screen_8"
+    name: "风格推荐"
+    description: "source_refs:[8]; 功能: 以同风格房间海报做收尾，顶部标题，底部留轻量按钮或角标位置。"
+    order: 8
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-recommendation; style_tokens=[styled_room_poster, recommendation_header, small_cta_corner]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-cream-lifestyle-room|camera=front-wide-soft-view|layout=top-left-handwritten-title_bottom-main-sofa-scene|subject=one-dominant-sofa-in-warm-room|accent=lifestyle-figure_and-soft-floor-lamp|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=scene-hero|bg=sunlit-cream-living-room|camera=front-three-quarter-comfort-view|layout=top-title-band_bottom-comfort-scene|subject=main-sofa-with-comfort-pose-scene|accent=cream-header_band_and-wood-frame-edges|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=scene-note|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=on-body-proof|bg=bright-cream-window-scene|camera=mid-shot-interaction-view|layout=top-left-copy_bottom-removable-cover-action|subject=sofa-removable-module-demonstration|accent=lifted-cushion_and-soft-shadows|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_3}}|negative=single-centered-packshot
+  s4|kind=annotated-breakdown|bg=clean-white-floating-board|camera=front-exploded-view|layout=top-right-title_middle-main-sofa_bottom-separated-parts|subject=sofa-module-exploded-layout|accent=floating-cushions_and-part-labels|text_mode=strong|text_zone=top-right_and-part-sides|text_align=right|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_4}}|negative=single-image-only
+  s5|kind=evidence-panel|bg=soft-yellow-proof-board|camera=front-centered-badge-view|layout=top-left-title_middle-large-badge_bottom-icon-row|subject=trust-badge-and-proof-icons-board|accent=glass-badge_and-certified-strip|text_mode=strong|text_zone=top-left_and-bottom-center|text_align=left|text_density=data-callout|copy_role=proof-data|slot={{copy_function_language_5}}|negative=headline-only
+  s6|kind=detail-grid|bg=cream-detail-collage|camera=three-panel-closeup-view|layout=top-left-copy_bottom-three-detail-panels|subject=fabric-performance-detail-grid|accent=brush-hand-water-actions_and-small-labels|text_mode=strong|text_zone=top-left_and-panel-corners|text_align=left|text_density=caption-grid|copy_role=material-note|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=macro-closeup|bg=soft-beige-fabric-panel|camera=diagonal-macro-view|layout=top-left-title_center-large-number_bottom-benefit-row|subject=fabric-texture-and-density-closeup|accent=diagonal-crop_and-translucent-circles|text_mode=strong|text_zone=top-left_and-bottom-center|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_7}}|negative=plain-white-packshot
+  s8|kind=scene-recommendation|bg=warm-styled-room-poster|camera=front-room-poster-view|layout=top-left-title_bottom-large-room-scene_with-corner-badge|subject=related-style-room-poster|accent=small-cta-corner_and-poster-frame|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

@@ -1,0 +1,128 @@
+name: 简灰棉柔男装卫衣详情页骨架纯骨架版
+description: 男装卫衣、圆领卫衣、棉柔亲肤、简约舒适风格的纯骨架版详情页 skill：保留品牌极简开场、棉感意象、卖点模特、版型对比、细节拼图、尺码快选、模特展示和单品收尾 8 屏骨架，不承载运行时文案与业务判断。适合男装卫衣、扎染面料、浅灰极简、模特陈列型详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 棉柔卫衣
+trigger_words:
+- 棉柔卫衣
+- 男装卫衣
+- 圆领卫衣
+- 简约舒适
+- 扎染面料
+weight: 1.0
+tags:
+- name: 棉柔卫衣
+  weight: 1.0
+- name: 男装卫衣
+  weight: 1.0
+- name: 圆领卫衣
+  weight: 0.99
+- name: 简约舒适
+  weight: 0.98
+- name: 扎染面料
+  weight: 0.97
+- name: 浅灰极简
+  weight: 0.96
+- name: 模特展示
+  weight: 0.95
+- name: 尺码快选
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 品牌开场
+  description: 'source_refs:[1]; 功能: 顶部品牌胶囊与标签开场，中部单模特半身承接，整体保留浅灰留白与弱文本感。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=brand-hero-opening; style_tokens=[light_gray_studio, centered_half_body_adult_model,
+    brand_badges]
+- id: screen_2
+  name: 棉柔意象
+  description: 'source_refs:[2]; 功能: 用漂浮棉团和柔和微景观表达亲肤棉柔与空气感，保留左侧双区文案结构。'
+  order: 2
+  prompt_guide: f_code=F5; screen_kind=material-scene; style_tokens=[sky_blue_air, floating_cotton, soft_landscape]
+- id: screen_3
+  name: 卖点模特
+  description: 'source_refs:[3]; 功能: 左侧三段卖点文字，右侧立姿模特主视觉，突出宽松圆领、舒适感和扎染面料。'
+  order: 3
+  prompt_guide: f_code=F2+F6; screen_kind=feature-model-hero; style_tokens=[left_copy_column, standing_adult_model, clean_gray_background]
+- id: screen_4
+  name: 版型对比
+  description: 'source_refs:[4]; 功能: 上部单模特展示，下部三版型线稿卡片对比，强调宽松、常规、修身的选择结构。'
+  order: 4
+  prompt_guide: f_code=F3; screen_kind=fit-compare; style_tokens=[upper_adult_model, lower_fit_cards, outline_icons]
+- id: screen_5
+  name: 细节拼图
+  description: 'source_refs:[5]; 功能: 标题开场加 2x2 细节拼图，领口、印花、袖口和下摆局部特写配短标签说明。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[headline_top_left, macro_panels, four_detail_captions]
+- id: screen_6
+  name: 尺码快选
+  description: 'source_refs:[6]; 功能: 大标题加单位提示，中部尺码数据表，底部脚注说明，保持理性信息排版。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[large_table, top_unit_mark, footnotes]
+- id: screen_7
+  name: 模特展示
+  description: 'source_refs:[7]; 功能: 左上标题加大幅坐姿模特图，保留服装上身比例和简洁陈列感。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=model-display; style_tokens=[seated_adult_model, chair_prop, wide_margin]
+- id: screen_8
+  name: 收尾单品
+  description: 'source_refs:[8]; 功能: 全身模特搭配手提包收尾，弱文本或留白收束整套详情页。'
+  order: 8
+  prompt_guide: f_code=F2+F6; screen_kind=full-body-closure; style_tokens=[full_body_adult_model, carry_bag, minimal_text]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=light-gray-studio|camera=centered-half-body-male-model|layout=top-band-badges_bottom-centered-portrait|subject=single-centered-on-body-adult-model|accent=brand-pill-logo_and_outline-tags|text_mode=weak|text_zone=top-band|text_align=spread|text_density=badge-row|copy_role=hero-feature|slot={{copy_function_language_1}}|negative=headline-only
+
+  s2|kind=material-scene|bg=sky-blue-soft-outdoor|camera=floating-cotton-cluster-over-soft-landscape|layout=top-left-small-copy_center-floating-material_bottom-left-benefit-copy|subject=single-dominant-material-cluster|accent=cotton-icon_and_air-flow|text_mode=strong|text_zone=left-side|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=on-body-hero|bg=light-gray-studio|camera=three-quarter-standing-adult-model|layout=left-callout-stack_right-full-body-model|subject=single-wearing-adult-model|accent=three-feature-callouts|text_mode=strong|text_zone=left-column|text_align=left|text_density=stacked-callouts|copy_role=hero-feature|slot={{copy_function_language_3}}|negative=headline-only
+
+  s4|kind=fit-compare|bg=light-gray-panel|camera=front-adult-model-with-lower-fit-choices|layout=upper-model_lower-three-choice-cards|subject=adult-model-plus-compare-cards|accent=fit-outline-diagrams|text_mode=weak|text_zone=bottom-band|text_align=center|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_4}}|negative=no-compare-layout
+
+  s5|kind=detail-grid|bg=light-gray-panel|camera=macro-collage-of-collar_print_cuff_hem|layout=top-title_middle-large-detail_bottom-three-detail-panels|subject=multi-panel-fabric-details|accent=2x2-grid_with_caption-overlays|text_mode=strong|text_zone=top-left_and_panel-overlays|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=single-image-only
+
+  s6|kind=size-chart|bg=light-gray-clean|camera=flat-data-panel|layout=top-title_middle-large-size-table_bottom-footnotes|subject=size-data-table|accent=unit-mark_and_grid-lines|text_mode=strong|text_zone=top-left|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=on-body-proof|bg=light-gray-studio|camera=seated-three-quarter-adult-model|layout=top-left-title_bottom-large-seated-model|subject=single-seated-on-body-adult-model|accent=chair-prop|text_mode=strong|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=brand-closure|bg=light-gray-studio|camera=full-body-adult-model-with-carry-bag|layout=full-frame-model_with_bottom-breathing-room|subject=single-full-body-closure|accent=carry-bag_and_minimal-styling|text_mode=placeholder|text_zone=bottom-edge|text_align=center|text_density=label-only|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

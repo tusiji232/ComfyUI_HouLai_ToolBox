@@ -1,0 +1,115 @@
+name: "暖木粉白宠物漏食磨牙玩具详情页骨架纯骨架版"
+description: "暖木粉白、宠物磨牙骨、漏食洁齿玩具风格的纯骨架版详情页 skill：保留双玩具开场、单品标注拆解、双卡细节说明、微距与实拍混排、参数表、变体展示和宠物使用拼贴 8 屏骨架，不承载运行时文案与业务判断。适合狗狗玩具、漏食玩具、洁齿磨牙、嗅闻互动类宠物用品详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "宠物磨牙骨"
+trigger_words:
+  - "宠物磨牙骨"
+  - "狗狗玩具"
+  - "漏食玩具"
+  - "洁齿磨牙"
+  - "嗅闻玩具"
+weight: 1.0
+tags:
+  - name: "宠物磨牙骨"
+    weight: 1.0
+  - name: "狗狗玩具"
+    weight: 1.0
+  - name: "漏食玩具"
+    weight: 0.99
+  - name: "洁齿磨牙"
+    weight: 0.98
+  - name: "嗅闻玩具"
+    weight: 0.97
+  - name: "暖木粉白"
+    weight: 0.96
+  - name: "骨头玩具"
+    weight: 0.95
+  - name: "宠物用品"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "双品开场"
+    description: "source_refs:[1]; 功能: 暖木桌面上的双色双玩具开场，顶部保留柔和标题区，突出轻松温暖的宠物用品氛围。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[warm_wood_table, dual_pet_toys, soft_pink_title]"
+  - id: "screen_2"
+    name: "单品拆解"
+    description: "source_refs:[2]; 功能: 单件骨头玩具白底居中，围绕软刺、漏食孔和表面纹理做标注说明。"
+    order: 2
+    prompt_guide: "f_code=F2; screen_kind=annotated-breakdown; style_tokens=[single_toy_center, arrow_callouts, white_background]"
+  - id: "screen_3"
+    name: "双卡细节"
+    description: "source_refs:[3]; 功能: 上下两张细节卡片展示同一玩具，并配局部放大窗说明表面结构和藏食孔位。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=detail-panel; style_tokens=[stacked_detail_cards, circular_zoom_insets, light_pink_frames]"
+  - id: "screen_4"
+    name: "微距实拍"
+    description: "source_refs:[4]; 功能: 上半部分微距纹理，下半部分狗狗使用实拍和安全说明，形成细节与场景混排。"
+    order: 4
+    prompt_guide: "f_code=F4+F6; screen_kind=scene-collage; style_tokens=[macro_texture, dog_use_scene, mixed_panels]"
+  - id: "screen_5"
+    name: "参数表"
+    description: "source_refs:[5]; 功能: 极简白底参数卡，顶部标题，下部表格信息，保持清晰理性的中段收束。"
+    order: 5
+    prompt_guide: "f_code=F4; screen_kind=spec-panel; style_tokens=[clean_parameter_sheet, centered_title, white_table_card]"
+  - id: "screen_6"
+    name: "变体球体"
+    description: "source_refs:[6]; 功能: 木桌场景中的双色球形玩具展示，作为同系列变体页，弱化文字、强化单品切换。"
+    order: 6
+    prompt_guide: "f_code=F1; screen_kind=product-display; style_tokens=[dual_round_toys, warm_table, weak_copy]"
+  - id: "screen_7"
+    name: "骨头展示"
+    description: "source_refs:[7]; 功能: 木桌场景中的双色骨头玩具并排陈列，配轻量道具，延续温暖产品展示节奏。"
+    order: 7
+    prompt_guide: "f_code=F1+F6; screen_kind=product-display; style_tokens=[dual_bone_toys, warm_scene_prop, display_page]"
+  - id: "screen_8"
+    name: "宠物使用"
+    description: "source_refs:[8]; 功能: 上大下小三图拼贴的宠物咬玩具真实使用页，突出互动和食物引导玩法。"
+    order: 8
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[one_large_two_small, dog_interaction, usage_collage]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-wood-table-with-soft-pink-haze|camera=two-pet-toys-on-tabletop|layout=top-title_bottom-dual-subject|subject=two-color-pet-toys-in-warm-scene|accent=soft-pink-title-and-food-crumbs|text_mode=strong|text_zone=top-center|text_align=center|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=annotated-breakdown|bg=clean-white-with-soft-pink-copy|camera=single-pet-toy-front-display|layout=top-copy_middle-single-subject_bottom-icon-row|subject=one-dominant-pet-toy|accent=arrow-callouts-and-feature-icons|text_mode=strong|text_zone=top-left|text_align=left|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=headline-only
+  s3|kind=detail-grid|bg=white-detail-board|camera=stacked-product-cards-with-zoom-insets|layout=top-title_middle-two-detail-cards|subject=one-pet-toy-with-surface-and-hole-details|accent=circular-zoom-windows|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-image-only
+  s4|kind=scene-collage|bg=white-board-with-light-pink-frames|camera=macro-top_and-dog-use-bottom|layout=top-macro_middle-use-scene_bottom-safety-panel|subject=toy-texture-and-real-pet-interaction|accent=mixed-panel-layout|text_mode=strong|text_zone=mid-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=evidence-panel|bg=clean-white-spec-sheet|camera=parameter-table-card|layout=top-title_middle-parameter-table|subject=spec-table-and-product-info|accent=thin-divider-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_5}}|negative=single-image-only
+  s6|kind=product-hero|bg=warm-wood-tabletop|camera=two-round-pet-toys-on-curved-table-edge|layout=top-weak-copy_bottom-dual-subject|subject=two-variant-pet-toys|accent=soft-daylight-and-round-shapes|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_6}}|negative=headline-only
+  s7|kind=product-hero|bg=warm-wood-table-with-small-scene-prop|camera=two-bone-pet-toys-on-tabletop|layout=top-weak-copy_middle-dual-display|subject=two-bone-shaped-pet-toys|accent=small-pet-figurine-and-soft-daylight|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_7}}|negative=headline-only
+  s8|kind=scene-collage|bg=warm-indoor-floor-scene|camera=one-large-and-two-small-dog-use-scenes|layout=top-large-scene_bottom-two-small-scenes|subject=dog-chewing-and-feeding-interaction|accent=split-collage-and-hand-feed-action|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

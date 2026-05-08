@@ -1,0 +1,111 @@
+name: 青艾抗菌男士短袜详情页骨架纯骨架版
+description: 男袜短袜、艾草抗菌袜、草本防臭袜、绿色证据风格的纯骨架版详情页 skill：保留艾草开场、草本数据、抑菌分镜、柔软堆叠、薄厚对比、360 环绕、局部细节和模特收尾 8 屏骨架，不承载运行时文案与业务判断。适合男士抗菌袜、草本短袜、吸汗防臭袜详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 艾草抗菌袜
+trigger_words:
+- 艾草抗菌袜
+- 草本短袜
+- 吸汗防臭袜
+- 男士抗菌袜
+- 艾草男袜
+weight: 1.0
+tags:
+- name: 艾草抗菌袜
+  weight: 1.0
+- name: 草本短袜
+  weight: 0.99
+- name: 吸汗防臭袜
+  weight: 0.98
+- name: 男士抗菌袜
+  weight: 0.97
+- name: 艾草男袜
+  weight: 0.96
+- name: 绿色证据风格
+  weight: 0.95
+- name: 360支撑袜
+  weight: 0.94
+- name: 薄厚对比袜
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 艾草开场
+  description: 'source_refs:[1]; 功能: 脚部上身与艾草草地的开场页，保留绿色底面和认证徽章。'
+  order: 1
+  prompt_guide: f_code=F1+F4; screen_kind=hero-opening; style_tokens=[green_grass_base, certification_badge, white_sock_hero]
+- id: screen_2
+  name: 草本数据
+  description: 'source_refs:[2]; 功能: 艾草植物近景与大数字组合页，突出草本来源证据感。'
+  order: 2
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[botanical_closeup, large_numbers, plant_story]
+- id: screen_3
+  name: 抑菌分镜
+  description: 'source_refs:[3]; 功能: 绿色液滴和叶片分栏的信息页，保留上下双模块结构。'
+  order: 3
+  prompt_guide: f_code=F4; screen_kind=evidence-panel; style_tokens=[droplet_panel, split_infographic, fresh_green_glow]
+- id: screen_4
+  name: 柔软堆叠
+  description: 'source_refs:[4]; 功能: 多双袜体堆叠与柔软标题页，保留棉团道具和竖版卡片。'
+  order: 4
+  prompt_guide: f_code=F6; screen_kind=scene-collage; style_tokens=[stacked_socks, cotton_props, grey_card_layout]
+- id: screen_5
+  name: 薄厚对比
+  description: 'source_refs:[5]; 功能: 黑白袜对比页，保留厚薄差异和双列说明。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=compare-closure; style_tokens=[thickness_compare, black_white_split, product_cards]
+- id: screen_6
+  name: 360环绕
+  description: 'source_refs:[6]; 功能: 上脚页加蓝色箭头标记，突出环绕支撑和贴脚感。'
+  order: 6
+  prompt_guide: f_code=F2+F3; screen_kind=annotated-breakdown; style_tokens=[support_arrows, seated_leg_pose, green_floor]
+- id: screen_7
+  name: 局部细节
+  description: 'source_refs:[7]; 功能: 袜口、脚弓等局部细节页，保留大字标题和局部特写。'
+  order: 7
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[detail_closeups, large_type, minimal_grid]
+- id: screen_8
+  name: 模特收尾
+  description: 'source_refs:[8]; 功能: 直立腿部上身收尾页，保留草坪底和白袜整身关系。'
+  order: 8
+  prompt_guide: f_code=F2; screen_kind=on-body-proof; style_tokens=[standing_leg_pose, grass_base, clean_white_sock]
+template: |-
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=green_grass_base_with_clean_white_space|camera=feet_up_pose_in_white_socks|layout=left_title_right_large_feet_pose_top_badge|subject=single_pair_mens_short_socks_with_botanical_story|accent=certification_badge_and_green_floor|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=evidence-panel|bg=deep_green_botanical_closeup|camera=plant_macro_with_large_data_type|layout=top_copy_middle_botanical_image_bottom_large_number_row|subject=botanical_origin_and_clean_material_story|accent=large_numeric_markers|text_mode=strong|text_zone=left-side|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=evidence-panel|bg=fresh_green_split_infographic|camera=dual_panel_botanical_and_droplet_graphics|layout=top_right_product_panel_bottom_left_botanical_panel|subject=antibacterial_story_in_two_information_blocks|accent=liquid_bubbles_and_leaf_macro|text_mode=strong|text_zone=right-upper_and_left-lower|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=scene-collage|bg=soft_grey_card_with_cotton_props|camera=stacked_sock_tower|layout=top_copy_middle_product_stack_bottom_small_footer|subject=multi_pair_short_sock_softness_story|accent=cotton_props_and_vertical_card_frame|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=compare-closure|bg=clean_grey_compare_board|camera=dual_column_black_white_thickness_compare|layout=top_title_middle_two_compare_columns_bottom_small_labels|subject=thickness_and_breathability_option_compare|accent=product_rollers_and_small_text_blocks|text_mode=strong|text_zone=top-right|text_align=left|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_5}}|negative=no-compare-layout
+  s6|kind=annotated-breakdown|bg=green_floor_with_white_wall|camera=seated_leg_pose_with_support_arrows|layout=top_copy_middle_large_leg_pose_bottom_small_note|subject=ring_support_mapping_for_short_sock_on_body|accent=blue_direction_arrows|text_mode=strong|text_zone=top-right|text_align=left|text_density=bullet-list|copy_role=comfort-proof|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=detail-grid|bg=white_detail_closeup_board|camera=large_title_with_lower_detail_crops|layout=top_large_type_bottom_two_detail_blocks|subject=multi_panel_review_of_cuff_arch_and_surface|accent=close_crop_windows|text_mode=strong|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=on-body-proof|bg=green_grass_strip_with_clean_upper_space|camera=standing_leg_pose_front_view|layout=top_copy_middle_tall_leg_pose_bottom_small_note|subject=single_pair_mens_short_socks_in_standing_pose|accent=grass_base_and_soft_shadow|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_8}}|negative=headline-only
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

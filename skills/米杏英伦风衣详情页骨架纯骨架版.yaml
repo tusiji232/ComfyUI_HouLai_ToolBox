@@ -1,0 +1,127 @@
+name: 米杏英伦风衣详情页骨架纯骨架版
+description: 女装风衣、英伦通勤、中长廓形、米杏外套风格的纯骨架版详情页 skill：保留走廊开场、趋势拼贴、垂坠面料证明、设计款式模特页、衣长对比、细节拼图、窗边收尾和尺码表 8 屏骨架，不承载运行时文案与业务判断。适合女装风衣、通勤外套、轻复古廓形上装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 英伦风衣
+trigger_words:
+- 英伦风衣
+- 风衣女
+- 中长风衣
+- 廓形风衣
+- 通勤风衣
+weight: 1.0
+tags:
+- name: 英伦风衣
+  weight: 1.0
+- name: 风衣女
+  weight: 1.0
+- name: 中长风衣
+  weight: 0.99
+- name: 廓形风衣
+  weight: 0.98
+- name: 通勤风衣
+  weight: 0.97
+- name: 米杏外套
+  weight: 0.96
+- name: 轻复古通勤
+  weight: 0.95
+- name: 小个子风衣
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 走廊开场
+  description: 'source_refs:[1]; 功能: 黑白地砖走廊里的全身模特开场，突出米杏风衣的通勤感、鞋包搭配和纵向身形延展。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[corridor_scene, full_body_adult_model, british_commute]
+- id: screen_2
+  name: 风格趋势
+  description: 'source_refs:[2]; 功能: 顶部趋势标题加 2x2 穿搭小图，保留多套风格参考和轻留白情绪页结构。'
+  order: 2
+  prompt_guide: f_code=F6; screen_kind=trend-collage; style_tokens=[top_title, four_look_grid, soft_beige_board]
+- id: screen_3
+  name: 垂坠面料
+  description: 'source_refs:[3]; 功能: 用大面积垂坠面料特写和小图标标签，表达顺滑挺括与面料优势。'
+  order: 3
+  prompt_guide: f_code=F5; screen_kind=material-proof; style_tokens=[fabric_drape_macro, icon_labels, soft_shadow]
+- id: screen_4
+  name: 设计款式
+  description: 'source_refs:[4]; 功能: 保留大幅模特半身或三分之二身位，配标题和简短设计说明，突出领型与廓形。'
+  order: 4
+  prompt_guide: f_code=F2+F6; screen_kind=design-model; style_tokens=[portrait_adult_model, headline_top, clean_beige_space]
+- id: screen_5
+  name: 衣长对比
+  description: 'source_refs:[5]; 功能: 双模特并列或同屏长短对比结构，强调版型差异和选款关系。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=compare-layout; style_tokens=[two_adult_model_compare, side_labels, clean_white_panel]
+- id: screen_6
+  name: 细节拼图
+  description: 'source_refs:[6]; 功能: 2x2 细节拼图复盘领口、扣件、走线和面料局部，保留右侧细标注。'
+  order: 6
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[detail_collage, macro_panels, slim_annotations]
+- id: screen_7
+  name: 窗边收尾
+  description: 'source_refs:[7]; 功能: 室内窗边全身模特收尾页，延续手提包和单人展示的都市通勤氛围。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=model-closure; style_tokens=[window_light, single_adult_model, commute_bag]
+- id: screen_8
+  name: 尺码信息
+  description: 'source_refs:[8]; 功能: 上方线稿说明加中下部尺码表的理性信息页，保留表格与脚注关系。'
+  order: 8
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[outline_drawing, large_table, footnote_block]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=black_white_corridor_with_soft_beige_light|camera=full_body_female_model_front_view|layout=top_small_brand_bottom_full_model|subject=single_adult_model_in_long_outerwear|accent=handbag_and_leather_shoes|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=scene-collage|bg=soft_beige_trend_board|camera=four_look_collage_with_small_figures|layout=top_title_middle_2x2_style_grid_bottom_brief_note|subject=multi-look_outerwear_collage|accent=trend_caption_and_small_style_tags|text_mode=strong|text_zone=top-center|text_align=center|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=material-proof|bg=warm_light_beige_material_board|camera=large_draped_fabric_macro|layout=top_left_copy_middle_fabric_card_bottom_icon_row|subject=flowing_fabric_surface|accent=mini_material_icons|text_mode=strong|text_zone=left-side|text_align=left|text_density=bullet-list|copy_role=material-note|slot={{copy_function_language_3}}|negative=single-image-only
+
+  s4|kind=on-body-hero|bg=clean_beige_indoor_wall|camera=portrait_to_three_quarter_adult_model|layout=top_right_title_bottom_large_model|subject=single_adult_model_showing_collar_and_silhouette|accent=minimal_design_labels|text_mode=strong|text_zone=right-upper|text_align=left|text_density=two-line|copy_role=hero-feature|slot={{copy_function_language_4}}|negative=headline-only
+
+  s5|kind=compare-closure|bg=white_compare_panel|camera=two_adult_models_front_compare|layout=top_title_bottom_dual_model_compare|subject=two_length_or_fit_options|accent=side_measure_labels|text_mode=weak|text_zone=top-left_and_side|text_align=left|text_density=option-labels|copy_role=choice-recap|slot={{copy_function_language_5}}|negative=no-compare-layout
+
+  s6|kind=detail-grid|bg=clean_white_detail_board|camera=macro_collage_of_collar_button_cuff_fabric|layout=left_large_model_crop_right_2x2_detail_panels|subject=multi_panel_outerwear_details|accent=thin_line_annotations|text_mode=strong|text_zone=right-side|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-image-only
+
+  s7|kind=on-body-proof|bg=soft_window_light_room|camera=full_body_adult_model_with_handbag|layout=top_left_title_bottom_single_model|subject=single_adult_model_in_commute_scene|accent=window_frame_and_bag_prop|text_mode=strong|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=size-chart|bg=white_data_panel|camera=outline_drawing_above_large_table|layout=top_sketch_middle_table_bottom_notes|subject=outerwear_size_data|accent=technical_lines_and_grid|text_mode=strong|text_zone=top-right|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-centered-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

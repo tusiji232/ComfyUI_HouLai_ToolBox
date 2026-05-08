@@ -1,0 +1,115 @@
+name: "红蓝商务多设备无线鼠标详情页骨架纯骨架版"
+description: "红蓝商务科技、多设备无线鼠标风格的纯骨架版详情页 skill：保留红底开场、白底图标功能页、蓝底多设备切换、桌面双连接、底部电池证明、办公使用、手握舒适页和尺寸参数页 8 屏骨架，不承载运行时文案与业务判断。适合无线鼠标、商务鼠标、多设备切换鼠标类数码详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "商务鼠标"
+trigger_words:
+  - "商务鼠标"
+  - "无线鼠标"
+  - "多设备鼠标"
+  - "办公鼠标"
+  - "蓝牙鼠标"
+weight: 1.0
+tags:
+  - name: "商务鼠标"
+    weight: 1.0
+  - name: "无线鼠标"
+    weight: 1.0
+  - name: "多设备鼠标"
+    weight: 0.99
+  - name: "办公鼠标"
+    weight: 0.98
+  - name: "蓝牙鼠标"
+    weight: 0.97
+  - name: "红底数码"
+    weight: 0.96
+  - name: "尺寸参数"
+    weight: 0.95
+  - name: "人体工学"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "红底开场"
+    description: "source_refs:[1]; 功能: 红底单鼠标开场，突出多设备切换核心卖点。"
+    order: 1
+    prompt_guide: "f_code=F1; screen_kind=hero-opening; style_tokens=[red_background, centered_mouse, device_switch_copy]"
+  - id: "screen_2"
+    name: "图标功能"
+    description: "source_refs:[2]; 功能: 白色桌面信息页，以六枚功能图标和短句构成功能板。"
+    order: 2
+    prompt_guide: "f_code=F4; screen_kind=feature-panel; style_tokens=[icon_grid, white_desk, clean_layout]"
+  - id: "screen_3"
+    name: "多设备切换"
+    description: "source_refs:[3]; 功能: 蓝底单鼠标配切换图标和局部放大窗。"
+    order: 3
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[blue_background, mouse_front, switch_icons]"
+  - id: "screen_4"
+    name: "双重连接"
+    description: "source_refs:[4]; 功能: 俯拍桌面中鼠标与键盘、笔记本同框，强调蓝牙与接收器连接。"
+    order: 4
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[overhead_desk, connectivity_icons, mouse_center]"
+  - id: "screen_5"
+    name: "电池证明"
+    description: "source_refs:[5]; 功能: 鼠标底部翻面大特写页，保留荧光底色和电池图标。"
+    order: 5
+    prompt_guide: "f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[underside_macro, neon_yellow_bg, battery_icon]"
+  - id: "screen_6"
+    name: "办公使用"
+    description: "source_refs:[6]; 功能: 办公桌面中真实手部使用鼠标的场景页。"
+    order: 6
+    prompt_guide: "f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[office_hand_use, monitor_desk, range_icon]"
+  - id: "screen_7"
+    name: "握持舒适"
+    description: "source_refs:[7]; 功能: 手握鼠标近景特写的人体工学页。"
+    order: 7
+    prompt_guide: "f_code=F2; screen_kind=on-body-proof; style_tokens=[hand_closeup, ergonomic_shape, desk_context]"
+  - id: "screen_8"
+    name: "尺寸重量"
+    description: "source_refs:[8]; 功能: 红底尺寸与重量参数页。"
+    order: 8
+    prompt_guide: "f_code=F4; screen_kind=spec-panel; style_tokens=[red_spec_board, dimension_lines, receiver_compare]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=high-saturation-red-tech-board|camera=single-mouse-front-display|layout=top-left-copy_bottom-centered-subject|subject=one-dominant-mouse|accent=device-icons-and-brand-strip|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+  s2|kind=detail-grid|bg=clean-white-desk-board|camera=icon-grid-with-desk-corners|layout=top-center-copy_middle-icon-grid|subject=function-icons-and-clean-desk|accent=laptop-and-tablet-corners|text_mode=strong|text_zone=top-center|text_align=center|text_density=bullet-list|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-image-only
+  s3|kind=evidence-panel|bg=solid-blue-proof-board|camera=single-mouse-front-with-switch-icons|layout=top-left-copy_middle-mouse_bottom-callout|subject=mouse-and-multi-device-switch-proof|accent=circle-zoom-and-switch-symbol|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=scene-collage|bg=white-overhead-desk|camera=mouse-between-keyboard-and-laptop|layout=top-icons_middle-overhead-scene_bottom-copy|subject=mouse-in-connectivity-desk-setup|accent=bluetooth-and-receiver-icon|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=evidence-panel|bg=neon-lime-proof-board|camera=mouse-underside-macro|layout=bottom-left-copy_middle-large-underside|subject=underside-structure-and-battery-proof|accent=battery-icon|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_5}}|negative=headline-only
+  s6|kind=on-body-proof|bg=office-monitor-desk-scene|camera=hand-using-mouse-at-desk|layout=top-left-copy_middle-hand-use-scene|subject=mouse-in-real-office-use|accent=range-icon-and-keyboard|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=on-body-proof|bg=clean-desk-closeup|camera=hand-grip-closeup-on-mouse|layout=bottom-left-copy_middle-ergonomic-closeup|subject=hand-and-mouse-contact-shape|accent=miniature-desk-props|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=short-paragraph|copy_role=comfort-proof|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=evidence-panel|bg=high-saturation-red-spec-sheet|camera=mouse-front-plus-receiver-size-diagram|layout=top-title_middle-product_bottom-size-table|subject=dimension-lines-and-weight-info|accent=white-measurement-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

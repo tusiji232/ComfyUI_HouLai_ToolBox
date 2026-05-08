@@ -1,0 +1,127 @@
+name: 粉白甜感半裙套装详情页骨架纯骨架版
+description: 女装衬衫半裙套装、粉白甜感、少女休闲、棚拍陈列风格的纯骨架版详情页 skill：保留跪姿开场、衬衫面料、细节拼图、套装组成、全身展示、尺码表、模特站姿和坐姿收尾 8 屏骨架，不承载运行时文案与业务判断。适合粉白套装、衬衫半裙搭配、韩系甜感女装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 半裙套装
+trigger_words:
+- 半裙套装
+- 衬衫套装
+- 粉白套装
+- 甜感女装
+- 韩系套装
+weight: 1.0
+tags:
+- name: 半裙套装
+  weight: 1.0
+- name: 衬衫套装
+  weight: 0.99
+- name: 粉白套装
+  weight: 0.98
+- name: 甜感女装
+  weight: 0.97
+- name: 韩系套装
+  weight: 0.96
+- name: 少女穿搭
+  weight: 0.95
+- name: 白色半裙
+  weight: 0.94
+- name: 粉色衬衫
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 跪姿开场
+  description: 'source_refs:[1]; 功能: 柔和棚拍中的跪姿模特开场，突出粉衬衫、白帽和花器道具。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[kneeling_adult_model, pink_white_palette, studio_prop]
+- id: screen_2
+  name: 衬衫面料
+  description: 'source_refs:[2]; 功能: 单张衬衫布料微距页，保留白粉渐变背景和简洁标题。'
+  order: 2
+  prompt_guide: f_code=F5; screen_kind=material-proof; style_tokens=[shirt_fabric_macro, blush_gradient, soft_copy]
+- id: screen_3
+  name: 细节拼图
+  description: 'source_refs:[3]; 功能: 3 格细节页，展示纽扣、褶皱、裙料等局部，配上方说明。'
+  order: 3
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[three_detail_tiles, top_paragraph, pink_white_board]
+- id: screen_4
+  name: 套装组成
+  description: 'source_refs:[4]; 功能: 上方文字说明加下方套装平铺或单品并列页，清楚区分上装和下装。'
+  order: 4
+  prompt_guide: f_code=F3; screen_kind=annotated-breakdown; style_tokens=[text_block_top, flatlay_items, component_labels]
+- id: screen_5
+  name: 全身展示
+  description: 'source_refs:[5]; 功能: 全身模特站姿页，保留左右留白和轻注释，突出套装比例。'
+  order: 5
+  prompt_guide: f_code=F6; screen_kind=product-hero; style_tokens=[full_body_adult_model, airy_studio, soft_margin]
+- id: screen_6
+  name: 尺码表
+  description: 'source_refs:[6]; 功能: 顶部小头像和下部表格的尺码页，延续奶油白排版。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[mini_portrait_header, clean_table, cream_panel]
+- id: screen_7
+  name: 站姿收尾
+  description: 'source_refs:[7]; 功能: 站姿模特展示页，保留画架或摆件道具和轻文案结构。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=model-display; style_tokens=[standing_adult_model, easel_prop, relaxed_pose]
+- id: screen_8
+  name: 坐姿收尾
+  description: 'source_refs:[8]; 功能: 坐姿模特页，保留室内摆件、轻松坐姿和版面胶带装饰。'
+  order: 8
+  prompt_guide: f_code=F6; screen_kind=brand-closure; style_tokens=[seated_adult_model, tape_corners, studio_objects]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=soft_pink_sweet_studio_opening|camera=kneeling_full_body_adult_model_with_hat|layout=top_small_title_bottom_single_model|subject=single_adult_model_in_shirt_and_skirt_set|accent=flower_pot_and_small_prop|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=material-proof|bg=blush_pink_gradient_board|camera=single_large_shirt_fabric_macro|layout=top_right_title_middle_macro_bottom_small_note|subject=soft_shirt_fabric_texture|accent=light_fold_highlight|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_2}}|negative=single-image-only
+
+  s3|kind=detail-grid|bg=white_pink_detail_board|camera=three_detail_tiles_of_button_pleat_fabric|layout=top_copy_middle_three_tile_grid_bottom_small_notes|subject=shirt_and_skirt_detail_set|accent=soft_shadow_tiles|text_mode=strong|text_zone=top-center|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-image-only
+
+  s4|kind=annotated-breakdown|bg=light_gray_component_board|camera=flatlay_items_with_simple_labels|layout=top_paragraph_bottom_three_item_lineup|subject=top_bottom_set_components|accent=component_name_labels|text_mode=strong|text_zone=top-left_and_bottom|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_4}}|negative=headline-only
+
+  s5|kind=product-hero|bg=clean_cream_studio|camera=full_body_adult_model_standing|layout=left_breathing_room_right_single_model|subject=single_adult_model_in_two_piece_set|accent=soft_floor_shadow|text_mode=weak|text_zone=left-side|text_align=left|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_5}}|negative=headline-only
+
+  s6|kind=size-chart|bg=cream_white_data_panel|camera=mini_portrait_above_size_table|layout=top_small_portrait_middle_large_table_bottom_footnote|subject=set_size_information|accent=light_gray_dividers|text_mode=strong|text_zone=top-right|text_align=left|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=on-body-proof|bg=cream_studio_with_easel|camera=full_body_adult_model_with_hand_prop|layout=top_left_small_copy_bottom_single_model|subject=standing_adult_model_showing_full_set|accent=easel_and_room_objects|text_mode=weak|text_zone=top-left|text_align=left|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=single-centered-packshot
+
+  s8|kind=brand-closure|bg=warm_cream_studio_scene|camera=seated_adult_model_three_quarter_view|layout=top_small_title_bottom_seated_model|subject=single_adult_model_relaxed_closure|accent=tape_corner_and_small_studio_props|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=headline-only'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

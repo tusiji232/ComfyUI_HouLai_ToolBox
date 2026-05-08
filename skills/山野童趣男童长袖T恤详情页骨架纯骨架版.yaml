@@ -1,0 +1,128 @@
+name: 山野童趣男童长袖T恤详情页骨架纯骨架版
+description: 男童长袖 T 恤、纯棉打底衫、山野童装、春秋男童上衣风格的纯骨架版详情页 skill：保留户外开场、坐姿体验、内里证明、跑动场景、白布说明、细节宫格、信息尺码和模特收尾 8 屏骨架，不承载运行时文案与业务判断。适合男童长袖
+  T、纯棉打底衫、自然系童装上衣详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 男童长袖T
+trigger_words:
+- 男童长袖T
+- 纯棉打底衫
+- 男童上衣
+- 春秋童装
+- 自然系童装
+weight: 1.0
+tags:
+- name: 男童长袖T
+  weight: 1.0
+- name: 纯棉打底衫
+  weight: 1.0
+- name: 男童上衣
+  weight: 0.99
+- name: 春秋童装
+  weight: 0.98
+- name: 自然系童装
+  weight: 0.97
+- name: 户外场景
+  weight: 0.96
+- name: 细节宫格
+  weight: 0.95
+- name: 信息尺码
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 户外开场
+  description: 'source_refs:[1]; 功能: 山野草地中的单模特开场，建立自然童趣和纯棉气质。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[outdoor_grass_hero, single_child_model, mountain_backdrop]
+- id: screen_2
+  name: 坐姿体验
+  description: 'source_refs:[2]; 功能: 户外坐姿模特页承接亲肤柔软体验。'
+  order: 2
+  prompt_guide: f_code=F2+F6; screen_kind=on-body-proof; style_tokens=[seated_child_model_outdoors, soft_copy, scenic_background]
+- id: screen_3
+  name: 内里证明
+  description: 'source_refs:[3]; 功能: 衣物内里和手部触感构成的纯棉证明页。'
+  order: 3
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[inside_fabric_demo, hand_touch, cotton_claim]
+- id: screen_4
+  name: 跑动场景
+  description: 'source_refs:[4]; 功能: 童模奔跑场景页，强化活力和穿搭感。'
+  order: 4
+  prompt_guide: f_code=F2+F6; screen_kind=scene-collage; style_tokens=[running_child_model, outdoor_motion, white_round_frame]
+- id: screen_5
+  name: 白布说明
+  description: 'source_refs:[5]; 功能: 白布抽象页配短文案说明柔软亲肤。'
+  order: 5
+  prompt_guide: f_code=F2; screen_kind=macro-closeup; style_tokens=[white_fabric_fold, clean_space, bottom_note]
+- id: screen_6
+  name: 细节宫格
+  description: 'source_refs:[6]; 功能: 领口、印花、袖口三块细节宫格页。'
+  order: 6
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[three_detail_cards, garment_parts, blue_label_strip]
+- id: screen_7
+  name: 信息尺码
+  description: 'source_refs:[7]; 功能: 产品信息和尺码表组合页。'
+  order: 7
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[product_info_card, size_table, check_list]
+- id: screen_8
+  name: 模特收尾
+  description: 'source_refs:[8]; 功能: 户外单模特收尾页，保留大圆角照片窗。'
+  order: 8
+  prompt_guide: f_code=F1+F6; screen_kind=model-closure; style_tokens=[single_child_model_closure, scenic_background, rounded_photo]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=bright-grassland-mountain-scene|camera=single-child-model-standing-outdoors|layout=top-left-copy_bottom-large-model|subject=one_child_model_in_raglan_long_sleeve_top|accent=rounded-photo-window|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=on-body-proof|bg=soft-outdoor-postcard-board|camera=seated-child-model-on-rock|layout=top-left-copy_bottom-large-seated-model|subject=one_child_model_in_relaxed_pose|accent=scenic_depth|text_mode=strong|text_zone=top-left|text_align=left|text_density=one-line|copy_role=comfort-proof|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=evidence-panel|bg=white-fabric-proof-board|camera=inside-fabric-with-hand-touch|layout=top-left-copy_middle-main-proof_photo_bottom-short-note|subject=inner_fabric_and_soft_handfeel|accent=rounded-photo-card|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_3}}|negative=single-image-only
+
+  s4|kind=scene-collage|bg=white-board-with-scenic-photo|camera=single-running-child-model|layout=top-right-copy_bottom-main-running-photo|subject=outdoor_motion_for_child_topwear|accent=rounded-frame-shadow|text_mode=strong|text_zone=top-right|text_align=right|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_4}}|negative=plain-white-packshot
+
+  s5|kind=macro-closeup|bg=white-fabric-minimal-board|camera=large-soft-fabric-fold|layout=top-left-copy_middle-large-fabric_texture_bottom-proof-note|subject=soft_cotton_texture_closeup|accent=tiny-icon-row|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_5}}|negative=headline-only
+
+  s6|kind=detail-grid|bg=white-detail-board|camera=three-garment-detail-cards|layout=top-title_bottom-three-card-grid|subject=collar_print_and_cuff_details|accent=blue-caption-strip|text_mode=strong|text_zone=top-left|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=spec-panel|bg=white-info-board|camera=product-info-plus-size-table|layout=top-title_middle-info-list_bottom-size-table|subject=topwear_info_and_size_data|accent=checkbox_list|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=model-closure|bg=white-board-with-large-photo-window|camera=single-child-model-front-portrait|layout=top-right-weak-copy_bottom-main-photo|subject=one_child_model_in_nature_scene|accent=large-rounded-window|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=plain-white-packshot'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

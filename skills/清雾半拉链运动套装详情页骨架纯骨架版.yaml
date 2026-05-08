@@ -1,0 +1,128 @@
+name: 清雾半拉链运动套装详情页骨架纯骨架版
+description: 运动套装、半拉链套装、训练服套装、速干瑜伽服风格的纯骨架版详情页 skill：保留全身开场、功能拼贴、背部细节、面料说明、适用场景、尺码信息、模特展示和拼贴收尾 8 屏骨架，不承载运行时文案与业务判断。适合半拉链运动套装、速干训练服、轻机能女装套装详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 半拉链套装
+trigger_words:
+- 半拉链套装
+- 运动套装
+- 训练服套装
+- 速干瑜伽服
+- 女装套装
+weight: 1.0
+tags:
+- name: 半拉链套装
+  weight: 1.0
+- name: 运动套装
+  weight: 1.0
+- name: 训练服套装
+  weight: 0.99
+- name: 速干瑜伽服
+  weight: 0.98
+- name: 女装套装
+  weight: 0.97
+- name: 背部细节
+  weight: 0.96
+- name: 适用场景
+  weight: 0.95
+- name: 尺码表
+  weight: 0.94
+shots:
+- id: screen_1
+  name: 全身开场
+  description: 'source_refs:[1]; 功能: 全身模特开场页，保留柔绿渐变背景和几何色块。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[full_body_adult_model, green_gradient, geometric_shapes]
+- id: screen_2
+  name: 功能拼贴
+  description: 'source_refs:[2]; 功能: 领口、抽绳、口袋三段拼贴的功能解析页。'
+  order: 2
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[three_feature_panels, closeup_and_inset, white_board]
+- id: screen_3
+  name: 背部细节
+  description: 'source_refs:[3]; 功能: 背部交叉带和后背结构的单张解析页。'
+  order: 3
+  prompt_guide: f_code=F4; screen_kind=detail-collage; style_tokens=[back_strap_closeup, side_note, pastel_gradient]
+- id: screen_4
+  name: 面料说明
+  description: 'source_refs:[4]; 功能: 面料微距和底部三枚图标构成的材质说明页。'
+  order: 4
+  prompt_guide: f_code=F3+F4; screen_kind=evidence-panel; style_tokens=[fabric_macro, icon_row, soft_grey_lilac]
+- id: screen_5
+  name: 适用场景
+  description: 'source_refs:[5]; 功能: 三个模特并排展示不同使用场景的应用页。'
+  order: 5
+  prompt_guide: f_code=F5+F6; screen_kind=scene-collage; style_tokens=[three_adult_models, sport_icons, application_board]
+- id: screen_6
+  name: 尺码信息
+  description: 'source_refs:[6]; 功能: 模特信息、尺码表和洗护示意组合页。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=spec-panel; style_tokens=[adult_model_profile, size_chart, care_icons]
+- id: screen_7
+  name: 模特展示
+  description: 'source_refs:[7]; 功能: 单模特正面展示页，延续高留白和平面感。'
+  order: 7
+  prompt_guide: f_code=F6; screen_kind=product-hero; style_tokens=[single_adult_model_display, centered_photo, weak_copy]
+- id: screen_8
+  name: 拼贴收尾
+  description: 'source_refs:[8]; 功能: 主模特加右侧细节列的拼贴收尾页。'
+  order: 8
+  prompt_guide: f_code=F5+F6; screen_kind=compare-closure; style_tokens=[main_adult_model_plus_detail_column, clean_white_board,
+    fashion_finish]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=soft-green-gradient-studio|camera=single-full-body-adult-model-standing|layout=top-left-copy_bottom-large-model|subject=one_adult_model_in_half_zip_training_set|accent=geometric-color-blocks|text_mode=strong|text_zone=top-left|text_align=left|text_density=two-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=detail-grid|bg=white-board-with-pastel-panels|camera=three-feature-panels-with-closeups|layout=top-title_bottom-three-panel-stack|subject=collar_drawstring_and_pocket_features|accent=small-circle-inset|text_mode=strong|text_zone=top-center|text_align=center|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_2}}|negative=single-centered-packshot
+
+  s3|kind=detail-grid|bg=white-board-with-soft-green-pink-gradient|camera=back-strap-closeup|layout=left-main-closeup_right-short-note|subject=back_strap_and_shoulder_structure|accent=small-lime-shadow|text_mode=strong|text_zone=right-center|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_3}}|negative=single-image-only
+
+  s4|kind=evidence-panel|bg=soft-grey-lilac-fabric-board|camera=large-fabric-macro-with-icon-row|layout=top-right-copy_middle-fabric_macro_bottom-three-icons|subject=fabric_texture_and_material_note|accent=round-proof-icons|text_mode=strong|text_zone=center-right|text_align=right|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_4}}|negative=headline-only
+
+  s5|kind=scene-collage|bg=white-application-board|camera=three-adult-model-application-lineup|layout=top-title_middle-three-models_bottom-icon-strip|subject=multiple_usage_scenes_of_one_set|accent=sport-icon-row|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_5}}|negative=no-multi-panel-collage
+
+  s6|kind=spec-panel|bg=white-size-info-board|camera=adult-model-card-plus-size-table|layout=top-model-strip_middle-size-table_bottom-care-diagram|subject=set_size_and_basic_information|accent=small-circular-portrait|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=product-hero|bg=white-board-with-soft-green-photo-window|camera=single-adult-model-front-standing|layout=top-title_bottom-main-photo|subject=one_adult_model_in_training_set_front_view|accent=thin-side-copy|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=scene-note|slot={{copy_function_language_7}}|negative=plain-white-packshot
+
+  s8|kind=compare-closure|bg=white-fashion-finish-board|camera=main-adult-model-plus-right-detail-column|layout=left-main-model_right-two-detail-crops|subject=full_look_and_detail_column_finish|accent=small-detail-photo-stack|text_mode=weak|text_zone=top-right|text_align=right|text_density=one-line|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=no-compare-layout'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''

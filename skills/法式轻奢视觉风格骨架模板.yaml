@@ -1,0 +1,99 @@
+name: "法式轻奢视觉风格骨架模板"
+description: "可迁移的详情页风格骨架示例：保留视觉与图文关系，不绑定具体产品细节。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "法式轻奢风格详情页"
+trigger_words:
+  - "法式轻奢风格详情页"
+  - "style transfer detail page"
+weight: 1.0
+tags:
+  - name: "法式轻奢风格详情页"
+    weight: 1.0
+
+shots:
+  - id: "screen_1"
+    name: "开场氛围屏"
+    description: "source_refs:[1,2]; 功能: 品牌氛围引入与主视觉建立。"
+    order: 1
+    prompt_guide: "f_code=F1/F6; p_code=P2; i_code=I5; style_tokens=[warm-neutral, soft side light, top-weight composition, clean reserve]; copy_action=generate_copy; copy_placeholder={{copy_function_language_1}}"
+  - id: "screen_2"
+    name: "卖点聚焦屏"
+    description: "source_refs:[3,4]; 功能: 关键卖点聚合表达。"
+    order: 2
+    prompt_guide: "f_code=F2; p_code=P1/P2; i_code=I5; style_tokens=[macro emphasis, texture contrast, dual text bands]; copy_action=generate_copy; copy_placeholder={{copy_function_language_2}}"
+  - id: "screen_3"
+    name: "信息图表屏"
+    description: "source_refs:[5]; 功能: 规格/尺码/参数信息位，可根据叙事前置或后置。"
+    order: 3
+    prompt_guide: "f_code=F4/F5; p_code=P5; i_code=I1; style_tokens=[clean white, split layout, technical clarity]; copy_action=reserve_space; copy_placeholder={{copy_function_language_3}}"
+  - id: "screen_4"
+    name: "细节拼贴屏"
+    description: "source_refs:[6,7]; 功能: 局部细节和材质观察。"
+    order: 4
+    prompt_guide: "f_code=F3; p_code=P4; i_code=I4; style_tokens=[grid collage, minimal margin, even exposure]; copy_action=conditional; copy_placeholder={{copy_function_language_4}}"
+  - id: "screen_5"
+    name: "场景搭配屏"
+    description: "source_refs:[8,9]; 功能: 场景化展示与搭配关系。"
+    order: 5
+    prompt_guide: "f_code=F6; p_code=P4; i_code=I2; style_tokens=[lifestyle scene, gentle depth, annotation room]; copy_action=generate_copy; copy_placeholder={{copy_function_language_5}}"
+  - id: "screen_6"
+    name: "结构示意屏"
+    description: "source_refs:[10]; 功能: 结构关系说明，可用于工艺/层次信息。"
+    order: 6
+    prompt_guide: "f_code=F3/F4; p_code=P3/P5; i_code=I1; style_tokens=[diagram clarity, neutral backdrop, high legibility]; copy_action=reserve_space; copy_placeholder={{copy_function_language_6}}"
+  - id: "screen_7"
+    name: "延展方案屏"
+    description: "source_refs:[11]; 功能: 配色或组合方案延展。"
+    order: 7
+    prompt_guide: "f_code=F6; p_code=P4; i_code=I4; style_tokens=[multi-panel rhythm, palette consistency, low clutter]; copy_action=generate_copy; copy_placeholder={{copy_function_language_7}}"
+  - id: "screen_8"
+    name: "收束转化屏"
+    description: "source_refs:[12]; 功能: 结尾总结与行动引导。"
+    order: 8
+    prompt_guide: "f_code=F1/F2; p_code=P2; i_code=I5; style_tokens=[clean end-card, strong hierarchy, calm whitespace]; copy_action=generate_copy; copy_placeholder={{copy_function_language_8}}"
+
+template: |
+  【模板定位】
+  这是“风格骨架模板”，用于把参考页视觉语言迁移到新产品。
+  只复刻：配色、光影、构图、留白、图文关系。
+  不复刻：参考产品具体细节、品牌词、品类词、参数词。
+
+  【全局约束】
+  - 输出语言严格为 {{language}}。
+  - 产品事实仅来自新输入：{{product}}。
+  - 平台语境：{{platform}}。
+  - 生成数量受 {{batch_count}} 控制（最多8屏）。
+  - 屏位为动态叙事位，不是固定功能槽位。
+
+  【第1屏】氛围建立：{{copy_function_language_1}}
+  【第2屏】卖点聚焦：{{copy_function_language_2}}
+  【第3屏】信息图表：{{copy_function_language_3}}
+  【第4屏】细节拼贴：{{copy_function_language_4}}
+  【第5屏】场景搭配：{{copy_function_language_5}}
+  【第6屏】结构示意：{{copy_function_language_6}}
+  【第7屏】延展方案：{{copy_function_language_7}}
+  【第8屏】收束转化：{{copy_function_language_8}}
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

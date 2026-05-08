@@ -1,0 +1,115 @@
+name: "复古黑金蓝牙音箱详情页骨架纯骨架版"
+description: "蓝牙音箱、无线音箱、复古音箱、客厅桌面音响风格的纯骨架版详情页 skill：保留暖调开场主图、空间音效场景、配对与音量控制、经典外观展示、新一代蓝牙技术、旋钮接口细节、环保构造场景和产品规格页 8 屏骨架，不承载运行时文案与业务判断。适合蓝牙音箱、桌面音响、客厅音箱、黑金复古数码详情页复刻。"
+category: "详情页模板"
+schema_version: "style_only_v3"
+trigger: "复古音箱"
+trigger_words:
+  - "复古音箱"
+  - "蓝牙音箱"
+  - "无线音响"
+  - "桌面音箱"
+  - "客厅音响"
+weight: 1.0
+tags:
+  - name: "复古音箱"
+    weight: 1.0
+  - name: "蓝牙音箱"
+    weight: 1.0
+  - name: "无线音响"
+    weight: 0.99
+  - name: "桌面音箱"
+    weight: 0.98
+  - name: "客厅音响"
+    weight: 0.97
+  - name: "黑金复古"
+    weight: 0.96
+  - name: "高音质音箱"
+    weight: 0.95
+  - name: "实体控制"
+    weight: 0.94
+
+shots:
+  - id: "screen_1"
+    name: "开场主图"
+    description: "source_refs:[1]; 功能: 暖色家居桌面中的单音箱开场，画面底部保留大型号标题，突出复古与家居感。"
+    order: 1
+    prompt_guide: "f_code=F1+F6; screen_kind=hero-opening; style_tokens=[sunlit_tabletop, single_speaker, large_model_title]"
+  - id: "screen_2"
+    name: "空间音效"
+    description: "source_refs:[2]; 功能: 顶部黑底说明区，下部媒体设备与音箱同框，表现空间感音效和桌面使用场景。"
+    order: 2
+    prompt_guide: "f_code=F2+F6; screen_kind=scene-note; style_tokens=[black_header, desktop_scene, media_device_plus_speaker]"
+  - id: "screen_3"
+    name: "配对控音"
+    description: "source_refs:[3]; 功能: 左上文案说明，主体为暖色窗帘光影中的单音箱陈列，突出操作简洁与大音量感。"
+    order: 3
+    prompt_guide: "f_code=F2; screen_kind=product-hero; style_tokens=[warm_curtain_light, centered_speaker, simple_controls]"
+  - id: "screen_4"
+    name: "经典设计"
+    description: "source_refs:[4]; 功能: 桌面生活场景中的斜角主机展示，保留家居办公道具和浅色台面。"
+    order: 4
+    prompt_guide: "f_code=F2+F6; screen_kind=design-showcase; style_tokens=[desk_lifestyle, angled_product, home_office_props]"
+  - id: "screen_5"
+    name: "蓝牙升级"
+    description: "source_refs:[5]; 功能: 深色科技页，上部技术文案，下部大幅正面产品近景，突出蓝牙升级与高级感。"
+    order: 5
+    prompt_guide: "f_code=F3; screen_kind=evidence-panel; style_tokens=[dark_premium_bg, large_closeup, tech_copy]"
+  - id: "screen_6"
+    name: "细节控制"
+    description: "source_refs:[6]; 功能: 顶部说明，下部两段实体控制件和接口近景特写，突出控制面板与连接方式。"
+    order: 6
+    prompt_guide: "f_code=F3; screen_kind=detail-grid; style_tokens=[dual_closeups, physical_controls, connection_panel]"
+  - id: "screen_7"
+    name: "环保构造"
+    description: "source_refs:[7]; 功能: 顶部环保构造说明，中部绸面单品特写，下部家居柜面摆放场景，保留上下双段叙事。"
+    order: 7
+    prompt_guide: "f_code=F6; screen_kind=scene-collage; style_tokens=[top_closeup, satin_surface, bottom_home_scene]"
+  - id: "screen_8"
+    name: "规格参数"
+    description: "source_refs:[8]; 功能: 白底规格页，顶部大标题与产品图，下部多行参数表，保持清晰理性排版。"
+    order: 8
+    prompt_guide: "f_code=F4; screen_kind=spec-panel; style_tokens=[clean_white_sheet, product_front, parameter_table]"
+
+template: |
+  sv=style_only_v3
+  cn=中文骨架说明
+  pd={{product}}
+  pi={{product_info}}
+  sp={{selling_points}}
+  pf={{platform}}
+  lg={{language}}
+  bc={{batch_count}}
+  arch=skeleton-only
+  brain=system-prompt-only
+  s1|kind=hero-opening|bg=warm-sunlit-living-room|camera=one-main-audio-unit-on-round-wood-table|layout=full-frame-product_with_bottom-large-model-title|subject=one-dominant-audio-unit-in-home-scene|accent=knit-textile_and_window-light|text_mode=strong|text_zone=bottom-left|text_align=left|text_density=one-line|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=headline-only
+  s2|kind=scene-note|bg=black-top-band_with_warm-blinds|camera=desktop-scene-with-media-device-and-audio-unit|layout=top-copy_bottom-desktop-scene|subject=main-audio-unit-next-to-media-source|accent=wood-blinds_and_black-header|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=scene-note|slot={{copy_function_language_2}}|negative=single-centered-packshot
+  s3|kind=product-hero|bg=warm-curtain-window-light|camera=main-audio-unit-on-dark-wood-table|layout=top-left-copy_bottom-centered-product|subject=one-dominant-audio-unit|accent=curtain-shadow_and_table-edge|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-feature|slot={{copy_function_language_3}}|negative=headline-only
+  s4|kind=product-hero|bg=light-desk-lifestyle|camera=angled-audio-unit-on-work-surface|layout=top-left-copy_bottom-right-product|subject=main-audio-unit-in-home-office-scene|accent=home-office-props|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_4}}|negative=single-centered-packshot
+  s5|kind=evidence-panel|bg=deep-navy-tech-premium|camera=large-front-product-closeup|layout=top-left-copy_bottom-large-closeup|subject=single-large-speaker-closeup|accent=dark-premium-gradient|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=proof-data|slot={{copy_function_language_5}}|negative=headline-only
+  s6|kind=detail-grid|bg=deep-navy-panel|camera=two-stacked-control-closeups|layout=top-copy_middle-two-stacked-closeups|subject=physical-controls-and-input-ports|accent=control-surface|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=feature-callout|slot={{copy_function_language_6}}|negative=single-image-only
+  s7|kind=scene-collage|bg=dark-premium-plus-warm-home|camera=top-closeup_bottom-home-scene|layout=top-copy_middle-closeup_bottom-cabinet-scene|subject=audio-unit-material-and-home-placement|accent=fabric-surface_and_home-shelf|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_7}}|negative=single-image-only
+  s8|kind=evidence-panel|bg=clean-light-spec-sheet|camera=front-product-plus-parameter-table|layout=top-title_middle-product_bottom-spec-table|subject=single-product-with-parameter-table|accent=thin-divider-lines|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_8}}|negative=single-image-only
+
+defaults:
+  schema_version: "style_only_v3"
+  screen_count: "8"
+  style_transfer_mode: "style_only"
+  dynamic_sequence: "true"
+  language_lock: "strict"
+  output_language: "中文"
+
+variables:
+  product: ""
+  product_info: ""
+  selling_points: ""
+  language: "中文"
+  platform: ""
+  batch_count: "8"
+  copy_function_language_1: ""
+  copy_function_language_2: ""
+  copy_function_language_3: ""
+  copy_function_language_4: ""
+  copy_function_language_5: ""
+  copy_function_language_6: ""
+  copy_function_language_7: ""
+  copy_function_language_8: ""

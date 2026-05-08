@@ -1,0 +1,128 @@
+name: 白色蛋糕半裙详情页骨架纯骨架版
+description: 女装蛋糕半裙、白色高腰、中长蓬松、轻韩系街拍风格的纯骨架版详情页 skill：保留主图拼贴、全身展示、裙摆层次、面料微距、结构细节、尺码表、显高显瘦证明和腿型包容收尾 8 屏骨架，不承载运行时文案与业务判断。适合白色半裙、蛋糕裙、中长A字裙详情页复刻。
+category: 详情页模板
+schema_version: style_only_v3
+trigger: 蛋糕半裙
+trigger_words:
+- 蛋糕半裙
+- 白色半裙
+- 高腰长裙
+- A字半裙
+- 蓬蓬半裙
+weight: 1.0
+tags:
+- name: 蛋糕半裙
+  weight: 1.0
+- name: 白色半裙
+  weight: 0.99
+- name: 高腰长裙
+  weight: 0.98
+- name: A字半裙
+  weight: 0.97
+- name: 蓬蓬半裙
+  weight: 0.96
+- name: 轻韩系
+  weight: 0.95
+- name: 显高显瘦
+  weight: 0.94
+- name: 中长裙装
+  weight: 0.93
+shots:
+- id: screen_1
+  name: 主图拼贴
+  description: 'source_refs:[1]; 功能: 主模特大图配右下局部小图的拼贴开场，突出裙摆层次和整体造型。'
+  order: 1
+  prompt_guide: f_code=F1+F6; screen_kind=hero-opening; style_tokens=[main_adult_model_plus_inset, gray_frame, street_entry]
+- id: screen_2
+  name: 全身展示
+  description: 'source_refs:[2]; 功能: 单模特全身展示页，保留上方说明和圆角拱门式照片框。'
+  order: 2
+  prompt_guide: f_code=F6; screen_kind=product-hero; style_tokens=[full_body_adult_model, arch_frame, airy_copy]
+- id: screen_3
+  name: 裙摆层次
+  description: 'source_refs:[3]; 功能: 后视或侧后视行走页，突出蛋糕层次裙摆与垂落效果。'
+  order: 3
+  prompt_guide: f_code=F2+F6; screen_kind=fit-callout; style_tokens=[back_or_side_walk_view, tiered_skirt, room_scene]
+- id: screen_4
+  name: 面料微距
+  description: 'source_refs:[4]; 功能: 单张白色面料微距页，保留灰框和柔和打光。'
+  order: 4
+  prompt_guide: f_code=F5; screen_kind=material-proof; style_tokens=[white_fabric_macro, gray_frame, soft_light]
+- id: screen_5
+  name: 结构细节
+  description: 'source_refs:[5]; 功能: 3-4 格细节页，展示松紧腰、里衬、褶皱和裙摆工艺。'
+  order: 5
+  prompt_guide: f_code=F3; screen_kind=detail-grid; style_tokens=[detail_tiles, waistband_closeup, white_fabric_parts]
+- id: screen_6
+  name: 尺码表
+  description: 'source_refs:[6]; 功能: 尺码推荐与规格表页面，保留推荐身高和尺码标签。'
+  order: 6
+  prompt_guide: f_code=F4; screen_kind=size-chart; style_tokens=[height_range, compact_table, size_pills]
+- id: screen_7
+  name: 显高显瘦
+  description: 'source_refs:[7]; 功能: 单模特加左侧优点列表的证明页，表达高腰收腹与日常通勤适配。'
+  order: 7
+  prompt_guide: f_code=F3+F6; screen_kind=evidence-panel; style_tokens=[adult_model_plus_benefit_list, white_skirt_scene,
+    slimming_story]
+- id: screen_8
+  name: 腿型包容
+  description: 'source_refs:[8]; 功能: 大标题、单模特和底部腿型示意的收尾证明页，强调多身材包容度。'
+  order: 8
+  prompt_guide: f_code=F3+F6; screen_kind=compare-closure; style_tokens=[adult_model_plus_leg_diagrams, bold_headline, inclusive_fit]
+template: 'sv=style_only_v3
+
+  cn=中文骨架说明
+
+  pd={{product}}
+
+  pi={{product_info}}
+
+  sp={{selling_points}}
+
+  pf={{platform}}
+
+  lg={{language}}
+
+  bc={{batch_count}}
+
+  arch=skeleton-only
+
+  brain=system-prompt-only
+
+  s1|kind=hero-opening|bg=white_cake_skirt_street_hero|camera=main_full_body_adult_model_plus_small_inset|layout=left_large_model_right_lower_inset_top_copy|subject=single_adult_model_in_tiered_skirt|accent=soft_gray_frame_and_tote_bag|text_mode=strong|text_zone=right-upper|text_align=left|text_density=short-paragraph|copy_role=hero-benefit|slot={{copy_function_language_1}}|negative=plain-white-packshot
+
+  s2|kind=product-hero|bg=white_clean_board_with_arch_frame|camera=single_full_body_adult_model_front_view|layout=top_center_copy_middle_arch_photo_bottom_breathing_room|subject=single_adult_model_showing_full_skirt_length|accent=rounded_arch_border|text_mode=weak|text_zone=top-center|text_align=center|text_density=one-line|copy_role=hero-feature|slot={{copy_function_language_2}}|negative=headline-only
+
+  s3|kind=on-body-hero|bg=warm_home_scene_board|camera=back_or_side_walk_view_adult_model|layout=top_title_bottom_single_moving_model|subject=tiered_skirt_swing_and_volume_display|accent=room_prop_and_motion_line|text_mode=strong|text_zone=top-left|text_align=left|text_density=short-paragraph|copy_role=hero-feature|slot={{copy_function_language_3}}|negative=single-centered-packshot
+
+  s4|kind=material-proof|bg=soft_gray_white_macro_board|camera=single_large_white_fabric_macro|layout=top_right_copy_middle_macro_bottom_small_note|subject=soft_lightweight_fabric_texture|accent=gray_square_frame|text_mode=strong|text_zone=top-right|text_align=right|text_density=short-paragraph|copy_role=material-note|slot={{copy_function_language_4}}|negative=single-image-only
+
+  s5|kind=detail-grid|bg=white_detail_information_board|camera=three_to_four_detail_tiles_of_waist_lining_hem|layout=top_title_middle_detail_grid_bottom_small_labels|subject=waistband_lining_and_tier_details|accent=gray_outline_frames|text_mode=strong|text_zone=top-center_and_panel_edge|text_align=left|text_density=caption-grid|copy_role=feature-callout|slot={{copy_function_language_5}}|negative=single-image-only
+
+  s6|kind=size-chart|bg=light_gray_size_panel|camera=size_recommendation_above_compact_table|layout=top_size_badges_middle_table_bottom_height_range|subject=skirt_size_and_height_guidance|accent=gray_and_white_size_pills|text_mode=strong|text_zone=top-center|text_align=center|text_density=data-table|copy_role=proof-data|slot={{copy_function_language_6}}|negative=single-centered-packshot
+
+  s7|kind=evidence-panel|bg=white_slimming_story_board|camera=single_adult_model_with_left_benefit_column|layout=left_benefit_list_right_full_body_model|subject=high_waist_and_slimming_effect_proof|accent=rounded_benefit_box|text_mode=strong|text_zone=left-column|text_align=left|text_density=bullet-list|copy_role=proof-data|slot={{copy_function_language_7}}|negative=headline-only
+
+  s8|kind=compare-closure|bg=white_inclusive_fit_board|camera=single_adult_model_with_bottom_leg_diagrams|layout=top_bold_title_middle_model_bottom_leg_type_icons|subject=body_shape_and_leg_type_compatibility|accent=three_leg_diagrams_and_check_mark|text_mode=strong|text_zone=top-left_and_bottom|text_align=left|text_density=bullet-list|copy_role=choice-recap|slot={{copy_function_language_8}}|negative=no-compare-layout'
+defaults:
+  schema_version: style_only_v3
+  screen_count: '8'
+  style_transfer_mode: style_only
+  dynamic_sequence: 'true'
+  language_lock: strict
+  output_language: 中文
+variables:
+  product: ''
+  product_info: ''
+  selling_points: ''
+  language: 中文
+  platform: ''
+  batch_count: '8'
+  copy_function_language_1: ''
+  copy_function_language_2: ''
+  copy_function_language_3: ''
+  copy_function_language_4: ''
+  copy_function_language_5: ''
+  copy_function_language_6: ''
+  copy_function_language_7: ''
+  copy_function_language_8: ''
